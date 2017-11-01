@@ -6,6 +6,8 @@ This is the repository for Geosoft GX Developer support for .Net development. Re
 
 [.Net Development](https://geosoftgxdev.atlassian.net/wiki/spaces/GXD93/pages/78053479/.NET+Development)
 
+Also see the [Geosoft Inc . organization on Github](https://github.com/GeosoftInc) for the other programming language specific repos.
+
 License
 -------
 
