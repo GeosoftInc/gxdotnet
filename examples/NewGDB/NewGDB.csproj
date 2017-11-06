@@ -4,10 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{473A5E92-441A-4441-89C6-3811661077CB}</ProjectGuid>
+    <ProjectGuid>{AB95C908-1C04-4039-B16A-FE33A9BE1989}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>XToolControl</RootNamespace>
-    <AssemblyName>XToolControl</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewGDB</RootNamespace>
+    <AssemblyName>NewGDB</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -47,7 +48,7 @@
     <OutputPath>bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -56,50 +57,50 @@
     <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x86'">
       <HintPath>..\..\x86_references\geoengine.core.gxnet.dll</HintPath>
     </Reference>
-    <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
-    </Reference>
-    <Reference Include="geoengine.core.gxnetx" Condition="'$(Platform)' == 'x86'">
-      <HintPath>..\..\x86_references\geoengine.core.gxnetx.dll</HintPath>
-    </Reference>
-    <Reference Include="geoengine.core.gxnetx" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnetx.dll</HintPath>
+    <Reference Include="GeoEngine.Core.Managed" Condition="'$(Platform)' == 'x86'">
+      <HintPath>..\..\x86_references\GeoEngine.Core.Managed.dll</HintPath>
     </Reference>
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x86'">
       <HintPath>..\..\x86_references\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
+    <Reference Include="Geosoft.GX.Controls" Condition="'$(Platform)' == 'x86'">
+      <HintPath>..\..\x86_references\Geosoft.GX.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x64'">
+      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoEngine.Core.Managed" Condition="'$(Platform)' == 'x64'">
+      <HintPath>$(GeosoftBinFolder)\GeoEngine.Core.Managed.dll</HintPath>
+    </Reference>
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x64'">
       <HintPath>$(GeosoftBinFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
-    <Reference Include="System">
-      <Name>System</Name>
+    <Reference Include="Geosoft.GX.Controls" Condition="'$(Platform)' == 'x64'">
+      <HintPath>$(GeosoftBinFolder)\Geosoft.GX.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Include="System.Drawing">
-      <Name>System.Drawing</Name>
-    </Reference>
-    <Reference Include="System.Windows.Forms">
-      <Name>System.Windows.Forms</Name>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
+    <Compile Include="NewGDB.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShowXToolControl.cs" />
-    <Compile Include="XToolControl.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="NewGDB.designer.cs">
+      <DependentUpon>NewGDB.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="XToolControl.resx">
-      <DependentUpon>XToolControl.cs</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NewGDB.resx">
+      <DependentUpon>NewGDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

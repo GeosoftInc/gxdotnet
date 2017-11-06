@@ -6,8 +6,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{29B24005-D726-4B22-A16F-01F65EBF3F1F}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>App.ico</ApplicationIcon>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>chanadd</AssemblyName>
@@ -54,17 +53,11 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x86'">
-      <HintPath>$(API_BUILD_DIR)\$(Configuration)\geoengine.core.gxnet.dll</HintPath>
+    <Reference Include="geoengine.core.gxnet">
+      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
     </Reference>
-    <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(API_BUILD_DIR_64)\$(Configuration)\geoengine.core.gxnet.dll</HintPath>
-    </Reference>
-    <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x86'">
-      <HintPath>$(API_BUILD_DIR)\$(Configuration)\geosoft.desktop.gxnet.dll</HintPath>
-    </Reference>
-    <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(API_BUILD_DIR_64)\$(Configuration)\geosoft.desktop.gxnet.dll</HintPath>
+    <Reference Include="geosoft.desktop.gxnet">
+      <HintPath>$(GeosoftBinFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -81,10 +74,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.ico" />
-    <Compile Include="..\..\..\..\..\..\build\buildinfo\deskversion.assembly.cs">
-      <Link>deskversion.assembly.cs</Link>
-    </Compile>
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
