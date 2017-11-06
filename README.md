@@ -10,6 +10,9 @@ Also see the [Geosoft Inc. organization on Github](https://github.com/GeosoftInc
 
 Quick Start
 -----------
+### Configuration
+
+Select a __[Release](https://github.com/GeosoftInc/gxdotnet/releases)__ and download the source code compressed file.  Extract to a folder (e.g. ___c:\geosoft_code\gxdotnet___) on your system. This will contain the following sub-folders:
 
 The `build.proj` and `env.targets` files contain [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) scripts that  can be used to build the examples or launch Visual Studio with the correct environments defined.
 
