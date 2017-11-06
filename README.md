@@ -30,6 +30,10 @@ msbuild /t:StartDevEnv
 ```
 Then open `examples\examples.sln`.
 
+### References
+
+All Geosoft assemblies are references from the Geosoft Desktop Applications bin directory.
+
 ### x86 References
 The `x86_references` directory provide minimal assemblies necessary to build assemblies targetting x86. These assemblies cannot be used and is only neccessary to be able to use the Visual Studio Windows Forms Designer since Visual Studio is at this moment still an x86 application.
 
