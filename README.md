@@ -14,6 +14,11 @@ Quick Start
 
 Select a __[Release](https://github.com/GeosoftInc/gxdotnet/releases)__ and download the source code compressed file.  Extract to a folder (e.g. ___c:\geosoft_code\gxdotnet___) on your system. This will contain the following sub-folders:
 
+   | Folder | Content |
+   |:------:| ------- |
+   | ___examples___ | C# examples |
+   | ___x86_references___ | Geosoft .NET dlls and xml, to be placed with your programs |
+
 The `build.proj` and `env.targets` files contain [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) scripts that  can be used to build the examples or launch Visual Studio with the correct environments defined.
 
 [Visual Studio Community 2017](https://www.visualstudio.com/downloads/) is recommened for developers that do not yet have access to Visual Studio. It should also be possible to build using other toolsets (e.g. MingW), but this is neither tested nor supported.
