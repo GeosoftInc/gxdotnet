@@ -15829,6 +15829,21 @@ Oasis montaj.
             <public_method>no</public_method>
             <extended_method>no</extended_method>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.LoadGravityCG6(GeoEngine.Core.GXNet.CDB,System.String)">
+            <summary>Load a CG-6 gravity survey file</summary>
+            <param name="oDB1">Database</param>
+            <param name="str2">Gravity data file</param>
+            <remarks>
+
+            Has its own format - space-delimited columns of data
+           
+</remarks>
+            <available_version>9.4.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CDU.LoadGravity(GeoEngine.Core.GXNet.CDB,GeoEngine.Core.GXNet.CREG,System.Int32,System.String)">
             <summary>Load a gravity survey file</summary>
             <param name="oDB1">Database</param>

@@ -16372,6 +16372,22 @@ Oasis montaj.
             <public_method>no</public_method>
             <extended_method>no</extended_method>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDU.LoadGravityCG6(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String)">
+            <summary>Load a CG-6 gravity survey file</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="oDB1">Database</param>
+            <param name="str2">Gravity data file</param>
+            <remarks>
+
+            Has its own format - space-delimited columns of data
+           
+</remarks>
+            <available_version>9.4.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CDU.LoadGravity(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,GeoEngine.Core.GXNetX.CREG,System.Int32,System.String)">
             <summary>Load a gravity survey file</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>

@@ -4555,6 +4555,15 @@ framework which will supports persistance through CMETA.
 
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CTB.SetSortMode(System.Int32)">
+            <summary>Set the sort mode of a table.</summary>
+            <param name="i1">See <see cref="T:GeoEngine.Core.GXNetX.TB_SORTConstant" /></param>
+            <available_version>9.3.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CTB.Sort(System.Int32)">
             <summary>Sorts a table by a specified column.</summary>
             <param name="i1">Index of data Column to sort table by</param>
@@ -11357,9 +11366,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.TickEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -11375,9 +11384,9 @@ framework which will supports persistance through CMETA.
             <param name="d8">Major tick modulus on station vv</param>
             <param name="d9">Maximum gap to span; set to 0 or rDUMMY to ignore all gaps.</param>
             <available_version>6.3.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Tick(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Double,System.Double,System.Double)">
@@ -11392,9 +11401,9 @@ framework which will supports persistance through CMETA.
             <param name="d7">Major tick size</param>
             <param name="d8">Major tick modulus on station vv</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.TextBox(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.Double,System.Double,System.Double,System.Double,System.String,System.Double,System.Int32)">
@@ -11409,9 +11418,9 @@ framework which will supports persistance through CMETA.
             <param name="d7">Line spacing (1.2 good)</param>
             <param name="i8">See <see cref="T:GeoEngine.Core.GXNetX.MVU_TEXTBOXConstant" /></param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.SymbOff(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Double)">
@@ -11430,9 +11439,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ReGenAreas(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.String)">
@@ -11453,9 +11462,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PropSymbLegend(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Double,System.String,System.String)">
@@ -11481,9 +11490,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.8</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ProfilePlotEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Int32,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Int32,System.String,System.String)">
@@ -11506,9 +11515,9 @@ framework which will supports persistance through CMETA.
             <param name="str15">Negative fill color</param>
             <remarks>Profiles will be drawn in the current line style.</remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ProfilePlot(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Int32,System.Double,System.Double,System.Double,System.Int32)">
@@ -11526,9 +11535,9 @@ framework which will supports persistance through CMETA.
             <param name="i10">1 to join profile to line ends.</param>
             <remarks>Profiles will be drawn in the current line style.</remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Probability(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CITR)">
@@ -11554,9 +11563,9 @@ framework which will supports persistance through CMETA.
             <param name="oITR18">ITR to color symbols.</param>
             <remarks>The ITR can be empty (but must still be a valid ITR object).</remarks>
             <available_version>5.1.8</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PostEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Double,System.Int32,System.Double,System.Int32,System.Double,System.Int32)">
@@ -11583,9 +11592,9 @@ framework which will supports persistance through CMETA.
             <param name="d19">Vertical reference angle</param>
             <param name="i20">1 up is right, -1 up is left</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Post(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Double)">
@@ -11602,9 +11611,9 @@ framework which will supports persistance through CMETA.
             <param name="i9">Reference point number</param>
             <param name="d10">Text angle</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.GenerateSurfaceFromVoxel(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVOX,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Double,System.Double,System.String)">
@@ -11622,9 +11631,9 @@ framework which will supports persistance through CMETA.
             <param name="str10">Geosurface file</param>
             <remarks>TODO... Move to VOX method for surface generation only and use GeosurfaceD to display.</remarks>
             <available_version>8.5.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PlotVoxelSurface2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVOX,System.Double,System.Int32,System.Double,System.Double,System.String)">
@@ -11647,9 +11656,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>7.3.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PlotVoxelSurface(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVOX,System.Double,System.Int32,System.Double)">
@@ -11670,9 +11679,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>6.4.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PathPlotEx2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.String,System.Int32,System.Int32,System.Double,System.Int32,System.Double,System.Double,System.Double,System.Int32)">
@@ -11692,9 +11701,9 @@ framework which will supports persistance through CMETA.
             <param name="i12">See <see cref="T:GeoEngine.Core.GXNetX.MVU_FLIGHT_DUMMIESConstant" /></param>
             <remarks>This is the same except for the additional line dummies parameter.</remarks>
             <available_version>5.0.8</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PathPlotEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.String,System.Int32,System.Int32,System.Double,System.Int32,System.Double,System.Double,System.Double)">
@@ -11713,9 +11722,9 @@ framework which will supports persistance through CMETA.
             <param name="d11">Maximum gap before breaking line, 0.0 for no breaks.</param>
             <remarks>This is the same except for the additional line compass parameter.</remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.PathPlot(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.String,System.Int32,System.Double,System.Int32,System.Double,System.Double,System.Double)">
@@ -11738,9 +11747,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.MDF(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMAP,System.String,System.String,System.String)">
@@ -11869,9 +11878,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>6.4.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.iMapset2Test(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.Double,System.Double,System.Double,System.String,System.Int32,System.Int32,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -11899,9 +11908,9 @@ framework which will supports persistance through CMETA.
 </remarks>
             <returns>See <see cref="T:GeoEngine.Core.GXNetX.GEO_BOOLConstant" /> TRUE if the parameters are good.</returns>
             <available_version>8.3.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.iMapsetTest(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.Double,System.Double,System.Double,System.String,System.Int32,System.Int32,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -11929,9 +11938,9 @@ framework which will supports persistance through CMETA.
 </remarks>
             <returns>See <see cref="T:GeoEngine.Core.GXNetX.GEO_BOOLConstant" /> TRUE if the parameters are good.</returns>
             <available_version>6.3.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.iExportableDXF3DGroupsLST(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CLST)">
@@ -11950,9 +11959,9 @@ framework which will supports persistance through CMETA.
 </remarks>
             <returns>The number of groups in the LST.</returns>
             <available_version>7.1.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Histogram5(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CITR)">
@@ -11983,9 +11992,9 @@ framework which will supports persistance through CMETA.
             <param name="oITR23">ITR to color bars.</param>
             <remarks>The ITR can be empty (but must still be a valid ITR object).</remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Histogram4(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CST)">
@@ -12013,9 +12022,9 @@ framework which will supports persistance through CMETA.
             <param name="i20">Decimals for stats, negative for sig. fig.</param>
             <param name="oST21">ST with histogram for box-whisker plot (-1 for no plot)</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Histogram3(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CST)">
@@ -12042,9 +12051,9 @@ framework which will supports persistance through CMETA.
             <param name="i19">Decimals for stats, negative for sig. fig.</param>
             <param name="oST20">ST with histogram for box-whisker plot (-1 for no plot)</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Histogram2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Double,System.String,System.Double,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CST,System.Double)">
@@ -12082,9 +12091,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Histogram(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CST,GeoEngine.Core.GXNetX.CST,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CST)">
@@ -12115,9 +12124,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.GetRangeGOCADSurface(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
@@ -12137,9 +12146,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>6.4.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.GenAreas(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.String,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double)">
@@ -12160,9 +12169,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.FlightPlot(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.String,System.Int32,System.Double,System.Int32,System.Double,System.Double)">
@@ -12203,9 +12212,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ExportSurpacSTR(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CWA,GeoEngine.Core.GXNetX.CWA)">
@@ -12239,9 +12248,9 @@ framework which will supports persistance through CMETA.
             <param name="oWA3">DXF file to export</param>
             <remarks>Supported objects exported include lines, polygons, text.</remarks>
             <available_version>6.2.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ExportDatamineString(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CLST,System.String)">
@@ -12320,9 +12329,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.DecayCurve(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVA,GeoEngine.Core.GXNetX.CVA,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.String)">
@@ -12356,9 +12365,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.CSymbLegend(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.Double,System.Double,System.Double,System.Double,System.String,System.String,System.String)">
@@ -12388,9 +12397,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ContourPLY(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CPLY,System.String,System.String)">
@@ -12409,9 +12418,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.1.6</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Contour(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.String,System.String)">
@@ -12421,9 +12430,9 @@ framework which will supports persistance through CMETA.
             <param name="str2">Control file name</param>
             <param name="str3">Grid file name</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarREG(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CREG)">
@@ -12453,9 +12462,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>8.2</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarStyle(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
@@ -12471,9 +12480,9 @@ framework which will supports persistance through CMETA.
             <param name="d8">Y location</param>
             <param name="i9">See <see cref="T:GeoEngine.Core.GXNetX.COLORBAR_STYLEConstant" /></param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarHorStyle(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32)">
@@ -12490,9 +12499,9 @@ framework which will supports persistance through CMETA.
             <param name="i9">See <see cref="T:GeoEngine.Core.GXNetX.COLORBAR_STYLEConstant" /></param>
             <param name="i10">See <see cref="T:GeoEngine.Core.GXNetX.COLORBAR_LABELConstant" /></param>
             <available_version>5.1.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarHor2Style(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32)">
@@ -12516,9 +12525,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.1.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarHor2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
@@ -12541,9 +12550,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.1.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBarHor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
@@ -12567,9 +12576,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBar2Style(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
@@ -12592,9 +12601,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBar2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -12616,9 +12625,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ColorBar(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CITR,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double)">
@@ -12633,9 +12642,9 @@ framework which will supports persistance through CMETA.
             <param name="d7">X location (bottom left corner of color boxes)</param>
             <param name="d8">Y location</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.CDIPixelPlot3D(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.String,GeoEngine.Core.GXNetX.CVA,GeoEngine.Core.GXNetX.CVA,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CITR)">
@@ -12721,9 +12730,9 @@ framework which will supports persistance through CMETA.
             <param name="d27">Width of the bar chart in mm</param>
             <param name="d28">Height of the bar chart in mm</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.ArrowVectorVV(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double)">
@@ -12751,9 +12760,9 @@ framework which will supports persistance through CMETA.
 			
 </remarks>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVU.Arrow(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMVIEW,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32)">
@@ -12768,9 +12777,9 @@ framework which will supports persistance through CMETA.
             <param name="d7">Angle of barbs with respect to the tail in degrees.</param>
             <param name="i8">See <see cref="T:GeoEngine.Core.GXNetX.MVU_ARROWConstant" /></param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="T:GeoEngine.Core.GXNetX.CMVU">
@@ -18059,18 +18068,18 @@ Use, for instance, to see if the map view contains projection information. The f
             <param name="str1">Variable</param>
             <param name="str2">Replacement</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAPL.Process(GeoEngine.Core.GXNetX.CMAP)">
             <summary>Process a MAPL</summary>
             <param name="oMAP1">MAP</param>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAPL.CreateREG(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Int32,GeoEngine.Core.GXNetX.CREG)">
@@ -18089,9 +18098,9 @@ Use, for instance, to see if the map view contains projection information. The f
 </remarks>
             <returns>MAPL, aborts if creation fails</returns>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAPL.Create(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Int32)">
@@ -18109,9 +18118,9 @@ Use, for instance, to see if the map view contains projection information. The f
 </remarks>
             <returns>MAPL, aborts if creation fails</returns>
             <available_version>5.0.0</available_version>
-            <licensed_method>yes</licensed_method>
+            <licensed_method>no</licensed_method>
             <app_method>no</app_method>
-            <public_method>no</public_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
         </member>
         <member name="T:GeoEngine.Core.GXNetX.CMAPL">
@@ -29771,6 +29780,12 @@ The DBREAD class is used to open and read from databases. Very large lines
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.TPAT_CODE_SIZE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.TPAT_STRING_SIZEConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.TB_SORT_ALLOW_DUPLICATES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SORTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.TB_SORT_UNIQUE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SORTConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.TB_SEARCH_LINEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SEARCHConstant" />.</summary>
         </member>
@@ -32857,6 +32872,12 @@ The DBREAD class is used to open and read from databases. Very large lines
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.TPAT_CODE_SIZE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.TPAT_STRING_SIZEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.TB_SORT_ALLOW_DUPLICATES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SORTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.TB_SORT_UNIQUE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SORTConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.TB_SEARCH_LINEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.TB_SEARCHConstant" />.</summary>
@@ -36217,6 +36238,16 @@ The DBREAD class is used to open and read from databases. Very large lines
         </member>
         <member name="T:GeoEngine.Core.GXNetX.TPAT_STRING_SIZEConstant">
             <summary>Default string sizes.</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.TB_SORTConstant.ALLOW_DUPLICATES">
+            <summary>allow duplicates when sorting</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.TB_SORTConstant.UNIQUE">
+            <summary>only unique values only when sorting</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.TB_SORTConstant">
+            <summary>TB Sortinging mode</summary>
             <tocexclude />
         </member>
         <member name="F:GeoEngine.Core.GXNetX.TB_SEARCHConstant.LINEAR">
