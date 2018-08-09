@@ -4575,6 +4575,80 @@ The type string can be one of the following:
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingVV(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>Direct-gridding method, VV version.</summary>
+            <param name="oPG1">Input grid</param>
+            <param name="d2">X origin of grid</param>
+            <param name="d3">Y origin of grid</param>
+            <param name="d4">X cell size</param>
+            <param name="d5">Y cell size</param>
+            <param name="d6">Rotation angle (degrees CCW).</param>
+            <param name="oVV7">X locations of values</param>
+            <param name="oVV8">Y locations of values</param>
+            <param name="oVV9">Z values to grid</param>
+            <param name="i10">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
+            <remarks>
+Grid cells take on the specified statistic of the values inside the
+cell area. Grid cells containing no data values are set to dummy.
+</remarks>
+            <available_version>7.3</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingDB3D(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Direct-gridding method, DB version, 3D.</summary>
+            <param name="oPG1">Input 3D PG</param>
+            <param name="d2">X origin of 3D grid</param>
+            <param name="d3">Y origin of 3D grid</param>
+            <param name="d4">Z origin of 3D grid</param>
+            <param name="d5">X cell size</param>
+            <param name="d6">Y cell size</param>
+            <param name="d7">Z cell size</param>
+            <param name="d8">Rotation angle (degrees CCW, vertical axis only).</param>
+            <param name="oDB9">Database</param>
+            <param name="i10">X Channel [READONLY]</param>
+            <param name="i11">Y Channel [READONLY]</param>
+            <param name="i12">Z Channel [READONLY]</param>
+            <param name="i13">Data Channel [READONLY]</param>
+            <param name="i14">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
+            <remarks>
+3D grid cells take on the specified statistic of the values inside the
+cell area. Grid cells containing no data values are set to dummy.
+</remarks>
+            <available_version>8.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingDB(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Direct-gridding method, DB version.</summary>
+            <param name="oPG1">Input grid</param>
+            <param name="d2">X origin of grid</param>
+            <param name="d3">Y origin of grid</param>
+            <param name="d4">X cell size</param>
+            <param name="d5">Y cell size</param>
+            <param name="d6">Rotation angle (degrees CCW).</param>
+            <param name="oDB7">Database</param>
+            <param name="i8">X Channel [READONLY]</param>
+            <param name="i9">Y Channel [READONLY]</param>
+            <param name="i10">Data Channel [READONLY]</param>
+            <param name="i11">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
+            <remarks>
+Grid cells take on the specified statistic of the values inside the
+cell area. Grid cells containing no data values are set to dummy.
+</remarks>
+            <available_version>7.3</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CPGU.rMaximumTerrainSteepness(GeoEngine.Core.GXNet.CPG,System.Int32)">
             <summary>Compute the Maximum Steepness of a topography Pager</summary>
             <param name="oPG1">Topography Pager</param>
@@ -5343,80 +5417,6 @@ the value of one or more of its four neighouring points.
             <param name="i6">Y dimension to expand to (0 for expansion to FFT2D legal dimension)</param>
             <remarks>3D pagers are expanded in X,Y direction the number of slices(Z) is unchanged .</remarks>
             <available_version>5.0</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>no</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>General</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingVV(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
-            <summary>Direct-gridding method, VV version.</summary>
-            <param name="oPG1">Input grid</param>
-            <param name="d2">X origin of grid</param>
-            <param name="d3">Y origin of grid</param>
-            <param name="d4">X cell size</param>
-            <param name="d5">Y cell size</param>
-            <param name="d6">Rotation angle (degrees CCW).</param>
-            <param name="oVV7">X locations of values</param>
-            <param name="oVV8">Y locations of values</param>
-            <param name="oVV9">Z values to grid</param>
-            <param name="i10">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
-            <remarks>
-Grid cells take on the specified statistic of the values inside the
-cell area. Grid cells containing no data values are set to dummy.
-</remarks>
-            <available_version>7.3</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>no</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>General</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingDB3D(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>Direct-gridding method, DB version, 3D.</summary>
-            <param name="oPG1">Input 3D PG</param>
-            <param name="d2">X origin of 3D grid</param>
-            <param name="d3">Y origin of 3D grid</param>
-            <param name="d4">Z origin of 3D grid</param>
-            <param name="d5">X cell size</param>
-            <param name="d6">Y cell size</param>
-            <param name="d7">Z cell size</param>
-            <param name="d8">Rotation angle (degrees CCW, vertical axis only).</param>
-            <param name="oDB9">Database</param>
-            <param name="i10">X Channel [READONLY]</param>
-            <param name="i11">Y Channel [READONLY]</param>
-            <param name="i12">Z Channel [READONLY]</param>
-            <param name="i13">Data Channel [READONLY]</param>
-            <param name="i14">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
-            <remarks>
-3D grid cells take on the specified statistic of the values inside the
-cell area. Grid cells containing no data values are set to dummy.
-</remarks>
-            <available_version>8.0</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>no</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>General</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNet.CPGU.DirectGriddingDB(GeoEngine.Core.GXNet.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>Direct-gridding method, DB version.</summary>
-            <param name="oPG1">Input grid</param>
-            <param name="d2">X origin of grid</param>
-            <param name="d3">Y origin of grid</param>
-            <param name="d4">X cell size</param>
-            <param name="d5">Y cell size</param>
-            <param name="d6">Rotation angle (degrees CCW).</param>
-            <param name="oDB7">Database</param>
-            <param name="i8">X Channel [READONLY]</param>
-            <param name="i9">Y Channel [READONLY]</param>
-            <param name="i10">Data Channel [READONLY]</param>
-            <param name="i11">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
-            <remarks>
-Grid cells take on the specified statistic of the values inside the
-cell area. Grid cells containing no data values are set to dummy.
-</remarks>
-            <available_version>7.3</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -10528,6 +10528,23 @@ Names like "SYMBOLS_UxData_Targets_Targets".
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CGU.DespikeEMArray(GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32@)">
+            <summary>Despike a time-series with individual noise levels</summary>
+            <param name="oVV1">VV input time series)</param>
+            <param name="oVV2">VV individual noise values)</param>
+            <param name="oVV3">VV despiked output time series</param>
+            <param name="i4">Number of spikes removed - returned</param>
+            <remarks>
+Remove spikes from a single EM time-series decay curve. Each point has its own noise level.
+The algorithm is to be determined.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CGU.GravityStillReadingCorrection(GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.String,System.Int32)">
             <summary>Gravity Still Reading Correction on selected lines.</summary>
             <param name="oDB1">Database</param>
@@ -13991,7 +14008,7 @@ Same as UnLoadVerify_EDB with FALSE to prompt save.
         </member>
         <member name="M:Geosoft.Desktop.GXNet.CEDB.ShowProfile(System.Int32,System.Int32)">
             <summary>Show a profile in the profile window</summary>
-            <param name="i1">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
+            <param name="i1">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, -1 to plot to the currently selected profile window. See iProfileOpen_EDB)</param>
             <param name="i2">Channel symbol</param>
             <remarks>If the symbol is not loaded, it will be loaded.</remarks>
             <available_version>5.0</available_version>
@@ -15192,6 +15209,54 @@ e.g. "x=y+1;"
        The DXFI class is used for importing AutoCADÂ® dxf files into Geosoft maps.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.FootprintCoverageDynamic(GeoEngine.Core.GXNet.CDAT,GeoEngine.Core.GXNet.CPLY,System.String,System.Int32,System.Double,System.Double@,System.Double@,GeoEngine.Core.GXNet.CMPLY)">
+            <summary>Compute the footprint of a survey</summary>
+            <param name="oDAT1">Input DAT for the dataset</param>
+            <param name="oPLY2">The input area including exclusion regions</param>
+            <param name="str3">Channel that defines the radius</param>
+            <param name="i4">Number of segments to define a circle (default 30)</param>
+            <param name="d5">The maxium change in circumference allowed to reduce polygon complexity</param>
+            <param name="d6">Computed Covered Area</param>
+            <param name="d7">Computed Total Area</param>
+            <param name="oMPLY8">Computed coverted polygon and its exclusion regions</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>EM Tau Calculation</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.FootprintCoverageStatic(GeoEngine.Core.GXNet.CDAT,GeoEngine.Core.GXNet.CPLY,System.Double,System.Int32,System.Double,System.Double@,System.Double@,GeoEngine.Core.GXNet.CMPLY)">
+            <summary>Compute the footprint of a survey</summary>
+            <param name="oDAT1">Input DAT for the dataset</param>
+            <param name="oPLY2">The input area including exclusion regions</param>
+            <param name="d3">The radius of the instrument</param>
+            <param name="i4">Number of segments to define a circle (default 30)</param>
+            <param name="d5">The maxium change in circumference allowed to reduce polygon complexity</param>
+            <param name="d6">Computed Covered Area</param>
+            <param name="d7">Computed Total Area</param>
+            <param name="oMPLY8">Computed coverted polygon and its exclusion regions</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>EM Tau Calculation</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.EMTauTrendWindow(GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV)">
+            <summary>Automatic fitting EM Tau</summary>
+            <param name="oVV1">Observed EM				[READONLY]</param>
+            <param name="oVV2">Time						[READONLY]</param>
+            <param name="i3">Get linear trends of nWindows consecutive points				[READONLY]</param>
+            <param name="oVV4">Calculated tau values - same number of items as hVVobs</param>
+            <param name="oVV5">rms error of fit</param>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>EM Tau Calculation</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNet.CDU.iEMTauManual(GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32@,System.Double@,System.Double@,System.Double@,System.Int32@,GeoEngine.Core.GXNet.CVV)">
             <summary>Automatic fitting EM Tau</summary>
@@ -20537,6 +20602,38 @@ in the DH_EAST channel in the collar table.
             <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDH.GetHoleSurveyFromTo(GeoEngine.Core.GXNet.CDB,System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>Get the Survey information of a Hole using From/To database.</summary>
+            <param name="oDB1">From/To Database</param>
+            <param name="i2">Line handle for hole</param>
+            <param name="oVV3">X</param>
+            <param name="oVV4">Y</param>
+            <param name="oVV5">Z</param>
+            <param name="oVV6">Depth</param>
+            <param name="oVV7">From To Segment lengths</param>
+            <param name="i8">Thin nearly co-linear segments?</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDH.GetHoleSurveyEx(System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>Get the Survey information of a Hole.</summary>
+            <param name="i1">Hole index</param>
+            <param name="oVV2">X</param>
+            <param name="oVV3">Y</param>
+            <param name="oVV4">Z</param>
+            <param name="oVV5">Depth</param>
+            <param name="i6">Thin nearly co-linear segments?</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CDH.GetHoleSurvey(System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV)">
             <summary>Get the Survey information of a Hole.</summary>
             <param name="i1">Hole index</param>
@@ -23124,6 +23221,20 @@ Prefix_NAME_Suffix
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CARCMAP.LoadRasterEx(System.String)">
+            <summary>Load a raster file to the current data frame and create associated files</summary>
+            <param name="str1">File Name</param>
+            <remarks>
+Loads any file type recognized as "raster" formats by ARC GIS.
+This includes geosoft GRD files.
+</remarks>
+            <available_version>9.4</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CARCMAP.LoadRaster(System.String)">
             <summary>Load a raster file to the current data frame</summary>
             <param name="str1">File Name</param>
@@ -24491,6 +24602,18 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FORM_OPEN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FORMConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_DAT">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_RAW">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_DMP">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_SCINTREX_DAT">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_GOCAD_VOXET">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
@@ -26636,6 +26759,18 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FORM_OPEN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FORMConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_DAT">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_RAW">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_DMP">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_SCINTREX_DAT">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_GOCAD_VOXET">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
@@ -28860,9 +28995,7 @@ replaces data in matching lines only.
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IP_FILTERConstant.PYRIAMIDP">
             <summary>
-::
-
-   Regular pyramid filter with peak on a point:
+Regular pyramid filter with peak on a point::
 
       !  maxn:
      /*\   n1
@@ -28873,9 +29006,7 @@ replaces data in matching lines only.
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IP_FILTERConstant.PYRIAMID">
             <summary>
-::
-
-   Regular pyramid filter:
+Regular pyramid filter::
 
       _!_  maxn:
      /* *\   n1
@@ -28886,9 +29017,7 @@ replaces data in matching lines only.
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IP_FILTERConstant.PANTLEGP">
             <summary>
-::
-
-   Regular pant-leg filter with top at first point:
+Regular pant-leg filter with top at first point::
 
       !  nscp:
      /*\   n1
@@ -28899,10 +29028,7 @@ replaces data in matching lines only.
         </member>
         <member name="F:Geosoft.Desktop.GXNet.IP_FILTERConstant.PANTLEG">
             <summary>
-::
-
-   Regular pant-leg filter:
-
+Regular pant-leg filter::
 
       _!_    
      /*_*\   n1
@@ -29140,6 +29266,18 @@ replaces data in matching lines only.
         <member name="T:Geosoft.Desktop.GXNet.FILE_FORMConstant">
             <summary>File Form Defines</summary>
             <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.DAT">
+            <summary>Data files  *.dat`  LOCAL</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.RAW">
+            <summary>Geosoft RAW gravity files  *.raw`  LOCAL</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.DMP">
+            <summary>Dump files  *.dmp`  LOCAL</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.SCINTREX_DAT">
+            <summary>Scintrex gravity files  *.dat`  LOCAL</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.GOCAD_VOXET">
             <summary>GOCAD voxet files *.vo		LOCAL</summary>

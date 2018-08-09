@@ -9,8 +9,8 @@
             Implements advanced button functionality on <see cref="T:Geosoft.GX.Controls.BaseForm"/> derived forms.
             </summary>
             <remarks>
-            By placing this control onto a <see cref="T:Geosoft.GX.Controls.PanelControl"/> positioned in the center of the <see cref="T:Geosoft.GX.Controls.BaseForm"/> 
-            the button will cause the area below the panel to be collapsed when the form is loaded. This button can then be used to 
+            By placing this control onto a <see cref="T:Geosoft.GX.Controls.PanelControl"/> positioned in the center of the <see cref="T:Geosoft.GX.Controls.BaseForm"/>
+            the button will cause the area below the panel to be collapsed when the form is loaded. This button can then be used to
             automatically expand/collapse the form to reveal more advanced features or hide them.
             </remarks>
         </member>
@@ -32,6 +32,17 @@
             <summary>
             	<para>Hides the controls in the advanced region. This ensures, for instance, that
               the controls are not included in the TAB order when the advanced controls are hidden.</para>
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.AdvancedButtonControl.OnExpanded">
+            <summary>
+            Occurs when the advanced panel is shown. Expanding the panel sets to visible all the controls contained therein, so use this
+            to hide any controls you don't want to be visible when the panel is expanded.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.AdvancedButtonControl.OnHidden">
+            <summary>
+            Occurs when the advanced panel is hidden. 
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.ShowControls">
@@ -73,19 +84,19 @@
             <filterpriority>1</filterpriority>
         </member>
         <member name="F:Geosoft.GX.Controls.AdvancedButtonControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -131,18 +142,18 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseEditControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseEditControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseEditControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -255,59 +266,96 @@
             Internal control to use in designers for snapping guidelines.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughExtensions.ClickThroughWndProc(System.Windows.Forms.Control,System.Windows.Forms.Message@)">
+            <summary>
+            This WndProc extension method implements click-through functionality. Some controls (MenuStrip, ToolStrip) will not
+            recognize a click unless the form they are hosted in is active. So the first click will activate the
+            form and then a second is required to actually make the click happen.
+            </summary>
+            <param name="ctl">The Message that was passed to your WndProc.</param>
+            <param name="m">The Message that was passed to your WndProc.</param>
+            <returns>true if the message was processed, false if it was not</returns>
+            <remarks>
+            You should first call base.WndProc(), and then call this method. This method is only intended to
+            change a return value, not to change actual processing before that.
+            See: https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
+            </remarks>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ClickThroughMenuStrip">
+            <summary>
+            MenuStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughMenuStrip.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ClickThroughToolStrip">
+            <summary>
+            ToolStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughToolStrip.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
+        </member>
         <member name="T:Geosoft.GX.Controls.ColorMethodControl">
             <summary>
             <see cref="T:System.Windows.Forms.ComboBox"/> type control which selects the colour method for colour zones
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ColorMethodControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.iColorMethod">
-            <summary> 
+            <summary>
             Return the colour method integer value
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isAsLastDisplayed">
-            <summary> 
+            <summary>
             Is the current selection As last displayed?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isDefault">
-            <summary> 
+            <summary>
             Is the current selection Default?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isHistogramEqualization">
-            <summary> 
+            <summary>
             Is the current selection Histogram Equalization?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isNormalDistribution">
-            <summary> 
+            <summary>
             Is the current selection Normal Distribution?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLinear">
-            <summary> 
+            <summary>
             Is the current selection Linear?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLogLinear">
-            <summary> 
+            <summary>
             Is the current selection Log-Linear?
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ColorMethodControl.SetModel(System.Int32)">
-            <summary> 
+            <summary>
             Set the current colour model - input one of ITR_ZONE_MODELConstant values.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.GroupedComboBox">
             <summary>
-            Represents a Windows combo box control that, when bound to a data source, is capable of 
+            Represents a Windows combo box control that, when bound to a data source, is capable of
             displaying items in groups/categories.
             </summary>
             <remarks>
@@ -323,7 +371,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.GroupedComboBox.DrawMode">
             <summary>
-            Gets a value indicating whether the drawing of elements in the list will be handled by user code. 
+            Gets a value indicating whether the drawing of elements in the list will be handled by user code.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.GroupedComboBox.GroupMember">
@@ -338,7 +386,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.GroupedComboBox.System#Collections#IComparer#Compare(System.Object,System.Object)">
             <summary>
-            Explicit interface implementation for the IComparer.Compare method. Performs a two-tier comparison 
+            Explicit interface implementation for the IComparer.Compare method. Performs a two-tier comparison
             on two list items so that the list can be sorted by group, then by display value.
             </summary>
             <param name="x"></param>
@@ -347,7 +395,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.GroupedComboBox.IsGroupStart(System.Int32,System.String@)">
             <summary>
-            Determines whether the list item at the specified index is the start of a new group. In all 
+            Determines whether the list item at the specified index is the start of a new group. In all
             cases, populates the string respresentation of the group that the item belongs to.
             </summary>
             <param name="index"></param>
@@ -402,25 +450,25 @@
             
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.ControlVisibilitySizingHelper">
-            <summary>
-            This class listen to the VisibleChanged event of the buddies for a sequence of label controls and will 
-            resize the height of the parent container/form and reposition controls as necessary. 
+             <summary>
+             This class listen to the VisibleChanged event of the buddies for a sequence of label controls and will
+             resize the height of the parent container/form and reposition controls as necessary.
             
-            It assumes simple top down control organization and will not necessarily work for complex layouts. 
-            </summary>
+             It assumes simple top down control organization and will not necessarily work for complex layouts.
+             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.ControlVisibilitySizingHelper.#ctor(System.Windows.Forms.Control)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.CTRHelper">
-            <summary>
-            GX.NET controls do not render in Visual Studio the same way that they render in 
-            the software, since VS turns off compatible text rendering, but OM does not.
+             <summary>
+             GX.NET controls do not render in Visual Studio the same way that they render in
+             the software, since VS turns off compatible text rendering, but OM does not.
             
-            This class is used to selectively disable compatible text rendering.
-            </summary>
+             This class is used to selectively disable compatible text rendering.
+             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.DHMath">
             <summary>
@@ -457,6 +505,394 @@
         </member>
         <member name="F:Geosoft.GX.Controls.Helpers.DHMath.D3Point.dZ">
             <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetOrigin(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetOrigin(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetOrigin(GeoEngine.Core.GXNet.CMULTIGRID3D,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetOrigin(GeoEngine.Core.GXNetX.CMULTIGRID3D,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetBoundingBox(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetBoundingBox(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsThematic(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsThematic(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsDouble(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsDouble(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsVector(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsVector(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetTPAT(GeoEngine.Core.GXNet.CMULTIGRID3D,GeoEngine.Core.GXNet.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetTPAT(GeoEngine.Core.GXNetX.CMULTIGRID3D,GeoEngine.Core.GXNetX.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetTPAT(GeoEngine.Core.GXNet.CMULTIGRID3D,GeoEngine.Core.GXNet.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetTPAT(GeoEngine.Core.GXNetX.CMULTIGRID3D,GeoEngine.Core.GXNetX.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeX(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeX(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeY(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeY(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeZ(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.IsUniformCellSizeZ(GeoEngine.Core.GXNetX.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.CopyFromHandle(GeoEngine.Core.GXNetX.CPLY,System.IntPtr)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetDoubleArray(GeoEngine.Core.GXNet.CVV)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesX(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesY(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesZ(GeoEngine.Core.GXNet.CMULTIGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetCellSizesX(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double[])">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetCellSizesY(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double[])">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.SetCellSizesZ(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double[])">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetVectorOrientation(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double@,System.Double@,System.Boolean@)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesXAsString(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesYAsString(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetCellSizesZAsString(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetVolumeVectors(GeoEngine.Core.GXNet.CMULTIGRID3D,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetVolumeVectors(GeoEngine.Core.GXNetX.CMULTIGRID3D,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@,Geosoft.Core.Point3D@)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetOrientedDataExtents(GeoEngine.Core.GXNet.CMULTIGRID3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetOrientedDataExtents(GeoEngine.Core.GXNetX.CMULTIGRID3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetSectionCellSizes(GeoEngine.Core.GXNet.CMULTIGRID3D,System.Double,System.Double,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DExtensions.GetSectionCellSizes(GeoEngine.Core.GXNetX.CMULTIGRID3D,System.Double,System.Double,Geosoft.Core.Point3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CGRID3DExtensions">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.#ctor(System.UInt64,System.UInt64,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.NumValid">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.NumDummies">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.Min">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.Max">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.Mean">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DDoubleStatitics.StandardDev">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.#ctor(System.UInt64,System.UInt64,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.NumValid">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.NumDummies">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.Min">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.Max">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.Mean">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DThematicStatitics.StandardDev">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.#ctor(System.UInt64,System.UInt64,Geosoft.Core.Vector3D,Geosoft.Core.Vector3D,Geosoft.Core.Vector3D,Geosoft.Core.Vector3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.NumValid">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.NumDummies">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.Min">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.Max">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.Mean">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GRID3DVectorStatitics.StandardDev">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetDoubleStatistics(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetDoubleStatistics(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetThematicStatistics(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetThematicStatistics(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetVectorStatistics(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.GetVectorStatistics(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsThematic(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsThematic(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsDouble(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsDouble(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsVector(GeoEngine.Core.GXNet.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CGRID3DExtensions.IsVector(GeoEngine.Core.GXNetX.CGRID3D)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.IsThematic(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.IsDouble(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.IsVector(System.String)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.GetIPJ(System.String,GeoEngine.Core.GXNet.CIPJ)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.SetIPJ(System.String,GeoEngine.Core.GXNet.CIPJ)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.GetTPAT(System.String,GeoEngine.Core.GXNet.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.SetTPAT(System.String,GeoEngine.Core.GXNet.CTPAT)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ConvertDoubleToVector(System.String,System.String,System.String,System.String,System.Double,System.Double,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ConvertVectorToDouble(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ClipToPolygon(System.String,System.String,GeoEngine.Core.GXNet.CPLY,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ConvertDoubleToVector(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Double,System.Double,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ConvertVectorToDouble(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CMULTIGRID3DUTILS.ClipToPolygon(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,GeoEngine.Core.GXNetX.CPLY,System.Boolean)">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.ExternalGXX">
+            <summary>
+            External GXX Context Class
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.#ctor">
+            <summary>
+            Create the External GXX
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.Dispose">
+            <summary>
+            Dispose of the handle
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.GetContext">
+            <summary>
+            Get the Context
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.I3DViewInteracter">
@@ -791,24 +1227,24 @@
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.Explorer">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.Helpers.Explorer.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.Explorer.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.Explorer.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -879,19 +1315,19 @@
             <returns></returns>
         </member>
         <member name="F:Geosoft.GX.Controls.Helpers.NonGxNet.FileBrowserControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.NonGxNet.FileBrowserControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.NonGxNet.FileBrowserControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -2409,6 +2845,11 @@
             Datamine files (*.dm)
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.DMP">
+            <summary>
+            Dump files (*.dmp)
+            </summary>
+        </member>
         <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.DTM">
             <summary>
             Surpac DTM Files (*.dtm)
@@ -2607,6 +3048,11 @@
         <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.PRJ">
             <summary>
             Projection File (*.prj)
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.SCINTREX_DAT">
+            <summary>
+            Scintrex gravity files (*.dat)
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.SEL">
@@ -2939,6 +3385,36 @@
              UBC IP location files
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.UBC_MOD">
+            <summary>
+             UBC model files
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.UBC_DEN">
+            <summary>
+             UBC density model files
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.UBC_SUS">
+            <summary>
+             UBC susceptibility model files
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.GOCAD_VOXET">
+            <summary>
+             GOCAD voxet files
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.RAW">
+            <summary>
+            Geosoft RAW gravity file (*.raw)
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.DAT">
+            <summary>
+            Data files (*.dat)
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.Helpers.GeoDoubleConverter">
             <summary>
             <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of doubles, represent empty strings as dummies and do min/max range checking.
@@ -2997,7 +3473,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.IDoubleRangeCallbackContainer">
             <summary>
-            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to 
+            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to
             provide minimum/maximum range checking for specific propertie(s).
             </summary>
         </member>
@@ -3011,7 +3487,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.GeoRangeDoubleConverter">
             <summary>
-            <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of doubles as above but with support for 
+            <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of doubles as above but with support for
             specific min/max range checking. The <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> has to implement <see cref="T:Geosoft.GX.Controls.Helpers.IDoubleRangeCallbackContainer"/>.
             </summary>
         </member>
@@ -3028,7 +3504,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.IInt32RangeCallbackContainer">
             <summary>
-            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to 
+            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to
             provide minimum/maximum range checking for specific propertie(s).
             </summary>
         </member>
@@ -3042,7 +3518,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.GeoRangeInt32Converter">
             <summary>
-            <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of integers as above but with support for 
+            <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of integers as above but with support for
             specific min/max range checking. The <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> has to implement <see cref="T:Geosoft.GX.Controls.Helpers.IInt32RangeCallbackContainer"/>.
             </summary>
         </member>
@@ -3224,7 +3700,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.IEnumCallbackContainer">
             <summary>
-            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to 
+            Implement this interface in a <see cref="T:System.ComponentModel.ICustomTypeDescriptor"/> implementation class to
             provide a drop down display list (similar to that of an enum) for specific propertie(s).
             </summary>
         </member>
@@ -3237,7 +3713,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.EnumCallbackConverter">
             <summary>
-            <see cref="T:System.ComponentModel.StringConverter"/> to support a dynamic dropdown list of strings resolved at runtime. 
+            <see cref="T:System.ComponentModel.StringConverter"/> to support a dynamic dropdown list of strings resolved at runtime.
             The <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> has to implement <see cref="T:Geosoft.GX.Controls.Helpers.IEnumCallbackContainer"/>.
             </summary>
         </member>
@@ -3258,7 +3734,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.EnumEditCallbackConverter">
             <summary>
-            TypeConverter to support a dynamic dropdown list of strings resolved at runtime. 
+            TypeConverter to support a dynamic dropdown list of strings resolved at runtime.
             The <see cref="T:System.ComponentModel.ITypeDescriptorContext"></see> has to implement <see cref="T:Geosoft.GX.Controls.Helpers.IEnumCallbackContainer"/>. This converter supports
             editing of values in the edit box.
             </summary>
@@ -4210,13 +4686,13 @@
         </member>
         <member name="P:Geosoft.GX.Controls.IIniParameterControl.INIComponent">
             <summary>
-            INI support property. Used by INI compoenent to register itself with the form to ensure reliable initialization 
+            INI support property. Used by INI compoenent to register itself with the form to ensure reliable initialization
             for controls from INI parameter settings irrespective of their property initialization order in the designer generated code.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.IIniParameterControl.INIParameter">
             <summary>
-            If set will contain the INI parameter (GROUP.PARAM) for this control. This is used to improve the error messaged 
+            If set will contain the INI parameter (GROUP.PARAM) for this control. This is used to improve the error messaged
             during validation failures during script runs.
             </summary>
         </member>
@@ -4269,19 +4745,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControlEx.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControlEx.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControlEx.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -4322,24 +4798,24 @@
         </member>
         <member name="P:Geosoft.GX.Controls.InfoLabel.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.InfoLabel.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.InfoLabel.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.InfoLabel.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -4436,19 +4912,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.DualChoiceRadioControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DualChoiceRadioControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.DualChoiceRadioControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -4749,19 +5225,19 @@
             <param name="index">The zero-based index of the item to remove</param>
         </member>
         <member name="F:Geosoft.GX.Controls.CheckedComboBoxControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.CheckedComboBoxControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.CheckedComboBoxControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -4808,19 +5284,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBoxSelectionSpecifierControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -4915,6 +5391,11 @@
             <remarks>This event is raised for the target as well as for the source.
             The role a control plays (source or target) can be determined from the Operation property of the DroppedEventArgs.</remarks>
         </member>
+        <member name="M:Geosoft.GX.Controls.DragDropListBox.Clear">
+            <summary>
+            Clear all items in both boxes and restore to initial state. Call this, NOT this.Items.Clear() !
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBox.OnDragDrop(System.Windows.Forms.DragEventArgs)">
             <summary>
             Raises the <see cref="E:System.Windows.Forms.Control.DragDrop"/> event.
@@ -4980,6 +5461,16 @@
             </summary>
             <param name="e">A <see cref="T:System.Windows.Forms.KeyEventArgs"/> that contains the event data.</param>
         </member>
+        <member name="M:Geosoft.GX.Controls.DragDropListBox.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Raises the <see cref="E:System.Windows.Forms.Control.WndProc"/> event.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.DragDropListBox.ItemsChanged">
+            <summary>
+            Handles changes to items in the list box.
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBox.RestoreSelection(System.Int32)">
             <summary>
             Restores the lost selection from the array selectionSave.
@@ -5003,7 +5494,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.DragDropListBox.GetDragDropEffect(System.Windows.Forms.DragEventArgs)">
             <summary>
-            Determines the drag-and-drop operation which is beeing performed, which can be either None, Move or Copy. 
+            Determines the drag-and-drop operation which is beeing performed, which can be either None, Move or Copy.
             </summary>
             <param name="drgevent">DragEventArgs.</param>
             <returns>The current drag-and-drop operation.</returns>
@@ -5184,9 +5675,9 @@
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.GDBChannelSelectorControl">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GDBChannelSelectorControl.#ctor">
             <summary>
@@ -5206,19 +5697,19 @@
             <value><c>true</c> if [allow VA channels]; otherwise, <c>false</c>.</value>
         </member>
         <member name="F:Geosoft.GX.Controls.GDBChannelSelectorControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GDBChannelSelectorControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.GDBChannelSelectorControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -5305,7 +5796,7 @@
         </member>
         <member name="E:Geosoft.GX.Controls.AutoHideSplitContainer.PositionPanel">
             <summary>
-            Fired if the child controls in Panel1 should be repositioned 
+            Fired if the child controls in Panel1 should be repositioned
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.AutoHideSplitContainer.InsideClientRect">
@@ -5324,19 +5815,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.AutoHideSplitContainer.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.AutoHideSplitContainer.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.AutoHideSplitContainer.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -5989,19 +6480,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.BaseControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -6274,7 +6765,7 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BetterComboBox.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
@@ -6285,7 +6776,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.BetterComboBox.InitializeComponent">
             <summary>
-            Required method for Designer support - do not modify 
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -6362,7 +6853,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.ButtonControl.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
@@ -6377,19 +6868,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.ButtonControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ButtonControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.ButtonControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -6831,6 +7322,11 @@
             If true, then the control may not be left blank.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.ComboBoxControl.RequiredErrorOverride">
+            <summary>
+            Alternate error provider text to display in case field is required.
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.ComboBoxControl.Force">
             <summary>
             If true, then the control may not be left blank (dummy).
@@ -7056,19 +7552,19 @@
             </exception>
         </member>
         <member name="F:Geosoft.GX.Controls.ConstrainControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ConstrainControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.ConstrainControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -7174,7 +7670,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.BaseWizard.CurrentPage">
             <summary>
-            Indicates the current page 
+            Indicates the current page
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.BaseWizard.IsOnLastPage">
@@ -7243,7 +7739,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.BaseWizard.RegisterINIComponent(Geosoft.GX.Controls.INI)">
             <summary>
-            Used by INI compoenent to register itself with the form to ensure reliable initialization for controls from INI parameter settings 
+            Used by INI compoenent to register itself with the form to ensure reliable initialization for controls from INI parameter settings
             irrespective of their property initialization order in the designer generated code
             </summary>
             <param name="ini"></param>
@@ -7351,7 +7847,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelControl.ReInitialize">
             <summary>
-            	<para>Force reinitialization of the panel to make ready to add new controls.<see cref="T:Geosoft.GX.Controls.CollapsePanelControl"/> class.</para> 
+            	<para>Force reinitialization of the panel to make ready to add new controls.<see cref="T:Geosoft.GX.Controls.CollapsePanelControl"/> class.</para>
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelControl.HideControls">
@@ -7386,19 +7882,19 @@
             </remarks>
         </member>
         <member name="F:Geosoft.GX.Controls.CollapsePanelControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -7507,19 +8003,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.CollapsePanelButtonControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelButtonControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.CollapsePanelButtonControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -7529,18 +8025,18 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DHProjectEditControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DHProjectEditControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DHProjectEditControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -7654,7 +8150,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.INIComponentDesigner">
             <summary>
-            Component Designer for INI component 
+            Component Designer for INI component
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.INIComponentDesigner.#ctor">
@@ -7854,6 +8350,16 @@
             Set the GX parameter name associated with this control.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.INI.SetControlDefaultValue(Geosoft.GX.Controls.BaseControl,System.String)">
+            <summary>
+            Set the default value associated with this control.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.INI.SetControlDefaultValue(Geosoft.GX.Controls.BaseControl,System.Int32)">
+            <summary>
+            Set the default value associated with this control.
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.INI.Site">
             <summary>
             ISite override
@@ -7870,7 +8376,7 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.INI.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -7907,32 +8413,47 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.LineSelectionControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.LineSelectionControl.IncludeDisplayedLineAsOption">
+            <summary>
+            If false, remove 'Displayed line' as one of the options"
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.LineSelectionControl.IncludeMarkedRowsAsOption">
+            <summary>
+            If false, remove 'Displayed line' as one of the options"
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.LineSelectionControl.isDisplayedLine">
-            <summary> 
+            <summary>
             Is the current selection for the currently displayed line?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.LineSelectionControl.isSelectedLines">
-            <summary> 
+            <summary>
             Is the current selection for the selected lines?
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.LineSelectionControl.isAllLines">
-            <summary> 
+            <summary>
             Is the current selection for all the lines?
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.LineSelectionControl.IsMarkedRows">
+            <summary>
+            Is the current selection for the currently marked rows?
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.LineSelectionControl.GetLineLST(GeoEngine.Core.GXNet.CDB,System.String)">
-            <summary> 
+            <summary>
             Get a CLST object containing the currently requested lines, NAME = Line Name, VALUE = Line Symbol.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.LineSelectionControl.GetLineLST(GeoEngine.Core.GXNet.CDB,System.String,System.Int32)">
-            <summary> 
+            <summary>
             Get a CLST object containing the currently requested lines, NAME = Line Name, VALUE = Line Symbol.
             </summary>
         </member>
@@ -7943,7 +8464,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.LinkLabelControl.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
@@ -7954,7 +8475,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.ListBoxControl.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
@@ -7965,14 +8486,14 @@
             within the form and that the controls' with focus is not painted with cues to this effect.
             </para>
             <para>
-            Another issue is that if these forms are used within a native application the main window 
-            (or its last active popup) is not activated as soon as a modeless child is closed. 
+            Another issue is that if these forms are used within a native application the main window
+            (or its last active popup) is not activated as soon as a modeless child is closed.
             It seems that the last active desktop application is activated and this causes usability
             issues.
             </para>
             <para>
             This class is derived from <see cref="T:System.Windows.Forms.Form"/> and implements workarounds
-            for these two issues. Unless the form is shown modelessly 
+            for these two issues. Unless the form is shown modelessly
             </para>
             </summary>
         </member>
@@ -8236,7 +8757,7 @@
             <param name="numSignificantFigures">The number of significant figures</param>
             <param name="mode">Specification for how to round value if it is midway between two other numbers at the significant figures specified.</param>
             <returns>
-            The number nearest to value that has a number of significant figures equal to digits. If value has fewer 
+            The number nearest to value that has a number of significant figures equal to digits. If value has fewer
             significant figures than specified, the value is returned unchanged.
             </returns>
         </member>
@@ -8422,7 +8943,7 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.NumericUpDownControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -8604,19 +9125,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.RadioButtonControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.RadioButtonControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.RadioButtonControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -8671,19 +9192,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.RangeControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.RangeControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.RangeControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -8693,19 +9214,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.RangeControlSensitivity.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.RangeControlSensitivity.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.RangeControlSensitivity.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -8820,25 +9341,25 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.SelectionSpecifier.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.SelectionSpecifier.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.SelectionSpecifier.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Separator">
             <summary>
-            Very simple horizontal separator 
+            Very simple horizontal separator
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Separator.#ctor">
@@ -9276,18 +9797,18 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GeoDatabaseEditControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GeoDatabaseEditControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GeoDatabaseEditControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -9411,7 +9932,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.GroupBoxControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
-            Raises the <see cref="E:System.Windows.Forms.Control.Paint"/> event. 
+            Raises the <see cref="E:System.Windows.Forms.Control.Paint"/> event.
             </summary>
             <param name="e">A <see cref="T:System.Windows.Forms.PaintEventArgs"/> that contains the event data.</param>
         </member>
@@ -9422,7 +9943,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.GroupBoxControl.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
@@ -9967,11 +10488,11 @@
         </member>
         <member name="T:Geosoft.GX.Controls.IParamStorage">
             <summary>
-            Implement this interface to provide an alternate implementation of parameter storage 
+            Implement this interface to provide an alternate implementation of parameter storage
             for the GX Controls.
             </summary>
             <remarks>
-            An object that implements this interface can be passed as a parameter to the constructors 
+            An object that implements this interface can be passed as a parameter to the constructors
             of Geosoft GX control containers to override the default implementation,
             </remarks>
         </member>
@@ -10084,19 +10605,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.SizeGripStatusStrip.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.SizeGripStatusStrip.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.SizeGripStatusStrip.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -10152,7 +10673,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.TrackBar.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
@@ -10198,7 +10719,7 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.FontComboBox.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
@@ -10207,11 +10728,21 @@
             Initialize the control with the list of fonts on the system.
             </summary>
             <remarks>
-            This should generally be called from within a <see cref="M:Geosoft.GX.Controls.BaseForm.InitializeForm"/> override 
+            This should generally be called from within a <see cref="M:Geosoft.GX.Controls.BaseForm.InitializeForm"/> override
             in the parent form.
             </remarks>
             <param name="bShowSample">If true will display a sample of the Font on the right (TrueType fonts only)</param>
             <param name="bSkipGFN">If true will show TrueType fonts only</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.FontComboBox.FontName(System.Boolean@)">
+            <summary>
+            Get the currently selected font
+            </summary>
+            <remarks>
+            This should generally be called from within a <see cref="M:Geosoft.GX.Controls.BaseForm.InitializeForm"/> override
+            in the parent form.
+            </remarks>
+            <param name="isGeosoftFont">returns true if a GFN font is selected</param>
         </member>
         <member name="T:Geosoft.GX.Controls.TriStateTreeViewWithAlteredExpandCollapse">
             <summary>
@@ -10261,7 +10792,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.Validator">
             <summary>
-            A class that provides various data validation methods. 
+            A class that provides various data validation methods.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Validator.IsChannelNameValid(System.String)">
@@ -10290,7 +10821,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.WizardPage">
             <summary>
-            A wizard page which can be added 
+            A wizard page which can be added
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.WizardPage.#ctor">
@@ -10346,19 +10877,19 @@
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.WizardPage.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.WizardPage.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.WizardPage.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -10593,12 +11124,12 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.EditStringControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.EditStringControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
@@ -10664,7 +11195,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.EditStringControl.SetValue(System.String)">
             <summary>
-            Set the value in the edit window, using a string as input. 
+            Set the value in the edit window, using a string as input.
             </summary>
             <param name="strValue">The value to put in the edit window.</param>
         </member>
@@ -10701,18 +11232,18 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.FolderEditControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.FolderEditControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.FolderEditControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -10812,7 +11343,7 @@
             </value>
         </member>
         <member name="M:Geosoft.GX.Controls.LabelControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -10857,24 +11388,24 @@
         </member>
         <member name="P:Geosoft.GX.Controls.LabelControl.GrowthAnchorFamilyBehaviour">
             <summary>
-            Defines the behaviour(s) of a control when any of its siblings with this 
+            Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.LabelControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.NativeMethods.SystemMetric">
-            <summary>
-            Flags used with the Windows API (User32.dll):GetSystemMetrics(SystemMetric smIndex)
-              
-            This Enum and declaration signature was written by Gabriel T. Sharp
-            ai_productions@verizon.net or osirisgothra@hotmail.com
-            Obtained on pinvoke.net, please contribute your code to support the wiki!
-            </summary>
+             <summary>
+             Flags used with the Windows API (User32.dll):GetSystemMetrics(SystemMetric smIndex)
+            
+             This Enum and declaration signature was written by Gabriel T. Sharp
+             ai_productions@verizon.net or osirisgothra@hotmail.com
+             Obtained on pinvoke.net, please contribute your code to support the wiki!
+             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXSCREEN">
             <summary>
@@ -10903,22 +11434,22 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXBORDER">
             <summary>
-            Width of a window border, in pixels. This is equivalent to the SM_CXEDGE value for windows with the 3-D look. 
+            Width of a window border, in pixels. This is equivalent to the SM_CXEDGE value for windows with the 3-D look.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYBORDER">
             <summary>
-            Height of a window border, in pixels. This is equivalent to the SM_CYEDGE value for windows with the 3-D look. 
+            Height of a window border, in pixels. This is equivalent to the SM_CYEDGE value for windows with the 3-D look.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXDLGFRAME">
             <summary>
-            Thickness of the frame around the perimeter of a window that has a caption but is not sizable, in pixels. SM_CXFIXEDFRAME is the height of the horizontal border and SM_CYFIXEDFRAME is the width of the vertical border. 
+            Thickness of the frame around the perimeter of a window that has a caption but is not sizable, in pixels. SM_CXFIXEDFRAME is the height of the horizontal border and SM_CYFIXEDFRAME is the width of the vertical border.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYDLGFRAME">
             <summary>
-            Thickness of the frame around the perimeter of a window that has a caption but is not sizable, in pixels. SM_CXFIXEDFRAME is the height of the horizontal border and SM_CYFIXEDFRAME is the width of the vertical border. 
+            Thickness of the frame around the perimeter of a window that has a caption but is not sizable, in pixels. SM_CXFIXEDFRAME is the height of the horizontal border and SM_CYFIXEDFRAME is the width of the vertical border.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYVTHUMB">
@@ -11038,12 +11569,12 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXFRAME">
             <summary>
-            Thickness of the sizing border around the perimeter of a window that can be resized, in pixels. SM_CXSIZEFRAME is the width of the horizontal border, and SM_CYSIZEFRAME is the height of the vertical border. 
+            Thickness of the sizing border around the perimeter of a window that can be resized, in pixels. SM_CXSIZEFRAME is the width of the horizontal border, and SM_CYSIZEFRAME is the height of the vertical border.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYFRAME">
             <summary>
-            Thickness of the sizing border around the perimeter of a window that can be resized, in pixels. SM_CXSIZEFRAME is the width of the horizontal border, and SM_CYSIZEFRAME is the height of the vertical border. 
+            Thickness of the sizing border around the perimeter of a window that can be resized, in pixels. SM_CXSIZEFRAME is the width of the horizontal border, and SM_CYSIZEFRAME is the height of the vertical border.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXMINTRACK">
@@ -11063,7 +11594,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYDOUBLECLK">
             <summary>
-            Height of the rectangle around the location of a first click in a double-click sequence, in pixels. The second click must occur within the rectangle defined by SM_CXDOUBLECLK and SM_CYDOUBLECLK for the system to consider the two clicks a double-click. (The two clicks must also occur within a specified time.) 
+            Height of the rectangle around the location of a first click in a double-click sequence, in pixels. The second click must occur within the rectangle defined by SM_CXDOUBLECLK and SM_CYDOUBLECLK for the system to consider the two clicks a double-click. (The two clicks must also occur within a specified time.)
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXICONSPACING">
@@ -11098,7 +11629,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXFIXEDFRAME">
             <summary>
-            Identical Values Changed After Windows NT 4.0  
+            Identical Values Changed After Windows NT 4.0
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYFIXEDFRAME">
@@ -11223,7 +11754,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXDRAG">
             <summary>
-            Width of a rectangle centered on a drag point to allow for limited movement of the mouse pointer before a drag operation begins, in pixels. 
+            Width of a rectangle centered on a drag point to allow for limited movement of the mouse pointer before a drag operation begins, in pixels.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYDRAG">
@@ -11233,7 +11764,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_SHOWSOUNDS">
             <summary>
-            Nonzero if the user requires an application to present information visually in situations where it would otherwise present the information only in audible form; zero otherwise. 
+            Nonzero if the user requires an application to present information visually in situations where it would otherwise present the information only in audible form; zero otherwise.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXMENUCHECK">
@@ -11288,7 +11819,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_SAMEDISPLAYFORMAT">
             <summary>
-            Windows XP (v5.1+) Nonzero if all the display monitors have the same color format, zero otherwise. Note that two displays can have the same bit depth, but different color formats. For example, the red, green, and blue pixels can be encoded with different numbers of bits, or those bits can be located in different places in a pixel's color value. 
+            Windows XP (v5.1+) Nonzero if all the display monitors have the same color format, zero otherwise. Note that two displays can have the same bit depth, but different color formats. For example, the red, green, and blue pixels can be encoded with different numbers of bits, or those bits can be located in different places in a pixel's color value.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_IMMENABLED">
@@ -11298,12 +11829,12 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CXFOCUSBORDER">
             <summary>
-            Windows XP (v5.1+) Width of the left and right edges of the focus rectangle drawn by DrawFocusRect. This value is in pixels. 
+            Windows XP (v5.1+) Width of the left and right edges of the focus rectangle drawn by DrawFocusRect. This value is in pixels.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_CYFOCUSBORDER">
             <summary>
-            Windows XP (v5.1+) Height of the top and bottom edges of the focus rectangle drawn by DrawFocusRect. This value is in pixels. 
+            Windows XP (v5.1+) Height of the top and bottom edges of the focus rectangle drawn by DrawFocusRect. This value is in pixels.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_TABLETPC">
@@ -11333,7 +11864,7 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_REMOTESESSION">
             <summary>
-            Windows XP (v5.1+) This system metric is used in a Terminal Services environment. If the calling process is associated with a Terminal Services client session, the return value is nonzero. If the calling process is associated with the Terminal Server console session, the return value is zero. The console session is not necessarily the physical console - see WTSGetActiveConsoleSessionId for more information. 
+            Windows XP (v5.1+) This system metric is used in a Terminal Services environment. If the calling process is associated with a Terminal Services client session, the return value is nonzero. If the calling process is associated with the Terminal Server console session, the return value is zero. The console session is not necessarily the physical console - see WTSGetActiveConsoleSessionId for more information.
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.NativeMethods.SystemMetric.SM_SHUTTINGDOWN">
@@ -11351,9 +11882,9 @@
             Implements a convenient panel for placement on <see cref="T:Geosoft.GX.Controls.BaseForm"/> derived forms.
             </summary>
             <remarks>
-            Normally this control acts as a container for the OK and Cancel <see cref="T:Geosoft.GX.Controls.ButtonControl"/> controls. 
-            One can also place a <see cref="T:Geosoft.GX.Controls.AdvancedButtonControl"/> this control onto it and position it in the center of the <see cref="T:Geosoft.GX.Controls.BaseForm"/> 
-            and the button will cause the area below the panel to be collapsed when the form is loaded. The button can then be used to 
+            Normally this control acts as a container for the OK and Cancel <see cref="T:Geosoft.GX.Controls.ButtonControl"/> controls.
+            One can also place a <see cref="T:Geosoft.GX.Controls.AdvancedButtonControl"/> this control onto it and position it in the center of the <see cref="T:Geosoft.GX.Controls.BaseForm"/>
+            and the button will cause the area below the panel to be collapsed when the form is loaded. The button can then be used to
             automatically expand/collapse the form to reveal more advanced features or hide them.
             </remarks>
         </member>
@@ -11435,19 +11966,19 @@
             <param name="m"></param>
         </member>
         <member name="F:Geosoft.GX.Controls.PanelControl.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.PanelControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.PanelControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -11457,18 +11988,18 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.PatternEditControl.#ctor">
-            <summary> 
+            <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.PatternEditControl.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.PatternEditControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -11489,7 +12020,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.PatternEditControl.SetPattern(System.Int32,System.Double,System.Int32,System.Double,System.Int32,System.Int32)">
             <summary>
-            Set the pattern of the edit window. 
+            Set the pattern of the edit window.
             </summary>
             <param name="iPat">The pattern number, >= 0</param>
             <param name="dSize">The pattern tile size in mm</param>
@@ -11500,7 +12031,7 @@
         </member>
         <member name="M:Geosoft.GX.Controls.PatternEditControl.GetPattern(System.Int32@,System.Double@,System.Int32@,System.Double@,System.Int32@,System.Int32@)">
             <summary>
-            Set the pattern of the edit window. 
+            Set the pattern of the edit window.
             </summary>
             <param name="iPat">The pattern number, >= 0</param>
             <param name="dSize">The pattern tile size in mm</param>
@@ -11913,7 +12444,7 @@
         </member>
         <member name="M:PopupControl.Popup.InitializeComponent">
             <summary>
-            Required method for Designer support - do not modify 
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
@@ -12042,9 +12573,9 @@
             </summary>
         </member>
         <member name="T:PopupControl.VToolTip">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="M:PopupControl.VToolTip.#ctor">
             <summary>
@@ -12052,19 +12583,19 @@
             </summary>
         </member>
         <member name="F:PopupControl.VToolTip.components">
-            <summary> 
+            <summary>
             Required designer variable.
             </summary>
         </member>
         <member name="M:PopupControl.VToolTip.Dispose(System.Boolean)">
-            <summary> 
+            <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:PopupControl.VToolTip.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
+            <summary>
+            Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>

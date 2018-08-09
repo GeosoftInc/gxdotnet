@@ -4,29 +4,6 @@
         "geoengine.core.gxnetx"
     </assembly>
     <members>
-        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
             <summary>Fire the General Information Message delegate event.</summary>
             <param name="Class">Message Class</param>
@@ -141,6 +118,29 @@ framework which will supports persistance through CMETA.
         <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
             <summary>Change the current projection.</summary>
             <param name="IPJ">Projection</param>
+        </member>
+        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -703,14 +703,13 @@ if the value is dummy or outside of the range of data.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CVV.ReSample(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32)">
+        <member name="M:GeoEngine.Core.GXNetX.CVV.ReSample(System.Double,System.Double,System.Double,System.Double,System.Int32)">
             <summary>Resamples a VV from one fid/incr to another fid/incr.</summary>
             <param name="d1">Current start fid</param>
             <param name="d2">Current increment</param>
             <param name="d3">New fid start</param>
             <param name="d4">New fid increment</param>
             <param name="i5">New length</param>
-            <param name="i6">Extrapolate Endpoints (0 - No, 1 - Yes)</param>
             <available_version>5.1.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -945,20 +944,9 @@ X and Y values.
         <member name="M:GeoEngine.Core.GXNetX.CVV.InvLog(System.Int32,System.Int32,System.Double)">
             <summary>Inverse of the _Log_VV function.</summary>
             <param name="i1">&amp;lt;define&amp;gt;VV_LOG_BASE&amp;lt;/define&amp;gt;</param>
-            <param name="i2">&amp;lt;define&amp;gt;VV_LOG_NEGATIVE&amp;lt;/define&amp;gt;</param>
+            <param name="i2">&amp;lt;define&amp;gt;VV_LOGMODE&amp;lt;/define&amp;gt;</param>
             <param name="d3">Minimum value for &amp;lt;define&amp;gt;VV_LOG_NEGATIVE&amp;lt;/define&amp;gt;</param>
-            <remarks>
-This is the inverse function for _Log_VV, with the same inputs.
-
-NEGATIVE_NO    - will not return values smaller than the input minimum
-NEGATIVE_YES   - if the data is in the range +/- minimum,
-it is left alone.  Otherwise, the sign is removed,
-the minimum is subtracted, the log of the minimum is added,
-and the exponential (base e or base 10) is taken of the
-sum. The sign is then reapplied.
-Minimum value will be defaulted to 1.0 if it is 0.0 or
-less than 0.0
-</remarks>
+            <remarks>This is the inverse function for _Log_VV, with the same inputs.</remarks>
             <available_version>7.3</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -1454,7 +1442,7 @@ or 0.
         <member name="M:GeoEngine.Core.GXNetX.CVV.Log(System.Int32,System.Int32,System.Double)">
             <summary>Apply log to the vv.</summary>
             <param name="i1">&amp;lt;define&amp;gt;VV_LOG_BASE&amp;lt;/define&amp;gt;</param>
-            <param name="i2">&amp;lt;define&amp;gt;VV_LOG_NEGATIVE&amp;lt;/define&amp;gt;</param>
+            <param name="i2">&amp;lt;define&amp;gt;VV_LOGMODE&amp;lt;/define&amp;gt;</param>
             <param name="d3">Minimum value for &amp;lt;define&amp;gt;VV_LOG_NEGATIVE&amp;lt;/define&amp;gt;</param>
             <remarks>
 Minimum value will be defaulted to 1.0 if it is 0.0 or
@@ -1700,6 +1688,26 @@ Convert_GS if necessary.
        the voxel.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CVOXD.SetRenderMode(System.Int32)">
+            <summary>Get voxel render mode.</summary>
+            <param name="i1">&amp;lt;define&amp;gt;VOXELRENDER_MODE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CVOXD.GetRenderMode(System.Int32@)">
+            <summary>Get voxel render mode.</summary>
+            <param name="i1">&amp;lt;define&amp;gt;VOXELRENDER_MODE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CVOXD.SetShellControls(System.Double,System.Double)">
             <summary>Set the shell controls</summary>
@@ -10363,8 +10371,28 @@ Starts inside, ends outside : &amp;lt;define&amp;gt;PLY_LINE_CLIP_INSIDE&amp;lt;
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CPLY.Combine(GeoEngine.Core.GXNetX.CPLY,System.Int32)">
+            <summary>Combines two PLY Object with another</summary>
+            <param name="oPLY1">Source</param>
+            <param name="i2">Make all the polygons copied excluded? - if not they will be copied as they are.</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CPLY.IsValid">
+            <summary>Ensure a polygon is valid</summary>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CPLY.Copy(GeoEngine.Core.GXNetX.CPLY)">
-            <summary>Destroys a PLY Object</summary>
+            <summary>Copies one PLY Object to another</summary>
             <param name="oPLY1">Source</param>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -11564,8 +11592,8 @@ and the font size.
             <param name="oVOX2">Voxel model</param>
             <param name="i3">&amp;lt;define&amp;gt;MVU_VOX_SURFACE_METHOD&amp;lt;/define&amp;gt;</param>
             <param name="i4">&amp;lt;define&amp;gt;MVU_VOX_SURFACE_OPTION&amp;lt;/define&amp;gt;</param>
-            <param name="d5">TODO</param>
-            <param name="d6">TODO</param>
+            <param name="d5">Iso-surface value</param>
+            <param name="d6">For closed surfaces: close between the selected value and this value (set equal to the Iso-surface to close within nearest values below, DUMMY to close within nearest value above)</param>
             <param name="i7">Drawing color</param>
             <param name="d8">Line thickness for line drawing, and 2D views.</param>
             <param name="d9">Transparency (0 - transparent, 1 - opaque).</param>
@@ -14538,6 +14566,16 @@ if gaps from dummies are to be kept.
             <extended_method>no</extended_method>
             <method_group>Drawing Entity</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.PolygonMPLY(GeoEngine.Core.GXNetX.CMPLY)">
+            <summary>Draw multiple complex polygons from MPLY.</summary>
+            <param name="oMPLY1" />
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Drawing Entity</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.PolygonPLY(GeoEngine.Core.GXNetX.CPLY)">
             <summary>Draw a complex polygon from PLY.</summary>
             <param name="oPLY1" />
@@ -16063,6 +16101,315 @@ specifying a 0 radius for one of the ends.
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.CreateSubsetFromRealExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Create a new MULTIGRID3D that is a subset of the non-dummy extents.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">File Name of the MULTIGRID3D that will be subset</param>
+            <param name="str2">File Name of the MULTIGRID3D that will be created</param>
+            <remarks>Creates a MULTIGRID3D object that is a subset with all dummy data regions removed.</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.CreateSubset(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Create a new MULTIGRID3D that is a subset of an exisiting MULTIGRID3D.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">File Name of the MULTIGRID3D that will be subset</param>
+            <param name="str2">File Name of the MULTIGRID3D that will be created</param>
+            <param name="i3">Starting location in X.</param>
+            <param name="i4">Starting location in Y.</param>
+            <param name="i5">Starting location in Z.</param>
+            <param name="i6">Number of items to copy in X.</param>
+            <param name="i7">Number of items to copy in Y.</param>
+            <param name="i8">Number of items to copy in Z.</param>
+            <remarks>Creates a MULTIGRID3D object that is a subset .</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.KrigFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ,GeoEngine.Core.GXNetX.CREG)">
+            <summary>A more compact and extensible form of LogGridPointsZExFromGDB_MULTIGRID3DUTIL.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="d2">Cell size (DUMMY for default)</param>
+            <param name="i3">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
+            <param name="oDB4">Database</param>
+            <param name="i5">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i6">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i7">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i8">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="oIPJ9" />
+            <param name="oREG10" />
+            <remarks>
+Optional Parameters.
+
+If these values are not set in the REG, then default parameters will be used.
+
+ERROR_VOXEL:		Output error grid3d filename ("" for none)
+CELLSIZEZ:      Z Cell size string (space delimited, "" for default)
+RADIUS_MIN:		Minimum Search Radius (REAL) (Default = 4) (Blanking Distance)
+RADIUS_MAX:		Maximum Search Radius (REAL) (Default = 16)
+SEARCH_MIN:		Minimum Search Points (INT) (Default = 16)
+SEARCH_MAX:		Maximum Search Points (INT) (Default = 32)
+VARIOGRAM_ONLY: Set to 1 to calculate the variogram only (INT) (Default = 0)
+MODEL:				Variogram Model number 1-power, 2-sperical, 3-gaussian, 4-exponential  (INT) (Default = 2)
+POWER:          Power (Default = DUMMY)
+SLOPE:          Slope (REAL) (if input is DUMMY, value calculated and set on return)
+RANGE:          Range (REAL) (if input is DUMMY, value calculated and set on return)
+SILL :          Sill (REAL) (if input is DUMMY, value calculated and set on return)
+STRIKE:				Strike (REAL) (Default = 0)
+DIP:					Dip (REAL)	(Default = 90)
+PLUNGE:				Plunge (REAL) (Default = 0)
+STRIKE WEIGHT:	Along-Strike Weight (REAL) (Default = 1)
+DIP_WEIGHT:      Down-Dip Weight (REAL) (Default = 1)
+LOG_OPT:			One of &amp;lt;define&amp;gt;VOX_GRID_LOGOPT&amp;lt;/define&amp;gt; (Default = 0)
+MIN_LOG:			Log Minimum (REAL)	(Default = 1)
+MIN_X:				Minimum X (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_X:				Maximum X (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Y:				Minimum Y (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. external multiple of cell size chosen)
+MAX_Y:				Maximum Y (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)
+MIN_Z:				Minimum Z (REAL) (default = DUMMY to determine from the data. If input, nearest lt. or eq. multiple of cell size chosen)
+MAX_Z:				Maximum Z (REAL) (default = DUMMY to determine from the data. If input, nearest gt. or eq. multiple of cell size chosen)A more compact and extensible form of LogGridPointsZEx_VOX. Only the most
+basic parameters are entered directly. Optional parameters are passed via a REG object.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.LogGridPointsZExFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Double,System.String,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double@,System.Double@,System.Double,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Log grid a grid3d from a database (using variable Z's)</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="str2">Output error grid3d filename</param>
+            <param name="d3">Cell size (DUMMY for default)</param>
+            <param name="str4">Cell size in Z ("" for default)</param>
+            <param name="i5">Variogram Only</param>
+            <param name="d6">Minimum Search Radius (DUMMY for none)</param>
+            <param name="d7">Maximum Search Radius (DUMMY for none)</param>
+            <param name="i8">Minimum Search Points</param>
+            <param name="i9">Maximum Search Points</param>
+            <param name="i10">Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</param>
+            <param name="d11">Power</param>
+            <param name="d12">Slope</param>
+            <param name="d13">Range</param>
+            <param name="d14">Nugget</param>
+            <param name="d15">Sill</param>
+            <param name="d16">Strike</param>
+            <param name="d17">Dip</param>
+            <param name="d18">Plunge</param>
+            <param name="d19">Strike Weight</param>
+            <param name="d20">Dip Plane Weight</param>
+            <param name="i21">&amp;lt;define&amp;gt;VOX_GRID_LOGOPT&amp;lt;/define&amp;gt; Log Option</param>
+            <param name="d22">Minimum log</param>
+            <param name="i23">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
+            <param name="oDB24">Database</param>
+            <param name="i25">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i26">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i27">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i28">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="oIPJ29" />
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GridPointsZExFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Double,System.String,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double@,System.Double@,System.Double,System.Double@,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Grid a grid3d from a database (using variable Z's)</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="str2">Output error grid3d filename</param>
+            <param name="d3">Cell size (DUMMY for default)</param>
+            <param name="str4">Cell size in Z ("" for default)</param>
+            <param name="i5">Variogram Only</param>
+            <param name="d6">Minimum Search Radius (DUMMY for none)</param>
+            <param name="d7">Maximum Search Radius (DUMMY for none)</param>
+            <param name="i8">Minimum Search Points</param>
+            <param name="i9">Maximum Search Points</param>
+            <param name="i10">Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</param>
+            <param name="d11">Power</param>
+            <param name="d12">Slope</param>
+            <param name="d13">Range</param>
+            <param name="d14">Nugget</param>
+            <param name="d15">Sill</param>
+            <param name="d16">Strike</param>
+            <param name="d17">Dip</param>
+            <param name="d18">Plunge</param>
+            <param name="d19">Strike Weight</param>
+            <param name="d20">Dip Plane Weight</param>
+            <param name="i21">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
+            <param name="oDB22">Database</param>
+            <param name="i23">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i24">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i25">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i26">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="oIPJ27" />
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GridPointsZFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Double,System.String,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Grid a grid3d from a database (using variable Z's)</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="str2">Output error grid3d filename</param>
+            <param name="d3">Cell size (DUMMY for default)</param>
+            <param name="str4">Cell size in Z ("" for default)</param>
+            <param name="i5">Variogram Only</param>
+            <param name="d6">Minimum Search Radius (DUMMY for none)</param>
+            <param name="d7">Maximum Search Radius (DUMMY for none)</param>
+            <param name="i8">Minimum Search Points</param>
+            <param name="i9">Maximum Search Points</param>
+            <param name="i10">Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</param>
+            <param name="d11">Power</param>
+            <param name="d12">Slope</param>
+            <param name="d13">Range</param>
+            <param name="d14">Nugget</param>
+            <param name="d15">Sill</param>
+            <param name="i16">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
+            <param name="oDB17">Database</param>
+            <param name="i18">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i19">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i20">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i21">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="oIPJ22" />
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GridPointsFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Double,System.Int32,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Grid a grid3d from a database using kriging.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="str2">Output error grid3d filename</param>
+            <param name="d3">Cell size (DUMMY for default)</param>
+            <param name="i4">Variogram Only</param>
+            <param name="d5">Minimum Search Radius (DUMMY for none)</param>
+            <param name="d6">Maximum Search Radius (DUMMY for none)</param>
+            <param name="i7">Minimum Search Points</param>
+            <param name="i8">Maximum Search Points</param>
+            <param name="i9">Model number 1-power, 2-sperical, 3-gaussian, 4-exponential</param>
+            <param name="d10">Power</param>
+            <param name="d11">Slope</param>
+            <param name="d12">Range</param>
+            <param name="d13">Nugget</param>
+            <param name="d14">Sill</param>
+            <param name="i15">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
+            <param name="oDB16">Database</param>
+            <param name="i17">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i18">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i19">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i20">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="oIPJ21" />
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GetDataGroundExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Get the voxel size in ground units that has non-dummy data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">input filename</param>
+            <param name="d2">Ground location of minimum valid data in X.</param>
+            <param name="d3">Ground location of minimum valid data in Y.</param>
+            <param name="d4">Ground location of minimum valid data in Z.</param>
+            <param name="d5">Ground location of maximum valid data in X.</param>
+            <param name="d6">Ground location of maximum valid data in Y.</param>
+            <param name="d7">Ground location of maximum valid data in Z.</param>
+            <remarks>
+Find the non-dummy volume of a MULTIGRID3D object. If the voxel is all dummies,
+returns &amp;lt;define&amp;gt;iMAX&amp;lt;/define&amp;gt; for the minima, and &amp;lt;define&amp;gt;iMIN&amp;lt;/define&amp;gt; for the maxima.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GetDataExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>Get the voxel size that has non-dummy data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">input filename</param>
+            <param name="i2">Index of minimum valid data in X.</param>
+            <param name="i3">Index of minimum valid data in Y.</param>
+            <param name="i4">Index of minimum valid data in Z.</param>
+            <param name="i5">Index of maximum valid data in X.</param>
+            <param name="i6">Index of maximum valid data in Y.</param>
+            <param name="i7">Index of maximum valid data in Z.</param>
+            <remarks>
+Find the non-dummy volume of a MULTIGRID3D object. If the voxel is all dummies,
+returns &amp;lt;define&amp;gt;iMAX&amp;lt;/define&amp;gt; for the minima, and &amp;lt;define&amp;gt;iMIN&amp;lt;/define&amp;gt; for the maxima.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GridIDWFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Double,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32)">
+            <summary>Create a grid3d using IDW gridding.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Output grid3d filename</param>
+            <param name="d2">Voxel origin X</param>
+            <param name="d3">Voxel origin Y</param>
+            <param name="d4">Voxel origin Z</param>
+            <param name="i5">Voxel cell count X</param>
+            <param name="i6">Voxel cell count Y</param>
+            <param name="i7">Voxel cell count Z</param>
+            <param name="d8">Voxel cell size X</param>
+            <param name="d9">Voxel cell size Y</param>
+            <param name="d10">Voxel cell size Z</param>
+            <param name="oDB11">Database</param>
+            <param name="i12">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i13">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i14">Z channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="i15">Data channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="d16">Weight Power (default 2)</param>
+            <param name="d17">Weight Slope (default 1)</param>
+            <param name="d18">Distance weighting limit (default = 4 * CUBE_ROOT(DX*DY*DZ))</param>
+            <param name="d19">Dummy values farther from data than this distance. (default = 4 * CUBE_ROOT(DX*DY*DZ))</param>
+            <param name="i20">Apply log transform to input data before gridding (0:No (default), 1:Yes)</param>
+            <param name="d21">One of &amp;lt;define&amp;gt;VV_LOG_BASE_10&amp;lt;/define&amp;gt; (default) or :const:`VV_LOG_BASE_E</param>
+            <param name="i22">One of &amp;lt;define&amp;gt;VV_LOG_NEGATIVE_NO&amp;lt;/define&amp;gt; (default) or &amp;lt;define&amp;gt;VV_LOG_NEGATIVE_YES&amp;lt;/define&amp;gt;</param>
+            <remarks>
+The Z and Data channels may be array channels. If they are, the array sizes must match.
+                 3D cells take on the averaged values within a search radius, weighted inversely by distance.
+
+              Weighting can be controlled using the power and slope properties;
+
+              weighting = 1 / (distance^wtpower + 1/slope) where distance is in
+              units of grid cells (X dimenstion). Default is 0.0,
+
+              If the blanking distance is set, all cells whose center point is not within the blanking distance of
+              at least one data point are set to dummy.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.GridDirectFromGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Int32,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>Create a grid3d using direct gridding.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -16102,7 +16449,45 @@ specifying a 0 radius for one of the ends.
             <param name="i7">Desample data (1) or use as is (0)</param>
             <param name="i8">&amp;lt;define&amp;gt;RBFKERNEL&amp;lt;/define&amp;gt;</param>
             <param name="d9">Kernel Epsilon</param>
-            <available_version>9.4</available_version>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ClipToPolygon(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,GeoEngine.Core.GXNetX.CPLY,System.Int32)">
+            <summary>Invert the Z values in the Grid3d.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Name of the input grid3d</param>
+            <param name="str2">Name of the output grid3d</param>
+            <param name="oPLY3">Polygons to clip to</param>
+            <param name="i4">Clip Dummies (1) or leave them (0)</param>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ExtractDEM(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Extract a DEM grid from a voxel.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Name of the input grid3d</param>
+            <param name="str2">Name of the output grid</param>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.InvertZ(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Invert the Z values in the Grid3d.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Name of the input grid3d</param>
+            <param name="str2">Name of the output grid3d</param>
+            <available_version>9.5</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -16291,6 +16676,19 @@ specifying a 0 radius for one of the ends.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.CreateDoubleConstantCopy(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.String)">
+            <summary>Generate a double MultiVoxset with a constant value based on an input voxel</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Name of output Voxel File</param>
+            <param name="d2">Constant Value to use - DUMMY for a trully sparse grid3d</param>
+            <param name="str3">Name of voxel to model</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.CreateDoubleConstant(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
             <summary>Generate a double MultiVoxset with a constant value</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -16380,12 +16778,13 @@ specifying a 0 radius for one of the ends.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ConvertDoubleToThematic(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CVV,System.String)">
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ConvertDoubleToThematic(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CTPAT,System.String)">
             <summary>Convert Double MultiVoxset to Thematic MultiVoxset</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="str1">Input grid3d filename</param>
             <param name="oVV2">Translation VV handle</param>
-            <param name="str3">Output grid3d filename</param>
+            <param name="oTPAT3">TPAT object</param>
+            <param name="str4">Output grid3d filename</param>
             <available_version>9.4</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -16400,6 +16799,22 @@ specifying a 0 radius for one of the ends.
             <param name="oVV2">Translation VV handle</param>
             <param name="str3">Output grid3d filename</param>
             <available_version>9.4</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ConvertVectorToDoubleUsingRotation(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Double,System.Double)">
+            <summary>Convert a Vector Voxel to 3 double Voxels using an external rotation. Internal rotations are ignored.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Vector Voxel file</param>
+            <param name="str2">Output X Voxel file</param>
+            <param name="str3">Output Y Voxel file</param>
+            <param name="str4">Output Z Voxel file</param>
+            <param name="d5">Inclination</param>
+            <param name="d6">Declination</param>
+            <available_version>9.5</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -16473,13 +16888,12 @@ specifying a 0 radius for one of the ends.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ExportToSEGY(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.Double)">
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ExportToSEGY(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Double)">
             <summary>Export To SEGY</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="str1">Input Voxel file</param>
-            <param name="str2">Voxel Name</param>
-            <param name="str3">Output Segy file</param>
-            <param name="d4">Sampling Internal</param>
+            <param name="str2">Output Segy file</param>
+            <param name="d3">Sampling Internal</param>
             <available_version>9.4</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -16511,6 +16925,18 @@ specifying a 0 radius for one of the ends.
             <param name="str1">Name of output Voxel file</param>
             <param name="oDB2">DB To import from</param>
             <param name="i3">Symbol to import data from</param>
+            <available_version>9.4</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ImportFromSegy(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Imports a MultiVoxset from a SEG Y File</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Name of output VOX</param>
+            <param name="str2">Name of input SEG Y file</param>
             <available_version>9.4</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -16640,6 +17066,44 @@ specifying a 0 radius for one of the ends.
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3D.GetDataGroundExtents(System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Get the voxel size in ground units that has non-dummy data.</summary>
+            <param name="d1">Ground location of minimum valid data in X.</param>
+            <param name="d2">Ground location of minimum valid data in Y.</param>
+            <param name="d3">Ground location of minimum valid data in Z.</param>
+            <param name="d4">Ground location of maximum valid data in X.</param>
+            <param name="d5">Ground location of maximum valid data in Y.</param>
+            <param name="d6">Ground location of maximum valid data in Z.</param>
+            <remarks>
+Find the non-dummy volume of a MULTIGRID3D object. If the voxel is all dummies,
+returns &amp;lt;define&amp;gt;iMAX&amp;lt;/define&amp;gt; for the minima, and &amp;lt;define&amp;gt;iMIN&amp;lt;/define&amp;gt; for the maxima.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3D.GetDataExtents(System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+            <summary>Get the voxel size that has non-dummy data.</summary>
+            <param name="i1">Index of minimum valid data in X.</param>
+            <param name="i2">Index of minimum valid data in Y.</param>
+            <param name="i3">Index of minimum valid data in Z.</param>
+            <param name="i4">Index of maximum valid data in X.</param>
+            <param name="i5">Index of maximum valid data in Y.</param>
+            <param name="i6">Index of maximum valid data in Z.</param>
+            <remarks>
+Find the non-dummy volume of a MULTIGRID3D object. If the voxel is all dummies,
+returns &amp;lt;define&amp;gt;iMAX&amp;lt;/define&amp;gt; for the minima, and &amp;lt;define&amp;gt;iMIN&amp;lt;/define&amp;gt; for the maxima.
+</remarks>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3D.ExportToPG">
             <summary>Export a MULTIGRID3D To a PG</summary>
             <returns>PG Object</returns>
@@ -16751,6 +17215,18 @@ specifying a 0 radius for one of the ends.
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3D.GetVectorOrientation(System.Double@,System.Double@,System.Int32@)">
+            <summary>Get the vector voxel orientation</summary>
+            <param name="d1">inclination</param>
+            <param name="d2">declination</param>
+            <param name="i3">rotated</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
@@ -17103,6 +17579,25 @@ specifying a 0 radius for one of the ends.
             <summary>
 
        High Performance 3D Grid.
+   
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMPLY.Create(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Creates a Multi Polygon Object.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <returns>MPLY Handle</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CMPLY">
+            <summary>
+
+       The MPLY object contains the definitions for one or more
+       PPLY.
    
 </summary>
         </member>
@@ -17647,6 +18142,397 @@ x  - Data Value
        can be queried for their associated metadata, and if it
        exists, the metadata can be retrieved and utilized by
        other Oasis montaj processes.
+   
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.DoesSurfaceIntersect(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String)">
+            <summary>Checks if the two surfaces intersect at all</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Primary Geosurface file</param>
+            <param name="str2">Primary Surface Name within Geosurface File</param>
+            <param name="str3">Secondary Geosurface file</param>
+            <param name="str4">Secondary Surface Name within Geosurface File</param>
+            <returns>Returns 1 if intersects, 0 if surfaces do not intersect</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ComputeSurfaceSubdivision(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String)">
+            <summary>Smooths a surface by applying a loop subdivision algorithm</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Geosurface file</param>
+            <param name="str2">Input Surface Name within Geosurface File</param>
+            <param name="str3">Output Geosurface file</param>
+            <param name="str4">Output Surface Name within Geosurface File</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ComputeSurfaceSimplification(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String)">
+            <summary>Simplifies a surface by reducing the number of edges by half</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Geosurface file</param>
+            <param name="str2">Input Surface Name within Geosurface File</param>
+            <param name="str3">Output Geosurface file</param>
+            <param name="str4">Output Surface Name within Geosurface File</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ComputeSurfaceIntersection(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Computes and outputs the intersection of two closed surfaces</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Primary Geosurface file</param>
+            <param name="str2">Primary Surface Name within Geosurface File</param>
+            <param name="str3">Secondary Geosurface file</param>
+            <param name="str4">Secondary Surface Name within Geosurface File</param>
+            <param name="str5">Output surface file</param>
+            <param name="str6">Output surface name</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ComputeSurfaceClip(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Clip a surface with another surface, and output the clipped surfaces</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Primary Geosurface file</param>
+            <param name="str2">Primary Surface Name within Geosurface File</param>
+            <param name="str3">Secondary Geosurface file</param>
+            <param name="str4">Secondary Surface Name within Geosurface File</param>
+            <param name="str5">Output surface file</param>
+            <param name="str6">Output surface name</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ComputeSurfaceUnion(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Compute union of two surfaces</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Primary Geosurface file</param>
+            <param name="str2">Primary Surface Name within Geosurface File</param>
+            <param name="str3">Secondary Geosurface file</param>
+            <param name="str4">Secondary Surface Name within Geosurface File</param>
+            <param name="str5">Output surface file</param>
+            <param name="str6">Output surface name</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithPolygon2d(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>Clip a Surface a specified Polygon file</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Geosurface file</param>
+            <param name="str2">Input Surface name within Geosurface file</param>
+            <param name="str3">Polygon File</param>
+            <param name="str4">Output Surface file</param>
+            <param name="i5">Set true if the values inside polygon are to be masked</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>Clip a Surface with X,Y,Z extents</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Geosurface file</param>
+            <param name="str2">Input Surface name within Geosurface file</param>
+            <param name="str3">Output Surface file</param>
+            <param name="d4">Min value of X</param>
+            <param name="d5">Max value of X</param>
+            <param name="d6">Min value of Y</param>
+            <param name="d7">Max value of Y</param>
+            <param name="d8">Min value of Z</param>
+            <param name="d9">Max value of Z</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithGrid(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>Clip a Surface with a Grid Surface (grid converted to surface)</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Input Geosurface file</param>
+            <param name="str2">Input Surface name within Geosurface file</param>
+            <param name="str3">Grid Surface file name</param>
+            <param name="str4">Grid surface name within file</param>
+            <param name="str5">Output Surface file</param>
+            <param name="str6">Name of Surface Item above grid - required for mode=CLIP_ABOVE and CLIP_BOTH</param>
+            <param name="str7">Name of Surface Item below grid - required for mode=CLIP_BELOW and CLIP_BOTH</param>
+            <param name="i8">&amp;lt;define&amp;gt;SURFACE_CLIP_MODE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CMESHUTIL">
+            <summary>
+
+       Mesh utility methods.
+   
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.Save">
+            <summary>Saves Mesh to the Project Cache and Geosurface file</summary>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.ImportGridToMesh(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String)">
+            <summary>Imports a Grid to a Surface. Creates a new Geosurface file for the surface</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Grid File Name</param>
+            <param name="str2">Surface File Name</param>
+            <param name="str3">Surface Item Name within the file</param>
+            <returns>MESH handle, terminates if creation fails</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.GetAttributeValues(System.String,System.String,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Inserts an attribute set to a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="str2">Attribute Name</param>
+            <param name="i3">&amp;lt;define&amp;gt;ATTRIBUTE_DATA_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="i4">&amp;lt;define&amp;gt;ATTRIBUTE_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="i5">Patch ID</param>
+            <param name="oVV6">Attributes VV VV</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.SetAttributeValues(System.String,System.String,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Inserts an attribute set to a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="str2">Attribute Name</param>
+            <param name="i3">&amp;lt;define&amp;gt;ATTRIBUTE_DATA_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="i4">&amp;lt;define&amp;gt;ATTRIBUTE_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="i5">Patch ID</param>
+            <param name="oVV6">Attributes VV VV</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.InsertAttributes(System.String,System.String,System.Int32,System.Int32)">
+            <summary>Inserts an attribute set to a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="str2">Attribute Name</param>
+            <param name="i3">&amp;lt;define&amp;gt;ATTRIBUTE_DATA_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="i4">&amp;lt;define&amp;gt;ATTRIBUTE_TYPE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.GetFaces(System.String,System.Int32,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Returns all the faces comprising of vertex indices in a patch</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <param name="oVV3">Face vertex 1</param>
+            <param name="oVV4">Face vertex 2</param>
+            <param name="oVV5">Face vertex 3</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.GetVertices(System.String,System.Int32,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Returns all the vertices in a patch</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <param name="oVV3">Vertices X</param>
+            <param name="oVV4">Vertices Y</param>
+            <param name="oVV5">Vertices Z</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.GetVertexPoint(System.String,System.Int32,System.Int32,System.Double@,System.Double@,System.Double@)">
+            <summary>Number of faces in a patch in mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <param name="i3">Vertex Index</param>
+            <param name="d4">X coordinate</param>
+            <param name="d5">Y coordinate</param>
+            <param name="d6">Z coordinate</param>
+            <returns>Returns the number of faces in a patch</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.NumFaces(System.String,System.Int32)">
+            <summary>Number of faces in a patch in mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <returns>Returns the number of faces in a patch</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.AddFace(System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Adds a face to a patch in a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <param name="i3">Vertex index 0 for the face</param>
+            <param name="i4">Vertex index 1 for the face</param>
+            <param name="i5">Vertex index 2 for the face</param>
+            <returns>Returns the face index of the added face</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.NumVertices(System.String,System.Int32)">
+            <summary>Number of vertices in a patch in mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <returns>Returns the number of vertices in a patch</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.AddVertex(System.String,System.Int32,System.Double,System.Double,System.Double)">
+            <summary>Adds a vertex to a patch in a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <param name="d3">x coordinate of the vertex</param>
+            <param name="d4">y coordinate of the vertex</param>
+            <param name="d5">z coordinate of the vertex</param>
+            <returns>Returns the vertex index of the added vertex</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.NumPatches(System.String)">
+            <summary>Returns the number of patches added to the mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <returns>The number of patches added to the mesh</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.PatchExists(System.String,System.Int32)">
+            <summary>Checks if a patch specified by a patch ID exists in a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <returns>TRUE if patch exists</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.DeletePatch(System.String,System.Int32)">
+            <summary>Deletes a patch specified by Patch ID from a mesh</summary>
+            <param name="str1">Mesh Name</param>
+            <param name="i2">Patch ID</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.InsertPatch(System.String)">
+            <summary>Inserts a new surface patch to the mesh specified by a unique ID</summary>
+            <param name="str1">Mesh Name</param>
+            <returns>Patch ID of the inserted patch</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.Open(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CLST)">
+            <summary>Opens an existing Mesh</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">File Name</param>
+            <param name="oLST2">LST to fill with Mesh Names</param>
+            <returns>MESH handle, terminates if creation fails</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESH.Create(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Creates a new Mesh</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Mesh Name</param>
+            <returns>MESH handle, terminates if creation fails</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CMESH">
+            <summary>
+
+       High Performance Surface API.
    
 </summary>
         </member>
@@ -22662,12 +23548,14 @@ trend removed. Following is the
 number of coefficients which should
 be present for a given order
 
-Order            Number of Coefficients
------            ----------------------
-0                 1
-1                 3
-2                 6
-3                 10
+===== ======================
+Order Number of Coefficients
+----- ----------------------
+0      1
+1      3
+2      6
+3      10
+===== ======================
 </remarks>
             <available_version>5.0</available_version>
             <licensed_method>yes</licensed_method>
@@ -24111,27 +24999,13 @@ to real numbers.
             <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CIMG.CreateNewFile(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
-            <summary>Creates an output image file using User defined info.</summary>
+            <summary>Creates a new image file</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="i1">Data type, &amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt; Cannot be &amp;lt;define&amp;gt;GS_TYPE_DEFAULT&amp;lt;/define&amp;gt;</param>
             <param name="i2">Grid orientation (KX): 1 (rows in X) -1 (rows in Y)</param>
             <param name="i3">Grid width</param>
             <param name="i4">Grid height</param>
             <param name="str5">Name of the Grid to link to</param>
-            <remarks>
-Special Note for developers who use this function and
-related functions to output ERMapper image (ERS, ECW) files:
-
-This function internally called ERMapper plugin to create ERS header
-files. To find the location of ERMapper plugin library, a registry setting
-needs to set. The key in the registry is HKEY_LOCAL_MACHINE\SOFTWARE\"MyProgram(libversion7.0)"
-and in that key register a string BASE_PATH = D:\Oasismontaj\plugins\er_mapper.
-MyProgram is the name of your application and D:\Oasismontaj\plugins\er_mapper
-is the location of ERMapper library.
-
-It is recommended that this registry key is set during the installation
-of your application.
-</remarks>
             <returns>IMG object</returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -30014,11 +30888,17 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOOKUP_EXACT">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOOKUPConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOG_NEGATIVE_YES">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant" />.</summary>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOGMODE_LINEAR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOG_NEGATIVE_NO">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant" />.</summary>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOGMODE_CLAMPED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOGMODE_SCALED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOGMODE_CLIPPED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VV_LOG_BASE_E">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_BASEConstant" />.</summary>
@@ -30058,6 +30938,15 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXE_EVAL_NEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXE_EVALConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_EDGES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_FILL">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_SMOOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOX_VECTORVOX_AID">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOX_VECTORVOX_IMPORTConstant" />.</summary>
@@ -31547,19 +32436,22 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.RBFKERNEL_MULTIQUADRATIC">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.RBFKERNEL_GUASSIAN">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
-        </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.RBFKERNEL_DISTANCE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_DUMMYITEMS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_ITEMS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_MEAN">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_MAX">
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_MAXIMUM">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_MIN">
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MULTIGRID3D_DIRECTGRID_MINIMUM">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.FILTER3D_TOTAL_GRADIENT">
@@ -31766,6 +32658,36 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.H_META_INVALID_TOKEN">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.H_META_INVALID_TOKENConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.SURFACE_CLIP_BOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.SURFACE_CLIP_BELOW">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.SURFACE_CLIP_ABOVE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_FACES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_VERTICES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_SURFACE_SIDES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_SINGLE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_VECTOR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_THEMATIC">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.ATTRIBUTE_DOUBLE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.MAPTEMPLATE_EXIST">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAPTEMPLATE_OPENConstant" />.</summary>
         </member>
@@ -31815,6 +32737,9 @@ to exaggerate one scale such as Z (1,1,5).
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.MAP_EXPORT_BITS_24">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.MAP_EXPORT_BITS_32">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.DUPMAP_COPY_PRE62">
@@ -33116,11 +34041,17 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOOKUP_EXACT">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOOKUPConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOG_NEGATIVE_YES">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant" />.</summary>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOGMODE_LINEAR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOG_NEGATIVE_NO">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant" />.</summary>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOGMODE_CLAMPED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOGMODE_SCALED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOGMODE_CLIPPED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VV_LOG_BASE_E">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VV_LOG_BASEConstant" />.</summary>
@@ -33160,6 +34091,15 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOXE_EVAL_NEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXE_EVALConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_EDGES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_FILL">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_SMOOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOX_VECTORVOX_AID">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOX_VECTORVOX_IMPORTConstant" />.</summary>
@@ -34649,19 +35589,22 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.Constant.RBFKERNEL_MULTIQUADRATIC">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.RBFKERNEL_GUASSIAN">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
-        </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.RBFKERNEL_DISTANCE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.RBFKERNELConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_DUMMYITEMS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_ITEMS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_MEAN">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_MAX">
+        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_MAXIMUM">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_MIN">
+        <member name="F:GeoEngine.Core.GXNetX.Constant.MULTIGRID3D_DIRECTGRID_MINIMUM">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.FILTER3D_TOTAL_GRADIENT">
@@ -34868,6 +35811,36 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.Constant.H_META_INVALID_TOKEN">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.H_META_INVALID_TOKENConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.SURFACE_CLIP_BOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.SURFACE_CLIP_BELOW">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.SURFACE_CLIP_ABOVE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_FACES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_VERTICES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_SURFACE_SIDES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_SINGLE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_VECTOR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_THEMATIC">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.ATTRIBUTE_DOUBLE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.MAPTEMPLATE_EXIST">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAPTEMPLATE_OPENConstant" />.</summary>
         </member>
@@ -34977,6 +35950,9 @@ to exaggerate one scale such as Z (1,1,5).
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.MAP_EXPORT_BITS_24">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.MAP_EXPORT_BITS_32">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.DUPMAP_COPY_PRE62">
@@ -36406,7 +37382,13 @@ encoding will switch to &amp;lt;define&amp;gt;WA_ENCODE_UTF8&amp;lt;/define&amp;
             <summary>Lookup style</summary>
             <tocexclude />
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant.YES">
+        <member name="F:GeoEngine.Core.GXNetX.VV_LOGMODEConstant.LINEAR">
+            <summary>Similar to Scaled but using a smoother function. Identical to LogLinear_VV.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VV_LOGMODEConstant.CLAMPED">
+            <summary>Any values below the minimum are turned to the minimum.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VV_LOGMODEConstant.SCALED">
             <summary>
 if the data is in the range +/- minimum,
 it is left alone.  Otherwise, the data
@@ -36416,10 +37398,10 @@ sign is reapplied. Use _LogLinear_VV function
 if decades in results are required.
 </summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant.NO">
+        <member name="F:GeoEngine.Core.GXNetX.VV_LOGMODEConstant.CLIPPED">
             <summary>Dummies out value less than the minimum.</summary>
         </member>
-        <member name="T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant">
+        <member name="T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant">
             <summary>Ways to handle negatives</summary>
             <tocexclude />
         </member>
@@ -36480,6 +37462,19 @@ if decades in results are required.
         </member>
         <member name="T:GeoEngine.Core.GXNetX.VOXE_EVALConstant">
             <summary>Voxel Evaluation modes</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_EDGES">
+            <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_FILL">
+            <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_SMOOTH">
+            <summary />
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant">
+            <summary>Render Modes</summary>
             <tocexclude />
         </member>
         <member name="F:GeoEngine.Core.GXNetX.VOX_VECTORVOX_IMPORTConstant.VOX_VECTORVOX_AID">
@@ -38470,9 +39465,6 @@ intensities.
         <member name="F:GeoEngine.Core.GXNetX.RBFKERNELConstant.MULTIQUADRATIC">
             <summary>Multiquadratic</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.RBFKERNELConstant.GUASSIAN">
-            <summary>Guassian</summary>
-        </member>
         <member name="F:GeoEngine.Core.GXNetX.RBFKERNELConstant.DISTANCE">
             <summary>Distance</summary>
         </member>
@@ -38480,14 +39472,20 @@ intensities.
             <summary>Math kernel to use in the RBF Computation</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_DUMMYITEMS">
+            <summary>The number of valid (non-dummy) items found in each cell - DUMMY if no items found</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_ITEMS">
+            <summary>The number of valid (non-dummy) items found in each cell - 0 if no items found</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_MEAN">
-            <summary />
+            <summary>Select the mean of all values found in each cell</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_MAX">
-            <summary />
+        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_MAXIMUM">
+            <summary>Select the maximum value found in each cell</summary>
         </member>
-        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_MIN">
-            <summary />
+        <member name="F:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant.MULTIGRID3D_DIRECTGRID_MINIMUM">
+            <summary>Select the minimum value found in each cell</summary>
         </member>
         <member name="T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant">
             <summary>How to calculate the cell values for direct gridding.</summary>
@@ -38729,6 +39727,48 @@ intensities.
             <summary>META Invalid Token</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant.SURFACE_CLIP_BOTH">
+            <summary>Output the surface items both above &amp; below the clipper surface</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant.SURFACE_CLIP_BELOW">
+            <summary>Output the surface item below clipper surface</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant.SURFACE_CLIP_ABOVE">
+            <summary>Output the surface item above clipper surface</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant">
+            <summary>Surface Clip Mode</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant.ATTRIBUTE_FACES">
+            <summary>Faces Attribute</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant.ATTRIBUTE_VERTICES">
+            <summary>Vertices Attribute</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant.ATTRIBUTE_SURFACE_SIDES">
+            <summary>Surface Sides Attribute</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant.ATTRIBUTE_SINGLE">
+            <summary>Single Value Attribute</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant">
+            <summary>Data Type of Attribute</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant.ATTRIBUTE_VECTOR">
+            <summary>VECTOR</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant.ATTRIBUTE_THEMATIC">
+            <summary>THEMATIC</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant.ATTRIBUTE_DOUBLE">
+            <summary>DOUBLE</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant">
+            <summary>Data Type of Attribute</summary>
+            <tocexclude />
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.MAPTEMPLATE_OPENConstant.MAPTEMPLATE_EXIST">
             <summary>Create from existing template on disk</summary>
         </member>
@@ -38872,6 +39912,9 @@ Format   Description                  Type
         </member>
         <member name="F:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant._24">
             <summary>24 Bit Color</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant._32">
+            <summary>32 Bit Color (8-bit alpha)</summary>
         </member>
         <member name="T:GeoEngine.Core.GXNetX.MAP_EXPORT_BITSConstant">
             <summary>Color Types</summary>
