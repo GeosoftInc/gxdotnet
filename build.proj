@@ -3,7 +3,7 @@
    <Import Project="env.targets"/>
    
    <Target Name="Build" DependsOnTargets="SetGXDotnetEnvVariables">
-      <MSBuild Projects="examples\examples.sln" Properties="$(GXCoreBuildProperties)" BuildInParallel="true" />
+      <MSBuild Projects="$(MSBuildThisFileDirectory)examples\examples.sln" Properties="$(GXCoreBuildProperties)" BuildInParallel="true" />
    </Target>
    
    <Target Name="StartDevEnv" DependsOnTargets="SetGXDotnetEnvVariables">
