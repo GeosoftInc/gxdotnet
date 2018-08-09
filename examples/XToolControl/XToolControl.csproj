@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>XToolControl</RootNamespace>
     <AssemblyName>XToolControl</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>$(DotNetTargetFrameworkVersion)</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -57,19 +57,19 @@
       <HintPath>..\..\x86_references\geoengine.core.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geoengine.core.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="geoengine.core.gxnetx" Condition="'$(Platform)' == 'x86'">
       <HintPath>..\..\x86_references\geoengine.core.gxnetx.dll</HintPath>
     </Reference>
     <Reference Include="geoengine.core.gxnetx" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnetx.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geoengine.core.gxnetx.dll</HintPath>
     </Reference>
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x86'">
       <HintPath>..\..\x86_references\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geosoft.desktop.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

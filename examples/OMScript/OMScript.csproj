@@ -24,7 +24,7 @@
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>$(DotNetTargetFrameworkVersion)</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -53,10 +53,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="geoengine.core.gxnet">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geoengine.core.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="geosoft.desktop.gxnet">
-      <HintPath>$(GeosoftBinFolder)\geosoft.desktop.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>

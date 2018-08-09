@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NewGDB</RootNamespace>
     <AssemblyName>NewGDB</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>$(DotNetTargetFrameworkVersion)</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -67,16 +67,16 @@
       <HintPath>..\..\x86_references\Geosoft.GX.Controls.dll</HintPath>
     </Reference>
     <Reference Include="geoengine.core.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geoengine.core.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geoengine.core.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="GeoEngine.Core.Managed" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\GeoEngine.Core.Managed.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\GeoEngine.Core.Managed.dll</HintPath>
     </Reference>
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\geosoft.desktop.gxnet.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="Geosoft.GX.Controls" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(GeosoftBinFolder)\Geosoft.GX.Controls.dll</HintPath>
+      <HintPath>$(DeskRefFolder)\Geosoft.GX.Controls.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
