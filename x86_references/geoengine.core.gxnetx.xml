@@ -4,6 +4,29 @@
         "geoengine.core.gxnetx"
     </assembly>
     <members>
+        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
             <summary>Fire the General Information Message delegate event.</summary>
             <param name="Class">Message Class</param>
@@ -118,29 +141,6 @@ framework which will supports persistance through CMETA.
         <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
             <summary>Change the current projection.</summary>
             <param name="IPJ">Projection</param>
-        </member>
-        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -703,13 +703,14 @@ if the value is dummy or outside of the range of data.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CVV.ReSample(System.Double,System.Double,System.Double,System.Double,System.Int32)">
+        <member name="M:GeoEngine.Core.GXNetX.CVV.ReSample(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32)">
             <summary>Resamples a VV from one fid/incr to another fid/incr.</summary>
             <param name="d1">Current start fid</param>
             <param name="d2">Current increment</param>
             <param name="d3">New fid start</param>
             <param name="d4">New fid increment</param>
             <param name="i5">New length</param>
+            <param name="i6">This parameter is not used</param>
             <available_version>5.1.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -3094,28 +3095,6 @@ serialize using EndGenerateBySubsetPG_VOX
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CVOX.GenerateConstantValueVV(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Int32,System.Double,System.Double,System.Double,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CIPJ,GeoEngine.Core.GXNetX.CMETA)">
-            <summary>Generate a VOX with a constant value, cells sizes passed in VVs.</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="str1">Name of output VOX</param>
-            <param name="d2">The Value to use</param>
-            <param name="i3">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
-            <param name="d4">Origin X</param>
-            <param name="d5">Origin Y</param>
-            <param name="d6">Origin Z</param>
-            <param name="oVV7">Cell Sizes X</param>
-            <param name="oVV8">Cell Sizes Y</param>
-            <param name="oVV9">Cell Sizes Z</param>
-            <param name="oIPJ10">Projection</param>
-            <param name="oMETA11">Metadata</param>
-            <returns>VOX Object</returns>
-            <available_version>8.4</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.CVOX.GeneratePGVV(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CPG,System.Double,System.Double,System.Double,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CIPJ,GeoEngine.Core.GXNetX.CMETA)">
             <summary>Generate a VOX from a 3D Pager, cells sizes passed in VVs.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -3132,31 +3111,6 @@ serialize using EndGenerateBySubsetPG_VOX
             <remarks>The input cell size VVs' lengths must match the input PG dimensions.</remarks>
             <returns>VOX Object</returns>
             <available_version>8.0</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CVOX.GenerateConstantValue(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Int32,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ,GeoEngine.Core.GXNetX.CMETA)">
-            <summary>Generate a VOX with a constant value</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="str1">Name of output VOX</param>
-            <param name="d2">Value to use</param>
-            <param name="i3">&amp;lt;define&amp;gt;GS_TYPES&amp;lt;/define&amp;gt;</param>
-            <param name="d4">Origin X</param>
-            <param name="d5">Origin Y</param>
-            <param name="d6">Origin Z</param>
-            <param name="d7">Cell Size X</param>
-            <param name="d8">Cell Size Y</param>
-            <param name="d9">Cell Size Z</param>
-            <param name="i10">Cell Count X</param>
-            <param name="i11">Cell Count Y</param>
-            <param name="i12">Cell Count Z</param>
-            <param name="oIPJ13">Projection</param>
-            <param name="oMETA14">Metadata</param>
-            <returns>VOX Object</returns>
-            <available_version>8.4</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -16937,10 +16891,10 @@ The Z and Data channels may be array channels. If they are, the array sizes must
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="str1">Name of output VOX</param>
             <param name="str2">Name of input SEG Y file</param>
-            <available_version>9.4</available_version>
-            <licensed_method>no</licensed_method>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
-            <public_method>yes</public_method>
+            <public_method>no</public_method>
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
@@ -18145,6 +18099,19 @@ x  - Data Value
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.DoesSurfaceSelfIntersect(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Checks if a surface self-intersects</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Geosurface file</param>
+            <param name="str2">Primary Surface Name within Geosurface File</param>
+            <returns>Returns 1 if surface self intersects, 0 if surface has no self-intersections</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.DoesSurfaceIntersect(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String)">
             <summary>Checks if the two surfaces intersect at all</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -18236,14 +18203,15 @@ x  - Data Value
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithPolygon2d(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Int32)">
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithPolygon2d(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.Int32)">
             <summary>Clip a Surface a specified Polygon file</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="str1">Input Geosurface file</param>
             <param name="str2">Input Surface name within Geosurface file</param>
             <param name="str3">Polygon File</param>
             <param name="str4">Output Surface file</param>
-            <param name="i5">Set true if the values inside polygon are to be masked</param>
+            <param name="str5">Output Surface name</param>
+            <param name="i6">Set true if the values inside polygon are to be masked</param>
             <available_version>9.5</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -18251,18 +18219,19 @@ x  - Data Value
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ClipSurfaceWithExtents(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>Clip a Surface with X,Y,Z extents</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="str1">Input Geosurface file</param>
             <param name="str2">Input Surface name within Geosurface file</param>
             <param name="str3">Output Surface file</param>
-            <param name="d4">Min value of X</param>
-            <param name="d5">Max value of X</param>
-            <param name="d6">Min value of Y</param>
-            <param name="d7">Max value of Y</param>
-            <param name="d8">Min value of Z</param>
-            <param name="d9">Max value of Z</param>
+            <param name="str4">Output Surface name</param>
+            <param name="d5">Min value of X</param>
+            <param name="d6">Max value of X</param>
+            <param name="d7">Min value of Y</param>
+            <param name="d8">Max value of Y</param>
+            <param name="d9">Min value of Z</param>
+            <param name="d10">Max value of Z</param>
             <available_version>9.5</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -18281,6 +18250,19 @@ x  - Data Value
             <param name="str6">Name of Surface Item above grid - required for mode=CLIP_ABOVE and CLIP_BOTH</param>
             <param name="str7">Name of Surface Item below grid - required for mode=CLIP_BELOW and CLIP_BOTH</param>
             <param name="i8">&amp;lt;define&amp;gt;SURFACE_CLIP_MODE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ImportGridToSurface(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String)">
+            <summary>Imports a Grid to a Surface</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Grid File Name</param>
+            <param name="str2">Surface File Name</param>
+            <param name="str3">Surface Item Name within the file</param>
             <available_version>9.5</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -30939,13 +30921,16 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXE_EVAL_NEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXE_EVALConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_SMOOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_FILL_EDGES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_EDGES">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_FILL">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
-        </member>
-        <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOXELRENDER_SMOOTH">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.VOX_VECTORVOX_AID">
@@ -34092,13 +34077,16 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOXE_EVAL_NEAR">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXE_EVALConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_SMOOTH">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_FILL_EDGES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_EDGES">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_FILL">
-            <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
-        </member>
-        <member name="F:GeoEngine.Core.GXNetX.Constant.VOXELRENDER_SMOOTH">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.VOX_VECTORVOX_AID">
@@ -37464,14 +37452,17 @@ if decades in results are required.
             <summary>Voxel Evaluation modes</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_SMOOTH">
+            <summary>Trilinear interpolation</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_FILL_EDGES">
+            <summary>Render both voxel cells and wireframe</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_EDGES">
-            <summary />
+            <summary>Render wireframe only</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_FILL">
-            <summary />
-        </member>
-        <member name="F:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant.VOXELRENDER_SMOOTH">
-            <summary />
+            <summary>Render voxel cells</summary>
         </member>
         <member name="T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant">
             <summary>Render Modes</summary>

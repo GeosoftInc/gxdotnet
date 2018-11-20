@@ -7947,28 +7947,6 @@ opportunity to do so the first time a script is run.
    
 </summary>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iMultipleArrayChannelProfileViewer(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String@,System.String@,System.String@,System.String@)">
-            <summary>
-View up to 3 array channel profiles. The first channel's array base properties are
-				used for all three (scaling, array base properties for the X-axis).
-</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="oDB1">DB obj</param>
-            <param name="str2">Selected line</param>
-            <param name="str3">Master array channel (can be empty on input)</param>
-            <param name="str4">Second array channel (optional)</param>
-            <param name="str5">Third array channel (optional)</param>
-            <returns>
-0 - OK
--1 - Cancel
-</returns>
-            <available_version>9.4</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>yes</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.Show3DViewerDialog(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
             <summary>Display a standalone 3D viewer</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -8221,6 +8199,33 @@ parent to ensure the dialog is correctly modal.
             <app_method>yes</app_method>
             <public_method>yes</public_method>
             <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.LaunchVAViewMultipleTool(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Launch the coincident array channel viewer.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Database name</param>
+            <param name="str2">Line name (can be blank)</param>
+            <param name="str3">Master Channel name (can be blank)</param>
+            <param name="str4">Channel 2 name (can be blank)</param>
+            <param name="str5">Channel 3 name (can be blank)</param>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iVAViewMultipleToolExists(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>See if there is a Multiple Array Channel viewer already open.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <remarks>See if there is a Multiple Array Channel viewer already open.</remarks>
+            <returns>0 if not open, 1 if open</returns>
+            <available_version>9.5</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoXToolEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,GeoEngine.Core.GXNetX.CMETA,System.Int32,System.Int32,System.Int32,System.Int32)">
@@ -8595,6 +8600,37 @@ The pattern Angle and Style parameters are not user-definable.
             <summary>Change the Internet Trust Relationships</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CREG)">
+            <summary>Generate a template file for importing drill holes where type is known</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="str1">Data file name</param>
+            <param name="str2">Template to make</param>
+            <param name="str3">Name of table</param>
+            <param name="i4">Type of import &amp;lt;define&amp;gt;DH_DATA&amp;lt;/define&amp;gt;</param>
+            <param name="oREG5">Drill Hole Object REG handle</param>
+            <available_version>9.5</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CREG)">
+            <summary>Generate a template file for importing drill holes where type is known</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Data file name</param>
+            <param name="str2">Template to make</param>
+            <param name="str3">Name of table</param>
+            <param name="i4">Type of import &amp;lt;define&amp;gt;DH_DATA&amp;lt;/define&amp;gt;</param>
+            <param name="oREG5">Drill Hole Object REG handle</param>
+            <available_version>9.5</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>yes</app_method>
             <public_method>no</public_method>
