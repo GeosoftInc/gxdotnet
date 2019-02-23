@@ -4,29 +4,6 @@
         "geoengine.core.gxnetx"
     </assembly>
     <members>
-        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
             <summary>Fire the General Information Message delegate event.</summary>
             <param name="Class">Message Class</param>
@@ -141,6 +118,29 @@ framework which will supports persistance through CMETA.
         <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
             <summary>Change the current projection.</summary>
             <param name="IPJ">Projection</param>
+        </member>
+        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -3780,6 +3780,24 @@ if the value is dummy or outside of the range of data.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CVA.RangeColumns(System.Int32,System.Int32,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)">
+            <summary>
+Computes the minimum and maximum range of the data for individual columns, in doubles,
+for a range of columns and rows.
+</summary>
+            <param name="i1">Starting row (0 to nRows-1)</param>
+            <param name="i2">Starting column (0 to nColumns-1</param>
+            <param name="i3">Number of rows (-1 for all from start)</param>
+            <param name="i4">Number of columns (-1 for all from start)</param>
+            <param name="oVV5">Minimum values returned:`VV` object - GS_REAL</param>
+            <param name="oVV6">Maximum values returned:`VV` object - GS_REAL</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CVA.RangeDouble(System.Double@,System.Double@)">
             <summary>
 Computes the minimum and maximum range of the data, in doubles,
@@ -3788,6 +3806,24 @@ in a vector while ignoring dummies.
             <param name="d1">Minimum value - returned</param>
             <param name="d2">Maximum value - returned</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CVA.Range(System.Int32,System.Int32,System.Int32,System.Int32,System.Double@,System.Double@)">
+            <summary>
+Computes the minimum and maximum range of the data, in doubles,
+in a vector while ignoring dummies, for a range of columns and rows.
+</summary>
+            <param name="i1">Starting row (0 to nRows-1)</param>
+            <param name="i2">Starting column (0 to nColumns-1</param>
+            <param name="i3">Number of rows (-1 for all from start)</param>
+            <param name="i4">Number of columns (-1 for all from start)</param>
+            <param name="d5">Minimum value - returned</param>
+            <param name="d6">Maximum value - returned</param>
+            <available_version>9.6</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -4310,6 +4346,16 @@ changing the extents and projection data
 1 - Yes
 </returns>
             <available_version>7.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CUSERMETA.SetXMLFormat(System.Int32)">
+            <summary>Get the XML Format</summary>
+            <param name="i1">&amp;lt;define&amp;gt;USERMETA_FORMAT&amp;lt;/define&amp;gt;</param>
+            <available_version>9.6</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -5190,6 +5236,20 @@ Empty the user string if no default is needed.
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
             <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>User Interaction</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iTestingSystemMode(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Checks to see if the GX is running in the Geosoft testing system.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <returns>
+0 - Normal operation
+1 - Running in the Geosoft testing system.
+</returns>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
             <public_method>yes</public_method>
             <extended_method>no</extended_method>
             <method_group>User Interaction</method_group>
@@ -6468,6 +6528,17 @@ guarantee all grid files besides the main one are copied.
             <extended_method>no</extended_method>
             <method_group>Licensing</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.CheckProductUpdates(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32)">
+            <summary>Check for product updates via Geosoft Connect</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="i1">Do not show notification if no updates available.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CSYS.SignIn(GeoEngine.Core.GXNetX.CGXNETCore)">
             <summary>Sign in via Geosoft Connect</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -7605,6 +7676,18 @@ the GX would terminate before it could be called.
 Use iNumErrorsAP_SYS to get the number of registered errors.
 </remarks>
             <available_version>6.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Error Handling</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iGetErrorAP(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32)">
+            <summary>Get the error number of an error.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="i1">The error index (0 to N-1, where N=number of registered errors)</param>
+            <returns>The error number registered, 0 if none registered.</returns>
+            <available_version>9.6</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -9634,6 +9717,484 @@ accumulate statistics.
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.ExportVoxelAndDatabase(System.String,System.String)">
+            <summary>Exports contents of SEG Y file to voxel and/or database.</summary>
+            <param name="str1">Output voxel file name</param>
+            <param name="str2">Output database file name</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.ResetTiePoints">
+            <summary>Discard user-supplied tie points and auto-choose new ones..</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.RecalculateGeoreferencing">
+            <summary>Recalculate georeferencing; call after configuration has changed.</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetTiePoint(System.Int32,System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>Set the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</summary>
+            <param name="i1">Tie point index.</param>
+            <param name="d2">x-coordinate</param>
+            <param name="d3">inline-coordinate</param>
+            <param name="i4">Tie point index.</param>
+            <param name="i5">crossline-coordinate</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetNumTiePoints(System.Int32)">
+            <summary>Get the number of tie points.</summary>
+            <param name="i1">Number of tie points</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTiePoint(System.Int32,System.Double@,System.Double@,System.Int32@,System.Int32@)">
+            <summary>Return  the currently-active tie points. If SetTiePoints() has not already been called, then the returned points will be the automatically-selected ones.</summary>
+            <param name="i1">Tie point index.</param>
+            <param name="d2">x-coordinate</param>
+            <param name="d3">inline-coordinate</param>
+            <param name="i4">Tie point index.</param>
+            <param name="i5">crossline-coordinate</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetNumTiePoints">
+            <summary>Get the number of tie points.</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetGeoreferencing(GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Sets the georeferencing of the voxel that would be exported with the current configuration.</summary>
+            <param name="oIPJ1" />
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetGeoreferencing">
+            <summary>Returns the georeferencing of the voxel that would be exported with the current configuration.</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetUserVoxelCellSizeXY(System.Double,System.Double)">
+            <summary>Set the XY cell size of the voxel that would be exported with the current configuration.</summary>
+            <param name="d1">Voxel cell size along X</param>
+            <param name="d2">Voxel cell size along Y</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetAutoVoxelCellSizeXY">
+            <summary>Set the XY cell size of the voxel that would be exported to the dimensions calculated from the tie points..</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetVoxelCellSize(System.Double@,System.Double@,System.Double@)">
+            <summary>Get the cell size of the voxel that would be exported with the current configuration.</summary>
+            <param name="d1">Voxel cell size along X</param>
+            <param name="d2">Voxel cell size along Y</param>
+            <param name="d3">Voxel cell size along Z</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetVoxelDimensions(System.Int32@,System.Int32@,System.Int32@)">
+            <summary>Get the size of the voxel that would be exported with the current configuration.</summary>
+            <param name="i1">Voxel size along X</param>
+            <param name="i2">Voxel size along Y</param>
+            <param name="i3">Voxel size along Z</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceCount(System.Int32@)">
+            <summary>Get the number of traces in the SEG Y file</summary>
+            <param name="i1">Trace count</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetFieldConfiguration(GeoEngine.Core.GXNetX.CLTB)">
+            <summary>Sets the interpretation of the fields in the SEG Y file, and specifies which fields should be exported to GDB.</summary>
+            <param name="oLTB1">LTB following the same format as returned by `GetFieldConfiguration()`.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetFieldConfiguration">
+            <summary>Returns information on the data in the trace headers.</summary>
+            <returns>:class:'LTB' containing trace header information</returns>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.ScanFile">
+            <summary>Scans the SEG Y file, and attempts to guess the layout.</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZOffset(System.Double@)">
+            <summary>Returns the z-offset (time delay) of the trace data. Positive values correspond to a deeper top-of-trace; negative values to a higher top-of-trace.</summary>
+            <param name="d1">The z offset/time delay</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetZOffsetConfiguration(System.String,System.Int32,System.Double)">
+            <summary>Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Which header contains the z offset: "file_header", "trace_header" or "none"</param>
+            <param name="i2">If `which_header` is "file_header" or "trace_header", then this parameter is the offset of the field. If `which_header` is "none", then this parameter is ignored.</param>
+            <param name="d3">If `which_header` is "file_header" or "trace_header", then this parameter is ignored. If `which_header` is "none", then this parameter is the z offset.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZOffsetConfiguration(System.String@,System.Int32@)">
+            <summary>Specifies where the z-offset (time delay) comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Out-parameter indicating which header contains the z offset: "file_header" "trace_header", or "none"</param>
+            <param name="i2">Out-parameter containing the byte offset of the field within the header (if applicable)</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetSampleInterval(System.Double@)">
+            <summary>Returns the sample interval of the trace data.</summary>
+            <param name="d1">output parameter for sample interval</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetSampleIntervalConfiguration(System.String,System.Int32,System.Double)">
+            <summary>Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Which header contains the sample interval: "file_header", "trace_header" or "none"</param>
+            <param name="i2">If `which_header` is "file_header" or "trace_header", then this parameter is the offset of the field containing the sample interval. If `which_header` is "none", thenthis parameter is ignored.</param>
+            <param name="d3">If `which_header` is "file_header" or "trace_header", then this parameter is ignored. If `which_header` is "none", thenthis parameter is the sample interval.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetSampleIntervalConfiguration(System.String@,System.Int32@)">
+            <summary>Specifies where the sample interval comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Out-parameter indicating which header contains the trace length: "file_header" "trace_header", or "none"</param>
+            <param name="i2">Out-parameter containing the byte offset of the field within the header (if applicable)</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceLength">
+            <summary>Returns the number of data samples per trace.</summary>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetTraceLengthConfiguration(System.String,System.Int32)">
+            <summary>Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Which header contains the trace length: "file_header", "trace_header" or "none"</param>
+            <param name="i2">If `which_header` is "file_header" or "trace_header", then this parameter is the offset of the field containing the trace length. If `which_header` is "none", then this parameter is the actual trace length.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceLengthConfiguration(System.String@,System.Int32@)">
+            <summary>Specifies where the trace length comes from: can be a field in the binary file header, a field in the trace header, or a value specified by the user.</summary>
+            <param name="str1">Out-parameter indicating which header contains the trace length: "file_header" "trace_header", or "none"</param>
+            <param name="i2">Out-parameter containing the byte offset of the field within the header (if applicable)</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetTraceDataType(System.String)">
+            <summary>Set the data type of the trace data. This must match one of the names returned by `GetTraceDataTypeName()`</summary>
+            <param name="str1">The name of data type.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataType(System.String@)">
+            <summary>Get the data type of the trace data. This will match one of the names rfeturned by `GetTraceDataTypeName()`</summary>
+            <param name="str1">The name of data type.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataTypeDisplayName(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@)">
+            <summary>Get a string, suitable for displaying to the user, describing the type returned by passing the same `index` value to `GetTraceDataTypeName()`</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="i1">Which name to return.</param>
+            <param name="str2">The display name of a supported data type.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataTypeName(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@)">
+            <summary>Get the name of one of the available data types. These are the names used as identifiers in this API. To get a name suitable for displaying to the user, use `GetTraceDataTypeDisplayName() instead.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="i1">Which name to return. Call this function  for each value between 0 and the value returned by `GetNumTraceTypes()` to get a full list of the available types.</param>
+            <param name="str2">The name of a supported data type.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetNumTraceDataTypes(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Returns the number of supported trace data types.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetBinaryHeader">
+            <summary>Get the SEG Y file's binary header.</summary>
+            <returns>:class:'LTB' containing three columns: the field name, offset, and value. The value column will be in text form, suitable for display to the end user.</returns>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTextHeader(System.String@)">
+            <summary>Get the SEG Y file's text header.</summary>
+            <param name="str1">The text header contents.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.ListTraceHeaderFields(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Returns the names and offsets of the fields in the trace header.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.ListBinaryHeaderFields(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Returns the names and offsets of the fields in the binary header.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.HasSaneSetup(System.String@)">
+            <summary>Returns true if reader has a valid configuration and passes some basic sanity checks. If this function returns false, `Export()` will not run and some of the getters may return garbage values.</summary>
+            <param name="str1">A string, suitable for displaying to the user, indicating why the configuration is not valid. (Ignore this string if the function returns true.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetLastSampleAt(System.Double@)">
+            <summary>Returns the depth of the last sample in the traces, in the units specified by `SetZUnits()`</summary>
+            <param name="d1">Out-parameter containing the depth of the last sample in the traces.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetZOffsetUnits(System.String)">
+            <summary>Set the units that the z-offset is in.</summary>
+            <param name="str1">The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZOffsetUnits(System.String@)">
+            <summary>Get the currently-specified units for the z offset.</summary>
+            <param name="str1">List of possible z-units,separated by newlines</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetZUnits(System.String)">
+            <summary>Set the z-units.</summary>
+            <param name="str1">The Z units. Must be one of the strings returned by `GetPossibleZUnits()`.</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZUnits(System.String@)">
+            <summary>Get the currently-specified z-units.</summary>
+            <param name="str1">List of possible z-units,separated by newlines</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetPossibleZUnits(System.String@)">
+            <summary>Get a list of the possible values that can be passed to `SetZUnits()`. The values returned by this function depend on what the z-type is set to.</summary>
+            <param name="str1">List of possible z-units,separated by newlines</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZType(System.String@)">
+            <summary>Indicate if the z-dimension is time or depth.</summary>
+            <param name="str1">Either "DEPTH" or "TIME".</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.SetZType(System.String)">
+            <summary>Specify if the z-dimension is time or depth.</summary>
+            <param name="str1">Either "DEPTH" or "TIME".</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSEGYREADER.OpenFile(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Opens a 3D SEG Y file.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">File name</param>
+            <returns>SEGYREADER handle, terminates if creation fails.</returns>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CSEGYREADER">
+            <summary>
+
+       Convert 3D SEG Y files to voxel or database.
+   
+</summary>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CSBF.SaveLog(System.String,System.String,System.String,System.Int32)">
             <summary>Save an embedded file to an ASCII file.</summary>
             <param name="str1">Directory name in the Parent SBF</param>
@@ -10189,6 +10750,23 @@ be removed.
             <summary>Get the PLY description string</summary>
             <param name="str1">Polygon description</param>
             <available_version>5.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CPLY.iClipPoint(System.Double,System.Double)">
+            <summary>
+Clips a point in or out of the polygon.
+Point is inside: &amp;lt;define&amp;gt;PLY_POINT_CLIP_INSIDE&amp;lt;/define&amp;gt;
+Point is outside: &amp;lt;define&amp;gt;PLY_POINT_CLIP_OUTSIDE&amp;lt;/define&amp;gt;
+An error occurred: &amp;lt;define&amp;gt;PLY_POINT_CLIP_ERROR&amp;lt;/define&amp;gt;
+</summary>
+            <param name="d1">Point X</param>
+            <param name="d2">Point Y</param>
+            <returns>&amp;lt;define&amp;gt;PLY_POINT_CLIP&amp;lt;/define&amp;gt;</returns>
+            <available_version>9.6</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -16886,18 +17464,6 @@ The Z and Data channels may be array channels. If they are, the array sizes must
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ImportFromSegy(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
-            <summary>Imports a MultiVoxset from a SEG Y File</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="str1">Name of output VOX</param>
-            <param name="str2">Name of input SEG Y file</param>
-            <available_version>9.5</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>no</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ListPropertiesGOCAD(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CLST)">
             <summary>List all the properties available in this GOCAD file.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -18098,6 +18664,22 @@ x  - Data Value
        other Oasis montaj processes.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.ExtractIsosurfaceFromVoxel(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.Double,System.Double,System.Int32)">
+            <summary>Extracts isosurface from a voxel, and saves the voxel to a Geosurface file</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Voxel file</param>
+            <param name="str2">Geosurface file</param>
+            <param name="str3">Surface name within geosurface file</param>
+            <param name="d4">Minimum/higher value</param>
+            <param name="d5">Maximum/lower value</param>
+            <param name="i6">Closed option - create a closed surface?</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMESHUTIL.DoesSurfaceSelfIntersect(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
             <summary>Checks if a surface self-intersects</summary>
@@ -19893,6 +20475,23 @@ The layer name is optional
             <public_method>yes</public_method>
             <extended_method>no</extended_method>
             <method_group>3D View</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMAP.RenderViewBitmap(GeoEngine.Core.GXNetX.CMVIEW,System.Int32,System.Double,System.Double,System.Double,System.Double,System.String,System.Int32)">
+            <summary>Render a map view to a bitmap.</summary>
+            <param name="oMVIEW1">MVIEW object</param>
+            <param name="i2">group (-1 for all)</param>
+            <param name="d3">MinX</param>
+            <param name="d4">MinY</param>
+            <param name="d5">MaxX</param>
+            <param name="d6">MaxY</param>
+            <param name="str7">File to generate (BMP or PNG, otherwise extension forced to BMP)</param>
+            <param name="i8">Maximum resolution in either direction, -1 for none (will change the pixel density of image if exceeded)</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Export</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAP.RenderBitmap(System.String,System.Double,System.Double,System.Double,System.Double,System.String,System.Int32)">
             <summary>Render a map to a bitmap.</summary>
@@ -23226,6 +23825,39 @@ up to X2,Y2 at the specified separation.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CIMU.PigeonHoleColor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG,GeoEngine.Core.GXNetX.CIMG,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CITR,System.Int32@)">
+            <summary>Pigeon-hole and count points by location and color locations in another grid based on ITR information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="oIMG1">Input grid</param>
+            <param name="oIMG2">Input color grid</param>
+            <param name="oVV3">X locations</param>
+            <param name="oVV4">Y locations</param>
+            <param name="oITR5">Input color transform</param>
+            <param name="i6">Number of points located in the grid.</param>
+            <remarks>
+X and Y location VVs are input. If a point (X, Y) is located within
+              one-half cell width from a location in the grid, then the value of
+              the grid at that location is incremented by 1.
+              The cells are inclusive at the minima, and exclusive at the maxima:
+              e.g. if dDx = dDy = 1, and dXo = dYo = 0, then the corner cell would
+              accept values  -0.5 &lt;= X &lt; 0.5 and -0.5 &lt;= Y &lt; 0.5.
+              The grid values should be set to 0 before calling this function.
+
+				The color grid locations are coloured by the number of items at each location,
+				with the colour being determined by the input ITR, which should map the integer
+				count values 1, 2, 3, etc. onto individual colours.				
+
+              The number of points "pigeon-holed" is returned to the user.
+              This function is useful, for instance, in determining the density of
+              sample locations in a survey area.
+</remarks>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CIMU.PigeonHole(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Int32@)">
             <summary>Pigeon-hole and count points by location into a grid.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -26172,21 +26804,6 @@ creation of new maps with 2D views.
        interpretations drawn on section maps. Both polygon and polyline features can be 
        stored in the same file. This API currently only provides read access, 
        but read/write support could be added in the future.
-   
-</summary>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGEOSOFT">
-            <summary>
-
-       This is not a class but a collection of global defines. It
-       is used by all functions.
-   
-</summary>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGEO">
-            <summary>
-
-       GEO Utility functions
    
 </summary>
         </member>
@@ -31839,6 +32456,15 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.PLY_LINE_CLIP_INSIDE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_LINE_CLIPConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.PLY_POINT_CLIP_ERROR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.PLY_POINT_CLIP_OUTSIDE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.IntConstants.PLY_POINT_CLIP_INSIDE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.IntConstants.PLY_CLIP_B_IN_A">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_CLIPConstant" />.</summary>
         </member>
@@ -34994,6 +35620,15 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.PLY_LINE_CLIP_INSIDE">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_LINE_CLIPConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.PLY_POINT_CLIP_ERROR">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.PLY_POINT_CLIP_OUTSIDE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.Constant.PLY_POINT_CLIP_INSIDE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.Constant.PLY_CLIP_B_IN_A">
             <summary>See <see cref="T:GeoEngine.Core.GXNetX.PLY_CLIPConstant" />.</summary>
@@ -38599,11 +39234,24 @@ contains user read/write files.
             <summary>Polygon line clip indicator</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant.ERROR">
+            <summary>An error occurred</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant.OUTSIDE">
+            <summary>The point is outside the polygon</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant.INSIDE">
+            <summary>The point is inside the polygon</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant">
+            <summary>Polygon point clipping mode</summary>
+            <tocexclude />
+        </member>
         <member name="F:GeoEngine.Core.GXNetX.PLY_CLIPConstant.B_IN_A">
-            <summary>Polygon B is completly inside polygon A</summary>
+            <summary>Polygon B is completely inside polygon A</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.PLY_CLIPConstant.A_IN_B">
-            <summary>Polygon A is completly inside polygon B</summary>
+            <summary>Polygon A is completely inside polygon B</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNetX.PLY_CLIPConstant.INTERSECT">
             <summary>The polygons do intersect</summary>

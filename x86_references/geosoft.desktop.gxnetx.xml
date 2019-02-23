@@ -1622,7 +1622,7 @@ input VV lengths.
         <member name="M:Geosoft.Desktop.GXNetX.CVVEXP.DoFormula(System.String,System.Int32)">
             <summary>This method runs a formula on the grids.</summary>
             <param name="str1">Formula</param>
-            <param name="i2">Max. Buff size</param>
+            <param name="i2">Legacy parameter, no longer used.</param>
             <available_version>6.2</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
@@ -5659,7 +5659,7 @@ the value of one or more of its four neighouring points.
         <member name="M:Geosoft.Desktop.GXNetX.CPGEXP.DoFormula(System.String,System.Int32)">
             <summary>This method runs a formula on the pagers.</summary>
             <param name="str1">Formula</param>
-            <param name="i2">Max. Buff size</param>
+            <param name="i2">Legacy parameter, no longer used.</param>
             <available_version>7.1</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
@@ -7778,7 +7778,7 @@ the HTTP protocol and not require a password.
         <member name="M:Geosoft.Desktop.GXNetX.CIEXP.DoFormula(System.String,System.Int32)">
             <summary>This method runs a formula on the grids.</summary>
             <param name="str1">Formula</param>
-            <param name="i2">Max. Buff size</param>
+            <param name="i2">Legacy parameter, no longer used.</param>
             <available_version>5.0</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
@@ -8199,33 +8199,6 @@ parent to ensure the dialog is correctly modal.
             <app_method>yes</app_method>
             <public_method>yes</public_method>
             <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.LaunchVAViewMultipleTool(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String)">
-            <summary>Launch the coincident array channel viewer.</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="str1">Database name</param>
-            <param name="str2">Line name (can be blank)</param>
-            <param name="str3">Master Channel name (can be blank)</param>
-            <param name="str4">Channel 2 name (can be blank)</param>
-            <param name="str5">Channel 3 name (can be blank)</param>
-            <available_version>9.5</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>yes</app_method>
-            <public_method>no</public_method>
-            <extended_method>yes</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iVAViewMultipleToolExists(GeoEngine.Core.GXNetX.CGXNETCore)">
-            <summary>See if there is a Multiple Array Channel viewer already open.</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <remarks>See if there is a Multiple Array Channel viewer already open.</remarks>
-            <returns>0 if not open, 1 if open</returns>
-            <available_version>9.5</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>no</public_method>
-            <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoXToolEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,GeoEngine.Core.GXNetX.CMETA,System.Int32,System.Int32,System.Int32,System.Int32)">
@@ -11978,7 +11951,7 @@ Reduction to magnetic pole (RedPol_FFT) and downward continuation
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="oDB1">Database Object</param>
             <param name="str2">Expression using channel names</param>
-            <param name="i3">Maximum size of expression after expanding all local variables (those with $ prefix).</param>
+            <param name="i3">Legacy parameter, no longer used.</param>
             <remarks>
 Expressions are strings that contain C-like math to be
 applied to channels in a database.  For example, following
@@ -14596,6 +14569,16 @@ profiles (&amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;) are ignored
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDB.ProfileRescaleAll(System.Int32)">
+            <summary>Rescale all profiles in a selected window in both X and Y, based on current scaling selections</summary>
+            <param name="i1">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CEDB.SetProfileRangeY(System.Int32,System.Int32,System.Double,System.Double,System.Int32)">
             <summary>Set profile Y range and display option</summary>
             <param name="i1">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
@@ -15476,6 +15459,30 @@ devoted to the profiles, use the SetSplit_EDB and rGetSplit_EDB functions.
             <param name="d2">Maximum x</param>
             <param name="i3">X axis channel, &amp;lt;define&amp;gt;NULLSYMB&amp;lt;/define&amp;gt; if none</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDB.SetProfileXAxisOptions(System.Int32,System.Int32,System.Double)">
+            <summary>Set profile X-axis options</summary>
+            <param name="i1">Auto rescale X-axis</param>
+            <param name="i2">render vertical grid lines</param>
+            <param name="d3">vertical lines interval</param>
+            <available_version>9.5.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDB.GetProfileXAxisOptions(System.Int32@,System.Int32@,System.Double@)">
+            <summary>Get profile X-axis options</summary>
+            <param name="i1">Auto rescale X-axis</param>
+            <param name="i2">render vertical grid lines</param>
+            <param name="d3">vertical lines interval</param>
+            <available_version>9.5.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>yes</app_method>
             <public_method>yes</public_method>
@@ -19581,6 +19588,34 @@ equal to the azimuth of the normal vector plus
        Datamine Multiple polygon object
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDH.NavigateToMXDeposit(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Navigate to MX Deposit portal</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Selection Type</param>
+            <param name="str2">Selection ID</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDH.GetMXDepositRightsInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <summary>Get MX Deposit Service API information via Geosoft ID rights.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="i1">Does Geosoft ID have rights to access MX Deposit?</param>
+            <param name="str2">Base URL</param>
+            <param name="str3">API Version Prefix</param>
+            <param name="str4">API Key</param>
+            <param name="str5">User Key</param>
+            <param name="str6">Database ID</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CDH.SurfaceIntersections(GeoEngine.Core.GXNetX.CDB,System.String,System.Int32)">
             <summary>Determine intersections of drillholes with a surface.</summary>
@@ -23885,6 +23920,47 @@ relative/absolute paths depends on it.
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CARCPY.AddError(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Add error message to output of current script</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Message</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CARCPY.AddWarning(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Add warning message to output of current script</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Message</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CARCPY.AddMessage(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Add informational message to output of current script</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="str1">Message</param>
+            <available_version>9.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.CARCPY">
+            <summary>
+
+       This library allows legacy GX code to call back into 
+       arcpy methods in the Geosoft AddIn for ArcGIS Pro.
+   
+</summary>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CARCMAP.GetIPJForPredefinedEsriPCS(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIPJ,System.Int32)">
             <summary>Fills an IPJ with a predefined ESRI PCS</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -24549,6 +24625,41 @@ If Z or M values are supported by the table geometry the strings
        data sources and layers.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CACQUIRE.GetSelectionInfo(System.String,System.Int32@,System.Int32@)">
+            <summary>Get some information from existing selection file.</summary>
+            <param name="str1">Selection File Name</param>
+            <param name="i2">&amp;lt;define&amp;gt;ACQUIRE_SEL&amp;lt;/define&amp;gt;</param>
+            <param name="i3">
+0 - Destination grid was not selected
+1 - Destination grid was selected
+</param>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CACQUIRE.iSelectionToolForceGridSelection(System.String,System.Int32)">
+            <summary>Run the acQuire Selection Tool, but force selection of destination grid.</summary>
+            <param name="str1">Selection File Name</param>
+            <param name="i2">&amp;lt;define&amp;gt;ACQUIRE_SEL&amp;lt;/define&amp;gt;</param>
+            <remarks>
+The selection file will be loaded (if present) and then
+the user can make selections then the selections are saved
+back in the selection file.
+</remarks>
+            <returns>
+0 - Ok
+1 - if user cancels
+</returns>
+            <available_version>9.6</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CACQUIRE.iSelectionTool(System.String,System.Int32)">
             <summary>Run the acQuire Selection Tool.</summary>
@@ -26146,6 +26257,15 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROFILE_SCALE_LINEAR">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_AUTO_RESCALE_X">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_R_VERT_GRID_LINE_INTERVAL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_VERT_GRID_LINE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_SAMERANGE">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
@@ -28303,6 +28423,15 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROFILE_SCALE_LINEAR">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_AUTO_RESCALE_X">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_R_VERT_GRID_LINE_INTERVAL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_VERT_GRID_LINE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_SAMERANGE">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
@@ -30978,6 +31107,15 @@ allow modification of projections (e.g. the OM Viewer).
         <member name="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant">
             <summary>Profile Scale Options</summary>
             <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_AUTO_RESCALE_X">
+            <summary>0-no, 1-yes</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.R_VERT_GRID_LINE_INTERVAL">
+            <summary>0-no, 1-yes</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_VERT_GRID_LINE">
+            <summary>0-no, 1-yes</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_SAMERANGE">
             <summary>0-no, 1-yes</summary>
