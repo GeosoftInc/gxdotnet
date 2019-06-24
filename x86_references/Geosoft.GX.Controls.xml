@@ -28,6 +28,18 @@
             Show a dialog in an expanded or collapsed state
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.AdvancedButtonControl.ExpandedStateHeight">
+            <summary>
+            Get/Modify the Expanded state height. This can be necessary if you hide/show controls
+            in your GX and need to adjust the expanded size to accomodate that.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.AdvancedButtonControl.CollapsedStateHeight">
+            <summary>
+            Get/Modify the Collapsed state height. This can be necessary if you hide/show controls
+            in your GX and need to adjust the collapsed size to accomodate that.
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.HideControls">
             <summary>
             	<para>Hides the controls in the advanced region. This ensures, for instance, that
@@ -7373,6 +7385,42 @@
              </example>
              <seealso cref="M:Geosoft.GX.Controls.ComboBoxControl.SetValue(System.String)"/>
         </member>
+        <member name="M:Geosoft.GX.Controls.ComboBoxControl.InitX(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CLST,System.Int32)">
+             <summary>
+             Initialize the control with with item names and optional values. Existing control items are first.
+             </summary>
+            
+             <remarks>
+             This should generally be called from within a <see cref="M:Geosoft.GX.Controls.BaseForm.InitializeForm"/> override
+             in the parent form (see example).
+             </remarks>
+             <param name="gxContext">Input GeoEngine.Core.GXNetX.CGXNETCore context.</param>
+             <param name="hLSTx">Input GXNetX.CLST object containing name and value items.</param>
+             <param name="iItemType">One of GeoEngine.Core.GXNet.Constant.LST_ITEM_NAME or GeoEngine.Core.GXNet.Constant.LST_ITEM_VALUE. This determines
+             which part of the list is passed in and out of the GX parameter block using the ini.SyncXXX methods.
+             </param>
+            
+             <example>
+             <code>
+            protected override void InitializeForm()
+            {
+               base.InitializeForm();
+            
+               CEDB hEDB = CEDB.Current();
+               CDB hDB = hEDB.Lock();
+               CLST hChanLST = CLST.Create(128);
+               hDB.ArrayLST(hChanLST);
+            
+               if (hChanLST.iSize() &lt; 2)
+                  ShowErrorAndExit(_("At least two array channels are required."));
+               m_cmbData.InitX(GetGXContext(), hChanLST, GeoEngine.Core.GXNetX.Constant.LST_ITEM_NAME);
+            
+               hEDB.UnLock();
+            }
+             </code>
+             </example>
+             <seealso cref="M:Geosoft.GX.Controls.ComboBoxControl.SetValue(System.String)"/>
+        </member>
         <member name="M:Geosoft.GX.Controls.ComboBoxControl.strGetName">
              <summary>
              Get the currently selected item from the list control.
@@ -8365,6 +8413,12 @@
             ISite override
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.INI.SyncDiskToMatchCurrentControls(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>
+            Update the on-disk INI storage to match whatever currently appears in the controls. This version does NOT, 
+            in turn, refresh the controls from disk (as the regular version does).
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.INI._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -8477,6 +8531,143 @@
             <summary>
             Defines the behaviour(s) of a control when any of its siblings with this
             property defined is shifted or moved due to translation string growth.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.MapViewControl">
+            <summary>
+            Geosoft map view control which remembers previous state using GX parameters
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.IsDirty">
+            <summary>
+            Set to true to force update of the displayed image on the next render
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.GXX">
+            <summary>
+            Set External GXX
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapView">
+            <summary>
+            Get the internal CMVIEW handle for rendering. Do not dispose!
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapViewX">
+            <summary>
+            Get the internal CMVIEW handle for rendering. Do not dispose!
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.XPerPixel">
+            <summary>
+            Return the horizontal scale Ground_X / Pixels
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.YPerPixel">
+            <summary>
+            Return thevertical scale Ground_Y / Pixels
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.SetWindow(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Set the window extents to render to the bitmap.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.OnPictureClick">
+            <summary>
+            Called when the picture control is clicked
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs">
+            <summary>
+            Event argument to use with the OnDragAcrossAndReleaseEvent.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Create event for dragging a mouse across the control.
+            </summary>
+            <param name="xs">Start X (View coords)</param>
+            <param name="ys">Start Y (View coords)</param>
+            <param name="xe">End X (View coords)</param>
+            <param name="ye">End Y (View coords)</param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.XStart">
+            <summary>
+            Starting location - X
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.YStart">
+            <summary>
+            Starting location - Y
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.XEnd">
+            <summary>
+            Ending location - X
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.YEnd">
+            <summary>
+            Ending location - Y
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.OnDragAcrossAndRelease">
+            <summary>
+            Called after the user clicks and holds the mouse, moves it across the picture and releases.
+            Returns to the start and end points locations in the View coordinates.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Render the map view to the picture box
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.SnapControl">
+            <summary>
+            Internal control to use in designers for snapping guidelines.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.CoordinateSystemDescription">
+            <summary>
+            Coordinate system description to display along with cursor-tracked location
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.CoordinateSystemUnits">
+            <summary>
+            Coordinate system units to display along with cursor-tracked location
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.SetExtents(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Set the render extents of the view. The plot will fix the maximum dimension. 
+            If the extents are not set, the view's visible extents will be used.buildde
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.GetLocationFromClick(System.Int32,System.Int32,System.Double@,System.Double@)">
+            <summary>
+            Get the mouse click location.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.ModelessFormWithFocusCuesAndMainWindowReactivation">
@@ -10618,6 +10809,49 @@
         <member name="M:Geosoft.GX.Controls.SizeGripStatusStrip.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.SpinButtonControl">
+            <summary>
+            C# replacement for the MFC Spin-Button control.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SpinButtonControl.#ctor">
+            <summary>
+            C# replacement for the MFC Spin-Button control.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.SpinButtonControl.UpButtonClicked">
+            <summary>
+            Occurs when the up button is clicked.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.SpinButtonControl.DownButtonClicked">
+            <summary>
+            Occurs when the down button is clicked.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SpinButtonControl.OnResize(System.EventArgs)">
+            <summary>
+            Overridden OnResize()
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Geosoft.GX.Controls.SpinButtonControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SpinButtonControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SpinButtonControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
             the contents of this method with the code editor.
             </summary>
         </member>
