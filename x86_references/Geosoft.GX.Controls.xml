@@ -3427,6 +3427,16 @@
             Data files (*.dat)
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters.OMF">
+            <summary>
+            OMF files (*.omf)
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.Helpers.FileFilters._3DSURVEY">
+            <summary>
+            3d survey files (*.3dSurvey)
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.Helpers.GeoDoubleConverter">
             <summary>
             <see cref="T:System.ComponentModel.TypeConverter"/> to do Geosoft conversion of doubles, represent empty strings as dummies and do min/max range checking.
@@ -5068,6 +5078,11 @@
             </summary>
             <param name="e">A <see cref="T:System.Windows.Forms.KeyPressEventArgs"/> that contains the event data.</param>
         </member>
+        <member name="P:Geosoft.GX.Controls.CheckedComboBox.IncludeAllCheckboxItem">
+            <summary>
+            Include \"All\" checkbox as the first item
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.CheckedComboBox.GetItemChecked(System.Int32)">
             <summary>
             Gets the item checked.
@@ -5156,6 +5171,11 @@
         <member name="P:Geosoft.GX.Controls.CheckedComboBoxControl.SnapControl">
             <summary>
             Internal control to use in designers for snapping guidelines.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.CheckedComboBoxControl.IncludeAllCheckboxItem">
+            <summary>
+            Set first item as "All", clicking on this checks/unchecks all items
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.CheckedComboBoxControl.Init(GeoEngine.Core.GXNet.CLST,System.Int32)">
@@ -9940,9 +9960,16 @@
         </member>
         <member name="M:Geosoft.GX.Controls.FileEditControl.FillBrowseLST(Geosoft.GX.Controls.Helpers.FileFilters,System.Collections.Generic.SortedList{System.String,System.String})">
             <summary>
-            Update auto-complete list for a given file type.
+            Update auto-complete list for a given single file type.
             </summary>
             <param name="eFileFilter">One of the standard Geosoft file filters</param>
+            <param name="_list">Sorted list of file names and full paths</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.FileEditControl.FillBrowseLST(Geosoft.GX.Controls.Helpers.FileFilters[],System.Collections.Generic.SortedList{System.String,System.String})">
+            <summary>
+            Update auto-complete list for list of file types.
+            </summary>
+            <param name="eFileFilters">Array of the standard Geosoft file filters</param>
             <param name="_list">Sorted list of file names and full paths</param>
         </member>
         <member name="E:Geosoft.GX.Controls.FileEditControl.TextChanged">
@@ -10977,6 +11004,125 @@
             in the parent form.
             </remarks>
             <param name="isGeosoftFont">returns true if a GFN font is selected</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.TripleChoiceRadioControl">
+            <summary>
+            Horizontal triple choice radio button that helps with designing forms for layout growth.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.bIsValid(System.String@)">
+            <summary>
+            Check to see if the current radio button passes valiation tests.
+            </summary>
+            <param name="strError">The error message returned if the control does not validate.</param>
+            <returns>Always true except if EnumValues were not configured.</returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.EnumValue1">
+            <summary>
+            Gets or sets the numeric value associated with Radio Button 1.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.EnumValue2">
+            <summary>
+            Gets or sets the numeric value associated with Radio Button 2.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.EnumValue3">
+            <summary>
+            Gets or sets the numeric value associated with Radio Button 3.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.DefaultValue">
+            <summary>
+            Gets or sets the default value of this control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.EqualColumnWidths">
+            <summary>
+            Make the columns of same width for better alignment with other controls.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.Text1">
+            <summary>
+            Gets or sets the text next to Radio Button 1.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.Text2">
+            <summary>
+            Gets or sets the text next to Radio Button 2.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.Text3">
+            <summary>
+            Gets or sets the text next to Radio Button 3.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.RadioButton1">
+            <summary>
+            Gets the Radio Button 1 control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.RadioButton2">
+            <summary>
+            Gets the Radio Button 2 control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.RadioButton3">
+            <summary>
+            Gets the Radio Button 3 control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.ReadOnly">
+            <summary>
+            Gets or sets the read-only status of this control; when set, the unchecked option is disabled to prevent changing.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.CurrentValue">
+            <summary>
+            Get the current INT value within the control.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.SetCurrentValue(System.Int32)">
+            <summary>
+            Set the current INT value within the control.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TripleChoiceRadioControl.CheckedChanged">
+            <summary>
+            Occurs when either radio button's Checked property is changed.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TripleChoiceRadioControl.Click">
+            <summary>
+            Occurs when either radio button control is clicked.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TripleChoiceRadioControl.SnapControl">
+            <summary>
+            Internal control to use in designers for snapping guidelines.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.TripleChoiceRadioControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TripleChoiceRadioControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.TriStateTreeViewWithAlteredExpandCollapse">
             <summary>
