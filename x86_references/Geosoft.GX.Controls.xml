@@ -8428,6 +8428,11 @@
             Set the default value associated with this control.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.INI.ClearControlDiskParameter(Geosoft.GX.Controls.BaseControl)">
+            <summary>
+            Clear the INI parameter associated with a control
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.INI.Site">
             <summary>
             ISite override

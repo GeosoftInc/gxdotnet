@@ -4,29 +4,6 @@
         "geoengine.core.gxnet"
     </assembly>
     <members>
-        <member name="P:TranslationAttribute.FriendlyPath">
-            <summary>
-The translation friendly path
-</summary>
-        </member>
-        <member name="P:TranslationAttribute.Domain">
-            <summary>
-The translation domain
-</summary>
-        </member>
-        <member name="M:TranslationAttribute.#ctor(System.String,System.String)">
-            <summary>
-Constructor
-</summary>
-        </member>
-        <member name="T:TranslationAttribute">
-            <summary>
-Translation attribute
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
-            <summary>Geosoft internal use only.</summary>
-        </member>
         <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
             <summary>
 Get the list of gx's called by this entry point
@@ -49,6 +26,29 @@ The parameter that is currently an empty string in the above example can be fill
 a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
 This feature is not currently implemented but is planned for future versions.
 </example>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
+            <summary>Geosoft internal use only.</summary>
+        </member>
+        <member name="P:TranslationAttribute.FriendlyPath">
+            <summary>
+The translation friendly path
+</summary>
+        </member>
+        <member name="P:TranslationAttribute.Domain">
+            <summary>
+The translation domain
+</summary>
+        </member>
+        <member name="M:TranslationAttribute.#ctor(System.String,System.String)">
+            <summary>
+Constructor
+</summary>
+        </member>
+        <member name="T:TranslationAttribute">
+            <summary>
+Translation attribute
+</summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>

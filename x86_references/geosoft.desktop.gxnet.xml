@@ -17163,6 +17163,21 @@ e.g. "x=y+1;"
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDXFI.DXF2ViewNoSurfaces(GeoEngine.Core.GXNet.CMVIEW,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>Draw entities in a DXF file to a view in a map, but for 3D views skips all surfaces</summary>
+            <param name="view" />
+            <param name="max_pen">User defined number of pens to use (can be &amp;lt;define&amp;gt;iDUMMY&amp;lt;/define&amp;gt;)</param>
+            <param name="pb_group">TRUE to place entire DXF in one group</param>
+            <param name="group">Group name for one group (can be "" if above is FALSE)</param>
+            <param name="pb_one_color">TRUE to force one color</param>
+            <param name="color">&amp;lt;define&amp;gt;MVIEW_COLOR&amp;lt;/define&amp;gt; (ignored if above is FALSE)</param>
+            <available_version>9.7.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CDXFI.DXF2ViewEx(GeoEngine.Core.GXNet.CMVIEW,System.Int32,System.Int32,System.String,System.Int32,System.Int32)">
             <summary>Draw entities in a DXF file to a view in a map</summary>
             <param name="view" />
