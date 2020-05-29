@@ -4,6 +4,29 @@
         "geoengine.core.gxnetx"
     </assembly>
     <members>
+        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
             <summary>Fire the General Information Message delegate event.</summary>
             <param name="Class">Message Class</param>
@@ -118,29 +141,6 @@ framework which will supports persistance through CMETA.
         <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
             <summary>Change the current projection.</summary>
             <param name="IPJ">Projection</param>
-        </member>
-        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -6940,6 +6940,61 @@ guarantee all grid files besides the main one are copied.
             <extended_method>no</extended_method>
             <method_group>Licensing</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewServiceURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
+            <summary>Get the service URL for View</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="service_url">Returned Service URL</param>
+            <param name="service_url_size">Size of Service URL</param>
+            <available_version>9.7.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewServiceURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
+            <summary>Get the service URL for View</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="service_url">Returned Service URL</param>
+            <available_version>9.7.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.ConnectWithCurrentCentralInstance(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
+            <summary>Query information necessary to communicate with current Central Instance</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="name">Instance name</param>
+            <param name="name_size">Instance name size</param>
+            <param name="base_path">Base path (single port support)</param>
+            <param name="base_path_size">Base path size</param>
+            <param name="url">URL</param>
+            <param name="url_size">Url size</param>
+            <param name="token">Authorization token</param>
+            <param name="token_size">Authorization token size</param>
+            <available_version>9.8</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.ConnectWithCurrentCentralInstance(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.String@)">
+            <summary>Query information necessary to communicate with current Central Instance</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="name">Instance name</param>
+            <param name="base_path">Base path (single port support)</param>
+            <param name="url">URL</param>
+            <param name="token">Authorization token</param>
+            <available_version>9.8</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CSYS.GetAPIKey(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
             <summary>Get the API Key if signed in</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -8716,6 +8771,36 @@ Numerical Receipies Julian function.
        and error handling functions.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSURFACEITEM.iIntersectsBoundingBox(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>Checks intersections of a bounding box with a SURFACEITEM Object</summary>
+            <param name="min_x">Min X</param>
+            <param name="min_y">Min Y</param>
+            <param name="min_z">Min Z</param>
+            <param name="max_x">Max X</param>
+            <param name="max_y">Max Y</param>
+            <param name="max_z">Max Z</param>
+            <available_version>9.7.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSURFACEITEM.ComputePolyLineIntersections(GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Compute intersections of a 3D PolyLine with a SURFACEITEM Object</summary>
+            <param name="vv_x">X coordinates.</param>
+            <param name="vv_y">Y coordinates.</param>
+            <param name="vv_z">Z coordinates.</param>
+            <param name="vv_x_out">X coordinates.</param>
+            <param name="vv_y_out">Y coordinates.</param>
+            <param name="vv_z_out">Z coordinates.</param>
+            <available_version>9.7.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CSURFACEITEM.ComputeExtendedInfo(System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
             <summary>Compute more information (including validation) about of all mesh components in the surface item.</summary>
@@ -30660,7 +30745,7 @@ equivalent to calling Associate_DB.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.SymbLST(GeoEngine.Core.GXNetX.CLST,System.Int32)">
             <summary>Populate a LST with database symbols.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <param name="type">&amp;lt;define&amp;gt;DB_SYMB_TYPE&amp;lt;/define&amp;gt;</param>
             <remarks>
 Populates a LST with channel, line, blob or user symbols.
@@ -30734,7 +30819,7 @@ object. Call GetChanOrderLST_DB to populate the LST.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.SelectedLineLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST with the selected lines.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <remarks>
 This method populates a LST object with all of the symbols
 of the selected lines in the database.
@@ -30787,7 +30872,7 @@ The LST is cleared first, and the items are sorted by name.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.LineLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST with database lines.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <remarks>
 Populates a LST with channel symbols.
 The name is put into the "Name" part of the LST (0),
@@ -30970,7 +31055,7 @@ database. The list will be stored in an LST object.
 In order to modify this displayed channels list,
 call SetChanOrderLST_DB after.
 </summary>
-            <param name="lst">LST object to populate</param>
+            <param name="lst">LST object to populate (construct with CreateSymbLST_DB)</param>
             <available_version>5.0.8</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -31096,7 +31181,7 @@ automatically removed.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.CSVChanLST(GeoEngine.Core.GXNetX.CLST,System.String)">
             <summary>Load a LST with channels in a comma-separated list.</summary>
-            <param name="lst">LST object to populate</param>
+            <param name="lst">LST object to populate (construct with CreateSymbLST_DB)</param>
             <param name="channels">Comma-separated list of channels</param>
             <remarks>
 The Name of the symbol is placed in the
@@ -31203,7 +31288,7 @@ letters of their blob names to avoid any possible conflicts.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.ClassGroupLST(GeoEngine.Core.GXNetX.CLST,System.String)">
             <summary>Load a LST with group lines in a particular class.</summary>
-            <param name="lst">LST object to populate</param>
+            <param name="lst">LST object to populate (construct with CreateSymbLST_DB)</param>
             <param name="cl">CLASS name for the group ("" for all)</param>
             <remarks>
 The Name of the symbol is placed in the
@@ -31222,7 +31307,7 @@ The LST is cleared first, and the items are sorted by name.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.ClassChanLST(GeoEngine.Core.GXNetX.CLST,System.String)">
             <summary>Load a LST with channels in a particular class.</summary>
-            <param name="lst">LST object to populate</param>
+            <param name="lst">LST object to populate (construct with CreateSymbLST_DB)</param>
             <param name="cl">CLASS name for the channel ("" for all)</param>
             <remarks>
 The Name of the symbol is placed in the
@@ -31241,7 +31326,7 @@ The LST is cleared first, and the items are sorted by name.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.NormalChanLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST with non-array database channels.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <remarks>Like ChanLST_DB, but does not include array channels or virtual channels.</remarks>
             <available_version>8.2</available_version>
             <licensed_method>no</licensed_method>
@@ -31252,7 +31337,7 @@ The LST is cleared first, and the items are sorted by name.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.ChanLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST with database channels.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <remarks>
 Populates a LST with channel symbols.
 The name is put into the "Name" part of the LST (0),
@@ -31272,7 +31357,7 @@ The LST is cleared first, and the items are sorted by name.
         <member name="M:GeoEngine.Core.GXNetX.CDB.ArraySizeLST(System.Int32,GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST object with array (VA) channel symbols with a particular number of columns.</summary>
             <param name="columns">Number of columns in array ( &gt; 1 )</param>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <available_version>8.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -31282,8 +31367,18 @@ The LST is cleared first, and the items are sorted by name.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.ArrayLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST object with array (VA) channel symbols.</summary>
-            <param name="lst">List to Populate</param>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Symbols</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CDB.CreateSymbLST(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Create  a LST object large enough to contain channel names and symbols numbers.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <available_version>9.8</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>

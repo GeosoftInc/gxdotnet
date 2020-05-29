@@ -942,6 +942,127 @@
             File name of item interacted upon
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.IPJInfo">
+            <summary>
+            Class to provide information from an IPJ for display purposes or otherwise
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IPJInfo.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IPJInfo.#ctor(GeoEngine.Core.GXNet.CIPJ)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ipj"><see cref="T:GeoEngine.Core.GXNet.CIPJ"/> instance.</param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.SourceType">
+            <summary>
+            One of <see cref="T:GeoEngine.Core.GXNet.IPJ_TYPEConstant"/>
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.HasProjection">
+            <summary>
+            Does the IPJ object contain a projected CS
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.IsGeographic">
+            <summary>
+            Is this a geographic CS
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.OrientationType">
+            <summary>
+            One of <see cref="T:GeoEngine.Core.GXNet.IPJ_ORIENTConstant"/>
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.X">
+            <summary>
+            Orientation X
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.XDisplay">
+            <summary>
+            Orientation X Display String
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.Y">
+            <summary>
+            Orientation Y
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.YDisplay">
+            <summary>
+            Orientation X Display String
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.Z">
+            <summary>
+            Orientation Z
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.ZDisplay">
+            <summary>
+            Orientation X Display String
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.Azimuth">
+            <summary>
+            Orientation Azimuth
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.AzimuthDisplay">
+            <summary>
+            Orientation Azimuth Display String
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.Swing">
+            <summary>
+            Orientation Swing
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.SwingDisplay">
+            <summary>
+            Orientation Swing Display String
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.OrientationDisplayName">
+            <summary>
+            Simple orientation information string (e.g. "Section" or "Level Plan")
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.LongOrientationDisplayName">
+            <summary>
+            More detailed orientation information string (e.g. "Section, 1400,1200,0m Azimuth=20° Swing=60°" or )
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.UnitsScale">
+            <summary>
+            Units Scale Conversion Factor
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.Units">
+            <summary>
+            Units
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IPJInfo.DisplayName">
+            <summary>
+            Display name
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IPJInfo.TryGetCoordinateSystemFromGrid(System.String)">
+            <summary>
+            Gets an <see cref="T:Geosoft.GX.Controls.Helpers.IPJInfo"/> from a grid or image file.
+            </summary>
+            <param name="gridFile">File path (with qualifiers)</param>
+            <returns><see cref="T:Geosoft.GX.Controls.Helpers.IPJInfo"/></returns>
+            <remarks>
+            If grid file does not exist defaults are returned. On Error defaults are returned with error set in <see cref="P:Geosoft.GX.Controls.Helpers.IPJInfo.DisplayName"/>
+            </remarks>
+        </member>
         <member name="T:Geosoft.GX.Controls.Helpers.SelectZoneFile">
              <summary>
              Select a colour zone file from one of the categories.
@@ -1461,41 +1582,6 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateFileNameEditor._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
-            </summary>
-        </member>
-        <member name="T:Geosoft.GX.Controls.Helpers.TranslateDockContent">
-            <summary>
-            Base class extending <see cref="T:WeifenLuo.WinFormsUI.Docking.DockContent"/> and only adding translation functionality
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.TranslateDockContent.#ctor">
-            <summary>
-            Default Constructor
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslateDockContent.SkipTranslationDesignMode">
-            <summary>
-            Should translation be skipped (due to design mode)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslateDockContent.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.TranslateDockContent._(System.String)">
-            <summary>
-            Translate string based on the current Geosoft language setting
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.TranslateDockContent._n(System.String)">
-            <summary>
-            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.TranslateDockContent.TranslateControls">
-            <summary>
-            Translate all controls.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.TranslatePictureBox">
@@ -5834,6 +5920,11 @@
         <member name="P:Geosoft.GX.Controls.AutoHideSplitContainer.InsideClientRect">
             <summary>
             Returns the current inside client rectangle based on the visibility of the caption and tab
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.AutoHideSplitContainer.ToggleAutoHide">
+            <summary>
+            Toggle current autohide state (can be used to start in collapsed state, but have to be called when the control is fully created)
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.AutoHideSplitContainer.Collapse">
@@ -10885,6 +10976,360 @@
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.TabControlCustom">
+            <summary>
+            A customizable <see cref="T:System.Windows.Forms.TabControl"/> tab control.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.#ctor">
+            <summary>
+            	<para>Initializes an instance of the <see cref="T:Geosoft.GX.Controls.TabControlCustom"/> class.</para>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnCreateControl">
+            <summary>
+            Raises the <see cref="M:System.Windows.Forms.Control.CreateControl"/> method.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.AdjustHeaderFont">
+            <summary>
+            HeaderFont allows for non-ambient font assignment (to TabControl headers only).
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.AdjustItemSize">
+            <summary>
+            Adjust TabControl header height.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.CreateParams">
+            <summary>
+            Encapsulates the information needed when creating a control.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.DisplayStyleProvider">
+            <summary>
+            Gets/Sets the display style provider of the tab control. These are defined in the TabStyleProviders folder.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.DisplayStyle">
+            <summary>
+            Gets/Sets the display style of the tab control. The definition of the style is done in DisplayStyleProvider.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.Multiline">
+            <summary>
+            Is the tab control multi-line?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.Padding">
+            <summary>
+            Gets/Sets the padding of the control (technically done in the style provider).
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.RightToLeftLayout">
+            <summary>
+            Defines the direction of the tab control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.HotTrack">
+            <summary>
+            Turns the HotTrack on/off. This defines whether the pointer is tracked when hovered over the control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.Alignment">
+            <summary>
+            Defines the control alignment.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.Appearance">
+            <summary>
+            Appearance value of the control. The painting is actually customized internally so this value is not used.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.DisplayRectangle">
+            <summary>
+            The rectangle attribute of the control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.ActiveIndex">
+            <summary>
+            The active index tab of the tab control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.ActiveTab">
+            <summary>
+            Returns the active tab page.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.HideTab(System.Windows.Forms.TabPage)">
+            <summary>
+            Removes tab from tab pages list.
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.HideTab(System.Int32)">
+            <summary>
+            Removes tab from tab pages list (by index).
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.HideTab(System.String)">
+            <summary>
+            Removes tab from tab pages list (by key).
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.ShowTab(System.Windows.Forms.TabPage)">
+            <summary>
+            Shows tab (by retrieving a hidden tab and adding it to the main tabs list).
+            </summary>
+            <param name="page"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.ShowTab(System.Int32)">
+            <summary>
+            Shows tab by retrieving it to the main tabs list (by index).
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.ShowTab(System.String)">
+            <summary>
+            Shows tab (by key).
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TabControlCustom.HScroll">
+            <summary>
+            Gets the horizontal scroll handler.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TabControlCustom.TabImageClick">
+            <summary>
+            Gets the even handler for clicking on a tab image.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TabControlCustom.TabClosing">
+            <summary>
+            Gets event handler when tab is closing.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnFontChanged(System.EventArgs)">
+            <summary>
+            Raises the FontChanged event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnResize(System.EventArgs)">
+            <summary>
+            Raises the Resize event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnParentBackColorChanged(System.EventArgs)">
+            <summary>
+            Raises the BackColorChanged event when the BackColor property value of the control's container changes.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnParentBackgroundImageChanged(System.EventArgs)">
+            <summary>
+            Raises the BackgroundImageChanged event when the property value of the control's container changes.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnParentChanged(System.EventArgs)">
+            <summary>
+            Raises the ParentChanged event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnSelecting(System.Windows.Forms.TabControlCancelEventArgs)">
+            <summary>
+            Raises the Selecting event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnMove(System.EventArgs)">
+            <summary>
+            Raises the Move event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnControlAdded(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            Raises the ControlAdded event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnControlRemoved(System.Windows.Forms.ControlEventArgs)">
+            <summary>
+            Raises the ControlRemoved event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.ProcessMnemonic(System.Char)">
+            <summary>
+            Processes a mnemonic character.
+            </summary>
+            <param name="charCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            Raises the SelectedIndexChanged event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnMouseClick(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the MouseClick event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnTabImageClick(System.Windows.Forms.TabControlEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnTabClosing(System.Windows.Forms.TabControlCancelEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnHScroll(System.Windows.Forms.ScrollEventArgs)">
+            <summary>
+            Raises the HScroll event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnMouseMove(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Raises the OnMouseMove(MouseEventArgs) event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Raises the Paint event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.PaintTransparentBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="graphics"></param>
+            <param name="clipRect"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetPageBounds(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabRow(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabPosition(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.IsFirstTabInRow(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabCloserRect(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetRightDropShadowRect(System.Int32)">
+            <summary>
+            Gets the drop shadow rectangle present to the right of the provided index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabControlCustom.GetLeftDropShadowRect(System.Int32)">
+            <summary>
+            Gets the drop shadow rectangle present to the left of the provided index.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.MousePosition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabControlCustom.HeaderFont">
+            <summary>
+            Customizable font for Tab headers (text above pages).
+            Kept separate from Control.Font to allow for non-transient font assignment to controls.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.TabStyle">
+            <summary>
+            Tab styles
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.TabStyle.None">
+            <summary>
+            No style defined
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.TabStyle.Rounded">
+            <summary>
+            Rounded style
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.TabStyle.Seequent">
+            <summary>
+            Seequent style defined
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.TabStyleProvider">
+            <summary>
+            Tab style providers and definitions
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.TabStyleProvider.#ctor(Geosoft.GX.Controls.TabControlCustom)">
+            <summary>
+            
+            </summary>
+            <param name="tabControl"></param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.TabStyleProvider.Radius">
+            <summary>
+            Determines the radius of the arc located at the corners of tabs. A larger radius yields lesser curves.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.ToolStripTrackBar">

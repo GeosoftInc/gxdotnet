@@ -18566,6 +18566,19 @@ the same length before appending data.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.LoadGravityCG6ToLine(GeoEngine.Core.GXNet.CDB,System.String,System.String)">
+            <summary>Load a CG-6 gravity survey file. Specify the name of the output line</summary>
+            <param name="db">Database</param>
+            <param name="data">Gravity data file</param>
+            <param name="line">line name - can be empty in which case it will create a line name from the input file name</param>
+            <remarks>Has its own format - space-delimited columns of data</remarks>
+            <available_version>9.7</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CDU.LoadGravityCG6(GeoEngine.Core.GXNet.CDB,System.String)">
             <summary>Load a CG-6 gravity survey file.</summary>
             <param name="db">Database</param>
@@ -22583,6 +22596,31 @@ If the DRILLTYPE is NOT found in the template, a value of
 is not a new-style template produced by Wholeplot.
 </remarks>
             <available_version>6.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDH.iGetTemplateBlobNoSourceResolve(GeoEngine.Core.GXNet.CDB,System.String,System.Int32@)">
+            <summary>Retrieve the import template from the database.</summary>
+            <param name="db">DB Handle</param>
+            <param name="templ">Name of template file to extract to.</param>
+            <param name="imp_type">The stored import template type &amp;lt;define&amp;gt;DH_DATA&amp;lt;/define&amp;gt;</param>
+            <remarks>
+The template can be retrieved in order to refresh the
+database with a call to the DHIMPORT.GX.
+
+The import types correspond to the DHIMPORT.IMPTYPE variable:
+0: ASCII, 1: Database/XLS, 2: ODBC
+
+If no template blob exists, templ
+</remarks>
+            <returns>
+0: No template stored in the database
+1: Template retrieved and written to a file.
+</returns>
+            <available_version>9.7.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
