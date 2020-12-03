@@ -2320,6 +2320,29 @@ the values are not to be used.
             <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTC.CreateEx2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIMG)">
+            <summary>Creates a Terrain Correction object with surveytype and topo surface elevation grid</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="img">Topo (Rock Surface DEM) grid</param>
+            <param name="elev_unit">Elevation unit in 1 metre (i.e. 0.3048 for feet)</param>
+            <param name="dinner">Inner distance (in topo grid projection units, default in metres)</param>
+            <param name="douter">Outer distance (in topo grid projection units, default in metres)</param>
+            <param name="dens_t">Terrain density in g/cc</param>
+            <param name="dens_w">Water density in g/cc</param>
+            <param name="elev_w">Water reference elevation (in elevation unit)</param>
+            <param name="edge">1 to calculate an edge correction (compensation), 0 otherwise</param>
+            <param name="edge_elev">Average elevation beyond max distance (in elevation unit)</param>
+            <param name="opt">&amp;lt;define&amp;gt;TC_OPT&amp;lt;/define&amp;gt;</param>
+            <param name="survey_type">&amp;lt;define&amp;gt;TC_SURVEYTYPE&amp;lt;/define&amp;gt;</param>
+            <param name="img2">Topo (Elev Surface DEM) grid</param>
+            <returns>TC Object</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CTC.CreateEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Int32,System.Int32)">
             <summary>Creates a Terrain Correction object	with surveytype</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -4804,6 +4827,7 @@ The type string can be one of the following:
    Grid          
    Map           
    3DView        
+   Geosurface
    Voxel         
    VoxelInversion
    GMS3D         
@@ -4943,6 +4967,7 @@ Database         List Databases.
 Grid             List Grids.
 Map              List Maps.
 3DView           List 3D Views.
+Geosurface       List Geosurfaces.
 Voxel            List Voxels.
 VoxelInversion   List VOXI Documents.
 MXD              List ArcGIS MXDs.
@@ -4969,6 +4994,7 @@ Database         List Databases.
 Grid             List Grids.
 Map              List Maps.
 3DView           List 3D Views.
+Geosurface       List Geosurfaces.
 Voxel            List Voxels.
 VoxelInversion   List VOXI Documents.
 MXD              List ArcGIS MXDs.
@@ -5039,6 +5065,7 @@ The type string can be one of the following:
    Grid          
    Map           
    3DView        
+   Geosurface
    Voxel         
    VoxelInversion
    GMS3D         
@@ -5072,6 +5099,7 @@ The type string can be one of the following:
    Grid          
    Map           
    3DView        
+   Geosurface
    Voxel         
    VoxelInversion
    GMS3D         
@@ -8427,6 +8455,31 @@ opportunity to do so the first time a script is run.
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.Fft2SpecFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)">
+            <summary>Interactive FFT2 radially averaged power spectrum filter</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="spec_file_name">Name of the input spectrum file</param>
+            <param name="con_file_name">Name of the output control file</param>
+            <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.Fft2SpecFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Interactive FFT2 radially averaged power spectrum filter</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="spec_file_name">Name of the input spectrum file</param>
+            <param name="con_file_name">Name of the output control file</param>
+            <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.Show3DViewerDialog(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
             <summary>Display a standalone 3D viewer</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -9410,7 +9463,7 @@ terminates on error
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CDB,System.String,System.Int32,System.String)">
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CDB,System.String@,System.Int32,System.String)">
             <summary>
 Allows the user to edit XYZ import templates
 using a complex dialog. The Template name
@@ -9433,7 +9486,29 @@ may change during editing.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.Int32,System.String)">
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CDB,System.String@,System.String)">
+            <summary>
+Allows the user to edit XYZ import templates
+using a complex dialog. The Template name
+may change during editing.
+</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="db">Database</param>
+            <param name="templ">Name of the Template (can change)</param>
+            <param name="file">Name of the XYZ file to base it on</param>
+            <returns>
+0 - OK
+1 - Error
+</returns>
+            <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String@,System.Int32,System.String)">
             <summary>
 Allows the user to edit XYZ import templates
 using a complex dialog. The Template name
@@ -9443,6 +9518,27 @@ may change during editing.
             <param name="db">Database</param>
             <param name="templ">Name of the Template (can change)</param>
             <param name="size">Size of the Template</param>
+            <param name="file">Name of the XYZ file to base it on</param>
+            <returns>
+0 - OK
+1 - Error
+</returns>
+            <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String@,System.String)">
+            <summary>
+Allows the user to edit XYZ import templates
+using a complex dialog. The Template name
+may change during editing.
+</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Database</param>
+            <param name="templ">Name of the Template (can change)</param>
             <param name="file">Name of the XYZ file to base it on</param>
             <returns>
 0 - OK
@@ -11170,6 +11266,134 @@ iMultiFileSave_GUI
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileFormEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="title">Title of the Form</param>
+            <param name="default">Default value</param>
+            <param name="psz_file_path">Where the file name(s) is returned</param>
+            <param name="file_size">Size of the File Name Buffer</param>
+            <param name="type">&amp;lt;define&amp;gt;DAT_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="validation_type">&amp;lt;define&amp;gt;FILE_FORM&amp;lt;/define&amp;gt;</param>
+            <param name="multi">Allow Multiple file selections = TRUE Single   file selections = FALSE</param>
+            <param name="sort">Sort file filter list = TRUE   Maintain default filter list sorting = FALSE</param>
+            <remarks>
+Remember to make the string size big enough for multiple file
+selections. In the case of multiple selections the names will be separated
+by a semicolon and only the first file will contain the full path.
+
+When using the multiple flag on any of these functions please be aware that
+the string returned will be in the format:
+drive:\path1\path2\name.grid|name2.grid|name3.grid(QUALIFIERS)
+All grids are required to be of the same type.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileFormEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="title">Title of the Form</param>
+            <param name="default">Default value</param>
+            <param name="psz_file_path">Where the file name(s) is returned</param>
+            <param name="type">&amp;lt;define&amp;gt;DAT_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="validation_type">&amp;lt;define&amp;gt;FILE_FORM&amp;lt;/define&amp;gt;</param>
+            <param name="multi">Allow Multiple file selections = TRUE Single   file selections = FALSE</param>
+            <param name="sort">Sort file filter list = TRUE   Maintain default filter list sorting = FALSE</param>
+            <remarks>
+Remember to make the string size big enough for multiple file
+selections. In the case of multiple selections the names will be separated
+by a semicolon and only the first file will contain the full path.
+
+When using the multiple flag on any of these functions please be aware that
+the string returned will be in the format:
+drive:\path1\path2\name.grid|name2.grid|name3.grid(QUALIFIERS)
+All grids are required to be of the same type.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileFormEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="title">Title of the Form</param>
+            <param name="default">Default value</param>
+            <param name="psz_file_path">Where the file name(s) is returned</param>
+            <param name="file_size">Size of the File Name Buffer</param>
+            <param name="type">&amp;lt;define&amp;gt;DAT_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="validation_type">&amp;lt;define&amp;gt;FILE_FORM&amp;lt;/define&amp;gt;</param>
+            <param name="multi">Allow Multiple file selections = TRUE Single   file selections = FALSE</param>
+            <param name="sort">Sort file filter list = TRUE   Maintain default filter list sorting = FALSE</param>
+            <remarks>
+Remember to make the string size big enough for multiple file
+selections. In the case of multiple selections the names will be separated
+by a semicolon and only the first file will contain the full path.
+
+When using the multiple flag on any of these functions please be aware that
+the string returned will be in the format:
+drive:\path1\path2\name.grid|name2.grid|name3.grid(QUALIFIERS)
+All grids are required to be of the same type.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileFormEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Grid and Image file Open/Save Form for Multiple/Single file selections and optional filter list sorting.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="title">Title of the Form</param>
+            <param name="default">Default value</param>
+            <param name="psz_file_path">Where the file name(s) is returned</param>
+            <param name="type">&amp;lt;define&amp;gt;DAT_TYPE&amp;lt;/define&amp;gt;</param>
+            <param name="validation_type">&amp;lt;define&amp;gt;FILE_FORM&amp;lt;/define&amp;gt;</param>
+            <param name="multi">Allow Multiple file selections = TRUE Single   file selections = FALSE</param>
+            <param name="sort">Sort file filter list = TRUE   Maintain default filter list sorting = FALSE</param>
+            <remarks>
+Remember to make the string size big enough for multiple file
+selections. In the case of multiple selections the names will be separated
+by a semicolon and only the first file will contain the full path.
+
+When using the multiple flag on any of these functions please be aware that
+the string returned will be in the format:
+drive:\path1\path2\name.grid|name2.grid|name3.grid(QUALIFIERS)
+All grids are required to be of the same type.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>Grid and Image file Open/Save Form for Multiple/Single file selections</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -12323,31 +12547,6 @@ width and height for the maximum X and Y.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.Fft2SpecFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)">
-            <summary>Interactive FFT2 radially averaged power spectrum filter</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
-            <param name="spec_file_name">Name of the input spectrum file</param>
-            <param name="con_file_name">Name of the output control file</param>
-            <available_version>5.0</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>yes</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CGUI.Fft2SpecFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
-            <summary>Interactive FFT2 radially averaged power spectrum filter</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="spec_file_name">Name of the input spectrum file</param>
-            <param name="con_file_name">Name of the output control file</param>
-            <available_version>5.0</available_version>
-            <licensed_method>yes</licensed_method>
-            <app_method>yes</app_method>
-            <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.CreateWNDFromHWND(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window)">
             <summary>Create a standard WND object from an HWND.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -12497,6 +12696,27 @@ This routine calculates the corner locations of plates defined in the Maxwell Pl
 program, given the top-center location and plate geometry parameters.
 </remarks>
             <available_version>6.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGU.MagneticTiltDepth(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String)">
+            <summary>Calculate the depth of magnetic sources based on the tilt depth method by Ahmed Salem et al.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="tilt_deriv_grid">Tilt derivative grid</param>
+            <param name="horiz_deriv_grid">Horizontal derivative grid</param>
+            <param name="database">Output database name (will overwrite existing)</param>
+            <remarks>
+Tilt-Depth is a magnetic depth estimation method that lends itself to rapid mapping of sedimentary basins without the complexity of unraveling the depth solutions from methods that give multiple solutions (e.g. Euler deconvolution).
+Reference: Sedimentary basins reconnaissance using the magnetic Tilt-Depth method by Ahmed Salem et al.
+Exploration Geophysics, 2010, 41, 198-209.
+Rick Blakely &amp; Gerry Connard have extended and improved this method, as have other authors.
+The 0-value contour of the tilt derivative grid is sampled to a new database, and the horizontal derivative
+grid is sampled at those locations. The inverse of the horizontal derivative values are output to the Tilt_Depth channel.
+</remarks>
+            <available_version>9.9</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -13232,6 +13452,22 @@ Sample Fraser Filter string:
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CFFT2.FilterResponse(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Double,System.Double,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Calculates response for filter(s) defined in control file. Not specific to 2D.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="con_fil">FFT filter control file</param>
+            <param name="start">Wavenumber start</param>
+            <param name="increment">Wavenumber increment</param>
+            <param name="input_vv">Input spectrum</param>
+            <param name="output_vv">Output spectrum</param>
+            <param name="profile_vv">Output filter profile</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CFFT2.TransPG(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CPG,System.Int32)">
             <summary>Apply 2D FFT transform to data in pager</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -13351,7 +13587,7 @@ Sample Fraser Filter string:
             <summary>Apply 2D FFT filters to data in pager</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="pg">Pager obj</param>
-            <param name="con_fil">sConFil - FFT filter control file</param>
+            <param name="con_fil">FFT filter control file</param>
             <param name="tr">TR obj</param>
             <param name="dx">rDx - X increment</param>
             <param name="dy">rDy - Y increment</param>
@@ -13715,6 +13951,17 @@ Reduction to magnetic pole (RedPol_FFT) and downward continuation
             <param name="thick">Thickness (meters) of the earth model</param>
             <param name="dens">Background density (g/cm3) (default = 0)</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CFFT.AddWhiteNoise(System.Double,System.Int32)">
+            <summary>Add white noise to the power spectrum of an FFT object.</summary>
+            <param name="amp">The value added to the real part of all non-DC components of the current power spectrum</param>
+            <param name="option">&amp;lt;define&amp;gt;FFT_WHITE_NOISE&amp;lt;/define&amp;gt;</param>
+            <available_version>9.9</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -16513,8 +16760,8 @@ profiles (&amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;) are ignored
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CEDB.SetProfileRangeY(System.Int32,System.Int32,System.Double,System.Double,System.Int32)">
             <summary>Set profile Y range and display option</summary>
-            <param name="min_x">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
-            <param name="max_x">Profile number in window (see GetProfileRangeY_EDB)</param>
+            <param name="window">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
+            <param name="prof">Profile number in window (see GetProfileRangeY_EDB)</param>
             <param name="min_y">Minimum y</param>
             <param name="max_y">Maximum y</param>
             <param name="scl">&amp;lt;define&amp;gt;EDB_PROFILE_SCALE&amp;lt;/define&amp;gt;</param>
@@ -16883,7 +17130,7 @@ SCATTER.MASK      name of channel to use for mask
             <param name="state">Profile window number (0 to &amp;lt;define&amp;gt;MAX_PROF_WND&amp;lt;/define&amp;gt;-1, see iProfileOpen_EDB)</param>
             <param name="chan">Name of the channel</param>
             <remarks>If the symbol is not loaded, it will be loaded.</remarks>
-            <returns>Profile ID if loaded, -1 for error</returns>
+            <returns>Profile number in window (see GetProfileRangeY_EDB), -1 for error</returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
             <app_method>yes</app_method>
@@ -28560,6 +28807,12 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.FFT2_PG_FORWARD">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT2_PGConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.FFT_WHITE_NOISE_SET">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.FFT_WHITE_NOISE_ADD">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.FFT_DETREND_MEAN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_DETRENDConstant" />.</summary>
         </member>
@@ -28740,6 +28993,9 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDOC_UNLOAD_NO_PROMPT">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_UNLOADConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDOC_TYPE_GEOSURFACE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDOC_TYPE_GMS2D">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant" />.</summary>
         </member>
@@ -28811,15 +29067,6 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROFILE_SCALE_LINEAR">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_AUTO_RESCALE_X">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_R_VERT_GRID_LINE_INTERVAL">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_VERT_GRID_LINE">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.EDB_PROF_I_SAMERANGE">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
@@ -30735,6 +30982,12 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.Constant.FFT2_PG_FORWARD">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT2_PGConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.FFT_WHITE_NOISE_SET">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.FFT_WHITE_NOISE_ADD">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.FFT_DETREND_MEAN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.FFT_DETRENDConstant" />.</summary>
         </member>
@@ -30915,6 +31168,9 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDOC_UNLOAD_NO_PROMPT">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_UNLOADConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDOC_TYPE_GEOSURFACE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDOC_TYPE_GMS2D">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant" />.</summary>
         </member>
@@ -30986,15 +31242,6 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROFILE_SCALE_LINEAR">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_AUTO_RESCALE_X">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_R_VERT_GRID_LINE_INTERVAL">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_VERT_GRID_LINE">
-            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.EDB_PROF_I_SAMERANGE">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.EDB_PROFConstant" />.</summary>
@@ -33316,6 +33563,16 @@ allow modification of projections (e.g. the OM Viewer).
             <summary>Pager Direction</summary>
             <tocexclude />
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant.SET">
+            <summary>Set non-DC components to the input value and set the DC value to 0.0</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant.ADD">
+            <summary>Add the input value to the real part of all non-DC components of the current power spectrum</summary>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.FFT_WHITE_NOISEConstant">
+            <summary>Add white noise option</summary>
+            <tocexclude />
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.FFT_DETRENDConstant.MEAN">
             <summary>Remove mean value</summary>
         </member>
@@ -33576,6 +33833,9 @@ allow modification of projections (e.g. the OM Viewer).
             <summary>What type of prompt</summary>
             <tocexclude />
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant.GEOSURFACE">
+            <summary>Geosurface</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.EDOC_TYPEConstant.GMS2D">
             <summary>GMSYS 2D Model</summary>
         </member>
@@ -33679,15 +33939,6 @@ allow modification of projections (e.g. the OM Viewer).
         <member name="T:Geosoft.Desktop.GXNetX.EDB_PROFILE_SCALEConstant">
             <summary>Profile Scale Options</summary>
             <tocexclude />
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_AUTO_RESCALE_X">
-            <summary>0-no, 1-yes</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.R_VERT_GRID_LINE_INTERVAL">
-            <summary>0-no, 1-yes</summary>
-        </member>
-        <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_VERT_GRID_LINE">
-            <summary>0-no, 1-yes</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.EDB_PROFConstant.I_SAMERANGE">
             <summary>0-no, 1-yes</summary>

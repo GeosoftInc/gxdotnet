@@ -12,6 +12,9 @@
             By placing this control onto a <see cref="T:Geosoft.GX.Controls.PanelControl"/> positioned in the center of the <see cref="T:Geosoft.GX.Controls.BaseForm"/>
             the button will cause the area below the panel to be collapsed when the form is loaded. This button can then be used to
             automatically expand/collapse the form to reveal more advanced features or hide them.
+            
+            Note - Pay close attention to the anchoring of the parent control if encountering strange collapse/expand UI issues, 
+            as this can play a key role with how toggling this control effects the overall layout of the form.
             </remarks>
         </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.#ctor">
@@ -184,6 +187,32 @@
             Fired when control leaves the text box.
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs">
+            <summary>
+            Arguments for <see cref="E:Geosoft.GX.Controls.BaseEditControl.CommitRevert"/>
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs.Reverted">
+            <summary>
+            Was the value committed (Enter key, lost focus) or reverted (Escape key)
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.BaseEditControl.CommitRevert">
+            <summary>
+            Add event handler to get commit/revert event and behaviour
+            </summary>
+            <remarks>
+            If this event is handled the current value is backed when the control gains focus. 
+            Enter key or lost focus will result in the value being "committed" (<see cref="P:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs.Reverted"/> = false).
+            Escape key will revert to backed up value (<see cref="P:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs.Reverted"/> = false).
+            </remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseEditControl.AcceptsReturn">
+            <summary>
+             Gets or sets a value indicating whether pressing ENTER in a multiline System.Windows.Forms.TextBox
+             control creates a new line of text in the control or activates the default button for the form.
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.BaseEditControl.BitmapButton">
             <summary>
             Enable/Disable bitmap button
@@ -192,6 +221,11 @@
         <member name="P:Geosoft.GX.Controls.BaseEditControl.ButtonText">
             <summary>
             Button Text
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseEditControl.ButtonToolTip">
+            <summary>
+            Button ToolTip text
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.BaseEditControl.Units">
@@ -363,6 +397,220 @@
         <member name="M:Geosoft.GX.Controls.ColorMethodControl.SetModel(System.Int32)">
             <summary>
             Set the current colour model - input one of ITR_ZONE_MODELConstant values.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.MapCursors">
+            <summary>
+            Cursors to use in mappping contexts
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapCursors.Shadow">
+            <summary>
+            Standard shadow cursor mode
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapCursors.Digitize">
+            <summary>
+            Standard digitize mode
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.DataProfileControl">
+            <summary>
+            Plot one or more data profiles in an XY graph, with axis and scaling options.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.DataProfileControl.AxisScaling">
+            <summary>
+            All Axis scaling options. X and Y axes do not support all types individually
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Equal">
+            <summary>
+            Space axis equally by data index; ignore actual value, and do not plot labels
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Linear">
+            <summary>
+            Space axis linearlly
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Log">
+            <summary>
+            Space axis logarithmically
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.LogLinear">
+            <summary>
+            Space axis using Log-linear transform
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisScaling">
+            <summary>
+            Scaling for the X-axis.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumX">
+            <summary>
+            Pre-set Minimum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumX">
+            <summary>
+            Pre-set Maximum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDiscreteXDataTicsAndLabels">
+            <summary>
+            If false, plots a "normal" X-axis with tics and labels independent of the XData locations. 
+            If true, an X-tic is plotted for each YData value. If XData is defined, the value appears as a label.
+            If true and XData is not defined, data is spaced equally (XAxisScaling is ignored)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumX">
+            <summary>
+            Used for Log or LogLinear X-axis scaling
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XData">
+            <summary>
+            If defined, individual x-values for the X data. If not set, both MinimumX and MaximumX must be defined.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumY">
+            <summary>
+            Pre-set Minimum Y-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumY">
+            <summary>
+            Pre-set Maximum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisScaling">
+            <summary>
+            Scaling for the Y-axis: Equal not supported.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label1">
+            <summary>
+            Label for data set #1
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label2">
+            <summary>
+            Label for data set #2
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label3">
+            <summary>
+            Label for data set #3
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData1">
+            <summary>
+            Data set #1 (required)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData2">
+            <summary>
+            Data set #2 (optional)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData3">
+            <summary>
+            Data set #3 (optional)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color1">
+            <summary>
+            Colour for YData1 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color2">
+            <summary>
+            Colour for YData2 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color3">
+            <summary>
+            Colour for YData3 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumY">
+            <summary>
+            Used for Log or LogLinear Y-axis scaling
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisLabel">
+            <summary>
+            X-axis units
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisLabel">
+            <summary>
+            Y-axis units
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.CurrentXIndex">
+            <summary>
+            Highlight a particular data index.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDataSymbols">
+            <summary>
+            Plot square boxes at data points?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotLegend">
+            <summary>
+            Plot legend inside the graph?
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.Rescale">
+            <summary>
+            Force rescaling before next refresh
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl._(System.String)">
+            <summary>
+            Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl._n(System.String)">
+            <summary>
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.#ctor">
+            <summary>
+            	<para>Initializes an instance of the <see cref="T:Geosoft.GX.Controls.DataProfileControl"/> class.</para>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnResize(System.EventArgs)">
+            <summary>
+            
+            </summary>      
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.GroupedComboBox">
@@ -1564,6 +1812,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateClass._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateClass._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1577,6 +1830,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateFileNameEditor._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateFileNameEditor._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateFileNameEditor._n(System.String)">
@@ -1609,6 +1867,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslatePictureBox._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslatePictureBox._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1629,6 +1892,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslatePropertyBag._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslatePropertyBag._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1642,6 +1910,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateDoubleConverter._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateDoubleConverter._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateDoubleConverter._n(System.String)">
@@ -1659,6 +1932,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateInt32Converter._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateInt32Converter._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1674,6 +1952,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateStringConverter._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateStringConverter._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1687,6 +1970,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateColorConverter._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateColorConverter._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateColorConverter._n(System.String)">
@@ -1712,6 +2000,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateCGXNETCore._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateCGXNETCore._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1725,6 +2018,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateExpandableObjectConverter._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateExpandableObjectConverter._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateExpandableObjectConverter._n(System.String)">
@@ -1758,6 +2056,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateTreeNode._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateTreeNode._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -1786,6 +2089,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateToolControl._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateToolControl._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateToolControl._n(System.String)">
@@ -2751,6 +3059,11 @@
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateForm._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateForm._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
@@ -2812,6 +3125,11 @@
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateUserControl._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateUserControl._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateUserControl._n(System.String)">
@@ -4608,7 +4926,7 @@
             false - Cancel
             </returns>
         </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.PathUI.bMultiDatOpen(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)">
+        <member name="M:Geosoft.GX.Controls.Helpers.PathUI.bMultiDatOpen(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Boolean)">
             <summary>
             Multiple file open dialog displaying both grid and image formats
             </summary>
@@ -4616,6 +4934,7 @@
             <param name="strTitle">Title of the dialog</param>
             <param name="strDefault">Default value</param>
             <param name="strReturn">Where the file name(s) is returned</param>
+            <param name="sortFilters">(Optional) Sorts the available file filter list in the dialog.</param>
             <returns>
             true - Ok
             false - Cancel
@@ -6334,6 +6653,20 @@
             false - Cancel
             </returns>
         </member>
+        <member name="M:Geosoft.GX.Controls.BaseControl.bMultiDatOpen(System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Boolean)">
+            <summary>
+            Multiple file open dialog displaying both grid and image formats
+            </summary>
+            <param name="ipWin">Parent window (need not be defined)</param>
+            <param name="strTitle">Title of the dialog</param>
+            <param name="strDefault">Default value</param>
+            <param name="strReturn">Where the file name(s) is returned</param>
+            <param name="sortFilters">(Optional) Sorts the available file filter list in the dialog.</param>
+            <returns>
+            true - Ok
+            false - Cancel
+            </returns>
+        </member>
         <member name="M:Geosoft.GX.Controls.BaseControl.bMultiFileOpen(System.Windows.Forms.IWin32Window,System.String,Geosoft.GX.Controls.Helpers.FileFilters,System.String,System.String@)">
             <summary>
             Multi File Open Dialog for Geosoft Filetypes
@@ -6829,6 +7162,15 @@
             Validate all the container controls
             </summary>
             <param name="cont"></param>
+            <param name="bUseErrorProvider"></param>
+            <param name="strINIError"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.BaseForm.bValidateControl(System.Windows.Forms.Control,System.Boolean,System.String@)">
+            <summary>
+            Validate a single control
+            </summary>
+            <param name="ctl"></param>
             <param name="bUseErrorProvider"></param>
             <param name="strINIError"></param>
             <returns></returns>
@@ -8084,6 +8426,11 @@
             Internal button control
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.CollapsePanelButtonControl.ShowPanel">
+            <summary>
+            Shows the panel.
+            </summary>
+        </member>
         <member name="E:Geosoft.GX.Controls.CollapsePanelButtonControl.ShowControlsChanged">
             <summary>
             Fired as controls state changes
@@ -8106,6 +8453,12 @@
         <member name="P:Geosoft.GX.Controls.CollapsePanelButtonControl.CollapsePanel">
             <summary>
             Gets or sets the CollapsePanelControl that this button will affect.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.CollapsePanelButtonControl.AutoCollapsePanel">
+            <summary>
+            Gets or sets wether to use automatic hide/show behaviour for <see cref="P:Geosoft.GX.Controls.CollapsePanelButtonControl.CollapsePanel"/>. 
+            Subscribe to <see cref="E:Geosoft.GX.Controls.CollapsePanelButtonControl.ShowControlsChanged"/> to implement custom behaviour.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.CollapsePanelButtonControl.BackColor">
@@ -8654,9 +9007,64 @@
             Geosoft map view control which remembers previous state using GX parameters
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MinX">
+            <summary>
+            Minimum X of current window
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MinY">
+            <summary>
+            Minimum Y of current window
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MaxX">
+            <summary>
+            Maximum X of current window
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MaxY">
+            <summary>
+            Maximum Y of current window
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MinXAOI">
+            <summary>
+            Minimum X of last zoomed area of interest
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MinYAOI">
+            <summary>
+            Minimum Y of last zoomed area of interest
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MaxXAOI">
+            <summary>
+            Maximum X of last zoomed area of interest
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MaxYAOI">
+            <summary>
+            Maximum Y of last zoomed area of interest
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.IsDirty">
             <summary>
             Set to true to force update of the displayed image on the next render
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDrag">
+            <summary>
+            Zoom on next click and drag of mouse on control
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.GridValueIMG">
+            <summary>
+            Set this property to display a grid value at the mouse cursor location in the status label
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.GridValueIMGX">
+            <summary>
+            Set this property to display a grid value at the mouse cursor location in the status label
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.GXX">
@@ -8684,9 +9092,39 @@
             Return thevertical scale Ground_Y / Pixels
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.MapViewControl.SetWindow(System.Double,System.Double,System.Double,System.Double)">
+        <member name="T:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs">
             <summary>
-            Set the window extents to render to the bitmap.
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.Canceled">
+            <summary>
+            Action was cancelled or failed to get valid extents
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.XMin">
+            <summary>
+            Starting location - X
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.YMin">
+            <summary>
+            Starting location - Y
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.XMax">
+            <summary>
+            Ending location - X
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.YMax">
+            <summary>
+            Ending location - Y
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted">
+            <summary>
+            Zoom on drag was completed
             </summary>
         </member>
         <member name="E:Geosoft.GX.Controls.MapViewControl.OnPictureClick">
@@ -8694,44 +9132,24 @@
             Called when the picture control is clicked
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs">
+        <member name="T:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs">
             <summary>
-            Event argument to use with the OnDragAcrossAndReleaseEvent.
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted"/>.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.#ctor(System.Double,System.Double,System.Double,System.Double)">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs.X">
             <summary>
-            Create event for dragging a mouse across the control.
-            </summary>
-            <param name="xs">Start X (View coords)</param>
-            <param name="ys">Start Y (View coords)</param>
-            <param name="xe">End X (View coords)</param>
-            <param name="ye">End Y (View coords)</param>
-        </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.XStart">
-            <summary>
-            Starting location - X
+            X
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.YStart">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs.Y">
             <summary>
-            Starting location - Y
+            Y
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.XEnd">
+        <member name="E:Geosoft.GX.Controls.MapViewControl.MapCursorUpdated">
             <summary>
-            Ending location - X
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.DragAcrossAndReleaseEventArgs.YEnd">
-            <summary>
-            Ending location - Y
-            </summary>
-        </member>
-        <member name="E:Geosoft.GX.Controls.MapViewControl.OnDragAcrossAndRelease">
-            <summary>
-            Called after the user clicks and holds the mouse, moves it across the picture and releases.
-            Returns to the start and end points locations in the View coordinates.
+            Map cursor and was updated (can be use to link controls)
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.#ctor">
@@ -8744,9 +9162,24 @@
             Clean up any resources being used.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.Initialize">
+            <summary>
+            Initialize temporary map and view instances
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <summary>
             Render the map view to the picture box
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.TrackMouseCursor(System.Double,System.Double)">
+            <summary>
+            Draw full control tracking mouse cursor and update status text
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.ResetTrackMouseCursor">
+            <summary>
+            Clear full control tracking mouse cursor
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.SnapControl">
@@ -8764,16 +9197,24 @@
             Coordinate system units to display along with cursor-tracked location
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.MapViewControl.SetExtents(System.Double,System.Double,System.Double,System.Double)">
-            <summary>
-            Set the render extents of the view. The plot will fix the maximum dimension. 
-            If the extents are not set, the view's visible extents will be used.buildde
-            </summary>
-        </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.GetLocationFromClick(System.Int32,System.Int32,System.Double@,System.Double@)">
             <summary>
             Get the mouse click location.
             </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.ZoomToFullExtents">
+            <summary>
+            Zoom to full extents of visible groups in view
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.ZoomTo(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Zoom to specified area
+            </summary>
+            <param name="xMin">Min X</param>
+            <param name="yMin">Min Y</param>
+            <param name="xMax">Max X</param>
+            <param name="yMax">Max Y</param>
         </member>
         <member name="F:Geosoft.GX.Controls.MapViewControl.components">
             <summary> 
@@ -9068,6 +9509,14 @@
             significant figures than specified, the value is returned unchanged.
             </returns>
         </member>
+        <member name="M:Geosoft.GX.Controls.NumberExtensionMethods.ToStringNoScientific(System.Double,System.Int32,Geosoft.GX.Controls.RoundToSignificantFiguresMode)">
+            <summary>
+            Convert to a display string with numeric precision parameters and without falling back to scientific notation
+            </summary>
+            <param name="value">The value to round</param>
+            <param name="numSignificantFigures">The number of significant figures</param>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers at the significant figures specified.</param>
+        </member>
         <member name="T:Geosoft.GX.Controls.NumericUpDownControl">
             <summary>
             </summary>
@@ -9353,6 +9802,175 @@
             Gets the ini.
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.QuantitativeColors">
+             <summary>
+             Static class to provide colors to make graphics with scientific results as clear as possible.
+             Credits to Paul Tol: https://personal.sron.nl/~pault/
+             
+             The aim is to have a palette of colours that are:
+            
+               1. distinct for all people, including colour-blind readers;
+               2. distinct from black and white;
+               3. distinct on screen and paper; and
+               4. still match well together.
+               
+             As of now three of the qualitative schemes are provided here, Bright, Vibrant and Muted
+             </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.QuantitativeColors.Bright">
+            <summary>
+            Bright qualitative colour scheme that is colour-blind safe. The main scheme for lines and their labels.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Blue">
+            <summary>
+            Blue
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Cyan">
+            <summary>
+            Cyan
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Green">
+            <summary>
+            Green
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Yellow">
+            <summary>
+            Yellow
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Red">
+            <summary>
+            Red
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Purple">
+            <summary>
+            Purple
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Grey">
+            <summary>
+            Grey
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Bright.Black">
+            <summary>
+            Black
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.QuantitativeColors.Vibrant">
+            <summary>
+            Vibrant qualitative colour scheme, an alternative to the bright scheme that is equally colour-blind safe. 
+            It has been designed for data visualization framework TensorBoard, built around their signature orange FF7043. 
+            That colour has been replaced here to make it print-friendly.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Blue">
+            <summary>
+            Blue
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Cyan">
+            <summary>
+            Cyan
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Teal">
+            <summary>
+            Teal
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Orange">
+            <summary>
+            Orange
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Red">
+            <summary>
+            Red
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Magenta">
+            <summary>
+            Purple
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Grey">
+            <summary>
+            Grey
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Vibrant.Black">
+            <summary>
+            Black
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.QuantitativeColors.Muted">
+            <summary>
+            Muted qualitative colour scheme, an alternative to the bright scheme of that is equally 
+            colour-blind safe with more colours, but lacking a clear red or medium blue. 
+            Pale grey is meant for bad data in maps.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Indigo">
+            <summary>
+            Indigo
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Cyan">
+            <summary>
+            Cyan
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Teal">
+            <summary>
+            Teal
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Green">
+            <summary>
+            Green
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Olive">
+            <summary>
+            Olive
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Sand">
+            <summary>
+            Sand
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Rose">
+            <summary>
+            Rose
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Wine">
+            <summary>
+            Wine
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Purple">
+            <summary>
+            Purple
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.PaleGrey">
+            <summary>
+            PaleGrey
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.QuantitativeColors.Muted.Black">
+            <summary>
+            Black
+            </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.RadioButtonControl">
             <summary>
@@ -9886,6 +10504,11 @@
         <member name="P:Geosoft.GX.Controls.FileEditControl.IsPacked">
             <summary>
             Is the file in packed storage?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.FileEditControl.SortFilters">
+            <summary>
+            Sort the available list of file filters in the dialog.
             </summary>
         </member>
         <member name="E:Geosoft.GX.Controls.FileEditControl.RequiredChanged">
@@ -10978,6 +11601,30 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.SplitContainerControl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SplitContainerControl.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.SplitContainerControl.SplitterWidth">
+            <inheritdoc cref="P:System.Windows.Forms.SplitContainer.SplitterWidth"/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.SplitContainerControl.TabStop">
+            <inheritdoc cref="P:System.Windows.Forms.SplitContainer.TabStop"/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.SplitContainerControl.GripperWidth">
+            <summary>
+            Width of gripper
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.SplitContainerControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <inheritdoc/>
+        </member>
         <member name="T:Geosoft.GX.Controls.TabControlCustom">
             <summary>
             A customizable <see cref="T:System.Windows.Forms.TabControl"/> tab control.
@@ -11978,12 +12625,6 @@
              Gets or sets a value indicating whether this is a multiline System.Windows.Forms.TextBox control.
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.EditStringControl.AcceptsReturn">
-            <summary>
-             Gets or sets a value indicating whether pressing ENTER in a multiline System.Windows.Forms.TextBox
-             control creates a new line of text in the control or activates the default button for the form.
-            </summary>
-        </member>
         <member name="P:Geosoft.GX.Controls.EditStringControl.UsePasswordChars">
             <summary>
             Gets or sets whether or not this control uses password characters.
@@ -12921,6 +13562,11 @@
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.Properties.Resources.digitize">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.Properties.Resources.dock">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
@@ -13007,6 +13653,11 @@
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.Properties.Resources.right">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Properties.Resources.shadow_cursor">
             <summary>
               Looks up a localized resource of type System.Byte[].
             </summary>

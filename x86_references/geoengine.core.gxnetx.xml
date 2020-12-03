@@ -4,29 +4,6 @@
         "geoengine.core.gxnetx"
     </assembly>
     <members>
-        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
             <summary>Fire the General Information Message delegate event.</summary>
             <param name="Class">Message Class</param>
@@ -6917,52 +6894,6 @@ guarantee all grid files besides the main one are copied.
             <extended_method>no</extended_method>
             <method_group>Licensing</method_group>
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
-            <summary>Get the View URL</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="url">Returned View URL</param>
-            <param name="url_size">Size of View URL</param>
-            <available_version>9.7</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
-            <summary>Get the View URL</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="url">Returned View URL</param>
-            <available_version>9.7</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewServiceURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
-            <summary>Get the service URL for View</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="service_url">Returned Service URL</param>
-            <param name="service_url_size">Size of Service URL</param>
-            <available_version>9.7.1</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetViewServiceURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
-            <summary>Get the service URL for View</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="service_url">Returned Service URL</param>
-            <available_version>9.7.1</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.CSYS.ConnectWithCurrentCentralInstance(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
             <summary>Query information necessary to communicate with current Central Instance</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -6989,29 +6920,6 @@ guarantee all grid files besides the main one are copied.
             <param name="url">URL</param>
             <param name="token">Authorization token</param>
             <available_version>9.8</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetAPIKey(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
-            <summary>Get the API Key if signed in</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="key">Returned API key</param>
-            <param name="key_size">Size of API key</param>
-            <available_version>9.7</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Licensing</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CSYS.GetAPIKey(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
-            <summary>Get the API Key if signed in</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="key">Returned API key</param>
-            <available_version>9.7</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -8343,6 +8251,33 @@ Exit status of the GX:
 1 ended with an error.
 </returns>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Execution</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iRunPython(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)">
+            <summary>Run a Python GX script with initialization information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="gx">Name of Python GX to run.</param>
+            <param name="init_info">Initialization information (usually JSON). Available withon Python script as a global variable named gx_init_info.</param>
+            <returns>Return value of the GX set by SetReturn_SYS (0 by default). Terminates on error or cancel.</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Execution</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iRunPython(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Run a Python GX script with initialization information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="gx">Name of Python GX to run.</param>
+            <param name="init_info">Initialization information (usually JSON). Available withon Python script as a global variable named gx_init_info.</param>
+            <returns>Return value of the GX set by SetReturn_SYS (0 by default). Terminates on error or cancel.</returns>
+            <available_version>9.9</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -18100,6 +18035,54 @@ The VV's cannot have any dummy elements.
             <extended_method>no</extended_method>
             <method_group>Clipping</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.Capture3DSnapshot(System.String,System.String,System.Int32,System.String@,System.Int32)">
+            <summary>Capture current 3D view state to a snapshot.</summary>
+            <param name="name">Snapshot name</param>
+            <param name="description">Snapshot description</param>
+            <param name="light_weight">Is this a light weight snapshot, i.e. just captures view orientation and type and not group visibility/clipping etc.</param>
+            <param name="guid">Snapshot GUID</param>
+            <param name="guid_size">Size of GUID buffer.</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Snapshots</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.Capture3DSnapshot(System.String,System.String,System.Int32,System.String@)">
+            <summary>Capture current 3D view state to a snapshot.</summary>
+            <param name="name">Snapshot name</param>
+            <param name="description">Snapshot description</param>
+            <param name="light_weight">Is this a light weight snapshot, i.e. just captures view orientation and type and not group visibility/clipping etc.</param>
+            <param name="guid">Snapshot GUID</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Snapshots</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.Restore3DSnapshot(System.String)">
+            <summary>Restore 3D view to specific snapshot state.</summary>
+            <param name="guid">Snapshot GUID</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Snapshots</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.Get3DSnapshots">
+            <summary>Get the list of 3D snapshots in a 3D view.</summary>
+            <remarks>Returns name/guid pairs.</remarks>
+            <returns>LST object</returns>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Snapshots</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.DefineViewerPlane3D(System.Double,System.Double,System.Double)">
             <summary>Define a 2D drawing plane based on the user's view.</summary>
             <param name="center_x">Center point X</param>
@@ -18156,6 +18139,21 @@ based on the plane.
             <extended_method>no</extended_method>
             <method_group>3D Rendering 2D</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.GetPlaneSurfInfo(System.Int32,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Get the surface information</summary>
+            <param name="plane">Plane index</param>
+            <param name="sample">Sample rate (&gt;=1)</param>
+            <param name="base">Base</param>
+            <param name="scale">Scale</param>
+            <param name="min">Min</param>
+            <param name="max">Max</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Plane</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.SetPlaneSurfInfo(System.Int32,System.Int32,System.Double,System.Double,System.Double,System.Double)">
             <summary>Set the surface information</summary>
             <param name="plane">Plane index</param>
@@ -18171,10 +18169,33 @@ based on the plane.
             <extended_method>no</extended_method>
             <method_group>3D Plane</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.GetPlaneSurface(System.Int32,System.String@,System.Int32)">
+            <summary>Get the surface image of a plane</summary>
+            <param name="plane">Plane index</param>
+            <param name="surface">Optional surface image/grid name, can be empty</param>
+            <param name="surface_size">Size of surface image/grid name buffer.</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Plane</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.GetPlaneSurface(System.Int32,System.String@)">
+            <summary>Get the surface image of a plane</summary>
+            <param name="plane">Plane index</param>
+            <param name="surface">Optional surface image/grid name, can be empty</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>3D Plane</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.SetPlaneSurface(System.Int32,System.String)">
             <summary>Set the surface image of a plane</summary>
             <param name="plane">Plane index</param>
-            <param name="surface">Optional surface image/grid name, can be NULL</param>
+            <param name="surface">Optional surface image/grid name, can be empty</param>
             <available_version>5.1.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -18193,7 +18214,7 @@ based on the plane.
             <param name="z">Z offset of plane</param>
             <param name="sx">X scale</param>
             <param name="sy">Y scale</param>
-            <param name="str_val">Z scale</param>
+            <param name="sz">Z scale</param>
             <remarks>
 For a grid with the "Y" axis giving elevation:
 use rotations = (-90, 0, 0) for a section with azimuth 90 (E-W)
@@ -18454,7 +18475,7 @@ used as the default drawing plane.
             <param name="z">Offset in Z</param>
             <param name="sx">Scale in X</param>
             <param name="sy">Scale in Y</param>
-            <param name="str_val">Scale in Z</param>
+            <param name="sz">Scale in Z</param>
             <available_version>5.1.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -18473,7 +18494,7 @@ used as the default drawing plane.
             <param name="z">Z offset of plane</param>
             <param name="sx">X scale</param>
             <param name="sy">Y scale</param>
-            <param name="str_val">Z scale</param>
+            <param name="sz">Z scale</param>
             <available_version>5.1.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -22858,6 +22879,17 @@ The layer name is optional
             <extended_method>no</extended_method>
             <method_group>Export</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMAP.RenameView(System.String,System.String)">
+            <summary>Renames a view in this map.</summary>
+            <param name="current_name">Name of view to rename)</param>
+            <param name="new_name">New name of view</param>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Export</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAP.ExportAreaRaster(System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Int32,System.Int32,System.String,System.String)">
             <summary>Export an area of a map to a non-geo raster format.</summary>
             <param name="name">File Name To Export</param>
@@ -24834,18 +24866,25 @@ an orientation for a dipping grid or view.
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CIPJ.SetPlanView(System.Double,System.Double,System.Double,System.Double)">
             <summary>Set plan orientation parameters.</summary>
-            <param name="x">X location of view origin</param>
-            <param name="y">Y location of view origin</param>
-            <param name="z">Z location of view origin</param>
-            <param name="rot">Rotation CCW from normal XY coords</param>
+            <param name="x">X location of view rotation point</param>
+            <param name="y">Y location of view rotation point</param>
+            <param name="z">Z location of view plane in 3D</param>
+            <param name="rot">Rotation CCW from normal XY coords about the rotation point</param>
             <remarks>
 This sets up the orientation of an IPJ for plan view plots,
-for instance in Wholeplot. These differ from regular plan
+for instance in drill hole section map (top plan view). 
+These differ from regular plan
 map views in that the elevation of the view plane is set, and
 the view may be rotated. In addition, when viewed in a map,
 a view with this IPJ will give a status bar location (X, Y, Z)
 of the actual location in space, as opposed to just the X, Y of
-the view plane itself.
+the view plane itself. When a rotation angle (CCW) is specified,
+the input (X, Y) location is the point about which the coordinate
+system is rotated. For instance, you can rotate a grid about its corner
+(XC, YC) by giving it a Plan View orientation (XC, YC, ZElevation, Rot).
+If there is no rotation, the input X, Y locations are irrelevent, but they
+will show up in the output string for the orientation, so it makes sense to
+default them to (0, 0).
 </remarks>
             <available_version>5.1.6</available_version>
             <licensed_method>no</licensed_method>
@@ -27146,20 +27185,6 @@ coordinates of more than one polygon.
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
-            <extended_method>no</extended_method>
-            <method_group>Miscellaneous</method_group>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.CIMU.GridInFill(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG,System.String,System.Int32,System.Int32)">
-            <summary>Fill in a ribbon along the edge and inside hollow areas of the grid</summary>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="im_gi">Image of input grid</param>
-            <param name="out_grd">Name of the output grid</param>
-            <param name="extend">Number of cells to extend ribbon along the edge</param>
-            <param name="iter">Number of iterations to fill inside hollow areas</param>
-            <available_version>7.2</available_version>
-            <licensed_method>no</licensed_method>
-            <app_method>no</app_method>
-            <public_method>yes</public_method>
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
@@ -31324,6 +31349,17 @@ The LST is cleared first, and the items are sorted by name.
             <extended_method>no</extended_method>
             <method_group>Symbols</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CDB.NonStringAndNonArrayChanLST(GeoEngine.Core.GXNetX.CLST)">
+            <summary>Load a LST with non-string and non-array database channels.</summary>
+            <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
+            <remarks>Like ChanLST_DB, but does not include array channels, virtual channels or string channels.</remarks>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Symbols</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.NormalChanLST(GeoEngine.Core.GXNetX.CLST)">
             <summary>Load a LST with non-array database channels.</summary>
             <param name="lst">List to Populate (construct with CreateSymbLST_DB)</param>
@@ -31603,6 +31639,26 @@ on the currently selected line handle.
             <extended_method>no</extended_method>
             <method_group>Line</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CDB.RenameLine(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>Change the name for a line.</summary>
+            <param name="line">Line handle of line to modify (READWRITE</param>
+            <param name="al_num">Line number (alphanumeric)</param>
+            <param name="type">Line type</param>
+            <param name="ver">Line version</param>
+            <remarks>
+The line must be locked :const:`DB_LOCK_READWRITE'
+Sets/resets the name of an existing line directly from line type, number, and version.
+The line number can be any combination of letters and numbers,
+i.e. XU324, 98765, A, 23NGV etc.
+Returns an error if the renamed line already exists.
+</remarks>
+            <available_version>9.9</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Line</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.ISetLineName2(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.Int32,System.String@,System.Int32)">
             <summary>Like SetLineName_DB, but can use alphanumeric for line number</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -31696,7 +31752,7 @@ See also SetLineName2_DB.
         <member name="M:GeoEngine.Core.GXNetX.CDB.iLineVersion(System.Int32)">
             <summary>This method returns the version number of a line.</summary>
             <param name="line">Line handle to look at</param>
-            <remarks>The channel must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
+            <remarks>The line must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
             <returns>Line Number.</returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -31708,7 +31764,7 @@ See also SetLineName2_DB.
         <member name="M:GeoEngine.Core.GXNetX.CDB.iLineType(System.Int32)">
             <summary>This method returns the type of a line.</summary>
             <param name="line">Line handle to look at</param>
-            <remarks>The channel must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
+            <remarks>The line must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
             <returns>&amp;lt;define&amp;gt;DB_LINE_TYPE&amp;lt;/define&amp;gt;</returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -31722,7 +31778,7 @@ See also SetLineName2_DB.
             <param name="line">Line handle to look at</param>
             <param name="line_number">Line number</param>
             <param name="length">Line number buffer size</param>
-            <remarks>The channel must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
+            <remarks>The line must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -31734,7 +31790,7 @@ See also SetLineName2_DB.
             <summary>Returns the string form of the line number (can be alphanumeric)</summary>
             <param name="line">Line handle to look at</param>
             <param name="line_number">Line number</param>
-            <remarks>The channel must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
+            <remarks>The line must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -31745,7 +31801,7 @@ See also SetLineName2_DB.
         <member name="M:GeoEngine.Core.GXNetX.CDB.iLineNumber(System.Int32)">
             <summary>This method returns the number of a line.</summary>
             <param name="line">Line handle to look at</param>
-            <remarks>The channel must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
+            <remarks>The line must be locked &amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt; or &amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;</remarks>
             <returns>Line Number.</returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -45801,6 +45857,29 @@ method of the data, which is usually
         <member name="T:GeoEngine.Core.GXNetX.GEO3DV_OPENConstant">
             <summary>Open Modes</summary>
             <tocexclude />
+        </member>
+        <member name="P:GeoEngine.Core.GXNetX.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CERROR.#ctor(System.String,System.String,System.Int32)">
             <summary>Create an error</summary>
