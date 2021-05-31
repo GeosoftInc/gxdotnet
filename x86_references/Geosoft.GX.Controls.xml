@@ -202,10 +202,20 @@
             Add event handler to get commit/revert event and behaviour
             </summary>
             <remarks>
-            If this event is handled the current value is backed when the control gains focus. 
+            If this event is handled the current value is backed when the control gains focus.
             Enter key or lost focus will result in the value being "committed" (<see cref="P:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs.Reverted"/> = false).
             Escape key will revert to backed up value (<see cref="P:Geosoft.GX.Controls.BaseEditControl.CommitRevertEventArgs.Reverted"/> = false).
             </remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseEditControl.TextBox">
+            <summary>
+            Windows Forms Text Box Control
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseEditControl.Button">
+            <summary>
+            Windows Forms Button Control
+            </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.BaseEditControl.AcceptsReturn">
             <summary>
@@ -399,303 +409,235 @@
             Set the current colour model - input one of ITR_ZONE_MODELConstant values.
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.MapCursors">
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins">
             <summary>
-            Cursors to use in mappping contexts
+            Mixin to reduce code duplicate for common control binding mechanisms
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapCursors.Shadow">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.ViewModelWhenAnyValue``2(``1,``0,System.Linq.Expressions.Expression)">
             <summary>
-            Standard shadow cursor mode
+            This method was obtained from the ReactiveUI internals and is very handy to set up bindings
+            with natural syntax like with the ControlBindingMixins.BindComboBox mixin.
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapCursors.Digitize">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindComboBox``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
+             <summary>
+             Utility method to bind the combination a reactive IList property and associated selection in a ViewModel to a <see cref="T:System.Windows.Forms.ComboBox"/> control in a view.
+             </summary>
+             <typeparam name="TViewModel">The type of the view model being bound.</typeparam>
+             <typeparam name="TView">The type of the view being bound.</typeparam>
+             <typeparam name="TVMListProp">The type of the list property bound on the view model.</typeparam>
+             <typeparam name="TVMSelectionProp">The type of the selection property bound on the view model.</typeparam>
+             <param name="view">The instance of the view to bind.</param>
+             <param name="viewModel">The instance of the view model to bind.</param>
+             <param name="vmListProperty">
+             An expression indicating the list property that is bound on the view model.
+             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
+             and the binder will attempt to subscribe to changes on each recursively.
+             </param>
+             <param name="vmSelectionProperty">
+             An expression indicating the selection property that is bound on the view model.
+             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
+             and the binder will attempt to subscribe to changes on each recursively.
+             </param>
+             <param name="vComboBoxProperty">
+             The combo box property on the view that is to be bound.
+             This can be a chain of properties of the form. <code>view => view.Foo.Bar.Baz</code>
+             and the binder will attempt to set the last one each time the view model property is updated.
+             </param>
+             <returns>
+             An instance of <see cref="T:System.IDisposable"/> that, when disposed,
+             disconnects the binding.
+             </returns>
+             <example>
+             Example ViewModel:
+             <code>
+             public class SomeViewModel
+             {
+                [ObservableAsProperty]
+                public List&lt;string&gt; SomeList { get; }
+            
+                [Reactive]
+                public string SelectionProperty { get; set; }
+            
+                public SomeViewModel()
+                {
+                }
+             }
+             </code>
+             Example View WhenActivated:
+             <code>
+             this.WhenActivated(d =&gt;
+             {
+                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
+                d(this.BindComboBox(ViewModel, vm =&gt; vm.SomeList, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox));
+             }
+             </code>
+             Which would be equivalent to:
+             <code>
+             this.WhenActivated(d =&gt;
+             {
+                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
+                d(this.OneWayBind(ViewModel, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox.SelectedItem));
+                d(this.OneWayBind(ViewModel, vm =&gt; vm.SomeList, v =&gt; v.comboBox.DataSource));
+                d(unitsComboBox.Events().SelectedIndexChanged
+                    .Select(_ => {
+                       if (ViewModel == null)
+                          return null;
+            
+                       return ViewModel.SomeList.ElementAtOrDefault(comboBox.SelectedIndex);
+                    })
+                    .Where(element =&gt; element != null)
+                    .Subscribe(element =&gt; ViewModel.SelectionProperty = element));
+               });
+             }
+             </code>
+             </example>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject">
             <summary>
-            Standard digitize mode
+            A <see cref="T:ReactiveUI.ReactiveObject"/> supporting translation functionality.
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.DataProfileControl">
-            <summary>
-            Plot one or more data profiles in an XY graph, with axis and scaling options.
-            </summary>
-        </member>
-        <member name="T:Geosoft.GX.Controls.DataProfileControl.AxisScaling">
-            <summary>
-            All Axis scaling options. X and Y axes do not support all types individually
-            </summary>
-        </member>
-        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Equal">
-            <summary>
-            Space axis equally by data index; ignore actual value, and do not plot labels
-            </summary>
-        </member>
-        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Linear">
-            <summary>
-            Space axis linearlly
-            </summary>
-        </member>
-        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Log">
-            <summary>
-            Space axis logarithmically
-            </summary>
-        </member>
-        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.LogLinear">
-            <summary>
-            Space axis using Log-linear transform
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisScaling">
-            <summary>
-            Scaling for the X-axis.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumX">
-            <summary>
-            Pre-set Minimum X-Axis value.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumX">
-            <summary>
-            Pre-set Maximum X-Axis value.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDiscreteXDataTicsAndLabels">
-            <summary>
-            If false, plots a "normal" X-axis with tics and labels independent of the XData locations. 
-            If true, an X-tic is plotted for each YData value. If XData is defined, the value appears as a label.
-            If true and XData is not defined, data is spaced equally (XAxisScaling is ignored)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumX">
-            <summary>
-            Used for Log or LogLinear X-axis scaling
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.XData">
-            <summary>
-            If defined, individual x-values for the X data. If not set, both MinimumX and MaximumX must be defined.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumY">
-            <summary>
-            Pre-set Minimum Y-Axis value.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumY">
-            <summary>
-            Pre-set Maximum X-Axis value.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisScaling">
-            <summary>
-            Scaling for the Y-axis: Equal not supported.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label1">
-            <summary>
-            Label for data set #1
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label2">
-            <summary>
-            Label for data set #2
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label3">
-            <summary>
-            Label for data set #3
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData1">
-            <summary>
-            Data set #1 (required)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData2">
-            <summary>
-            Data set #2 (optional)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData3">
-            <summary>
-            Data set #3 (optional)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color1">
-            <summary>
-            Colour for YData1 lines and symbols
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color2">
-            <summary>
-            Colour for YData2 lines and symbols
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color3">
-            <summary>
-            Colour for YData3 lines and symbols
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumY">
-            <summary>
-            Used for Log or LogLinear Y-axis scaling
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisLabel">
-            <summary>
-            X-axis units
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisLabel">
-            <summary>
-            Y-axis units
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.CurrentXIndex">
-            <summary>
-            Highlight a particular data index.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDataSymbols">
-            <summary>
-            Plot square boxes at data points?
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotLegend">
-            <summary>
-            Plot legend inside the graph?
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.Rescale">
-            <summary>
-            Force rescaling before next refresh
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl._(System.String)">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._(System.String)">
             <summary>
             Translate string based on the current Geosoft language setting
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl._n(System.String)">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._n(System.String)">
             <summary>
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.#ctor">
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1">
             <summary>
-            	<para>Initializes an instance of the <see cref="T:Geosoft.GX.Controls.DataProfileControl"/> class.</para>
+            A <see cref="T:Geosoft.GX.Controls.BaseForm"/> suitable to use as a View with <see cref="N:Geosoft.GX.Controls.ReactiveUI"/>
+            </summary>
+            <typeparam name="VM">The type of ViewModel.</typeparam>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr,Geosoft.GX.Controls.IParamStorage)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage,Geosoft.GX.Controls.IAPIAdapter)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ReactiveUI#IViewFor#ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.InitializeForm">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1">
+            <summary>
+            This is an UserControl that is both and UserControl and has ReactiveObject
+            powers (i.e. you can call RaiseAndSetIfChanged) and runtime GX translations.
+            </summary>
+            <typeparam name="TViewModel">The type of the view model.</typeparam>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.#ctor">
+            <summary>
+            Default Constructor
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnResize(System.EventArgs)">
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.SkipTranslationDesignMode">
             <summary>
-            
-            </summary>      
-        </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
-            <summary>
-            
+            Should translation be skipped (due to design mode)
             </summary>
         </member>
-        <member name="F:Geosoft.GX.Controls.DataProfileControl.components">
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.SkipTranslationRuntime">
             <summary>
-            Required designer variable.
+            Should translation be skipped (during runtime)
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.Dispose(System.Boolean)">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._(System.String)">
             <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
+            Translate string based on the current Geosoft language setting
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.GroupedComboBox">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._f(System.FormattableString)">
             <summary>
-            Represents a Windows combo box control that, when bound to a data source, is capable of
-            displaying items in groups/categories.
-            </summary>
-            <remarks>
-            A ComboBox Control With Grouping
-            By Bradley Smith - 2010/06/23 (http://www.brad-smith.info/blog/archives/104)
-            JB: Modified to work with BetterComboBox
-            </remarks>
-        </member>
-        <member name="P:Geosoft.GX.Controls.GroupedComboBox.DataSource">
-            <summary>
-            Gets or sets the data source for this GroupedComboBox.
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.GroupedComboBox.DrawMode">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._n(System.String)">
             <summary>
-            Gets a value indicating whether the drawing of elements in the list will be handled by user code.
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.GroupedComboBox.GroupMember">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControls">
             <summary>
-            Gets or sets the property to use when grouping items in the list.
+            Translate all controls which have been added to this parent.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.#ctor">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControl(System.Windows.Forms.Control)">
             <summary>
-            Initialises a new instance of the GroupedComboBox class.
+            Translate a specific control.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.System#Collections#IComparer#Compare(System.Object,System.Object)">
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.DesignMode">
             <summary>
-            Explicit interface implementation for the IComparer.Compare method. Performs a two-tier comparison
-            on two list items so that the list can be sorted by group, then by display value.
+             Gets a value that indicates whether the <see cref="T:System.ComponentModel.Component"/> is currently
+             in design mode.
             </summary>
-            <param name="x"></param>
-            <param name="y"></param>
-            <returns></returns>
+            <returns>
+            	true if the <see cref="T:System.ComponentModel.Component"/> is in design mode; otherwise, false.
+            </returns>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.IsGroupStart(System.Int32,System.String@)">
+        <member name="T:Geosoft.GX.Controls.Helpers.TreeViewExtensions">
             <summary>
-            Determines whether the list item at the specified index is the start of a new group. In all
-            cases, populates the string respresentation of the group that the item belongs to.
+            Extension classes for working with <see cref="T:System.Windows.Forms.TreeView"/>, its <see cref="T:System.Windows.Forms.TreeNode"/>s and <see cref="T:System.Windows.Forms.TreeNodeCollection"/>s.
             </summary>
-            <param name="index"></param>
-            <param name="groupText"></param>
-            <returns></returns>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.mBindingSource_ListChanged(System.Object,System.ComponentModel.ListChangedEventArgs)">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodes(System.Windows.Forms.TreeNodeCollection,System.Boolean)">
             <summary>
-            Re-synchronises the internal sorted collection when the data source changes.
+            Enumerate a node collection and its descendants
             </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnFontChanged(System.EventArgs)">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodes(System.Windows.Forms.TreeNode,System.Boolean)">
             <summary>
-            When the control font changes, updates the font used to render group names.
+            Enumerate a node and its descendants
             </summary>
-            <param name="e"></param>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnParentChanged(System.EventArgs)">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodesBreadthFirst(System.Windows.Forms.TreeNodeCollection)">
             <summary>
-            When the parent control changes, updates the font used to render group names.
+            Enumerate a node collection and its descendants (breadth first).
             </summary>
-            <param name="e"></param>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodesBreadthFirst(System.Windows.Forms.TreeNode)">
             <summary>
-            Performs custom painting for a list item.
+            Enumerate a node and its descendants (breadth first).
             </summary>
-            <param name="e"></param>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodesDepthFirst(System.Windows.Forms.TreeNodeCollection)">
             <summary>
-            Determines the size of a list item.
+            Enumerate a node collection and its descendants (depth first).
             </summary>
-            <param name="e"></param>
         </member>
-        <member name="M:Geosoft.GX.Controls.GroupedComboBox.SyncInternalItems">
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateNodesDepthFirst(System.Windows.Forms.TreeNode)">
             <summary>
-            Rebuilds the internal sorted collection.
+            Enumerate a node and its descendants (depth first).
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TreeViewExtensions.EnumerateBranch(System.Windows.Forms.TreeNode)">
+            <summary>
+            Enumerate nodes and its parents along a branch to root of tree. Starting at node itself.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.ControlLanguageUtil">
@@ -5101,6 +5043,321 @@
             </summary>
             <returns>CIPJ</returns>
         </member>
+        <member name="T:Geosoft.GX.Controls.MapCursors">
+            <summary>
+            Cursors to use in mappping contexts
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapCursors.Shadow">
+            <summary>
+            Standard shadow cursor mode
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapCursors.Digitize">
+            <summary>
+            Standard digitize mode
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.DataProfileControl">
+            <summary>
+            Plot one or more data profiles in an XY graph, with axis and scaling options.
+            The control currently supports maximum 3 data sets. May consider using more generic data set array instead if needed.
+            The data sets can scale together or independently on Y axis, the former scale method will use the range of the data set 1 (YData1) as primary reference.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.DataProfileControl.AxisScaling">
+            <summary>
+            All Axis scaling options. X and Y axes do not support all types individually
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Equal">
+            <summary>
+            Space axis equally by data index; ignore actual value, and do not plot labels
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Linear">
+            <summary>
+            Space axis linearlly
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.Log">
+            <summary>
+            Space axis logarithmically
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.AxisScaling.LogLinear">
+            <summary>
+            Space axis using Log-linear transform
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisScaling">
+            <summary>
+            Scaling for the X-axis.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumX">
+            <summary>
+            Pre-set Minimum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumX">
+            <summary>
+            Pre-set Maximum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDiscreteXDataTicsAndLabels">
+            <summary>
+            If false, plots a "normal" X-axis with tics and labels independent of the XData locations. 
+            If true, an X-tic is plotted for each YData value. If XData is defined, the value appears as a label.
+            If true and XData is not defined, data is spaced equally (XAxisScaling is ignored)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumX">
+            <summary>
+            Used for Log or LogLinear X-axis scaling
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XData">
+            <summary>
+            If defined, individual x-values for the X data. If not set, both MinimumX and MaximumX must be defined.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MinimumY">
+            <summary>
+            Pre-set Minimum Y-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.MaximumY">
+            <summary>
+            Pre-set Maximum X-Axis value.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisScaling">
+            <summary>
+            Scaling for the Y-axis: Equal not supported.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label1">
+            <summary>
+            Label for data set #1
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label2">
+            <summary>
+            Label for data set #2
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Label3">
+            <summary>
+            Label for data set #3
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData1">
+            <summary>
+            Data set #1 (required)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData2">
+            <summary>
+            Data set #2 (optional)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData3">
+            <summary>
+            Data set #3 (optional)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData2ScaleIndependent">
+            <summary>
+            Scale independently on YAxis for YData2.
+            - True: The plotting range is based on YData2 range
+            - False: The plotting range is the join of YData1 and YData2 ranges or custom range from MinimumY/MaximumY
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YData3ScaleIndependent">
+            <summary>
+            Scale independently on YAxis for YData3
+            - True: The plotting range is based on YData3 range
+            - False: The plotting range is the join of YData1 and YData3 ranges or custom range from MinimumY/MaximumY
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color1">
+            <summary>
+            Colour for YData1 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color2">
+            <summary>
+            Colour for YData2 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.Color3">
+            <summary>
+            Colour for YData3 lines and symbols
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.LogMinimumY">
+            <summary>
+            Used for Log or LogLinear Y-axis scaling
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.XAxisLabel">
+            <summary>
+            X-axis units
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.YAxisLabel">
+            <summary>
+            Y-axis units
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.CurrentXIndex">
+            <summary>
+            Highlight a particular data index.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDataSymbols">
+            <summary>
+            Plot square boxes at data points?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotLegend">
+            <summary>
+            Plot legend inside the graph?
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.Rescale">
+            <summary>
+            Force rescaling before next refresh
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl._(System.String)">
+            <summary>
+            Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl._n(System.String)">
+            <summary>
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.#ctor">
+            <summary>
+            	<para>Initializes an instance of the <see cref="T:Geosoft.GX.Controls.DataProfileControl"/> class.</para>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnResize(System.EventArgs)">
+            <summary>
+            
+            </summary>      
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DataProfileControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.GroupedComboBox">
+            <summary>
+            Represents a Windows combo box control that, when bound to a data source, is capable of
+            displaying items in groups/categories.
+            </summary>
+            <remarks>
+            A ComboBox Control With Grouping
+            By Bradley Smith - 2010/06/23 (http://www.brad-smith.info/blog/archives/104)
+            JB: Modified to work with BetterComboBox
+            </remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.GroupedComboBox.DataSource">
+            <summary>
+            Gets or sets the data source for this GroupedComboBox.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.GroupedComboBox.DrawMode">
+            <summary>
+            Gets a value indicating whether the drawing of elements in the list will be handled by user code.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.GroupedComboBox.GroupMember">
+            <summary>
+            Gets or sets the property to use when grouping items in the list.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.#ctor">
+            <summary>
+            Initialises a new instance of the GroupedComboBox class.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.System#Collections#IComparer#Compare(System.Object,System.Object)">
+            <summary>
+            Explicit interface implementation for the IComparer.Compare method. Performs a two-tier comparison
+            on two list items so that the list can be sorted by group, then by display value.
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.IsGroupStart(System.Int32,System.String@)">
+            <summary>
+            Determines whether the list item at the specified index is the start of a new group. In all
+            cases, populates the string respresentation of the group that the item belongs to.
+            </summary>
+            <param name="index"></param>
+            <param name="groupText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.mBindingSource_ListChanged(System.Object,System.ComponentModel.ListChangedEventArgs)">
+            <summary>
+            Re-synchronises the internal sorted collection when the data source changes.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnFontChanged(System.EventArgs)">
+            <summary>
+            When the control font changes, updates the font used to render group names.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnParentChanged(System.EventArgs)">
+            <summary>
+            When the parent control changes, updates the font used to render group names.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>
+            Performs custom painting for a list item.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)">
+            <summary>
+            Determines the size of a list item.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GroupedComboBox.SyncInternalItems">
+            <summary>
+            Rebuilds the internal sorted collection.
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.IIniParameterControl">
             <summary>
             All controls that wish to work with the INI component should implement this interface.
@@ -6935,6 +7192,11 @@
             for controls from INI parameter settings irrespective of their property initialization order in the designer generated code.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.BaseControl.ReactiveValidationError">
+             <summary>
+            
+             </summary>
+        </member>
         <member name="F:Geosoft.GX.Controls.BaseControl.components">
             <summary>
             Required designer variable.
@@ -7119,6 +7381,12 @@
             Override this in base class to do extra initialization (combobox lst init etc.)
             </summary>
             <remarks>The derived class should call this function in the appropriate place</remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.BaseForm.ExternalInitializeForm">
+            <summary>
+            Calls <see cref="M:Geosoft.GX.Controls.BaseForm.InitializeForm"/> for external usage.
+            </summary>
+            <seealso cref="P:Geosoft.GX.Controls.BaseForm.ExternalAppMainForm"/>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseForm.bValidateDialog(System.String@,System.Boolean)">
             <summary>
@@ -8759,6 +9027,9 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.INI.DesignMode">
+            <inheritdoc/>
         </member>
         <member name="P:Geosoft.GX.Controls.INI.ContainerControl">
             <summary>
@@ -12657,11 +12928,6 @@
         <member name="P:Geosoft.GX.Controls.EditStringControl.Text">
             <summary>
             Override Text property to use strGetValue() and SetValue().
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.EditStringControl.TextBox">
-            <summary>
-            Get the TextBox control associated with this control
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.EditStringControl.SetValue(System.String)">

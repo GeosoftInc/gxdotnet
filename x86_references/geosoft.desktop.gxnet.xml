@@ -4840,9 +4840,14 @@ All              Lists all files.
             <returns>
 &amp;lt;define&amp;gt;COMMAND_ENV&amp;lt;/define&amp;gt;
 
-Notes									We are moving towards embedded tools and menus and this setting can be
+Notes									
+
+We are moving towards embedded tools and menus and this setting can be
 queried from the project to determine how specific commands should react.
 Only 3D viewer is currently making use of this.
+
+If new Command environment enum values are added, then update the iGetCommandEnvironment_PROJ() function
+in geogxgui\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\include\obj\objgp.h.
 </returns>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
@@ -18197,8 +18202,22 @@ that fiducial into the new line.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CDU.SortIndexN(GeoEngine.Core.GXNet.CDB,System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>Create an ordered index from any number of channels.  The order of rows where compared items are the same is preserved.</summary>
+            <param name="db">Database</param>
+            <param name="line">Line symbol</param>
+            <param name="chVV">VV of channel symbols (INT). Sort by these channels [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="orderVV">VV of sort order values (INT, one for each channel) &amp;lt;define&amp;gt;DU_SORT&amp;lt;/define&amp;gt;</param>
+            <param name="in_ch">Output index channel (should be int) [&amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;]</param>
+            <available_version>9.10</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CDU.SortIndex2(GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>Create an ordered index from two channels</summary>
+            <summary>Create an ordered index from two channels.  The order of rows where compared items are the same is preserved.</summary>
             <param name="db">Database</param>
             <param name="line">Line symbol</param>
             <param name="ch1">Sort by this channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
@@ -18214,7 +18233,7 @@ that fiducial into the new line.
             <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNet.CDU.SortIndex(GeoEngine.Core.GXNet.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>Create an ordered index of the contents of a channel.</summary>
+            <summary>Create an ordered index of the contents of a channel. The order of rows where compared items are the same is preserved.</summary>
             <param name="db">Database</param>
             <param name="line">Line symbol</param>
             <param name="ch">Channel to sort [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>

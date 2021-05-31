@@ -4,29 +4,6 @@
         "geoengine.core.gxnet"
     </assembly>
     <members>
-        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
-        </member>
         <member name="P:TranslationAttribute.FriendlyPath">
             <summary>
 The translation friendly path
@@ -46,6 +23,9 @@ Constructor
             <summary>
 Translation attribute
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
+            <summary>Geosoft internal use only.</summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -10592,6 +10572,40 @@ accumulate statistics.
        statistics for a grid.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSEGYREADER.GetTraceData(System.Int32)">
+            <summary>Get the SEG Y trace file header data for a particular starting trace</summary>
+            <param name="trace_number">Which trace to read</param>
+            <returns>:class:'VV' containing the data from the trace header</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSEGYREADER.GetTraceHeaderAsJson(System.Int32,System.String@,System.Int32)">
+            <summary>Return the contents of a trace header as JSON.</summary>
+            <param name="trace_number">Which trace to read</param>
+            <param name="text">Trace header as JSON.</param>
+            <param name="json_length" />
+            <available_version>9.10</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSEGYREADER.GetTraceHeaderAsJson(System.Int32,System.String@)">
+            <summary>Return the contents of a trace header as JSON.</summary>
+            <param name="trace_number">Which trace to read</param>
+            <param name="text">Trace header as JSON.</param>
+            <available_version>9.10</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CSEGYREADER.ExportFiles">
             <summary>Exports contents of SEG Y file to voxel and/or database.</summary>
@@ -23578,6 +23592,47 @@ after the calculation (returned here for convenience).
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CKML.Import3DLinePath(GeoEngine.Core.GXNet.CMVIEW,System.String,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32,System.Int32)">
+            <summary>Imports a KML 3D LinePath into a provided view.</summary>
+            <param name="mview">MVIEW object - the (3d) view to import the LinePath into.</param>
+            <param name="name">The name of the resulting LinePath group.</param>
+            <param name="vv_vx">X Vertex Components - VV of GS_REAL</param>
+            <param name="vv_vy">Y Vertex Components - VV of GS_REAL</param>
+            <param name="vv_vz">Z Vertex Components - VV of GS_REAL</param>
+            <param name="color">The colour of the resulting surface - COL_ANY.</param>
+            <param name="extruded">Extrude the LinePath to the base - BOOL.</param>
+            <remarks>Requirements -- The MVIEW must be 3D and valid (see iIsView3D_MVIEW);- The group name must not be null/empty;- The three VV for vector components must contain vertices, and be of equal length.</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CKML.Import3DPolygon(GeoEngine.Core.GXNet.CMVIEW,System.String,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32,System.Int32)">
+            <summary>Imports a KML 3D polygon into a provided view.</summary>
+            <param name="mview">MVIEW object - the (3d) view to import the polygon into.</param>
+            <param name="name">The name of the resulting polygon group.</param>
+            <param name="vv_vx">X Vertex Components - VV of GS_REAL</param>
+            <param name="vv_vy">Y Vertex Components - VV of GS_REAL</param>
+            <param name="vv_vz">Z Vertex Components - VV of GS_REAL</param>
+            <param name="color">The colour of the resulting surface - COL_ANY.</param>
+            <param name="extruded">Extrude the polygon to the base - BOOL.</param>
+            <remarks>Requirements -- The MVIEW must be 3D and valid (see iIsView3D_MVIEW);- The group name must not be null/empty;- The three VV for vector components must contain vertices, and be of equal length.</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.CKML">
+            <summary>
+
+       KML functions provide an interface KML (Keyhole markup language) files.
+   
+</summary>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CITR.SetZoneValue(System.Int32,System.Double)">
             <summary>Set the value in a zone of the ITR</summary>
             <param name="zone">Number of the zone to set.</param>
@@ -23994,6 +24049,77 @@ is 0 (no color).
        used in conjunction with MVIEW objects (see MVIEW and MVU).
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.RemoveFavouriteCoordinateSystem(System.Int32)">
+            <summary>Remove favourite coordinate system from Settings.</summary>
+            <param name="index">Index of item.</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.GetFavouriteCoordinateSystem(System.Int32)">
+            <summary>Get a favourite coordinate system from Settings.</summary>
+            <param name="index">Index of item.</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iGetNumberOfFavouriteCoordinateSystems">
+            <summary>Get number of favourite coordinate systems in Settings.</summary>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.AddAsFavouriteCoordinateSystem">
+            <summary>Add as favourite coordinate system to Settings.</summary>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iGetEPSGIDForDatum">
+            <summary>Get EPSG ID for datum of coordinate system or &amp;lt;define&amp;gt;iDUMMY&amp;lt;/define&amp;gt; if unknown.</summary>
+            <returns>&amp;lt;define&amp;gt;IPJ_ORIENT&amp;lt;/define&amp;gt;</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iGetAuthorityID(System.String@,System.Int32)">
+            <summary>Get Authority ID (e.g. EPSG, ESRI) for coordinate system or &amp;lt;define&amp;gt;iDUMMY&amp;lt;/define&amp;gt; if unknown.</summary>
+            <param name="authority">Authority ID (e.g. EPSG and ESRI)</param>
+            <param name="authority_length">Authority ID string length.</param>
+            <returns>&amp;lt;define&amp;gt;IPJ_ORIENT&amp;lt;/define&amp;gt;</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iGetAuthorityID(System.String@)">
+            <summary>Get Authority ID (e.g. EPSG, ESRI) for coordinate system or &amp;lt;define&amp;gt;iDUMMY&amp;lt;/define&amp;gt; if unknown.</summary>
+            <param name="authority">Authority ID (e.g. EPSG and ESRI)</param>
+            <returns>&amp;lt;define&amp;gt;IPJ_ORIENT&amp;lt;/define&amp;gt;</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CIPJ.ReprojectSectionGrid(GeoEngine.Core.GXNet.CIPJ,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
             <summary>Reproject a section grid</summary>
@@ -24674,6 +24800,39 @@ supported.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iWarpsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@,System.Int32)">
+            <summary>Same as iWarpsAreTheSame_IPJ, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <param name="length">Reason buffer size</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iWarpsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@)">
+            <summary>Same as iWarpsAreTheSame_IPJ, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CIPJ.iWarpsAreTheSameWithinASmallTolerance(GeoEngine.Core.GXNet.CIPJ)">
             <summary>Same as iWarpsAreTheSame_IPJ, but allows for small numerical differences</summary>
             <param name="ipj2">IPJ 2</param>
@@ -24836,6 +24995,39 @@ when rendering a grid in 3D where it has been located on a plane.
 1 - Yes
 </returns>
             <available_version>8.3</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iOrientationsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@,System.Int32)">
+            <summary>Same as iOrientationsAreTheSame_IPJ, but allows for small numerical differences</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <param name="length">Reason buffer size</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iOrientationsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@)">
+            <summary>Same as iOrientationsAreTheSame_IPJ, but allows for small numerical differences</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -25164,6 +25356,41 @@ string will be empty.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iCoordinateSystemsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.Int32,System.String@,System.Int32)">
+            <summary>Same as iCoordinateSystemsAreTheSame_IPJ, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="sig_digits_EN">Significant digits for high-precision parameters like easting and northing (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <param name="length">Reason buffer size</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iCoordinateSystemsAreTheSameToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.Int32,System.String@)">
+            <summary>Same as iCoordinateSystemsAreTheSame_IPJ, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="sig_digits_EN">Significant digits for high-precision parameters like easting and northing (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <returns>
+0 - No
+1 - Yes
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CIPJ.iCoordinateSystemsAreTheSameWithinASmallTolerance(GeoEngine.Core.GXNet.CIPJ)">
             <summary>Same as iCoordinateSystemsAreTheSame_IPJ, but allows for small numerical differences</summary>
             <param name="ipj2">IPJ 2</param>
@@ -25214,6 +25441,59 @@ string will be empty.
             <param name="f_forward">1 -  Forward (raw -&gt; coordinate) , 0 - (coordinate -&gt; raw)</param>
             <returns>0 if ok - 1 otherwise</returns>
             <available_version>6.3</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iCompareDatumsToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@,System.Int32)">
+            <summary>Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <param name="length">Reason buffer size</param>
+            <remarks>
+To transform between different datums requires the use of a local
+datum transform.  The local datum transform can be defined when
+a coordinate system is created, but the definition is optional.
+This function will test that the local datum transforms are defined.
+Note that a coordinate transformation between datums without a
+local datum transform is still possible, but only the effect of
+ellipsoid shape will be modelled in the transform.
+</remarks>
+            <returns>
+0 - Datums are different
+1 - Datums are the same, but different LDT
+2 - Datums and LTD are the same
+</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.iCompareDatumsToSpecifiedToleranceWithFeedback(GeoEngine.Core.GXNet.CIPJ,System.Int32,System.String@)">
+            <summary>Compare the datums of two coordinate systems, but allows for a specified accuracy and returns the reason if they are different</summary>
+            <param name="ipj2">IPJ 2</param>
+            <param name="sig_digits">Significant digits (0 for exact)</param>
+            <param name="str_val">Reason if different returned</param>
+            <remarks>
+To transform between different datums requires the use of a local
+datum transform.  The local datum transform can be defined when
+a coordinate system is created, but the definition is optional.
+This function will test that the local datum transforms are defined.
+Note that a coordinate transformation between datums without a
+local datum transform is still possible, but only the effect of
+ellipsoid shape will be modelled in the transform.
+</remarks>
+            <returns>
+0 - Datums are different
+1 - Datums are the same, but different LDT
+2 - Datums and LTD are the same
+</returns>
+            <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -25480,8 +25760,18 @@ Copies the projection parameters, while leaving the rest
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CIPJ.CopyOrientation(GeoEngine.Core.GXNet.CIPJ)">
+            <summary>Copy any orientation and/or warp from one IPJ to another.</summary>
+            <param name="ip_jd">Destination IPJ</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CIPJ.ClearOrientation">
-            <summary>Clear an orientation warp from an IPJ.</summary>
+            <summary>Clear any orientation and/or warp from an IPJ.</summary>
             <available_version>5.1.6</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -26024,6 +26314,19 @@ If not, the method will terminate.
             <param name="im_gi">Input image</param>
             <param name="im_go">Output image</param>
             <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMU.GridVC(GeoEngine.Core.GXNet.CIMG,GeoEngine.Core.GXNet.CIMG,System.Int32,System.Double)">
+            <summary>Apply vertical continuation convolution filter to a grid.</summary>
+            <param name="im_gi">Input image</param>
+            <param name="im_go">Output image</param>
+            <param name="updown">1 to calculate continuation upward, 0 downward</param>
+            <param name="distance">Continuation distance</param>
+            <available_version>9.9</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -34587,6 +34890,9 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.IntConstants.SYS_DIR_USER_CSV">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SYS_DIR_GEOSOFT_PYTHON">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.SYS_DIR_GEOSOFT_TBL">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
         </member>
@@ -35981,6 +36287,15 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.LAYOUT_CONSTR_LEFT">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.LAYOUT_CONSTRConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.KML_ALT_ABSOLUTE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.KML_ALT_RELATIVETOGROUND">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.KML_ALT_CLAMPTOGROUND">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.ITR_MODEL_LOGLIN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
@@ -37773,6 +38088,9 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.Constant.SYS_DIR_USER_CSV">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SYS_DIR_GEOSOFT_PYTHON">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.SYS_DIR_GEOSOFT_TBL">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SYS_DIRConstant" />.</summary>
         </member>
@@ -39227,6 +39545,15 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.LAYOUT_CONSTR_LEFT">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.LAYOUT_CONSTRConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.KML_ALT_ABSOLUTE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.KML_ALT_RELATIVETOGROUND">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.KML_ALT_CLAMPTOGROUND">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.ITR_MODEL_LOGLIN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
@@ -41328,6 +41655,9 @@ but including any default menus specified in the settings (these will not come b
         <member name="F:GeoEngine.Core.GXNet.SYS_DIRConstant.USER_CSV">
             <summary>User CSV Folder</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.SYS_DIRConstant.GEOSOFT_PYTHON">
+            <summary>PYTHON folder</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.SYS_DIRConstant.GEOSOFT_TBL">
             <summary>TBL folder</summary>
         </member>
@@ -43262,6 +43592,19 @@ Format   Description                  Type
             <summary>Layout constraint specifiers</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNet.KML_ALTConstant.ABSOLUTE">
+            <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.KML_ALTConstant.RELATIVETOGROUND">
+            <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.KML_ALTConstant.CLAMPTOGROUND">
+            <summary />
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.KML_ALTConstant">
+            <summary>KML Altitude values.</summary>
+            <tocexclude />
+        </member>
         <member name="F:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant.ITR_MODEL_LOGLIN">
             <summary>The ITR is set up with a log-linear transform.</summary>
         </member>
@@ -45023,8 +45366,28 @@ method of the data, which is usually
             <summary>Open Modes</summary>
             <tocexclude />
         </member>
-        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
-            <summary>Geosoft internal use only.</summary>
+        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CERROR.#ctor(System.String,System.String,System.Int32)">
             <summary>Create an error</summary>
