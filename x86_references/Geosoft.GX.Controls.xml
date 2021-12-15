@@ -49,6 +49,11 @@
               the controls are not included in the TAB order when the advanced controls are hidden.</para>
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.IsVisibilityControlledFor(System.Windows.Forms.Control)">
+            <summary>
+            Check if visibility for a control will be affected by expanding or collapsing the UI with this button
+            </summary>
+        </member>
         <member name="E:Geosoft.GX.Controls.AdvancedButtonControl.OnExpanded">
             <summary>
             Occurs when the advanced panel is shown. Expanding the panel sets to visible all the controls contained therein, so use this
@@ -322,283 +327,286 @@
             Internal control to use in designers for snapping guidelines.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ClickThroughExtensions.ClickThroughWndProc(System.Windows.Forms.Control,System.Windows.Forms.Message@)">
+        <member name="T:Geosoft.GX.Controls.ControlExtensions">
             <summary>
-            This WndProc extension method implements click-through functionality. Some controls (MenuStrip, ToolStrip) will not
-            recognize a click unless the form they are hosted in is active. So the first click will activate the
-            form and then a second is required to actually make the click happen.
+            Generic extension methods for Windows Forms Controls
             </summary>
-            <param name="ctl">The Message that was passed to your WndProc.</param>
-            <param name="m">The Message that was passed to your WndProc.</param>
-            <returns>true if the message was processed, false if it was not</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstParentOf``1(System.Windows.Forms.Control)">
+            <summary>
+            Find first parent of a specific type
+            </summary>
+            <typeparam name="TParent">The type of parent to search for,</typeparam>
+            <param name="control">This control</param>
+            <returns>The parent instance if found or null if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstChildOf``1(System.Windows.Forms.Control)">
+            <summary>
+            Find first child control of a specific type (breadth first search)
+            </summary>
+            <typeparam name="TChild">The type of child to search for.</typeparam>
+            <param name="control">This control</param>
+            <returns>The child instance if found or null if not.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.SynchronizationContextUtils">
+            <summary>
+            Some UI actions seem to change the current Synchronization present in 
+            <see cref="P:System.Threading.SynchronizationContext.Current"/>. The utility methods present 
+            in this class provide a means to cache and restore the current synchronization 
+            context throughout a particular action.
+            </summary>
             <remarks>
-            You should first call base.WndProc(), and then call this method. This method is only intended to
-            change a return value, not to change actual processing before that.
-            See: https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
+            See https://stackoverflow.com/q/32439669/2942725 for details.
             </remarks>
         </member>
-        <member name="T:Geosoft.GX.Controls.ClickThroughMenuStrip">
+        <member name="M:Geosoft.GX.Controls.Helpers.SynchronizationContextUtils.Persist``1(System.Func{``0})">
             <summary>
-            MenuStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            Ensures that <see cref="P:System.Threading.SynchronizationContext.Current"/> is persisted
+            throughout invocation of the provided function.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ClickThroughMenuStrip.WndProc(System.Windows.Forms.Message@)">
+        <member name="M:Geosoft.GX.Controls.Helpers.SynchronizationContextUtils.Persist(System.Action)">
             <summary>
-            Processes Windows messages.
-            </summary>
-            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
-        </member>
-        <member name="T:Geosoft.GX.Controls.ClickThroughToolStrip">
-            <summary>
-            ToolStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            Ensures that <see cref="P:System.Threading.SynchronizationContext.Current"/> is persisted 
+            throughout invocation of the provided action.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ClickThroughToolStrip.WndProc(System.Windows.Forms.Message@)">
+        <member name="T:Geosoft.GX.Controls.Helpers.GXProgressBridge">
             <summary>
-            Processes Windows messages.
+            Encapsulates callbacks used to provide progress during GX execution <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressCallback"/>.
             </summary>
-            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
+            <remarks>
+            Default callbacks are applied for any unused callbacks during instantation.
+            </remarks>
         </member>
-        <member name="T:Geosoft.GX.Controls.ColorMethodControl">
+        <member name="M:Geosoft.GX.Controls.Helpers.GXProgressBridge.Make(System.Func{System.IntPtr,System.Int16,System.Int16},System.Func{System.IntPtr,System.Int16},System.Action{System.IntPtr,System.Int32,System.String,System.Int16},System.Action{System.IntPtr,System.Int32,System.Int16},System.Func{System.IntPtr,System.Int32,System.Int16})">
             <summary>
-            <see cref="T:System.Windows.Forms.ComboBox"/> type control which selects the colour method for colour zones
+            Instantiates a <see cref="T:Geosoft.GX.Controls.Helpers.GXProgressBridge"/> to provide delegates for progress updates
+            for the executing thread. Defaults are applied (empty Action, shorts return 0) to any unused
+            arguments.
             </summary>
+            <param name="progress">See <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressCallback"/></param>
+            <param name="progressState">See <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressStateCallback"/></param>
+            <param name="progressName">See <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressNameCallback"/></param>
+            <param name="progressUpdate">See <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressUpdateCallback"/></param>
+            <param name="progressStop">See <see cref="T:Geosoft.Engine.Core.SWIG.ISys.ProgressStopCallback"/></param>
+            <returns></returns>
         </member>
-        <member name="M:Geosoft.GX.Controls.ColorMethodControl.#ctor">
+        <member name="M:Geosoft.GX.Controls.Helpers.GXProgressBridge.SetProgressCallbacks">
             <summary>
-            Default constructor.
+            Assign progress callbacks for the executing thread.
             </summary>
+            <remarks>
+            See <see cref="M:Geosoft.Engine.Core.SWIG.ISys.SetProg(System.IntPtr,Geosoft.Engine.Core.SWIG.ISys.ProgressCallback,Geosoft.Engine.Core.SWIG.ISys.ProgressStateCallback,Geosoft.Engine.Core.SWIG.ISys.ProgressNameCallback,Geosoft.Engine.Core.SWIG.ISys.ProgressUpdateCallback,Geosoft.Engine.Core.SWIG.ISys.ProgressStopCallback)"/>
+            </remarks>
         </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.iColorMethod">
+        <member name="T:Geosoft.GX.Controls.Helpers.GXTaskException">
             <summary>
-            Return the colour method integer value
+            Encapsulates an error encountered during GX Task execution. Any error
+            registered against the GX context will be recorded in this exception.
             </summary>
+            <remarks>
+            See <see cref="M:GeoEngine.Core.GXNetX.CSYS.iGetTopErrorAP(GeoEngine.Core.GXNetX.CGXNETCore)"/>.
+            </remarks>
         </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isAsLastDisplayed">
+        <member name="P:Geosoft.GX.Controls.Helpers.GXTaskException.ErrorCode">
             <summary>
-            Is the current selection As last displayed?
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isDefault">
-            <summary>
-            Is the current selection Default?
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isHistogramEqualization">
-            <summary>
-            Is the current selection Histogram Equalization?
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isNormalDistribution">
-            <summary>
-            Is the current selection Normal Distribution?
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLinear">
-            <summary>
-            Is the current selection Linear?
+            The error code retrieved after execution from <see cref="M:GeoEngine.Core.GXNetX.CSYS.iGetTopErrorAP(GeoEngine.Core.GXNetX.CGXNETCore)"/>.
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLogLinear">
+        <member name="P:Geosoft.GX.Controls.Helpers.GXTaskException.ErrorMessage">
             <summary>
-            Is the current selection Log-Linear?
+            The error message retrieved after execution from <see cref="M:GeoEngine.Core.GXNetX.CSYS.IGetErrorMessageAP(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@)"/>.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ColorMethodControl.SetModel(System.Int32)">
+        <member name="M:Geosoft.GX.Controls.Helpers.GXTaskException.#ctor(System.Int32,System.String)">
             <summary>
-            Set the current colour model - input one of ITR_ZONE_MODELConstant values.
+            Constructs a new <see cref="T:Geosoft.GX.Controls.Helpers.GXTaskException"/>.
+            </summary>
+            <param name="code">The integer code associated with the error.</param>
+            <param name="message">The message associated with the error.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.GXTaskScheduler">
+            <summary>
+            Schedule tasks for work backed by threads created with <see cref="F:System.Threading.ApartmentState.STA"/>.
+            </summary>
+            <remarks>Also facilitates optional creation of thread-local kernel threadpools for parallelizing
+            execution of certain kernel functions.</remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.GXTaskScheduler.Run``1(System.Func{Geosoft.GX.Controls.Helpers.ExternalGXX,``0},Geosoft.GX.Controls.Helpers.GXProgressBridge)">
+            <summary>
+            Queues the specified work to run on a new thread created with <see cref="F:System.Threading.ApartmentState.STA"/>.
+            </summary>
+            <remarks>Any kernel functions invoked within <paramref name="func"/> will run in series (they will not be parallelized).
+            To have access to a kernel thread-local threadpool see <see cref="M:Geosoft.GX.Controls.Helpers.GXTaskScheduler.RunWithLocalPool``1(System.Func{Geosoft.GX.Controls.Helpers.ExternalGXX,``0},Geosoft.GX.Controls.Helpers.GXProgressBridge)"/></remarks>
+            <param name="func">A delegate which will receive an <see cref="T:Geosoft.GX.Controls.Helpers.ExternalGXX"/> to use and perform some function, returning a <typeparamref name="T"/>.</param>
+            <param name="progressCallbacks">Callbacks to associate with task progress.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.GXTaskScheduler.RunWithLocalPool``1(System.Func{Geosoft.GX.Controls.Helpers.ExternalGXX,``0},Geosoft.GX.Controls.Helpers.GXProgressBridge)">
+            <summary>
+            Queues the specified work to run on a new thread created with <see cref="F:System.Threading.ApartmentState.STA"/>, including the creation of a local ThreadPool for
+            executing kernel functions in parallel; see constructor for <see cref="M:Geosoft.GX.Controls.Helpers.ExternalGXX.Create(System.Int64)"/>.
+            </summary>
+            <remarks>Any kernel functions invoked within <paramref name="func"/> will run on the newly-created thread-local threadpool. To run kernel functions
+            synchronously see <see cref="M:Geosoft.GX.Controls.Helpers.GXTaskScheduler.Run``1(System.Func{Geosoft.GX.Controls.Helpers.ExternalGXX,``0},Geosoft.GX.Controls.Helpers.GXProgressBridge)"/></remarks>.
+            <param name="func">A delegate which will receive an <see cref="T:Geosoft.GX.Controls.Helpers.ExternalGXX"/>, created with a thread-local kernel ThreadPool, to use and perform some function, returning a <typeparamref name="T"/>.</param>
+            <param name="progressCallbacks">Callbacks to associate with task progress.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.IMGInfo">
+            <summary>
+            Class to provide information from a grid for display purposes or otherwise
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins">
+        <member name="M:Geosoft.GX.Controls.Helpers.IMGInfo.#ctor(GeoEngine.Core.GXNetX.CGXNETCore)">
             <summary>
-            Mixin to reduce code duplicate for common control binding mechanisms
+            Default constructor
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.ViewModelWhenAnyValue``2(``1,``0,System.Linq.Expressions.Expression)">
+        <member name="M:Geosoft.GX.Controls.Helpers.IMGInfo.#ctor(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CIMG)">
             <summary>
-            This method was obtained from the ReactiveUI internals and is very handy to set up bindings
-            with natural syntax like with the ControlBindingMixins.BindComboBox mixin.
+            Constructor
+            </summary>
+            <param name="gxCtx">GX context</param>
+            <param name="img"><see cref="T:GeoEngine.Core.GXNetX.CIMG"/> instance.</param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ZoneFile">
+            <summary>
+            Zone file for display colours
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindComboBox``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ColourMethod">
+            <summary>
+            Colour model (e.g. Linear, Normal, Equal-Area). This is read-only.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.IsShaded">
+            <summary>
+            Is the grid shaded?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.IsShadedWetLook">
+            <summary>
+            Is the grid shaded with "wet look"?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ColoursReversed">
+            <summary>
+            Are colours reversed from the original Zone file definition?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.Brightness">
+            <summary>
+            Brightness
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingGrid">
+            <summary>
+            Shading grid, if defined.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingInclination">
+            <summary>
+            Shading inclination
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingDeclination">
+            <summary>
+            Shading declination
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingBrightness">
+            <summary>
+            Shading brightness
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingContrast">
+            <summary>
+            Shading contrast
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.ShadingScale">
+            <summary>
+            Shading scale
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.IsSmoothed">
+            <summary>
+            Is the grid displayed using smoothing?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.DataContour">
+            <summary>
+            Data contour
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.DataMinimum">
+            <summary>
+            Data minimum
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IMGInfo.DataMaximum">
+            <summary>
+            Data minimum
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IMGInfo.TryGetInfoFromGrid(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>
+            Gets an <see cref="T:Geosoft.GX.Controls.Helpers.IMGInfo"/> from a grid or image file.
+            </summary>
+            <param name="gxCtx">GX context</param>
+            <param name="gridFile">File path (with qualifiers)</param>
+            <returns><see cref="T:Geosoft.GX.Controls.Helpers.IMGInfo"/></returns>
+            <remarks>
+            Returns system-defaults if the gridFile does not exist or there is an error"/>
+            </remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IMGInfo.SetInfoToGrid(System.String,Geosoft.GX.Controls.Helpers.IMGInfo)">
+            <summary>
+            Gets an <see cref="T:Geosoft.GX.Controls.Helpers.IMGInfo"/> from a grid or image file.
+            </summary>
+            <param name="gridFile">File path (with qualifiers)</param>
+            <param name="info">Grid information returned on success</param>
+            <returns><see cref="T:Geosoft.GX.Controls.Helpers.IMGInfo"/></returns>
+            <remarks>
+            Returns true if grid file exists and values are obtained"/>
+            </remarks>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.StringMeasureUtil">
              <summary>
-             Utility method to bind the combination a reactive IList property and associated selection in a ViewModel to a <see cref="T:System.Windows.Forms.ComboBox"/> control in a view.
+             Utility class to efficiently measure strings
              </summary>
-             <typeparam name="TViewModel">The type of the view model being bound.</typeparam>
-             <typeparam name="TView">The type of the view being bound.</typeparam>
-             <typeparam name="TVMListProp">The type of the list property bound on the view model.</typeparam>
-             <typeparam name="TVMSelectionProp">The type of the selection property bound on the view model.</typeparam>
-             <param name="view">The instance of the view to bind.</param>
-             <param name="viewModel">The instance of the view model to bind.</param>
-             <param name="vmListProperty">
-             An expression indicating the list property that is bound on the view model.
-             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
-             and the binder will attempt to subscribe to changes on each recursively.
-             </param>
-             <param name="vmSelectionProperty">
-             An expression indicating the selection property that is bound on the view model.
-             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
-             and the binder will attempt to subscribe to changes on each recursively.
-             </param>
-             <param name="vComboBoxProperty">
-             The combo box property on the view that is to be bound.
-             This can be a chain of properties of the form. <code>view => view.Foo.Bar.Baz</code>
-             and the binder will attempt to set the last one each time the view model property is updated.
-             </param>
-             <returns>
-             An instance of <see cref="T:System.IDisposable"/> that, when disposed,
-             disconnects the binding.
-             </returns>
-             <example>
-             Example ViewModel:
-             <code>
-             public class SomeViewModel
-             {
-                [ObservableAsProperty]
-                public List&lt;string&gt; SomeList { get; }
+             <remarks>
+             Usually <see cref="M:System.Windows.Forms.Control.CreateGraphics"/> need to be called on a window or control to do this, however this is expensive and
+             can delay window startup significantly in some cases. E.g. UI with lots of <see cref="T:Geosoft.GX.Controls.FileEditControl"/>s or <see cref="T:Geosoft.GX.Controls.ComboBoxControl"/>s
+             will results in many calls to <see cref="M:Geosoft.GX.Controls.BetterComboBox.UpdateDropDownWidth"/> and/or <see cref="M:Geosoft.GX.Controls.FileEditControl.FitMaxItemWidth"/>.
             
-                [Reactive]
-                public string SelectionProperty { get; set; }
-            
-                public SomeViewModel()
-                {
-                }
-             }
-             </code>
-             Example View WhenActivated:
-             <code>
-             this.WhenActivated(d =&gt;
-             {
-                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
-                d(this.BindComboBox(ViewModel, vm =&gt; vm.SomeList, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox));
-             }
-             </code>
-             Which would be equivalent to:
-             <code>
-             this.WhenActivated(d =&gt;
-             {
-                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
-                d(this.OneWayBind(ViewModel, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox.SelectedItem));
-                d(this.OneWayBind(ViewModel, vm =&gt; vm.SomeList, v =&gt; v.comboBox.DataSource));
-                d(unitsComboBox.Events().SelectedIndexChanged
-                    .Select(_ => {
-                       if (ViewModel == null)
-                          return null;
-            
-                       return ViewModel.SomeList.ElementAtOrDefault(comboBox.SelectedIndex);
-                    })
-                    .Where(element =&gt; element != null)
-                    .Subscribe(element =&gt; ViewModel.SelectionProperty = element));
-               });
-             }
-             </code>
-             </example>
+             This class creates and maintains a screen based <see cref="T:System.Drawing.Graphics"/> static instance to avoid the cost of creating one for
+             every control.
+             </remarks>
         </member>
-        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject">
-            <summary>
-            A <see cref="T:ReactiveUI.ReactiveObject"/> supporting translation functionality.
-            </summary>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureCharacterRanges(System.String,System.Drawing.Font,System.Drawing.RectangleF,System.Drawing.StringFormat)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureCharacterRanges(System.String,System.Drawing.Font,System.Drawing.RectangleF,System.Drawing.StringFormat)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._(System.String)">
-            <summary>
-            Translate string based on the current Geosoft language setting
-            </summary>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,System.Drawing.StringFormat,System.Int32@,System.Int32@)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,System.Drawing.StringFormat,System.Int32@,System.Int32@)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._f(System.FormattableString)">
-            <summary>
-            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
-            </summary>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Int32)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Int32)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._n(System.String)">
-            <summary>
-            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
-            </summary>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Int32,System.Drawing.StringFormat)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Int32,System.Drawing.StringFormat)"/>
         </member>
-        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1">
-            <summary>
-            A <see cref="T:Geosoft.GX.Controls.BaseForm"/> suitable to use as a View with <see cref="N:Geosoft.GX.Controls.ReactiveUI"/>
-            </summary>
-            <typeparam name="VM">The type of ViewModel.</typeparam>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Drawing.PointF,System.Drawing.StringFormat)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.PointF,System.Drawing.StringFormat)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor">
-            <inheritdoc/>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,System.Drawing.StringFormat)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF,System.Drawing.StringFormat)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr)">
-            <inheritdoc/>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font)"/>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr,Geosoft.GX.Controls.IParamStorage)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage,Geosoft.GX.Controls.IAPIAdapter)">
-            <inheritdoc/>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ReactiveUI#IViewFor#ViewModel">
-            <inheritdoc/>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ViewModel">
-            <inheritdoc/>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.InitializeForm">
-            <inheritdoc/>
-        </member>
-        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1">
-            <summary>
-            This is an UserControl that is both and UserControl and has ReactiveObject
-            powers (i.e. you can call RaiseAndSetIfChanged) and runtime GX translations.
-            </summary>
-            <typeparam name="TViewModel">The type of the view model.</typeparam>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.#ctor">
-            <summary>
-            Default Constructor
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.SkipTranslationDesignMode">
-            <summary>
-            Should translation be skipped (due to design mode)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._(System.String)">
-            <summary>
-            Translate string based on the current Geosoft language setting
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._f(System.FormattableString)">
-            <summary>
-            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._n(System.String)">
-            <summary>
-            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControls">
-            <summary>
-            Translate all controls which have been added to this parent.
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControl(System.Windows.Forms.Control)">
-            <summary>
-            Translate a specific control.
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.DesignMode">
-            <summary>
-             Gets a value that indicates whether the <see cref="T:System.ComponentModel.Component"/> is currently
-             in design mode.
-            </summary>
-            <returns>
-            	true if the <see cref="T:System.ComponentModel.Component"/> is in design mode; otherwise, false.
-            </returns>
+        <member name="M:Geosoft.GX.Controls.Helpers.StringMeasureUtil.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF)">
+            <inheritdoc cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font,System.Drawing.SizeF)"/>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.TreeViewExtensions">
             <summary>
@@ -1082,9 +1090,20 @@
             External GXX Context Class
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.#ctor">
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.#ctor(System.Boolean)">
             <summary>
             Create the External GXX
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.Finalize">
+            <summary>
+            Destructor
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.Dispose">
@@ -1092,9 +1111,42 @@
             Dispose of the handle
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX.GetContext">
+        <member name="P:Geosoft.GX.Controls.Helpers.ExternalGXX.Context">
             <summary>
             Get the Context
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.ExternalGXX.Project">
+            <summary>
+            Get Project interface for external GXX
+            </summary>
+            <returns><see cref="T:Geosoft.Desk.IProject"/> instance.</returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.ExternalGXX.ApGui">
+            <summary>
+            Get ApGui interface for external GXX
+            </summary>
+            <returns><see cref="T:Geosoft.Desk.IApGui"/> instance.</returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.ExternalGXX.APIAdapter">
+            <summary>
+            Get IAPIAdapter for external GXX
+            </summary>
+            <returns><see cref="T:Geosoft.GX.Controls.IAPIAdapter"/> instance.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX._(System.String)">
+            <summary>
+            Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ExternalGXX._n(System.String)">
+            <summary>
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.I3DViewInteracter">
@@ -1669,11 +1721,6 @@
             Should translation be skipped (due to design mode)
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.ITranslateControlsClass.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
-            </summary>
-        </member>
         <member name="T:Geosoft.GX.Controls.Helpers.GrowParentAnchorFamilyBehaviour">
             <summary>
             Defines the behaviour(s) of a control when any of its siblings with this
@@ -1797,11 +1844,6 @@
         <member name="P:Geosoft.GX.Controls.Helpers.TranslatePictureBox.SkipTranslationDesignMode">
             <summary>
             Should translation be skipped (due to design mode)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslatePictureBox.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslatePictureBox._(System.String)">
@@ -2021,11 +2063,6 @@
         <member name="P:Geosoft.GX.Controls.Helpers.TranslateToolControl.SkipTranslationDesignMode">
             <summary>
             Should translation be skipped (due to design mode)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslateToolControl.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateToolControl._(System.String)">
@@ -2370,6 +2407,14 @@
             </summary>
             <param name="parts"><see cref="T:Geosoft.GX.Controls.Helpers.FileUtil.FileParts"/></param>
             <returns>File name string</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.FileUtil.FilePathsAreTheSame(System.String,System.String)">
+            <summary>
+            Returns if the file paths are equal, ignoring qualifiers
+            </summary>
+            <param name="first">First path</param>
+            <param name="second">Second path</param>
+            <returns></returns>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.FileUtil.FILE_PART">
             <summary>
@@ -3021,11 +3066,6 @@
             Should translation be skipped (due to design mode)
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslateForm.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
-            </summary>
-        </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateForm.StartGrowFormDuringTranslation">
             <summary>
             Start mode to grow form during translations if strings do not fit
@@ -3057,11 +3097,6 @@
         <member name="P:Geosoft.GX.Controls.Helpers.TranslateUserControl.SkipTranslationDesignMode">
             <summary>
             Should translation be skipped (due to design mode)
-            </summary>
-        </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.TranslateUserControl.SkipTranslationRuntime">
-            <summary>
-            Should translation be skipped (during runtime)
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.Helpers.TranslateUserControl._(System.String)">
@@ -5043,6 +5078,928 @@
             </summary>
             <returns>CIPJ</returns>
         </member>
+        <member name="T:Geosoft.GX.Controls.NoBottomLineToolStripSystemRenderer">
+            <summary>
+            Custom <see cref="T:System.Windows.Forms.ToolStripSystemRenderer"/> that eliminates the white line underneath a toolstrip.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.NoBottomLineToolStripSystemRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughExtensions.ClickThroughWndProc(System.Windows.Forms.Control,System.Windows.Forms.Message@)">
+            <summary>
+            This WndProc extension method implements click-through functionality. Some controls (MenuStrip, ToolStrip) will not
+            recognize a click unless the form they are hosted in is active. So the first click will activate the
+            form and then a second is required to actually make the click happen.
+            </summary>
+            <param name="ctl">The Message that was passed to your WndProc.</param>
+            <param name="m">The Message that was passed to your WndProc.</param>
+            <returns>true if the message was processed, false if it was not</returns>
+            <remarks>
+            You should first call base.WndProc(), and then call this method. This method is only intended to
+            change a return value, not to change actual processing before that.
+            See: https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/
+            </remarks>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ClickThroughMenuStrip">
+            <summary>
+            MenuStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughMenuStrip.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ClickThroughToolStrip">
+            <summary>
+            ToolStrip that allows click through activation of its parent. (see https://blogs.msdn.microsoft.com/rickbrew/2006/01/09/how-to-enable-click-through-for-net-2-0-toolstrip-and-menustrip/)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ClickThroughToolStrip.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Processes Windows messages.
+            </summary>
+            <param name="m">The Windows <see cref="T:System.Windows.Forms.Message"/> to process.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ColorMethodControl">
+            <summary>
+            <see cref="T:System.Windows.Forms.ComboBox"/> type control which selects the colour method for colour zones
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ColorMethodControl.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.iColorMethod">
+            <summary>
+            Return the colour method integer value
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isAsLastDisplayed">
+            <summary>
+            Is the current selection As last displayed?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isDefault">
+            <summary>
+            Is the current selection Default?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isHistogramEqualization">
+            <summary>
+            Is the current selection Histogram Equalization?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isNormalDistribution">
+            <summary>
+            Is the current selection Normal Distribution?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLinear">
+            <summary>
+            Is the current selection Linear?
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorMethodControl.isLogLinear">
+            <summary>
+            Is the current selection Log-Linear?
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ColorMethodControl.SetModel(System.Int32)">
+            <summary>
+            Set the current colour model - input one of ITR_ZONE_MODELConstant values.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ColorMethodControl.RemoveAsLastDisplayedItem">
+            <summary>
+            Remove the "As last displayed" item - in some contexts it makes no sense/
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.GDBDataGridView">
+            <summary>
+            A <see cref="T:System.Windows.Forms.DataGridView"/> with similar presentation style as a Geosoft GDB
+            </summary>
+            <remarks>
+            A number of static style properties are made available for further external customization.
+            </remarks>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBDefaultFontSizePoints">
+            <summary>
+            DefaultFontSizePoints for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBDefaultFontName">
+            <summary>
+            Default FontName for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBDefaultFont">
+            <summary>
+            Default Font for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBDefaultBoldFont">
+            <summary>
+            Default BoldFont for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBForeColor">
+            <summary>
+            Default ForeColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBBackColor">
+            <summary>
+            Default BackColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBHeaderBackColor">
+            <summary>
+            Default HeaderBackColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBAlternatingBackColor">
+            <summary>
+            Default AlternatingBackColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBHighLightColor">
+            <summary>
+            Default HighLightColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBAlternatingHighLightColor">
+            <summary>
+            Default AlternatingHighLightColor for a GDB
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.GDBDataGridView.GDBGridColor">
+            <summary>
+            Default GridColor for a GDB
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateCellStyle(System.Boolean,System.Boolean,System.Boolean,System.Drawing.Font)">
+            <summary>
+            Create cell style
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateDefaultCellStyle">
+            <summary>
+            Create default cell style
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateRowHeadersDefaultCellStyle">
+            <summary>
+            Create default row headers cell style
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateColumnHeadersDefaultCellStyle">
+            <summary>
+            Create default column headers cell style
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateRowsDefaultCellStyle">
+            <summary>
+            Create default rows cell style
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GDBDataGridView.CreateAlternatingRowsDefaultCellStyle">
+            <summary>
+            Create default alternating rows cell style
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.GXNetParamStorage">
+            <summary>
+            <see cref="T:Geosoft.GX.Controls.IParamStorage"/> implementation for GeoEngine.Core.GXNet namespace
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.bStringParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.bIntParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.bDoubleParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.iGetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.SetIntParam(System.String,System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.dGetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.SetDoubleParam(System.String,System.String,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.GetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.SetParam(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.iGetColor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetParamStorage.strGetColor(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ModelessTabFix">
+             <summary>
+             Simple class that use the WH_GETMESSAGE hook to capture the keystroke
+             messages and call the IsDialogMessage API. If IsDialogMessage returns
+             TRUE, then do not pass the message on to the message pump. The hook is
+             set when the controls window is created and unset when the control
+             window is destroyed.
+            
+             See http://support.microsoft.com/kb/233263 for details.
+            
+             Example usage:
+             </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessTabFix.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="control">Control to hook</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessTabFix.ControlHandleCreated(System.Object,System.EventArgs)">
+            <summary>
+            Install the hook when the control window handle is created
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessTabFix.ControlHandleDestroyed(System.Object,System.EventArgs)">
+            <summary>
+            Uninstall the hook when the control window is destroyed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessTabFix.LocalWindowsHook_HookInvoked(System.Object,Geosoft.GX.Controls.HookEventArgs)">
+            <summary>
+            LocalWindowsHook.HookInvoked event callback, called by LocalWindowsHook
+            when a message is received.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ModelessTabFix.WindowMessage">
+            <summary>
+            Windows message Id constants
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ModelessTabFix.WindowsInterop">
+            <summary>
+            Windows imports
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ModelessTabFix.WindowsInterop.MSG">
+            <summary>
+            Windows MSG structure definition
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessTabFix.WindowsInterop.IsDialogMessageW(System.IntPtr,Geosoft.GX.Controls.ModelessTabFix.WindowsInterop.MSG@)">
+            <summary>
+            See: http://support.microsoft.com/kb/71450
+            </summary>
+            <param name="hDlg"></param>
+            <param name="lpMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.GXNetXParamStorage">
+            <summary>
+            <see cref="T:Geosoft.GX.Controls.IParamStorage"/> implementation for GeoEngine.Core.GXNetX namespace
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.#ctor(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="pGeo">A valid <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore"/> instance.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.bStringParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.bIntParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.bDoubleParamExists(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.iGetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.SetIntParam(System.String,System.String,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.dGetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.SetDoubleParam(System.String,System.String,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.GetParam(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.SetParam(System.String,System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.iGetColor(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GXNetXParamStorage.strGetColor(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ModelessBaseForm">
+            <summary>
+            A <see cref="T:Geosoft.GX.Controls.BaseForm"/> derived class that supports improved modeless behaviour
+            including the ability to automatically close on project close, if launched within montaj.
+            </summary>
+            <remarks>
+            <para>
+            Modeless Forms in .Net is arguably broken in the sense that one cannot tab between controls
+            within the form and that the controls' with focus is not painted with cues to this effect.
+            </para>
+            <para>
+            This class is derived from <see cref="T:Geosoft.GX.Controls.BaseForm"/> and implements workarounds
+            for this issue. Since the solution relies on changing the Z-Order of the controls to match
+            their Tab-Order within the parent/child hierarchy, this could lead to unexpected behaviour where overlapped
+            controls are used.
+            </para>
+            <para>
+            This class should only be used for modeless operation.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:Geosoft.GX.Controls.ModelessBaseForm.m_externalGXX">
+            <summary>
+            <see cref="T:Geosoft.GX.Controls.Helpers.ExternalGXX"/> to support GeoEngine.Core.GXNetX Geosoft.Desktop.GXNetX API use.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessBaseForm.#ctor(System.Boolean)">
+            <summary>
+            Default constructor
+            </summary>
+            <param name="runAsModal">
+            Pass true if intending to use as normal modal dialog
+            (via <see cref="M:System.Windows.Forms.Form.ShowDialog"/> or <see cref="M:System.Windows.Forms.Form.ShowDialog(System.Windows.Forms.IWin32Window)"/>
+            </param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessBaseForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessBaseForm.OnShown(System.EventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ModelessBaseForm.Context">
+             <summary>
+             Get the GX execution context
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessBaseForm.ShowHelp">
+            <summary>
+            Display Help message to the user based on the helpID
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.ModelessBaseForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ModelessBaseForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins">
+            <summary>
+            Mixin to reduce code duplicate for common control binding mechanisms
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.ViewModelWhenAnyValue``2(``1,``0,System.Linq.Expressions.Expression)">
+            <summary>
+            This method was obtained from the ReactiveUI internals and is very handy to set up bindings
+            with natural syntax like with the ControlBindingMixins.BindComboBox mixin.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindComboBox``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
+             <summary>
+             Utility method to bind the combination a reactive IList property and associated selection in a ViewModel to a <see cref="T:System.Windows.Forms.ComboBox"/> control in a view.
+             </summary>
+             <typeparam name="TViewModel">The type of the view model being bound.</typeparam>
+             <typeparam name="TView">The type of the view being bound.</typeparam>
+             <typeparam name="TVMListProp">The type of the list property bound on the view model.</typeparam>
+             <typeparam name="TVMSelectionProp">The type of the selection property bound on the view model.</typeparam>
+             <param name="view">The instance of the view to bind.</param>
+             <param name="viewModel">The instance of the view model to bind.</param>
+             <param name="vmListProperty">
+             An expression indicating the list property that is bound on the view model.
+             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
+             and the binder will attempt to subscribe to changes on each recursively.
+             </param>
+             <param name="vmSelectionProperty">
+             An expression indicating the selection property that is bound on the view model.
+             This can be a chain of properties of the form. <code>vm =&gt; vm.Foo.Bar.Baz</code>
+             and the binder will attempt to subscribe to changes on each recursively.
+             </param>
+             <param name="vComboBoxProperty">
+             The combo box property on the view that is to be bound.
+             This can be a chain of properties of the form. <code>view => view.Foo.Bar.Baz</code>
+             and the binder will attempt to set the last one each time the view model property is updated.
+             </param>
+             <returns>
+             An instance of <see cref="T:System.IDisposable"/> that, when disposed,
+             disconnects the binding.
+             </returns>
+             <example>
+             Example ViewModel:
+             <code>
+             public class SomeViewModel
+             {
+                [ObservableAsProperty]
+                public List&lt;string&gt; SomeList { get; }
+            
+                [Reactive]
+                public string SelectionProperty { get; set; }
+            
+                public SomeViewModel()
+                {
+                }
+             }
+             </code>
+             Example View WhenActivated:
+             <code>
+             this.WhenActivated(d =&gt;
+             {
+                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
+                d(this.BindComboBox(ViewModel, vm =&gt; vm.SomeList, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox));
+             }
+             </code>
+             Which would be somewhat equivalent (some extra intelligence was 
+             added to deal with failing to update VM and maintaining selection) to:
+             <code>
+             this.WhenActivated(d =&gt;
+             {
+                // Optional set up comboBox DisplayMember if list and selection properties are not simply strings
+                d(this.OneWayBind(ViewModel, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox.SelectedItem));
+                d(this.OneWayBind(ViewModel, vm =&gt; vm.SomeList, v =&gt; v.comboBox.DataSource));
+                d(unitsComboBox.Events().SelectedIndexChanged
+                    .Select(_ => {
+                       if (ViewModel == null)
+                          return null;
+            
+                       return ViewModel.SomeList.ElementAtOrDefault(comboBox.SelectedIndex);
+                    })
+                    .Where(element =&gt; element != null)
+                    .Subscribe(element =&gt; ViewModel.SelectionProperty = element));
+               });
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindFileEditControl``2(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,System.String}},System.Linq.Expressions.Expression{System.Func{``1,Geosoft.GX.Controls.FileEditControl}})">
+            <summary>
+            Binds the specified view model string property to the given view FileEditControl.
+            Pulls the full filepath from the FileEditControl.
+            </summary>
+            <typeparam name="TViewModel"></typeparam>
+            <typeparam name="TView"></typeparam>
+            <param name="view">The instance of the view to bind.</param>
+            <param name="viewModel">The instance of the view model to bind.</param>
+            <param name="vmProperty">An expression indicating the property that is bound on the view model.</param>
+            <param name="fileEditControlProperty">The property on the view that is to be bound</param>
+            <returns>An instance of System.IDisposable that, when disposed, disconnects the binding.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.CIPJExtension">
+            <summary>
+            CIPJ Extension for INI parameter utilities
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.CIPJExtension.GetIPJFromINI(GeoEngine.Core.GXNet.CIPJ,System.String)">
+            <summary>
+            Restore CIPJ properties from INI parameters
+            </summary>
+            <param name="hIPJ"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.CIPJExtension.SaveIPJToINI(GeoEngine.Core.GXNet.CIPJ,System.String)">
+            <summary>
+            Save CIPJ properties into INI parameter
+            </summary>
+            <param name="hIPJ"></param>
+            <param name="groupName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.CIPJExtension.GetNameUnit(GeoEngine.Core.GXNet.CIPJ,System.String@,System.String@)">
+            <summary>
+            Retrieve CIPJ name and unit properties
+            </summary>
+            <param name="hIPJ"></param>
+            <param name="name"></param>
+            <param name="unit"></param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.INIGroupAttribute">
+            <summary>
+            INI Group attribute
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.INIGroupAttribute.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.INIGroupAttribute.Name">
+            <summary>
+            INI Group Name
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.INIParamAttribute">
+            <summary>
+            INIParam attribute
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.INIParamAttribute.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.INIParamAttribute.Name">
+            <summary>
+            INI Param Name
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.INIUtility">
+            <summary>
+            INI Utility
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.INIUtility.GetINIGroup``1">
+            <summary>
+            Get INI Group attribute name
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory.Details">
+            <summary>
+            The details
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory.IsContentProminent">
+            <summary>
+            Is this category's contents prominent.
+            </summary>
+            <remarks>
+            A category with prominent contents can be indicated as such when used
+            by views, e.g. by default expanded in initial view etc.
+            </remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategoryCollection">
+            <summary>
+            A simple collection of <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory"/> about an object
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategoryCollection.GetKeyForItem(Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCollection">
+            <summary>
+            A simple collection of details about an object
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCollection.GetKeyForItem(Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair">
+            <summary>
+            Name/description pair describing a unit of details about an object
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1">
+            <summary>
+            A <see cref="T:Geosoft.GX.Controls.ModelessBaseForm"/> suitable to use as a View with <see cref="N:Geosoft.GX.Controls.ReactiveUI"/>
+            </summary>
+            <typeparam name="VM">The type of ViewModel.</typeparam>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1.#ctor(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1.ReactiveUI#IViewFor#ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1.ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1.InitializeForm">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1.ShowHelp">
+            <summary>
+            Display Help message to the user based on the helpID
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject">
+            <summary>
+            A <see cref="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject"/> that maintains a GX API context for GXNetX API use.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.Activator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.WhenActivatedFailed">
+            <summary>
+            Can be set in derived classes to indicate to views some failure occured in VM activation that would
+            prevent viewes from operating.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject._isSaveINI">
+            <summary>
+            Indicate whether to save INI parameters while deactivating
+            Derived class needs set this flag properly to indicate whether save INI or not
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.OnDeactivate">
+            <summary>
+            Called when model is deactivated
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.Context">
+             <summary>
+             Get the GX execution context
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.InitINIParams">
+            <summary>
+            Initialize INI parameters
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.SaveINIParams">
+            <summary>
+            Save INI parameters
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject">
+            <summary>
+            A <see cref="T:ReactiveUI.ReactiveObject"/> supporting translation functionality.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._(System.String)">
+            <summary>
+            Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject._n(System.String)">
+            <summary>
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1">
+            <summary>
+            A <see cref="T:Geosoft.GX.Controls.BaseForm"/> suitable to use as a View with <see cref="N:Geosoft.GX.Controls.ReactiveUI"/>
+            </summary>
+            <typeparam name="VM">The type of ViewModel.</typeparam>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(System.IntPtr,Geosoft.GX.Controls.IParamStorage)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.#ctor(Geosoft.GX.Controls.IParamStorage,Geosoft.GX.Controls.IAPIAdapter)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ReactiveUI#IViewFor#ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.ViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveBaseForm`1.InitializeForm">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1">
+            <summary>
+            This is an UserControl that is both and UserControl and has ReactiveObject
+            powers (i.e. you can call RaiseAndSetIfChanged) and runtime GX translations.
+            </summary>
+            <typeparam name="TViewModel">The type of the view model.</typeparam>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.SkipTranslationDesignMode">
+            <summary>
+            Should translation be skipped (due to design mode)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._(System.String)">
+            <summary>
+            Translate string based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._f(System.FormattableString)">
+            <summary>
+            Translate composite format string (C# string interpolation) based on the current Geosoft language setting
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1._n(System.String)">
+            <summary>
+            Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControls">
+            <summary>
+            Translate all controls which have been added to this parent.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.TranslateControl(System.Windows.Forms.Control)">
+            <summary>
+            Translate a specific control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1.DesignMode">
+            <summary>
+             Gets a value that indicates whether the <see cref="T:System.ComponentModel.Component"/> is currently
+             in design mode.
+            </summary>
+            <returns>
+            	true if the <see cref="T:System.ComponentModel.Component"/> is in design mode; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow">
+            <summary>
+            Describes the state of a row in a details grid.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.Description">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.IsCategoryHeader">
+            <summary>
+            Should this row be presented as a category header (bold style etc.)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.IsCategoryCollapsed">
+            <summary>
+            Should this row show present it is collapsed (arrow indicators etc.)
+            </summary>
+            <remarks>Will only be used if IsCategoryHeader is true too.</remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.IsCategoryEmpty">
+            <summary>
+            Should this row show present it is collapsed (arrow indicators etc.)
+            </summary>
+            <remarks>Will only be used if IsCategoryHeader is true too.</remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.#ctor(Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair)">
+            <summary>
+            Construct from <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsPair"/>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow.#ctor(Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory)">
+            <summary>
+            Construct from <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.DetailsCategory"/>
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel">
+            <summary>
+            View model to manipulate the read-only display of details within a view.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.Activator">
+            <summary>
+            Gets the Activator which will be used by the View when Activation/Deactivation occurs.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.DetailsRowsToShow">
+            <summary>
+            The presentation of the details as a list of rows
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.Details">
+            <summary>
+            The current details
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.ToggleExpandCollapseForRowCommand">
+            <summary>
+            Command to toggle the expand/collapse state for a row
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Details.SimpleDetailsGridFormView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:Geosoft.GX.Controls.ReactiveUI.Views.Details.SimpleDetailsGridFormView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Details.SimpleDetailsGridFormView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Views.Details.DetailsGridView">
+            <summary>
+            Simple user control to present a <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel"/> in a readonly view.
+            </summary>
+            <remarks>
+            The control will auto size to its content
+            </remarks>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Details.DetailsGridView.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Views.Details.DetailsFormViewFactory">
+            <summary>
+            Factory class to create a basic standalone details form
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Details.DetailsFormViewFactory.Create">
+            <summary>
+            Create a basic standalone details form
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.MapCursors">
             <summary>
             Cursors to use in mappping contexts
@@ -5064,6 +6021,12 @@
             The control currently supports maximum 3 data sets. May consider using more generic data set array instead if needed.
             The data sets can scale together or independently on Y axis, the former scale method will use the range of the data set 1 (YData1) as primary reference.
             </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DataProfileControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="T:Geosoft.GX.Controls.DataProfileControl.AxisScaling">
             <summary>
@@ -5107,7 +6070,7 @@
         </member>
         <member name="P:Geosoft.GX.Controls.DataProfileControl.PlotDiscreteXDataTicsAndLabels">
             <summary>
-            If false, plots a "normal" X-axis with tics and labels independent of the XData locations. 
+            If false, plots a "normal" X-axis with tics and labels independent of the XData locations.
             If true, an X-tic is plotted for each YData value. If XData is defined, the value appears as a label.
             If true and XData is not defined, data is spaced equally (XAxisScaling is ignored)
             </summary>
@@ -5247,25 +6210,19 @@
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DataProfileControl.OnResize(System.EventArgs)">
-            <summary>
+             <summary>
             
-            </summary>      
+             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.DataProfileControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.DataProfileControl.components">
             <summary>
             Required designer variable.
             </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.DataProfileControl.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
         <member name="M:Geosoft.GX.Controls.DataProfileControl.InitializeComponent">
             <summary>
@@ -6412,6 +7369,16 @@
             Base <see cref="T:System.Windows.Forms.Form"/> which implements hookup to Geosoft help system
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.HelpForm.m_strHelpGroup">
+            <summary>
+            Help topic group
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.HelpForm.m_strHelpID">
+            <summary>
+            Help topic ID
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.HelpForm.#ctor">
             <summary>
             Default contructor
@@ -6577,6 +7544,28 @@
             during validation failures during script runs.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.BaseControl.LabelBuddy">
+            <summary>
+            The <see cref="T:Geosoft.GX.Controls.LabelControl"/>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.BaseControl.SetEnabled(System.Boolean)">
+            <summary>
+            Convenience method to change <see cref="P:System.Windows.Forms.Control.Enabled"/> property for this control and its <see cref="P:Geosoft.GX.Controls.BaseControl.LabelBuddy"/> (if known)
+            </summary>
+            <param name="enabled">Desired <see cref="P:System.Windows.Forms.Control.Enabled"/> property</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.BaseControl.SetVisible(System.Boolean,System.Boolean)">
+            <summary>
+            Convenience method to change <see cref="P:System.Windows.Forms.Control.Visible"/> property for this control and its <see cref="P:Geosoft.GX.Controls.BaseControl.LabelBuddy"/> (if known)
+            </summary>
+            <param name="visible">Desired <see cref="P:System.Windows.Forms.Control.Visible"/> property</param>
+            <param name="includeEnabled">
+            Update the <see cref="P:System.Windows.Forms.Control.Enabled"/> property too. Usually a control should also be
+            disabled when made invisible to prevent validation firing for it.
+            For this reason the default for this is true, in rare cases that can be avoided by passing false.
+            </param>
+        </member>
         <member name="M:Geosoft.GX.Controls.BaseControl.FormatINIErrorString(System.String)">
             <summary>
             Formats an error string for error reports during scripting validation failures.
@@ -6603,6 +7592,12 @@
             </summary>
             <remarks>Does all validation, including by range. This is useful to ensure returned values are not used when they have not been validated.</remarks>
             <returns>True if all validation tests, including range (if defined), have passed.</returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.BaseControl.GlobalAdapterPropertiesOverride">
+            <summary>
+            Can be used to temproary override since parents are not always set when
+            EnsureAdapterInitialization is called upon. E.g. <see cref="T:Geosoft.GX.Controls.ModelessBaseForm"/>
+            </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseControl.bStringParamExists(System.String,System.String)">
             <summary>
@@ -7193,9 +8188,14 @@
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.BaseControl.ReactiveValidationError">
-             <summary>
-            
-             </summary>
+            <summary>
+            Used in ReactiveUI based validation bindings.
+            </summary>
+            <remarks>
+            Binding validation errors to this property will call <see cref="M:System.Windows.Forms.ErrorProvider.SetError(System.Windows.Forms.Control,System.String)"/> for this controls
+            on the error provider of the upmost parent form.
+            Also see: https://github.com/reactiveui/ReactiveUI.Validation#how-to-use
+            </remarks>
         </member>
         <member name="F:Geosoft.GX.Controls.BaseControl.components">
             <summary>
@@ -7468,12 +8468,12 @@
         </member>
         <member name="P:Geosoft.GX.Controls.BaseForm.ParamStorage">
             <summary>
-            Get the parameter storage interface (if defined)
+            Get or set the parameter storage interface (if defined)
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.BaseForm.APIAdapter">
             <summary>
-            Get the API adapter interface (if defined)
+            Get or set the API adapter interface (if defined)
             </summary>
         </member>
         <member name="F:Geosoft.GX.Controls.BaseForm.components">
@@ -8055,6 +9055,11 @@
             If true, then the control may not be left blank.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.ComboBoxControl.ValidChannelName">
+            <summary>
+            If true, then the selected Name value (if defined) must be a valid database channel name
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.ComboBoxControl.RequiredErrorOverride">
             <summary>
             Alternate error provider text to display in case field is required.
@@ -8070,6 +9075,16 @@
             Return the number of items in the combo box.
             </summary>
             <remarks>Return the number of items in the combo box.</remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ComboBoxControl.ComboBox">
+            <summary>
+            Get interior <see cref="P:Geosoft.GX.Controls.ComboBoxControl.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ComboBoxControl.Value">
+            <summary>
+            Get/Set the Value part of the control.
+            </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ComboBoxControl.Init(GeoEngine.Core.GXNet.CLST,System.Int32)">
              <summary>
@@ -9323,9 +10338,9 @@
             Set to true to force update of the displayed image on the next render
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDrag">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragActive">
             <summary>
-            Zoom on next click and drag of mouse on control
+            Emit <see cref="E:Geosoft.GX.Controls.MapViewControl.OnDragCompleted"/> on next click and drag of mouse on control.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.GridValueIMG">
@@ -9363,39 +10378,39 @@
             Return thevertical scale Ground_Y / Pixels
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs">
+        <member name="T:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs">
             <summary>
-            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted"/>.
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.OnDragCompleted"/>.
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.Canceled">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs.Canceled">
             <summary>
             Action was cancelled or failed to get valid extents
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.XMin">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs.XMin">
             <summary>
             Starting location - X
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.YMin">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs.YMin">
             <summary>
             Starting location - Y
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.XMax">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs.XMax">
             <summary>
             Ending location - X
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.MapViewControl.ZoomOnDragEventArgs.YMax">
+        <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragCompletedEventArgs.YMax">
             <summary>
             Ending location - Y
             </summary>
         </member>
-        <member name="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted">
+        <member name="E:Geosoft.GX.Controls.MapViewControl.OnDragCompleted">
             <summary>
-            Zoom on drag was completed
+            Drag was completed.
             </summary>
         </member>
         <member name="E:Geosoft.GX.Controls.MapViewControl.OnPictureClick">
@@ -9405,7 +10420,7 @@
         </member>
         <member name="T:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs">
             <summary>
-            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.ZoomOnDragCompleted"/>.
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.OnDragCompleted"/>.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs.X">
@@ -9452,6 +10467,14 @@
             <summary>
             Clear full control tracking mouse cursor
             </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.UpdateStatus(System.Double,System.Double,System.String)">
+            <summary>
+            Update status text
+            </summary>
+            <param name="x">X location</param>
+            <param name="y">Y location</param>
+            <param name="otherText">optional text to use</param>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.SnapControl">
             <summary>
@@ -9640,6 +10663,13 @@
             </summary>
             <param name="node">The node to select.</param>
         </member>
+        <member name="M:Geosoft.GX.Controls.MultiSelectTreeControl.ControlKeySelectNode(System.Windows.Forms.TreeNode)">
+            <summary>
+            Change the selection of the tree to a single node.
+            Add/remove based on currently selected and Control Key held.
+            </summary>
+            <param name="node">The node to change selection for.</param>
+        </member>
         <member name="M:Geosoft.GX.Controls.MultiSelectTreeControl.SelectSingleNodeFromRMB(System.Windows.Forms.TreeNode)">
             <summary>
             Change selection of the tree to a single node. Used by right-click handlers
@@ -9788,6 +10818,18 @@
             <param name="numSignificantFigures">The number of significant figures</param>
             <param name="mode">Specification for how to round value if it is midway between two other numbers at the significant figures specified.</param>
         </member>
+        <member name="M:Geosoft.GX.Controls.NumberExtensionMethods.IsEqualToSignificantFigures(System.Double,System.Double,System.Int32,Geosoft.GX.Controls.RoundToSignificantFiguresMode)">
+            <summary>
+            Compare two double precision values to a specified significant number of figures.
+            </summary>
+            <param name="value">This value</param>
+            <param name="otherValue">The other value</param>
+            <param name="numSignificantFigures">The number of significant figures</param>
+            <param name="mode">Specification for how to round value if it is midway between two other numbers at the significant figures specified.</param>
+            <returns>
+            True if the value is equal to otherValue for the specified significaant digits and rounding
+            </returns>
+        </member>
         <member name="T:Geosoft.GX.Controls.NumericUpDownControl">
             <summary>
             </summary>
@@ -9866,6 +10908,9 @@
         </member>
         <member name="F:Geosoft.GX.Controls.NumericUpDownControl.InterceptMouseWheelMode.Never">
             <summary>MouseWheel never works</summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.NumericUpDownControl.OnMouseWheel(System.Windows.Forms.MouseEventArgs)">
+            <inheritdoc/>
         </member>
         <member name="P:Geosoft.GX.Controls.NumericUpDownControl.ShowUpDownButtons">
             <summary>
@@ -9951,6 +10996,16 @@
             <summary>
             Custom textbox size management
             </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.NumericUpDownControl.ReactiveValidationError">
+            <summary>
+            Used in ReactiveUI based validation bindings.
+            </summary>
+            <remarks>
+            Binding validation errors to this property will call <see cref="M:System.Windows.Forms.ErrorProvider.SetError(System.Windows.Forms.Control,System.String)"/> for this controls
+            on the error provider of the upmost parent form.
+            Also see: https://github.com/reactiveui/ReactiveUI.Validation#how-to-use
+            </remarks>
         </member>
         <member name="P:Geosoft.GX.Controls.NumericUpDownControl.INIComponent">
             <summary>
@@ -10782,6 +11837,18 @@
             Sort the available list of file filters in the dialog.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.FileEditControl.TextBox">
+            <summary>
+            Get TextBox control
+            ToDo: Should consider a better way like mixins to aggregate all text change events to use in Reactive UI gracefully
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.FileEditControl.ComboBox">
+            <summary>
+            Get ComboBox control
+            ToDo: Should consider a better way like mixins to aggregate all text change events to use in Reactive UI gracefully
+            </summary>
+        </member>
         <member name="E:Geosoft.GX.Controls.FileEditControl.RequiredChanged">
             <summary>
             Fired when the <see cref="P:Geosoft.GX.Controls.FileEditControl.Required"/> property changes
@@ -11112,6 +12179,11 @@
             attached to an <see cref="T:System.ComponentModel.IContainer"/> implementation.
             </summary>
             <param name="container">The System.ComponentModel.IContainer to monitor for errors.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.GeoErrorProvider.Clear">
+            <summary>
+            Clears all settings associated with this component.
+            </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.GeoErrorProvider.SetError(System.Windows.Forms.Control,System.String)">
             <summary>
@@ -12118,16 +13190,16 @@
             <param name="e"></param>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.OnTabImageClick(System.Windows.Forms.TabControlEventArgs)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="e"></param>
+             </summary>
+             <param name="e"></param>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.OnTabClosing(System.Windows.Forms.TabControlCancelEventArgs)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="e"></param>
+             </summary>
+             <param name="e"></param>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.OnHScroll(System.Windows.Forms.ScrollEventArgs)">
             <summary>
@@ -12148,46 +13220,46 @@
             <param name="e"></param>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.PaintTransparentBackground(System.Drawing.Graphics,System.Drawing.Rectangle)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="graphics"></param>
-            <param name="clipRect"></param>
+             </summary>
+             <param name="graphics"></param>
+             <param name="clipRect"></param>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.GetPageBounds(System.Int32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
+             </summary>
+             <param name="index"></param>
+             <returns></returns>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabRow(System.Int32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
+             </summary>
+             <param name="index"></param>
+             <returns></returns>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabPosition(System.Int32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
+             </summary>
+             <param name="index"></param>
+             <returns></returns>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.IsFirstTabInRow(System.Int32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
+             </summary>
+             <param name="index"></param>
+             <returns></returns>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.GetTabCloserRect(System.Int32)">
-            <summary>
+             <summary>
             
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
+             </summary>
+             <param name="index"></param>
+             <returns></returns>
         </member>
         <member name="M:Geosoft.GX.Controls.TabControlCustom.GetRightDropShadowRect(System.Int32)">
             <summary>
@@ -12204,9 +13276,9 @@
             <returns></returns>
         </member>
         <member name="P:Geosoft.GX.Controls.TabControlCustom.MousePosition">
-            <summary>
+             <summary>
             
-            </summary>
+             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.TabControlCustom.HeaderFont">
             <summary>
@@ -12309,6 +13381,11 @@
         <member name="E:Geosoft.GX.Controls.TrackBar.Scroll">
             <summary>
             Fires when track bar changes positions
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.TrackBar.PropertyChanged">
+            <summary>
+            For use with ReactiveUI views, as it implements INotifyPropertyChanged
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.TrackBar.OnScroll">
@@ -13972,6 +15049,132 @@
             <summary>
               Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
             </summary>
+        </member>
+        <member name="T:Geosoft.GX.GXLog">
+            <summary>
+            Use this for GX logging
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.GXLog.Logger">
+            <summary>
+            The current logger (can be null)
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.GXLog.CreateLoggerUI">
+            <summary>
+            Create a basic logging UI
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.GXLog.Log(System.String,Geosoft.GX.LogLevel)">
+            <summary>
+            Log a message
+            </summary>
+            <param name="message">Message</param>
+            <param name="level">Level</param>
+        </member>
+        <member name="T:Geosoft.GX.LogLevel">
+            <summary>
+            Used to indicate log level
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Critical">
+            <summary>
+            Critical
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Info">
+            <summary>
+            Info
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Verbose">
+            <summary>
+            Verbose
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.LogLevel.Debug">
+            <summary>
+            Debug
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.IGXLogger">
+            <summary>
+            Interface of a logger
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.IGXLogger.Log(Geosoft.GX.LogLevel,System.String)">
+            <summary>
+            Log a message
+            </summary>
+            <param name="level">Level</param>
+            <param name="message">Message</param>
+        </member>
+        <member name="F:Geosoft.GX.InteractiveLogForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.InteractiveLogForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.InteractiveLogForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions">
+            <summary>
+            Extensions methods associated to <see cref="T:ReactiveUI.Validation.Abstractions.IValidatableViewModel"/> instances.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions.GetMinMaxValidationState(System.String,System.Double,System.Boolean,System.Double,System.Boolean)">
+            <summary>
+            TODO These methods needs general re-thinking on how to approach. Probably convertors so that
+            we do not need strings representing doubles in View Models
+            </summary>
+            <param name="strvalue"></param>
+            <param name="minValue"></param>
+            <param name="minValueInclusive"></param>
+            <param name="maxValue"></param>
+            <param name="maxValueInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions.GetMinMaxValidationState(System.Double,System.Double,System.Boolean,System.Double,System.Boolean)">
+            <summary>
+            TODO These methods needs general re-thinking on how to approach. Probably convertors so that
+            we do not need strings representing doubles in View Models
+            </summary>
+            <param name="value"></param>
+            <param name="minValue"></param>
+            <param name="minValueInclusive"></param>
+            <param name="maxValue"></param>
+            <param name="maxValueInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions.GetIntegerMinMaxValidationState(System.String,System.Int32,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Validation for integers. See note above.
+            </summary>
+            <param name="stringValue"></param>
+            <param name="minValue"></param>
+            <param name="minValueInclusive"></param>
+            <param name="maxValue"></param>
+            <param name="maxValueInclusive"></param>
+            <returns></returns>
         </member>
         <member name="T:PopupControl.ComboBox">
             <summary>

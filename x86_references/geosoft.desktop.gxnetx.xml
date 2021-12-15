@@ -3655,6 +3655,58 @@ defined, then the data file is not written).
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CSHD.EndShading(System.Int32)">
+            <summary>This ends interactive shading and must be called if any interactive changes should be applied. Passing false to apply changes is equivalent to simply disposing handle.</summary>
+            <param name="apply_changes">Apply changes to map.</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CSHD.iTrackInteractive(System.Int32,System.Double@,System.Double@)">
+            <summary>Track a line on map and get shading parameters based on its length and direction.</summary>
+            <param name="constraint">&amp;lt;define&amp;gt;SHD_FIX&amp;lt;/define&amp;gt;</param>
+            <param name="inclination">returned inclination</param>
+            <param name="declination">returned declination</param>
+            <returns>
+0 if tracking completed successfully.
+1 if user cancelled or tracking failed.
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CSHD.Refresh(System.String,System.Double,System.Double,System.Double,System.Double@,System.Double@,System.Int32)">
+            <summary>Refresh the SHD with new shading parameters.</summary>
+            <param name="grid_path">Grid path returned</param>
+            <param name="inclination">inclination (degrees)</param>
+            <param name="declination">declination (degrees)</param>
+            <param name="scale">vertical scale relative to base scale</param>
+            <param name="contrast">contrast 0-1 (recommended &gt;0.1, can change with wet_look changes)</param>
+            <param name="brightness">brightness 0-1 (can change with wet_look changes)</param>
+            <param name="wet_look">Apply wet-look effect (shading layer uses lighter distribution)?</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.CSHD">
+            <summary>
+
+       This class supports fast interactive shadowing in a map or grid document.
+
+       The SHD object is created using the
+       StartShading_EMAP method.
+   
+</summary>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CSEMPLOT.TotalOxides(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String)">
             <summary>Calculate the total oxides channel.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -4786,6 +4838,99 @@ control file parameters into the RGRD object.
        Run_RGRD function executes the Rangrid program using the RGRD object.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
+            <summary>Get Central project information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="instance">Instance name</param>
+            <param name="instance_size">Size of Instance name buffer.</param>
+            <param name="project">Project name</param>
+            <param name="project_size">Size of Project name buffer.</param>
+            <param name="crs">Coordinate Reference System</param>
+            <param name="crs_size">Size of CRS buffer.</param>
+            <param name="branch">Branch name</param>
+            <param name="branch_size">Size of Branch name buffer.</param>
+            <param name="rev_id">Revision Id</param>
+            <param name="rev_id_size">Size of Revision Id buffer.</param>
+            <param name="rev_date">Revision date</param>
+            <param name="rev_date_size">Size of Revision date buffer.</param>
+            <param name="rev_note">Revision note</param>
+            <param name="rev_note_size">Size of Revision note buffer.</param>
+            <param name="rev_stage">Revision stage</param>
+            <param name="rev_stage_size">Size of Revision stage buffer.</param>
+            <param name="rev_author">Revision author</param>
+            <param name="rev_author_size">Size of Revision author buffer.</param>
+            <remarks>Get Central project information.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+            <summary>Get Central project information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="instance">Instance name</param>
+            <param name="project">Project name</param>
+            <param name="crs">Coordinate Reference System</param>
+            <param name="branch">Branch name</param>
+            <param name="rev_id">Revision Id</param>
+            <param name="rev_date">Revision date</param>
+            <param name="rev_note">Revision note</param>
+            <param name="rev_stage">Revision stage</param>
+            <param name="rev_author">Revision author</param>
+            <remarks>Get Central project information.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.SetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>Set Central project information.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="server_guid">server guid</param>
+            <param name="project_guid">project guid</param>
+            <param name="branch_id">branch ID</param>
+            <param name="revision_id">revision ID</param>
+            <param name="cs_info">Coordinate system information, either EPSG or WKT</param>
+            <remarks>Set Central project information.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetServerAndProjectGUID(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32)">
+            <summary>Return the unique identifier of the project and server.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="server_id">Server ID</param>
+            <param name="server_id_size">Size of Server ID buffer.</param>
+            <param name="project_id">Project ID</param>
+            <param name="project_id_size">Size of Project ID buffer.</param>
+            <remarks>Return the unique identifier of the project and server.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetServerAndProjectGUID(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@)">
+            <summary>Return the unique identifier of the project and server.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="server_id">Server ID</param>
+            <param name="project_id">Project ID</param>
+            <remarks>Return the unique identifier of the project and server.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CPROJ.IGetName(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
             <summary>Return the name of the project file.</summary>
@@ -6694,6 +6839,23 @@ The TBL file will contain the following fields:
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CKGRD.GetDefaults(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.String,System.Double@,System.Int32@)">
+            <summary>Get default blanking distance and low-pass desampling factor.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Handle to a database</param>
+            <param name="x">Y Channel</param>
+            <param name="y">X Channel</param>
+            <param name="z">Data channel</param>
+            <param name="blankingDistance">blanking distance</param>
+            <param name="lowPassDesamplingFactor">low-pass desampling factor</param>
+            <returns>0 OK, 1 Error.</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CKGRD.iSaveParms(System.String)">
             <summary>
 Puts the Krigrid object's control parameters back into
@@ -6913,6 +7075,30 @@ and IP plan map for plotting contributing electrodes for a given database row of
        such as defining parameters for pseudo-section plots.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CIP.GetLineData(GeoEngine.Core.GXNetX.CDB,System.String,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.String,GeoEngine.Core.GXNetX.CVV)">
+            <summary>Get electrodes, data and mask values for a single line.</summary>
+            <param name="db">DB object</param>
+            <param name="line">Line name ("" for all selected lines)</param>
+            <param name="vv_R1X">RX1 x locations (returned)</param>
+            <param name="vv_R1Y">RX1 y locations (returned)</param>
+            <param name="vv_R2X">RX2 x locations (returned)</param>
+            <param name="vv_R2Y">RX2 y locations (returned)</param>
+            <param name="vv_T1X">TX1 x locations (returned)</param>
+            <param name="vv_T1Y">TX1 y locations (returned)</param>
+            <param name="vv_T2X">TX2 x locations (returned)</param>
+            <param name="vv_T2Y">TX2 y locations (returned)</param>
+            <param name="vv_QC_IP">IP QC channel values ("QC" or "QC_IP") (returned)</param>
+            <param name="vv_QC_Res">Resistivity QC channel values ("QC_RES") (returned)</param>
+            <param name="data">data channel (optional)</param>
+            <param name="vv_data">data channel values (returned)</param>
+            <remarks>True XY locations are returned for 2D arrays. Distant Electrode locations may be dummies.</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CIP.GetGridsVV">
             <summary>Get a VV populated with grids created making pseudosections by this IP object</summary>
@@ -7229,6 +7415,74 @@ A is the A-spacing. If the Topography is not defined, then
 it is assumed to be equal to 0.
 </remarks>
             <available_version>5.1.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CIP.RecalculateDerivedData(GeoEngine.Core.GXNetX.CDB,System.Int32,GeoEngine.Core.GXNetX.CLST,System.Int32)">
+            <summary>Recalculate derived channel values.</summary>
+            <param name="db">Database</param>
+            <param name="line_handle">line handle  [&amp;lt;define&amp;gt;DB_LOCK_READWRITE&amp;lt;/define&amp;gt;]</param>
+            <param name="channel_list">LST object - channel name overrides</param>
+            <param name="recalculate_xyz">Recalculate XYZ locations (TRUE or FALSE)?</param>
+            <remarks>
+This function recalculates "derived" channel values from
+"core" data. It duplicates and extends the functionality
+of RecalateEx_IP by allowing for the input/output channel
+names to be overridden, with extra control on what is calculated.
+
+   1. Recalculates the "STN" and "N" channels (depending on the system).
+   2. Recalculates the apparent resistivity "ResCalc",
+      average "IP_Avg" and metal factor "MF" channels
+   3. Recalculates the "X" and "Y" channels. One of these will
+      be equal to "STN", the other to the internally stored
+      line number for the current line.
+   4. Recalculate the "Z" channel, based on the current "Topo"
+      channel, and the "N" values.
+
+Channel overrides are passed via a LST object, with the channel key (type)
+passed in the LST_ITEM_NAME part, and the channel name passed in the 
+LST_ITEM_VALUE part.
+
+The following channel overrides supported 
+(NOTE: Different behaviours for 2D and 3D arrays)
+
+3D Electrode location channels (IP_ARRAY_3D_XXX):
+   "R1X", "R1Y", "R1Z", "R2X", "R2Y", "R2Z",
+   "T1X", "T1Y", "T1Z", "T2X", "T2Y", "T2Z" 
+   (electrodes not included or set to "" are not read)
+
+or IN-LINE arrays (DPDP, PLDP, PLPL, GRAD)
+   "R1X", "R2X", "T1X", "T2X"  (In-line locations)
+   "R1Y", "R2Y", "T1Y", "T2Y"  (Across-line locations)
+   "R1Z", "R2Z", "T1Z", "T2Z"  (Z)
+   (for any electrode not include or set to "" the default channel name For
+    the array line direction, or the defined distant electrode location
+    is used)
+
+Other input channels overridden if defined:
+   "Vp" (primary voltage - must be in mV)
+   "I" (current - must be in A)
+
+Other output channels overridden if defined (if you DON'T want the
+various output channels modified, then set the override values to ""):
+   "MF" (metal factor) - formulation defined in settings, 
+   "AvgIP" (average IP)
+   "AppRes" (apparent resistivity)
+   "N" (Pseudo-section pseudo-depth)
+   "Stn" (Station value)
+   "X" (Station "X" value)
+   "Y" (Station "Y" value)
+   "Z" (Station "Z" value)
+   "Topo" (Ground elevation at station location)
+
+Recalculating XYZ will result in any channel grid makers from the IPIMPGRID.GX
+being re-run, then if a maker exists for the Topo channel it is re-run, and
+finally the Z channel is recalculated (see "RecalculateZ_IP").
+</remarks>
+            <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -10687,6 +10941,86 @@ ImportADO_DU. See also ImportDatabaseADO_GUI.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iConfigureConnection(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
+            <summary>Configures connection string from ODBC database data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="connect">Connection string</param>
+            <param name="connect_size">Size of connection string returned</param>
+            <param name="temp">Template to make</param>
+            <param name="temp_size">Size of template string returned</param>
+            <param name="table">Name of table</param>
+            <param name="table_size">Size of table name string</param>
+            <remarks />
+            <returns>
+0 - OK
+-1 - Cancel
+</returns>
+            <available_version>9.9.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iConfigureConnection(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@)">
+            <summary>Configures connection string from ODBC database data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="connect">Connection string</param>
+            <param name="temp">Template to make</param>
+            <param name="table">Name of table</param>
+            <remarks />
+            <returns>
+0 - OK
+-1 - Cancel
+</returns>
+            <available_version>9.9.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iConfigureConnection(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
+            <summary>Configures connection string from ODBC database data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="connect">Connection string</param>
+            <param name="connect_size">Size of connection string returned</param>
+            <param name="temp">Template to make</param>
+            <param name="temp_size">Size of template string returned</param>
+            <param name="table">Name of table</param>
+            <param name="table_size">Size of table name string</param>
+            <remarks />
+            <returns>
+0 - OK
+-1 - Cancel
+</returns>
+            <available_version>9.9.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.iConfigureConnection(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@)">
+            <summary>Configures connection string from ODBC database data.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="connect">Connection string</param>
+            <param name="temp">Template to make</param>
+            <param name="table">Name of table</param>
+            <remarks />
+            <returns>
+0 - OK
+-1 - Cancel
+</returns>
+            <available_version>9.9.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)">
             <summary>
 Generate a template file for importing drill holes
@@ -12430,6 +12764,37 @@ to white (if "Ok" is selected) and no choice is offered.
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="vox_name">Name of the Voxel to get stats from</param>
             <available_version>5.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.GridStatHist5(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Display Histogram of up to 5 different grids</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="grid_name_1">Name of the first grid to get stats from (required)</param>
+            <param name="grid_name_2">Optional name of the second grid to get stats from</param>
+            <param name="grid_name_3">Optional name of the third grid to get stats from</param>
+            <param name="grid_name_4">Optional name of the fourth grid to get stats from</param>
+            <param name="grid_name_5">Optional name of the fifth grid to get stats from</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CGUI.GridStatHist5(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Display Histogram of up to 5 different grids</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="grid_name_1">Name of the first grid to get stats from (required)</param>
+            <param name="grid_name_2">Optional name of the second grid to get stats from</param>
+            <param name="grid_name_3">Optional name of the third grid to get stats from</param>
+            <param name="grid_name_4">Optional name of the fourth grid to get stats from</param>
+            <param name="grid_name_5">Optional name of the fifth grid to get stats from</param>
+            <available_version>2021.2</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>yes</app_method>
             <public_method>no</public_method>
@@ -15287,6 +15652,46 @@ Locations are in the current view user units
             <public_method>yes</public_method>
             <extended_method>no</extended_method>
             <method_group>Input</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEMAP.StartShading(System.String@,System.Int32,System.String@,System.Int32,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Int32@,System.IDisposable)">
+            <summary>Returns the fast-shadow SHD object and the current shading parameters</summary>
+            <param name="primary_grid_path">Grid path returned</param>
+            <param name="primary_grid_path_size">Size of the primary grid path</param>
+            <param name="shading_grid_path">Shading grid path returned (normally the same as the primary grid path, but can be different)</param>
+            <param name="shading_grid_path_size">Size of the shading grid path</param>
+            <param name="inclination">Inclination (degrees)</param>
+            <param name="declination">Declination (degrees)</param>
+            <param name="scale">Scale factor</param>
+            <param name="contrast">Contrast</param>
+            <param name="brightness">Brightness</param>
+            <param name="wet_look">Wet-look effect set (shading layer uses lighter distribution)</param>
+            <param name="disposable">Disposable to dispose when fast-shadow mode is ended internally (e.g. closing document)</param>
+            <returns>Returns a SHD object if there is a shading layer, otherwise terminates</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>General</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEMAP.StartShading(System.String@,System.String@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Int32@,System.IDisposable)">
+            <summary>Returns the fast-shadow SHD object and the current shading parameters</summary>
+            <param name="primary_grid_path">Grid path returned</param>
+            <param name="shading_grid_path">Shading grid path returned (normally the same as the primary grid path, but can be different)</param>
+            <param name="inclination">Inclination (degrees)</param>
+            <param name="declination">Declination (degrees)</param>
+            <param name="scale">Scale factor</param>
+            <param name="contrast">Contrast</param>
+            <param name="brightness">Brightness</param>
+            <param name="wet_look">Wet-look effect set (shading layer uses lighter distribution)</param>
+            <param name="disposable">Disposable to dispose when fast-shadow mode is ended internally (e.g. closing document)</param>
+            <returns>Returns a SHD object if there is a shading layer, otherwise terminates</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>General</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CEMAP.UnLock">
             <summary>This method unlocks the Edited map.</summary>
@@ -22154,6 +22559,26 @@ to match a different interval down the hole.
             <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDH.UpdateTemplateBlob(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.Int32)">
+            <summary>Update the import template and store to the database if necessary.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">DB Handle</param>
+            <param name="templDestination">Destination template name</param>
+            <param name="templSource">Source template name</param>
+            <param name="imp_type">&amp;lt;define&amp;gt;DH_DATA&amp;lt;/define&amp;gt;</param>
+            <remarks>
+The template will be updated using another template.
+
+The import types correspond to the DHIMPORT.IMPTYPE variable:
+0: ASCII, 1: Database/XLS, 2: ODBC
+</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CDH.SetTemplateBlob(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.Int32)">
             <summary>Store the import template to the database.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -25161,6 +25586,266 @@ resource. The Resource is loaded into memory but not displayed.
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.End(System.Int32)">
+            <summary>TODO</summary>
+            <param name="apply_changes">Apply changes to map.</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.Reset">
+            <summary>Reset the AGG back to its initial state. Same as cancelling out of the colour tool and restarting; all layers are reset.</summary>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.rGetTransparency">
+            <summary>Get the transparency. This is returned for the entire map group.</summary>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.SetTransparency(System.Double)">
+            <summary>Set the transparency. This is set for the entire map group.</summary>
+            <param name="transparency">Transparency value (1.0 - Opaque, 0.0 - Transparent)</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.rGetBrightness(System.Int32,System.Int32)">
+            <summary>Get the brightness of a single layer, or all the layers</summary>
+            <param name="layerSelection">&amp;lt;define&amp;gt;BRIGHT&amp;lt;/define&amp;gt;</param>
+            <param name="layer">layer index (required for BRIGHT_LAYER</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.SetBrightness(System.Double,System.Int32,System.Int32)">
+            <summary>Set the brightness of a single layer, or all the layers</summary>
+            <param name="brightness">Brightness value (-1.0 (black) &lt;= brightness &lt;= 1.0 (white))</param>
+            <param name="layerSelection">&amp;lt;define&amp;gt;BRIGHT&amp;lt;/define&amp;gt;</param>
+            <param name="layer">layer index (required for BRIGHT_LAYER</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iGetBrightnessType">
+            <summary>Is brightness set separately by layer and by object or just by object?</summary>
+            <remarks>
+For some objects (like AGG) brightness can be set for each layer, or for the object as a whole, while in others
+(like CSYMB) it can be set only for the object as a whole.
+</remarks>
+            <returns>
+BRIGHTNESS_ALL - Set brightness for the object as a whole only
+BRIGHTNESS_ALL_AND_LAYERS - Set brightness either for the object as a whole or by layer
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.SaveLayerITR(System.Int32)">
+            <summary>Save the layer's ITR to a file. A dialog prompts for the file name.</summary>
+            <param name="index">Index of layer</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.GetLayerHistogram(System.Int32,System.Double@,System.Double@)">
+            <summary>Get a VV filled with histogram bin counts for each zone of the ITR</summary>
+            <param name="index">Index of layer</param>
+            <param name="incr">width of bin increment</param>
+            <param name="min">Min (value at start of 2nd bin)</param>
+            <returns>VV object</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.GetLayerStatistics(System.Int32)">
+            <summary>Get a ST filled with layer statistics</summary>
+            <param name="index">Index of layer</param>
+            <returns>ST object</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iUpdateZoneTransformType(System.Windows.Forms.IWin32Window,System.Int32,System.Int32)">
+            <summary>Recalculate the layer's ITR to the provided type, based on the statistics of the chosen layer.</summary>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="index">Index of layer</param>
+            <param name="transformType">&amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;</param>
+            <remarks>
+If the input tranform type is ITR_ZONE_MODEL_NOZONE, ITR_ZONE_MODEL_NONE then nothing will happen
+and the function will return 1. The dialogs to enter parameters are shown for Linear, Log, Normal and Equal.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iUpdateZoneTransformType(System.Int32,System.Int32)">
+            <summary>Recalculate the layer's ITR to the provided type, based on the statistics of the chosen layer.</summary>
+            <param name="index">Index of layer</param>
+            <param name="transformType">&amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;</param>
+            <remarks>
+If the input tranform type is ITR_ZONE_MODEL_NOZONE, ITR_ZONE_MODEL_NONE then nothing will happen
+and the function will return 1. The dialogs to enter parameters are shown for Linear, Log, Normal and Equal.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iSetITRTransformFromLayer(System.Int32,GeoEngine.Core.GXNetX.CITR,System.Int32)">
+            <summary>Set the input ITR transform to the provided type, based on the statistics of the chosen layer.</summary>
+            <param name="index">Index of layer</param>
+            <param name="itr">ITR Handle</param>
+            <param name="transformType">&amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;</param>
+            <remarks>
+If the input tranform type is ITR_ZONE_MODEL_NOZONE or ITR_ZONE_MODEL_NONE
+then the user-preference default will be used.
+NOTE: This alters the input ITR, not the selected layer's own ITR. The layer is accessed
+purely to get the current statistics.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.SetLayerITR(System.Int32,GeoEngine.Core.GXNetX.CITR,System.Int32)">
+            <summary>Set a layer's ITR</summary>
+            <param name="index">Index of layer</param>
+            <param name="itr">ITR Handle</param>
+            <param name="redrawMap">Force redraw of map (0: No, 1: Yes)?</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.GetLayerITR(System.Int32,GeoEngine.Core.GXNetX.CITR)">
+            <summary>Get a layer's ITR</summary>
+            <param name="index">Index of layer</param>
+            <param name="itr">ITR Handle</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.GetLayerInfo(System.Int32,GeoEngine.Core.GXNetX.CITR,System.String@,System.Int32)">
+            <summary>Get a layer's information</summary>
+            <param name="index">Index of layer</param>
+            <param name="itr">ITR Handle</param>
+            <param name="layer_name">Name returned</param>
+            <param name="length">Name size</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.GetLayerInfo(System.Int32,GeoEngine.Core.GXNetX.CITR,System.String@)">
+            <summary>Get a layer's information</summary>
+            <param name="index">Index of layer</param>
+            <param name="itr">ITR Handle</param>
+            <param name="layer_name">Name returned</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iGetType">
+            <summary>Get a layer's type</summary>
+            <returns>&amp;lt;define&amp;gt;DCOL_TYPE&amp;lt;/define&amp;gt;</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iNumberOfLayers">
+            <summary>Get the number of layers.</summary>
+            <returns>The number of layers (often just one).</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.Start(GeoEngine.Core.GXNetX.CGXNETCore,System.IDisposable)">
+            <summary>Start interactive colour tool editing for current map, grid or other 3D document view.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="disposable">Disposable to dispose when interactive colour tool editing is ended internally (e.g. closing document)</param>
+            <returns>DCOL object</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.CDCOL">
+            <summary>
+
+       Object to interface with 2D map and 3D view objects that supports colour tool editing.
+   
+</summary>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CCOM.WriteLine(System.String)">
             <summary>Writes a Line to the COM</summary>
             <param name="line">Line to write</param>
@@ -26474,6 +27159,32 @@ See the note on offset symbols in RosePlot_CHIMERA
        CHIMERA GX function library.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CBIGRID.GetDefaults(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.String,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Get default values for max line separation, max point separation and trend angle.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Handle to a database</param>
+            <param name="x">Y Channel</param>
+            <param name="y">X Channel</param>
+            <param name="z">Data channel</param>
+            <param name="cell">cell size</param>
+            <param name="maxLineSeparation">max line separation</param>
+            <param name="maxPointSeparation">max point separation</param>
+            <param name="trendAngle">trend angle</param>
+            <param name="lowPassWavelength">low-pass filter wavelength</param>
+            <param name="highPass">high-pass filter wavelength</param>
+            <param name="noneLinear">non-linear filter tolerance</param>
+            <param name="preFilter">pre-filter sample increment</param>
+            <returns>
+0 - Ok
+1 - Error
+</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CBIGRID.SaveParms(System.String)">
             <summary>
@@ -27845,6 +28556,15 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.SHP_GEOM_TYPE_POINT">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHP_GEOM_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.SHD_FIX_DECLINATION">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.SHD_FIX_INCLINATION">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.SHD_FIX_NONE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.SEMPLOT_PLOT_UNKNOWN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SEMPLOT_PLOTConstant" />.</summary>
@@ -29586,6 +30306,33 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DGW_LABEL">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DGW_OBJECTConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DCOL_TYPE_VECTOR_VOXEL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DCOL_TYPE_VOXEL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DCOL_TYPE_SYMBOLS">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DCOL_TYPE_GRID">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.DCOL_TYPE_UNKNOWN">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.BRIGHTNESS_ALL_AND_LAYERS">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.BRIGHTNESS_ALL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.BRIGHT_LAYER">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.IntConstants.BRIGHT_ALL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.IntConstants.COM_STOPBITS_TWO">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.COM_STOPBITSConstant" />.</summary>
         </member>
@@ -30017,6 +30764,15 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.SHP_GEOM_TYPE_POINT">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHP_GEOM_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.SHD_FIX_DECLINATION">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.SHD_FIX_INCLINATION">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.SHD_FIX_NONE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.SEMPLOT_PLOT_UNKNOWN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.SEMPLOT_PLOTConstant" />.</summary>
@@ -31767,6 +32523,33 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNetX.Constant.DGW_LABEL">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DGW_OBJECTConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.DCOL_TYPE_VECTOR_VOXEL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.DCOL_TYPE_VOXEL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.DCOL_TYPE_SYMBOLS">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.DCOL_TYPE_GRID">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.DCOL_TYPE_UNKNOWN">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.BRIGHTNESS_ALL_AND_LAYERS">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.BRIGHTNESS_ALL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.BRIGHT_LAYER">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.Constant.BRIGHT_ALL">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNetX.BRIGHTConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNetX.Constant.COM_STOPBITS_TWO">
             <summary>See <see cref="T:Geosoft.Desktop.GXNetX.COM_STOPBITSConstant" />.</summary>
         </member>
@@ -32317,6 +33100,19 @@ on coarser averaged grid
         </member>
         <member name="T:Geosoft.Desktop.GXNetX.SHP_GEOM_TYPEConstant">
             <summary>Shape file geometry types</summary>
+            <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.SHD_FIXConstant.DECLINATION">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.SHD_FIXConstant.INCLINATION">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.SHD_FIXConstant.NONE">
+            <summary />
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.SHD_FIXConstant">
+            <summary>Interactive tracking constraints.</summary>
             <tocexclude />
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.SEMPLOT_PLOTConstant.UNKNOWN">
@@ -34752,6 +35548,45 @@ FILEPATH    .      RW     .      .      .
 LISTVAL     .      .      R      .      .
 LISTALIAS   .      .      RW     .      .
 </summary>
+            <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant.VECTOR_VOXEL">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant.VOXEL">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant.SYMBOLS">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant.GRID">
+            <summary />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant.UNKNOWN">
+            <summary />
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.DCOL_TYPEConstant">
+            <summary>Layer type</summary>
+            <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant.BRIGHTNESS_ALL_AND_LAYERS">
+            <summary>Can set the brightness for object as a whole and for individual layers</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant.BRIGHTNESS_ALL">
+            <summary>Can set the brightness only for object as a whole</summary>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.BRIGHTNESS_TYPESConstant">
+            <summary>Detrending option</summary>
+            <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.BRIGHTConstant.LAYER">
+            <summary>Set the brightness of the current layer</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNetX.BRIGHTConstant.ALL">
+            <summary>Set the brightness of all the layers</summary>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.BRIGHTConstant">
+            <summary>Brightness type</summary>
             <tocexclude />
         </member>
         <member name="F:Geosoft.Desktop.GXNetX.COM_STOPBITSConstant.TWO">

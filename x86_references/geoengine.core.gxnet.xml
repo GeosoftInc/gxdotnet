@@ -4,6 +4,9 @@
         "geoengine.core.gxnet"
     </assembly>
     <members>
+        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
+            <summary>Geosoft internal use only.</summary>
+        </member>
         <member name="P:TranslationAttribute.FriendlyPath">
             <summary>
 The translation friendly path
@@ -24,8 +27,28 @@ Constructor
 Translation attribute
 </summary>
         </member>
-        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
-            <summary>Geosoft internal use only.</summary>
+        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -6656,6 +6679,64 @@ guarantee all grid files besides the main one are copied.
             <extended_method>no</extended_method>
             <method_group>Licensing</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CSYS.GetPublishPathForCentral(System.String,System.String@,System.Int32)">
+            <summary>Get cache path to publish datasets to Central</summary>
+            <param name="project_uuid">Project UUID</param>
+            <param name="cache_path">Returned cache path</param>
+            <param name="cache_path_size">Size of cache path</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSYS.GetPublishPathForCentral(System.String,System.String@)">
+            <summary>Get cache path to publish datasets to Central</summary>
+            <param name="project_uuid">Project UUID</param>
+            <param name="cache_path">Returned cache path</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSYS.PublishDatasetsToCentral(System.String,System.String,System.String,System.String@,System.Int32,System.Int32@,System.Int32@,System.String,System.String)">
+            <summary>Publish datasets to Central</summary>
+            <param name="instance_uuid">Central Instance UUID</param>
+            <param name="project_uuid">Project UUID</param>
+            <param name="project_name">Project name</param>
+            <param name="central_server_guid">Central server GUID</param>
+            <param name="central_server_guid_size">Size of Central server GUID buffer.</param>
+            <param name="central_branch_id">Branch ID</param>
+            <param name="central_revision_id">Revision ID</param>
+            <param name="metadata_as_json">metadata as JSON</param>
+            <param name="parent_event_id">Parent Event ID</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSYS.PublishDatasetsToCentral(System.String,System.String,System.String,System.String@,System.Int32@,System.Int32@,System.String,System.String)">
+            <summary>Publish datasets to Central</summary>
+            <param name="instance_uuid">Central Instance UUID</param>
+            <param name="project_uuid">Project UUID</param>
+            <param name="project_name">Project name</param>
+            <param name="central_server_guid">Central server GUID</param>
+            <param name="central_branch_id">Branch ID</param>
+            <param name="central_revision_id">Revision ID</param>
+            <param name="metadata_as_json">metadata as JSON</param>
+            <param name="parent_event_id">Parent Event ID</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CSYS.IGetGeosoftID(System.String@,System.Int32)">
             <summary>Get the Geosoft ID (email) if signed in</summary>
             <param name="id">Returned ID</param>
@@ -13019,6 +13100,19 @@ only co-linear points would be removed).
             <extended_method>no</extended_method>
             <method_group>2D Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CPG.Set(System.Int32,System.Int32,System.Double)">
+            <summary>Write a single value to a 2D PG</summary>
+            <param name="col">iBx - element # in x (column #)</param>
+            <param name="row">iBy - element # in y (row #)</param>
+            <param name="value">value to set</param>
+            <remarks>This is a low-performance method.</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>2D Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CPG.rGet(System.Int32,System.Int32)">
             <summary>Read a single value from a 2D PG</summary>
             <param name="col">iBx - element # in x (column #)</param>
@@ -14277,6 +14371,26 @@ inclusive (as the first PLY) and exclusive interior regions.
             <param name="con">Control file name</param>
             <param name="grid">Grid file name</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVU.ColorBarREGEx(GeoEngine.Core.GXNet.CMVIEW,GeoEngine.Core.GXNet.CST,GeoEngine.Core.GXNet.CITR,GeoEngine.Core.GXNet.CITR,GeoEngine.Core.GXNet.CREG,GeoEngine.Core.GXNet.CVV)">
+            <summary>Create a Color Bar in view</summary>
+            <param name="mview">View</param>
+            <param name="st_hist">ST with histogram info of original</param>
+            <param name="itr">Itr</param>
+            <param name="itr2">Optional 2nd Itr (can be null)</param>
+            <param name="reg">Parameters</param>
+            <param name="vv">Ranges</param>
+            <remarks>
+See ColorBarREG_MVU.  This is the same except for the
+additional Ranges VV parameter.        
+The VV is not part of the REG object, it contains the interval values for the exact interval option from an ASCII file.
+</remarks>
+            <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -15563,6 +15677,63 @@ view coordinate system before they are placed in the view.
             <param name="guid">GUID</param>
             <returns>Group Number.</returns>
             <available_version>9.3</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.DeleteFolder3D(System.String)">
+            <summary>Delete a folder.</summary>
+            <param name="guid">Folder GUID.</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.MoveGroupToFolder3D(System.String,System.Int32)">
+            <summary>Add group to a folder in MVIEW.</summary>
+            <param name="guid">Folder parent GUID, or empty string for parent MVIEW.</param>
+            <param name="group">Group number</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.AddFolder3D(System.String,System.String,System.String@,System.Int32)">
+            <summary>Add a folder to the MVIEW.</summary>
+            <param name="name">Folder name</param>
+            <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
+            <param name="guid">GUID</param>
+            <param name="guid_size">Size of GUID buffer.</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.AddFolder3D(System.String,System.String,System.String@)">
+            <summary>Add a folder to the MVIEW.</summary>
+            <param name="name">Folder name</param>
+            <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
+            <param name="guid">GUID</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.GetFolderItems3D(System.String)">
+            <summary>Get the list of folders in the MVIEW.</summary>
+            <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW</param>
+            <remarks>Returns name/guid pairs. Empty GUID indicates item is a group.</remarks>
+            <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -19054,6 +19225,28 @@ The Z and Data channels may be array channels. If they are, the array sizes must
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CMULTIGRID3DUTIL.iDatabaseContainsVoxelGeometry(GeoEngine.Core.GXNet.CDB)">
+            <summary>Returns 1 if the original voxel geometry is stored inside the database</summary>
+            <param name="db">DB To import from</param>
+            <available_version>2021.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMULTIGRID3DUTIL.ImportFromGDBIgnoreStoredVoxelGeometry(System.String,GeoEngine.Core.GXNet.CDB,System.Int32)">
+            <summary>Imports from a Geosoft Database, but ignores any stored internal geometry</summary>
+            <param name="grid3d_file">Name of output Voxel file</param>
+            <param name="db">DB To import from</param>
+            <param name="symb">Symbol to import data from</param>
+            <available_version>2021.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CMULTIGRID3DUTIL.ImportFromGDB(System.String,GeoEngine.Core.GXNet.CDB,System.Int32)">
             <summary>Imports from a Geosoft Database</summary>
             <param name="grid3d_file">Name of output Voxel file</param>
@@ -20312,6 +20505,61 @@ x  - Data Value
        other Oasis montaj processes.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMESHUTIL.ApplyTransformation(System.String,System.String,System.String,System.String,System.Int32,System.Double,System.Double,System.Double)">
+            <summary>Applies a transformation to a surface, see &amp;lt;define&amp;gt;SURFACE_TRANSFORMATION_METHOD&amp;lt;/define&amp;gt;for available operations. The existing mesh will be preserved, and a new mesh will be created with the target name in the target file. Reprojection willbe handled automatically in the case that the coordinate systems differ.</summary>
+            <param name="inputSurfaceFile">Input surface file name</param>
+            <param name="inputSurfaceName">Input surface layer (mesh) name</param>
+            <param name="outputSurfaceFile">Output surface file name</param>
+            <param name="outputSurfaceName">Output surface layer (mesh) name</param>
+            <param name="transformationMethod">&amp;lt;define&amp;gt;SURFACE_TRANSFORMATION_METHOD&amp;lt;/define&amp;gt;</param>
+            <param name="x">X transformation component</param>
+            <param name="y">Y transformation component</param>
+            <param name="z">Z transformation component</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMESHUTIL.CopyMeshToGeoSurfaceFile(System.String,System.String,System.String)">
+            <summary>Copy a mesh from one geosurface file to another</summary>
+            <param name="input_surface_filename">Input Geosurface file name</param>
+            <param name="surface_name">Geosurface surface name</param>
+            <param name="output_surface_filename">Output Geosurface file name</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMESHUTIL.ProjectGeosurfaceOntoGrid(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>Repoject surface with the coordinate system of the IPJ.</summary>
+            <param name="surface_filename">Input Geosurface file name</param>
+            <param name="surface_name">Geosurface surface name</param>
+            <param name="input_geometry_grid">Input Geometry grid</param>
+            <param name="projection_method">&amp;lt;define&amp;gt;SURFACE_PROJECTION_METHOD&amp;lt;/define&amp;gt;</param>
+            <param name="output_grid">Output grid</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMESHUTIL.ReprojectGeosurfaceFile(System.String,System.String,GeoEngine.Core.GXNet.CIPJ)">
+            <summary>Repoject surface with the coordinate system of the IPJ.</summary>
+            <param name="input_surface_filename">Input Geosurface file name</param>
+            <param name="output_surface_filename">Output Geosurface file name</param>
+            <param name="ipj">IPJ in which to place the new Geosurface coordinate system</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CMESHUTIL.ExtractIsosurfaceFromVoxel(System.String,System.String,System.String,System.Double,System.Double,System.Int32)">
             <summary>Extracts isosurface from a voxel, and saves the voxel to a Geosurface file</summary>
@@ -23645,11 +23893,58 @@ after the calculation (returned here for convenience).
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.iGetZoneActive(System.Int32)">
+            <summary>Get whether a zone of the ITR is active (1) or rendered trasparent (0)</summary>
+            <param name="zone">Number of the zone to set.</param>
+            <remarks>Valid indices are 0 to N-1, where N is the size of the ITR.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.SetZoneActive(System.Int32,System.Int32)">
+            <summary>Set whether a zone of the ITR is active (1) or rendered trasparent (0)</summary>
+            <param name="zone">Number of the zone to set.</param>
+            <param name="active">1: active, 0: inactive (transparent)</param>
+            <remarks>Valid indices are 0 to N-1, where N is the size of the ITR.</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.SetZoneBaseColor(System.Int32,System.Int32)">
+            <summary>Set the color in a zone of the ITR</summary>
+            <param name="zone">Number of the zone to set.</param>
+            <param name="color">&amp;lt;define&amp;gt;MVIEW_COLOR&amp;lt;/define&amp;gt;</param>
+            <remarks>
+"
+              Valid indices are 0 to N-1, where N is the size of the ITR.
+              This function modifies the "base" colours directly. The base colours have
+              the current brightness applied to produce the rendered colours. The 
+              internal brightness remains unchanged.
+</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CITR.SetZoneColor(System.Int32,System.Int32)">
             <summary>Set the color in a zone of the ITR</summary>
             <param name="zone">Number of the zone to set.</param>
             <param name="color">&amp;lt;define&amp;gt;MVIEW_COLOR&amp;lt;/define&amp;gt;</param>
-            <remarks>Valid indices are 0 to N-1, where N is the size of the ITR.</remarks>
+            <remarks>
+"
+              Valid indices are 0 to N-1, where N is the size of the ITR.
+              This function modifies the colours as rendered, including applied
+              brightness, and triggers an internal reset of the ITR brightness
+              to zero, with all the "rendered" colours becoming the "base" colours.
+</remarks>
             <available_version>5.0</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -23774,6 +24069,32 @@ Contrast
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.rGetContour">
+            <summary>Get the contour value associated with the current transform model of the ITR</summary>
+            <remarks>
+The Linear, Normal and Equal-Area transforms accept a contour value as part of their definitions on creation.
+All the colour-breaks are rounded to the nearest integral multiple of the contour value (if defined).
+This function returns the value defined, and rDUMMY if none is defined.
+</remarks>
+            <returns>The contour setting of the ITR</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.rGetContrast">
+            <summary>Get the contrast setting of the ITR</summary>
+            <remarks>Brightness can range from 0.0 (flat) to 1.0 (normal full contrast).</remarks>
+            <returns>The contrast setting of the ITR</returns>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CITR.rGetBrightness">
             <summary>Get the brightness setting of the ITR</summary>
             <remarks>
@@ -23847,6 +24168,46 @@ when the ITR is created.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.SetZoneModel(System.Int32,GeoEngine.Core.GXNet.CVV)">
+            <summary>Set the ITR zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</summary>
+            <param name="model">&amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;</param>
+            <param name="parameters">VV object (REAL): see notes for values returned</param>
+            <remarks>
+The following parameters are required for the following values of &amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;:
+ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max
+ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max
+ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent
+ITR_ZONE_MODEL_EQUAL: [0]: Contour
+All other types do not require any values (the VV will be empty).
+NOTE: This will not change the actual ranges, so care is needed when using this function that the input
+specification accurately reflects the actual ranges.
+</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.GetZoneModel(System.Int32@,GeoEngine.Core.GXNet.CVV)">
+            <summary>Get the ITR zone model (e.g. Linear, LogLin, Equal Area) and the accompanying values (if defined)</summary>
+            <param name="model">&amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;</param>
+            <param name="parameters">VV object (REAL): see notes for values returned</param>
+            <remarks>
+The following parameters are returned for the following values returned for &amp;lt;define&amp;gt;ITR_ZONE_MODEL&amp;lt;/define&amp;gt;:
+ITR_ZONE_MODEL_LINEAR: [0]: Contour, [1]: Min, [2]: Max
+ITR_ZONE_MODEL_LOGLIN: [0]: Contour, [1]: Min, [2]: Max
+ITR_ZONE_MODEL_NORMAL: [0]: Contour, [1]: Mean, [2]: Standard Deviation, [3]: Exponent
+ITR_ZONE_MODEL_EQUAL: [0]: Contour
+All other types do not return any values (the VV will be empty).
+</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CITR.iGetZoneModelType">
             <summary>Get the ITR zone model (e.g. Linear, LogLin, Equal Area).</summary>
             <remarks>
@@ -23876,6 +24237,21 @@ transform is included in an ITR.
             <param name="val">Data value</param>
             <returns>&amp;lt;define&amp;gt;MVIEW_COLOR&amp;lt;/define&amp;gt;</returns>
             <available_version>5.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.GetZoneBaseColor(System.Int32,System.Int32@)">
+            <summary>Get the base color in a zone of the ITR</summary>
+            <param name="zone">Number of the zone to set.</param>
+            <param name="color">&amp;lt;define&amp;gt;MVIEW_COLOR&amp;lt;/define&amp;gt;</param>
+            <remarks>
+Valid indices are 0 to N-1, where N is the size of the ITR.
+The base colour is the colour in the ITR before any brightness is applied.
+</remarks>
+            <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -24035,6 +24411,37 @@ is 0 (no color).
 0.0 to 1.0 makes colors lighter, 1.0 is white
 </remarks>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.IGetName(System.String@,System.Int32)">
+            <summary>Get the name of the ITR.</summary>
+            <param name="name">Name returned</param>
+            <param name="length">Name size</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.IGetName(System.String@)">
+            <summary>Get the name of the ITR.</summary>
+            <param name="name">Name returned</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CITR.SetName(System.String)">
+            <summary>Set the name of the ITR.</summary>
+            <param name="name">Name to set</param>
+            <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -27110,6 +27517,53 @@ are not as important.
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.DeleteFault(System.Int32)">
+            <summary>Delete a fault trace</summary>
+            <param name="index">Fault index (0 to N-1)</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Faults</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.iAddFault(GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>Add a fault trace</summary>
+            <param name="xVV">X locations VV</param>
+            <param name="yVV">Y locations VV</param>
+            <param name="type">Fault type &amp;lt;define&amp;gt;IMG_FAULT&amp;lt;/define&amp;gt;</param>
+            <remarks>The X and Y values cannot be dummies. Polygons require at least three locations, Polylines require at least two.</remarks>
+            <returns>index of the added fault</returns>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Faults</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.GetFault(System.Int32,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32@)">
+            <summary>Retrieve a fault trace</summary>
+            <param name="index">Fault index (0 to N-1)</param>
+            <param name="xVV">X locations VV (REAL)</param>
+            <param name="yVV">Y locations VV (REAL)</param>
+            <param name="type">Fault type &amp;lt;define&amp;gt;IMG_FAULT&amp;lt;/define&amp;gt;</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Faults</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.iNumberOfFaults">
+            <summary>Returns the number of individual fault traces stored in the IMG</summary>
+            <remarks>Faults are paths of (X, Y) locations, and are either polylines or polygons.</remarks>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Faults</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CIMG.rGetRealParameter(System.String)">
             <summary>Store a real parameter in an IMG object</summary>
             <param name="name">Parameter name (case insensitive)</param>
@@ -27252,6 +27706,59 @@ as the latter function sets up the bounding rectangle in the metadata.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.SetShadowGridPath(System.String)">
+            <summary>Sets display information about this image.</summary>
+            <param name="path">Grid path for the shadow grid</param>
+            <remarks>
+This values does NOT take immediate effect; it is retrieved and used whenever
+the grid is displayed in a viewer or map, and is used (for instance) to set the default value
+in the Display Grid GX.
+</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.IGetShadowGridPath(System.String@,System.Int32)">
+            <summary>Gets the name of a view.</summary>
+            <param name="path">Shadow grid path name returned</param>
+            <param name="length">Shadow grid path name string size</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.IGetShadowGridPath(System.String@)">
+            <summary>Gets the name of a view.</summary>
+            <param name="path">Shadow grid path name returned</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.SetDisplayProperty(System.Int32,System.Double)">
+            <summary>Sets display information about this image.</summary>
+            <param name="query">&amp;lt;define&amp;gt;IMG_DISPLAY_PROPERTY&amp;lt;/define&amp;gt;</param>
+            <param name="value">Value</param>
+            <remarks>
+These values do NOT take immediate effect; they are retrieved and used whenever
+the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+in the Display Grid GX.
+Some values take on only values of 0 or 1.
+</remarks>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CIMG.rQuery(System.Int32)">
             <summary>Query information about the IMG</summary>
             <param name="query">&amp;lt;define&amp;gt;IMG_QUERY&amp;lt;/define&amp;gt;</param>
@@ -27273,6 +27780,22 @@ int or real.
             <param name="y">Y location in the grid projection</param>
             <returns>Grid value</returns>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMG.rGetDisplayProperty(System.Int32)">
+            <summary>Gets display information about this image.</summary>
+            <param name="query">&amp;lt;define&amp;gt;IMG_DISPLAY_PROPERTY&amp;lt;/define&amp;gt;</param>
+            <remarks>
+These values do not necessarily match the grid as currently displayed; they are retrieved and used whenever
+the grid is displayed in a viewer or map, and are used (for instance) to set the default values
+in the Display Grid GX.
+Some values return only values of 0 or 1.
+</remarks>
+            <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -33193,6 +33716,16 @@ the "Value".
    
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CCSYMB.GetStat(GeoEngine.Core.GXNet.CST)">
+            <summary>Get the ST of the CSYMB</summary>
+            <param name="st">ST object</param>
+            <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CCSYMB.SetStaticCol(System.Int32,System.Int32)">
             <summary>Set a static color for the symbol edge or fill.</summary>
             <param name="col">Color value</param>
@@ -33840,6 +34373,25 @@ If the file already exists, it will replaced.
             <remarks>The returned VV contains the file names.</remarks>
             <returns>The number of IMGs.</returns>
             <available_version>5.0.6</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CAGG.GetLayerST(System.Int32)">
+            <summary>Get a ST filled with layer statistics</summary>
+            <param name="layer">Layer number</param>
+            <remarks>
+Layers are numbered from 0, consecutively in the order they are
+placed in the aggregate.
+
+An error will occur if the layer does not exist.
+
+Caller must create/destroy ITR.
+</remarks>
+            <returns>ST object</returns>
+            <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -36117,6 +36669,21 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.IntConstants.H_META_INVALID_TOKEN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.H_META_INVALID_TOKENConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_TRANSFORMATION_METHOD_SCALE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_TRANSFORMATION_METHOD_SHIFT">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_PROJECTION_AVERAGE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_PROJECTION_MINIMUM">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_PROJECTION_MAXIMUM">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.SURFACE_CLIP_FAIL">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_CLIP_STATUSConstant" />.</summary>
         </member>
@@ -36296,6 +36863,9 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.KML_ALT_CLAMPTOGROUND">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.ITR_ZONE_MODEL_LOGLIN">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.ITR_MODEL_LOGLIN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
@@ -36776,6 +37346,39 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_FILE_READONLY">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FILEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_FAULT_POLYGON">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FAULTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_FAULT_POLYLINE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FAULTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_ENABLED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SMOOTHING_ENABLED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_COLOURS_REVERSED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_WETLOOK">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_BRIGHTNESS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_CONTRAST">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_SCALE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_DECLINATION">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMG_SHADING_INCLINATION">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.GRID3D_THEMATIC">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.GRID3D_TYPEConstant" />.</summary>
@@ -39315,6 +39918,21 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.Constant.H_META_INVALID_TOKEN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.H_META_INVALID_TOKENConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_TRANSFORMATION_METHOD_SCALE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_TRANSFORMATION_METHOD_SHIFT">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_PROJECTION_AVERAGE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_PROJECTION_MINIMUM">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_PROJECTION_MAXIMUM">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.SURFACE_CLIP_FAIL">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.SURFACE_CLIP_STATUSConstant" />.</summary>
         </member>
@@ -39554,6 +40172,9 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.KML_ALT_CLAMPTOGROUND">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.KML_ALTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.ITR_ZONE_MODEL_LOGLIN">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.ITR_MODEL_LOGLIN">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant" />.</summary>
@@ -40034,8 +40655,41 @@ to exaggerate one scale such as Z (1,1,5).
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FILEConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.IMG_FILE_READONLY">
-            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_NULLConstant" />.</summary>
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FILEConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_FAULT_POLYGON">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FAULTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_FAULT_POLYLINE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_FAULTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_ENABLED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SMOOTHING_ENABLED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_COLOURS_REVERSED">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_WETLOOK">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_BRIGHTNESS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_CONTRAST">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_SCALE">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_DECLINATION">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMG_SHADING_INCLINATION">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_NULLConstant" />.</summary>
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.GRID3D_THEMATIC">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.GRID3D_TYPEConstant" />.</summary>
@@ -43280,6 +43934,29 @@ intensities.
             <summary>META Invalid Token</summary>
             <tocexclude />
         </member>
+        <member name="F:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant.SCALE">
+            <summary>Transforms the surface by scaling it, provided sX, sY, sZ</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant.SHIFT">
+            <summary>Transforms the surface by shifting it, provided dX, dY, dZ</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.SURFACE_TRANSFORMATION_METHODConstant">
+            <summary>Surface transformation method</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant.SURFACE_PROJECTION_AVERAGE">
+            <summary>Average value: all intersections</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant.SURFACE_PROJECTION_MINIMUM">
+            <summary>Minimum value: first intersection from the bottom</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant.SURFACE_PROJECTION_MAXIMUM">
+            <summary>Maximum value: first intersection from the top</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.SURFACE_PROJECTION_METHODConstant">
+            <summary>Surface projection method</summary>
+            <tocexclude />
+        </member>
         <member name="F:GeoEngine.Core.GXNet.SURFACE_CLIP_STATUSConstant.SURFACE_CLIP_FAIL">
             <summary>Surface clipping fail</summary>
         </member>
@@ -43604,6 +44281,9 @@ Format   Description                  Type
         <member name="T:GeoEngine.Core.GXNet.KML_ALTConstant">
             <summary>KML Altitude values.</summary>
             <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant.LOGLIN">
+            <summary>The ITR is set up with a log-linear transform.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.ITR_ZONE_MODELConstant.ITR_MODEL_LOGLIN">
             <summary>The ITR is set up with a log-linear transform.</summary>
@@ -44315,6 +44995,47 @@ otherwise changes will only occur in the .gi file.
         </member>
         <member name="T:GeoEngine.Core.GXNet.IMG_FILEConstant">
             <summary>Image open modes</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_FAULTConstant.POLYGON">
+            <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_FAULTConstant.POLYLINE">
+            <summary />
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.IMG_FAULTConstant">
+            <summary>Fault type</summary>
+            <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_ENABLED">
+            <summary>Is shading enabled (0 or 1)?</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SMOOTHING_ENABLED">
+            <summary>Is smoothing enabled (0 or 1)?</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_COLOURS_REVERSED">
+            <summary>Zone colours reversed from originals (0 or 1)?</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_WETLOOK">
+            <summary>Shading wet look (0 or 1)?</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_BRIGHTNESS">
+            <summary>Shading brightness (0-1)</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_CONTRAST">
+            <summary>Shading contrast (0-1)</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_SCALE">
+            <summary>Shading scale</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_DECLINATION">
+            <summary>Shading declination</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant.IMG_SHADING_INCLINATION">
+            <summary>Shading inclination</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.IMG_DISPLAY_PROPERTYConstant">
+            <summary>Image display property</summary>
             <tocexclude />
         </member>
         <member name="T:GeoEngine.Core.GXNet.IMG_NULLConstant">
@@ -45366,29 +46087,6 @@ method of the data, which is usually
             <summary>Open Modes</summary>
             <tocexclude />
         </member>
-        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
-        </member>
         <member name="M:GeoEngine.Core.GXNet.CERROR.#ctor(System.String,System.String,System.Int32)">
             <summary>Create an error</summary>
         </member>
@@ -45542,6 +46240,11 @@ Get a VV array of unsigned shorts.
 Get a VV array of bytes.
 </summary>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CGXNETCore.GetInt64VV(GeoEngine.Core.GXNet.CVV,System.Int32)">
+            <summary>
+Get a VV array of integers.
+</summary>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CGXNETCore.GetIntVV(GeoEngine.Core.GXNet.CVV,System.Int32)">
             <summary>
 Get a VV array of integers.
@@ -45570,6 +46273,11 @@ Get a VM array of unsigned shorts.
         <member name="M:GeoEngine.Core.GXNet.CGXNETCore.GetByteVM(GeoEngine.Core.GXNet.CVM,System.Int32)">
             <summary>
 Get a VM array of bytes.
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CGXNETCore.GetInt64VM(GeoEngine.Core.GXNet.CVM,System.Int32)">
+            <summary>
+Get a VM array of integers.
 </summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CGXNETCore.GetIntVM(GeoEngine.Core.GXNet.CVM,System.Int32)">
@@ -45690,6 +46398,23 @@ Get or set the value at a particular index in the array
         <member name="T:GeoEngine.Core.GXNet.ByteVector">
             <summary>
 Expose array of bytes to managed code.
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.Int64Vector.#ctor(System.IntPtr,System.Int32)">
+            <summary>
+Default constructor
+</summary>
+            <param name="arrayPtr" />
+            <param name="count" />
+        </member>
+        <member name="P:GeoEngine.Core.GXNet.Int64Vector.Item(System.Int32)">
+            <summary>
+Get or set the value at a particular index in the array
+</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.Int64Vector">
+            <summary>
+Expose array of integers to managed code.
 </summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.IntVector.#ctor(System.IntPtr,System.Int32)">
