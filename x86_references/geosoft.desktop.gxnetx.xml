@@ -1850,6 +1850,123 @@ are valid in a particular font.
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.ClearNodeSelection">
+            <summary>Clear the section status of every node</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.SelectNode(System.Int32)">
+            <summary>Select or deselect a node by its index</summary>
+            <param name="nodeIdx">node index</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.ApplyConstantTransform(System.Double)">
+            <summary>Apply constant transform to the transform layer</summary>
+            <param name="elevation">change in elevation to apply</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.SaveToNewLayerGrid(System.String)">
+            <summary>Save changes to a new grid</summary>
+            <param name="sGrid">output grid path</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.iCanRedo">
+            <summary>Can perform redo on the transform layer</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.iCanUndo">
+            <summary>Can perform undo on the transform layer</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.Redo">
+            <summary>Redo one step of editing in the transform layer</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.Undo">
+            <summary>Undo one step of editing in the transform layer</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.Cancel">
+            <summary>Cancel changes done in the transform layer</summary>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.End(System.Int32)">
+            <summary>End interactive editing for selected grid layer in gmsys.</summary>
+            <param name="applyChanges">Apply changes to layer.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER.Start(GeoEngine.Core.GXNetX.CGXNETCore,System.IDisposable,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.Double,System.Int32)">
+            <summary>Start interactive editing for selected grid layer in gmsys.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="disposable">Disposable to dispose when interactive editing is ended internally (e.g. closing document)</param>
+            <param name="gridList">LST Handle. Use VALUE part for grid path</param>
+            <param name="pierceableList">LST Handle. Use VALUE part for piercable (1) or not piercable (0)</param>
+            <param name="spacing">Sample spacing in the transform layer object (0 for default)</param>
+            <param name="currentLayer">Index of the layer which is being transformed</param>
+            <returns>TRANSFORMLAYER object</returns>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNetX.CTRANSFORMLAYER">
+            <summary>
+
+       Object to interface with GMSYS 3D view objects that supports transforming layer.
+   
+</summary>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CTIN.SetIPJ(GeoEngine.Core.GXNetX.CIPJ)">
             <summary>Set the projection.</summary>
             <param name="ipj">IPJ to place in the TIN</param>
@@ -4839,7 +4956,68 @@ control file parameters into the RGRD object.
    
 </summary>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.HasPendingCentralPublishEvent(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>Checks if there is a pending publish event.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <remarks>Checks if there is a pending publish event.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.SetDefaultProjectPath(GeoEngine.Core.GXNetX.CGXNETCore,System.String)">
+            <summary>Set default project folder.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="folder">Default path</param>
+            <remarks>Set default project folder.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.IGetDefaultProjectPath(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
+            <summary>Get default project folder.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="folder">Returned default path</param>
+            <param name="size">Size of default path</param>
+            <remarks>Get default project folder.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.IGetDefaultProjectPath(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
+            <summary>Get default project folder.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="folder">Returned default path</param>
+            <remarks>Get default project folder.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.SaveDocumentView(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String)">
+            <summary>Save document view to a file.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="name">Document name</param>
+            <param name="meta_file">save meta to file</param>
+            <remarks>Save document view to a file.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32)">
             <summary>Get Central project information.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="instance">Instance name</param>
@@ -4860,6 +5038,10 @@ control file parameters into the RGRD object.
             <param name="rev_stage_size">Size of Revision stage buffer.</param>
             <param name="rev_author">Revision author</param>
             <param name="rev_author_size">Size of Revision author buffer.</param>
+            <param name="rev_server_url">Revision server url</param>
+            <param name="rev_server_url_size">Size of Revision server url.</param>
+            <param name="rev_proj_url">Revision project url</param>
+            <param name="rev_proj_url_size">Size of Revision project url.</param>
             <remarks>Get Central project information.</remarks>
             <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
@@ -4868,7 +5050,7 @@ control file parameters into the RGRD object.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
-        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.GetCentralProjectInformation(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)">
             <summary>Get Central project information.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
             <param name="instance">Instance name</param>
@@ -4880,6 +5062,8 @@ control file parameters into the RGRD object.
             <param name="rev_note">Revision note</param>
             <param name="rev_stage">Revision stage</param>
             <param name="rev_author">Revision author</param>
+            <param name="rev_server_url">Revision server url</param>
+            <param name="rev_proj_url">Revision project url</param>
             <remarks>Get Central project information.</remarks>
             <available_version>2021.2</available_version>
             <licensed_method>no</licensed_method>
@@ -5193,6 +5377,41 @@ with an extension and qualifiers (if applicable).
 1 - Error
 </returns>
             <available_version>9.7</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPROJ.iAddDocumentIncludeMeta(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.Int32)">
+            <summary>Adds (and opens) a document file in the current project.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="name">Document name</param>
+            <param name="type">Type of document to add</param>
+            <param name="meta">Meta file to load</param>
+            <param name="display">&amp;lt;define&amp;gt;PROJ_DISPLAY&amp;lt;/define&amp;gt;</param>
+            <remarks>
+The passed file name must be a valid
+file name complete with an extension and
+qualifiers (if applicable).
+
+The type string can be one of the following:
+
+   Database      
+   Grid          
+   Map           
+   3DView        
+   Geosurface
+   Voxel         
+   VoxelInversion
+   GMS3D         
+   GMS2D
+</remarks>
+            <returns>
+0 - Ok
+1 - Error
+</returns>
+            <available_version>2022.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>yes</app_method>
             <public_method>yes</public_method>
@@ -16606,6 +16825,27 @@ Four objects are placed on the clipboard:
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDOC.Save">
+            <summary>Save the managed document.</summary>
+            <remarks>Save the managed document</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDOC.iCopy(System.String)">
+            <summary>Copies a managed document to another document.</summary>
+            <param name="output">Name of output document</param>
+            <remarks>Copies a managed document to another document.</remarks>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CEDOC.UnLoadVerify(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.Int32)">
             <summary>Unloads an edited document, optional prompt to save.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -21657,6 +21897,24 @@ object to use.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDU.rAverageSpacing(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32)">
+            <summary>
+Returns the average spacing along a line.
+This is a simple average of the individual point separations after dummies are removed.
+Returns DUMMY if there are fewer than two valid locations.
+</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Database</param>
+            <param name="line">Line handle</param>
+            <param name="xCh">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="yCh">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CDU.AvgAzimuth(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Double,System.Double@)">
             <summary>Returns average azimuth of selected lines.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -25692,6 +25950,43 @@ BRIGHTNESS_ALL_AND_LAYERS - Set brightness either for the object as a whole or b
             <param name="index">Index of layer</param>
             <returns>ST object</returns>
             <available_version>2021.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iUpdateZoneTransformParameters(System.Windows.Forms.IWin32Window,System.Int32)">
+            <summary>Recalculate the layer's ITR, based on the current type of the DCOL. Launches anappropriate zone transform type parameter GUI based on the current selection.</summary>
+            <param name="owner">The <see cref="T:System.Windows.Forms.IWin32Window" /> the message box will display in front of.</param>
+            <param name="index">Index of layer</param>
+            <remarks>
+The transform type assumed is the current transform type for the DCOL. The dialogs
+to enter parameters are shown for Linear, Log, Normal and Equal.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDCOL.iUpdateZoneTransformParameters(System.Int32)">
+            <summary>Recalculate the layer's ITR, based on the current type of the DCOL. Launches anappropriate zone transform type parameter GUI based on the current selection.</summary>
+            <param name="index">Index of layer</param>
+            <remarks>
+The transform type assumed is the current transform type for the DCOL. The dialogs
+to enter parameters are shown for Linear, Log, Normal and Equal.
+</remarks>
+            <returns>
+0 - Ok
+1 - Cancel
+</returns>
+            <available_version>2022.1</available_version>
             <licensed_method>no</licensed_method>
             <app_method>yes</app_method>
             <public_method>yes</public_method>

@@ -7,26 +7,6 @@
         <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
             <summary>Geosoft internal use only.</summary>
         </member>
-        <member name="P:TranslationAttribute.FriendlyPath">
-            <summary>
-The translation friendly path
-</summary>
-        </member>
-        <member name="P:TranslationAttribute.Domain">
-            <summary>
-The translation domain
-</summary>
-        </member>
-        <member name="M:TranslationAttribute.#ctor(System.String,System.String)">
-            <summary>
-Constructor
-</summary>
-        </member>
-        <member name="T:TranslationAttribute">
-            <summary>
-Translation attribute
-</summary>
-        </member>
         <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
             <summary>
 Get the list of gx's called by this entry point
@@ -49,6 +29,26 @@ The parameter that is currently an empty string in the above example can be fill
 a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
 This feature is not currently implemented but is planned for future versions.
 </example>
+        </member>
+        <member name="P:TranslationAttribute.FriendlyPath">
+            <summary>
+The translation friendly path
+</summary>
+        </member>
+        <member name="P:TranslationAttribute.Domain">
+            <summary>
+The translation domain
+</summary>
+        </member>
+        <member name="M:TranslationAttribute.#ctor(System.String,System.String)">
+            <summary>
+Constructor
+</summary>
+        </member>
+        <member name="T:TranslationAttribute">
+            <summary>
+Translation attribute
+</summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -15683,8 +15683,18 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.DeleteFolder2D(System.String)">
+            <summary>Delete a 3DView folder.</summary>
+            <param name="name">Folder name.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CMVIEW.DeleteFolder3D(System.String)">
-            <summary>Delete a folder.</summary>
+            <summary>Delete a Map folder.</summary>
             <param name="guid">Folder GUID.</param>
             <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
@@ -15693,8 +15703,19 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.MoveGroupToFolder2D(System.String,System.Int32)">
+            <summary>Add group to a Map folder in MVIEW.</summary>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW.</param>
+            <param name="group">Group number</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CMVIEW.MoveGroupToFolder3D(System.String,System.Int32)">
-            <summary>Add group to a folder in MVIEW.</summary>
+            <summary>Add group to a 3DView folder in MVIEW.</summary>
             <param name="guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="group">Group number</param>
             <available_version>9.10</available_version>
@@ -15704,8 +15725,19 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.AddFolder2D(System.String,System.String)">
+            <summary>Add a Map folder to the MVIEW.</summary>
+            <param name="name">Folder name</param>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CMVIEW.AddFolder3D(System.String,System.String,System.String@,System.Int32)">
-            <summary>Add a folder to the MVIEW.</summary>
+            <summary>Add a 3DView folder to the MVIEW.</summary>
             <param name="name">Folder name</param>
             <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="guid">GUID</param>
@@ -15718,10 +15750,21 @@ view coordinate system before they are placed in the view.
             <method_group>Group Methods</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CMVIEW.AddFolder3D(System.String,System.String,System.String@)">
-            <summary>Add a folder to the MVIEW.</summary>
+            <summary>Add a 3DView folder to the MVIEW.</summary>
             <param name="name">Folder name</param>
             <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="guid">GUID</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMVIEW.GetFolderItems2D(System.String)">
+            <summary>Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the MVIEW.</summary>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW</param>
+            <remarks>Returns name/type pairs. Types can be 'Folder', 'Group' or 'Unknown'</remarks>
             <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -21787,6 +21830,16 @@ the name "MAPL" is used
        with the target MAP object on which to do the drawing
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMAP.DatasetFilePathList(GeoEngine.Core.GXNet.CLST)">
+            <summary>Get a list of all dataset file paths in this map.</summary>
+            <param name="lst">List to hold the paths.  Paths may be up to 2080 characters in length.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CMAP.GetDataProj">
             <summary>Get the projection type of the Data view of a map.</summary>
@@ -32502,7 +32555,7 @@ Channel must be locked for READONLY or READWRITE.
             <method_group>Channel</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CDB.SetIPJ(System.Int32,System.Int32,GeoEngine.Core.GXNet.CIPJ)">
-            <summary>Set a REG object into a symbol</summary>
+            <summary>Set an IPJ object into a pair of (X, Y) channels</summary>
             <param name="ch1">X channel</param>
             <param name="ch2">Y channel</param>
             <param name="ipj" />

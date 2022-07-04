@@ -348,6 +348,72 @@
             <param name="control">This control</param>
             <returns>The child instance if found or null if not.</returns>
         </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.IGraphicsAdapter">
+            <summary>
+            Provides an adapter to an instance of a <see cref="T:System.Windows.Forms.PaintEventArgs"/>,
+            typically called during the <see cref="M:System.Windows.Forms.Control.OnPaint(System.Windows.Forms.PaintEventArgs)"/>
+            event. Also provides methods for drawing through the <see cref="T:System.Drawing.Graphics"/>
+            instance passed into the event.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.MeasureString(System.String,System.Drawing.Font)">
+            <summary>
+            Forwards to <see cref="M:System.Drawing.Graphics.MeasureString(System.String,System.Drawing.Font)"/>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.DrawString(System.String,System.Drawing.Font,System.Drawing.Brush,System.Single,System.Single,System.Drawing.StringFormat)">
+            <summary>
+            Forwards to <see cref="M:System.Drawing.Graphics.DrawString(System.String,System.Drawing.Font,System.Drawing.Brush,System.Single,System.Single,System.Drawing.StringFormat)" />
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.DrawRectangle(System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Forwards to <see cref="M:System.Drawing.Graphics.DrawRectangle(System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32)" />
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.DrawLines(System.Drawing.Pen,System.Drawing.Point[])">
+            <summary>
+            Forwards to <see cref="M:System.Drawing.Graphics.DrawLines(System.Drawing.Pen,System.Drawing.Point[])" />
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.DrawLine(System.Drawing.Pen,System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Forwards to <see cref="M:System.Drawing.Graphics.DrawLine(System.Drawing.Pen,System.Drawing.Point,System.Drawing.Point)"/>
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.DrawRoundedRectangle(System.Drawing.Pen,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Draw a custom rounded rectangle using a <see cref="T:System.Drawing.Drawing2D.GraphicsPath"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.FillRoundedRectangle(System.Drawing.Brush,System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Fill a custom rounded rectangle using a <see cref="T:System.Drawing.Drawing2D.GraphicsPath"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.IGraphicsAdapter.ClipRectangle">
+            <summary>
+            Defines the <see cref="T:System.Drawing.Rectangle"/> for the graphics event.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.RealGraphicsAdapter.RoundedRect(System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            https://stackoverflow.com/a/33853557/2942725
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.GraphicsEventAdapter">
+            <summary>
+            Utilities for <see cref="T:Geosoft.GX.Controls.Helpers.IGraphicsAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.GraphicsEventAdapter.ToGraphicsAdapter(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Wraps an existing <see cref="T:System.Windows.Forms.PaintEventArgs"/> in
+            an abstracted interface: <see cref="T:Geosoft.GX.Controls.Helpers.IGraphicsAdapter"/>.
+            </summary>
+            <param name="e">The incoming paint event to wrap.</param>
+            <returns>The interface, exposing required methods.</returns>
+        </member>
         <member name="T:Geosoft.GX.Controls.Helpers.SynchronizationContextUtils">
             <summary>
             Some UI actions seem to change the current Synchronization present in 
@@ -1149,39 +1215,118 @@
             Mark string as unsafe to translate, e.g. INI params etc. (Used for reporting)
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.Helpers.I3DViewInteracter">
+        <member name="T:Geosoft.GX.Controls.Helpers.I3DViewInteractor">
             <summary>
-            Interface for interacting with a 3D View
+            An interface defining events forwarded from a 3D view, faciliates interaction with
+            the view without access to the control itself.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteracter.SelectOn3DView(System.Int32,System.Int32,System.Windows.Forms.Keys)">
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractor.MouseDown3D(System.Int32,System.Int32,System.Windows.Forms.Keys)">
             <summary>
-            Mouse selection
+            Invoked on mouse-down events from the connected 3D view.
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteracter.IsSelectOn3DViewActive">
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractor.MouseUp3D(System.Int32,System.Int32,System.Windows.Forms.Keys)">
             <summary>
-            Should SelectOn3DView be called on 3D view clicks selection
+            Invoked on mouse-up events from the connected 3D view.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteracter.ProcessCmdKey(System.Windows.Forms.Keys)">
+        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteractor.IsActive">
+            <summary>
+            Should interactor-specific logic be applied to the 3D View.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractor.ProcessCmdKey(System.Windows.Forms.Keys,System.Windows.Forms.Message)">
             <summary>
             Process key presses
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteracter.SelectOn3DViewCursor">
+        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteractor.InteractorCursor">
             <summary>
-            Icon to display when IsSelectOn3DViewActive is true
+            Cursor to display if <see cref="P:Geosoft.GX.Controls.Helpers.I3DViewInteractor.IsActive"/> is true.
             </summary>
         </member>
-        <member name="E:Geosoft.GX.Controls.Helpers.I3DViewInteracter.SelectOn3DViewChanged">
+        <member name="E:Geosoft.GX.Controls.Helpers.I3DViewInteractor.ViewStateChanged">
             <summary>
             Event occurs when any properties changed
             </summary>
         </member>
-        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteracter.FileName">
+        <member name="P:Geosoft.GX.Controls.Helpers.I3DViewInteractor.Filename">
             <summary>
             File name of item interacted upon
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.I3DViewInteractorEx">
+            <summary>
+            Represents an extended 3D view interactor, capturing more
+            elaborate view and mouse events than its parent, <see cref="T:Geosoft.GX.Controls.Helpers.I3DViewInteractor"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractorEx.TryContextMenu3D(System.Int32,System.Int32,System.Windows.Forms.ContextMenuStrip@)">
+            <summary>
+            Invoked when a context menu is launched on the view at location 
+            (<paramref name="X"/>, <paramref name="Y"/>). The interactor can
+            populate the menu with context-specific items if intended.
+            </summary>
+            <param name="X">The x-location the menu was launched at.</param>
+            <param name="Y">The y-location the menu was launched at.</param>
+            <param name="menu">The resulting context menu.</param>
+            <returns>True/False, depending on whether the default context menu is to be overridden.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractorEx.MouseMoved3D(Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs)">
+            <summary>
+            Invoked on mouse-movement events from the connected 3D view. Returns True
+            if the event handled the mouse-movement, which halts any further mouse-movement
+            handling in the 3D view.
+            </summary>
+            <returns>True if the event was handled, false if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractorEx.MouseWheel3D(System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Invoked on mouse-movement events from the connected 3D view. Returns True
+            if the event handled the mouse-movement, which halts any further mouse-movement
+            handling in the 3D view.
+            </summary>
+            <returns>True if the event was handled, false if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.I3DViewInteractorEx.Paint3D(System.Int32,System.Int32,Geosoft.GX.Controls.Helpers.IGraphicsAdapter)">
+            <summary>
+            Invoked when the 3D view is painted.
+            </summary>
+            <param name="controlWidth">The width of the 3D view control.</param>
+            <param name="controlHeight">The height of the 3D view control.</param>
+            <param name="e">The arguments the paint event was invoked with.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs">
+            <summary>
+            Encompasses a normal <see cref="T:System.Windows.Forms.MouseEventArgs"/> while also
+            capturing the <see cref="T:System.Drawing.Size"/> of the window where the event
+            was captured from.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs.SceneVolume">
+            <summary>
+            The volume describing the scene where the mouse event was captured.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs.ViewSize">
+            <summary>
+            The size of the control (view) where the mouse event was captured.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs.#ctor(System.Windows.Forms.MouseButtons,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Default .ctor.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs.#ctor(System.Windows.Forms.MouseEventArgs,Geosoft.Core.Volume,System.Drawing.Size)">
+            <summary>
+            Incorporate screen size and scene extents into the MouseMoved event.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.InteractorMouseMovedEventArgs.#ctor(System.Windows.Forms.MouseEventArgs,System.ValueTuple{System.Double,System.Double,System.Double},System.ValueTuple{System.Double,System.Double,System.Double},System.Drawing.Size)">
+            <summary>
+            Incorporate screen size and scene extents into the MouseMoved event, using min/max structs.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.IPJInfo">
@@ -10677,6 +10822,13 @@
             </summary>
             <param name="node">The node to select.</param>
         </member>
+        <member name="M:Geosoft.GX.Controls.MultiSelectTreeControl.RemoveNodeFromSelectionCollections(System.Windows.Forms.TreeNode,System.Boolean)">
+            <summary>
+            Remove node from selected nodes list
+            </summary>
+            <param name="node">Node to be removed</param>
+            <param name="updateBackColor">Option to reset back color</param>
+        </member>
         <member name="M:Geosoft.GX.Controls.MultiSelectTreeControl.ClearSelectedItems">
              <summary>
             
@@ -12968,6 +13120,19 @@
         <member name="M:Geosoft.GX.Controls.SplitContainerControl.OnPaint(System.Windows.Forms.PaintEventArgs)">
             <inheritdoc/>
         </member>
+        <member name="T:Geosoft.GX.Controls.Style.ButtonBaseBorderStyle">
+            <summary>
+            Enables dynamic border toggling for a <see cref="T:System.Windows.Forms.ButtonBase"/> 
+            control depending on mouse events.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Style.ButtonBaseBorderStyle.RegisterStyleEvents(System.Windows.Forms.ButtonBase)">
+            <summary>
+            Register the <see cref="E:System.Windows.Forms.Control.MouseEnter"/> and <see cref="E:System.Windows.Forms.Control.MouseLeave"/> events
+            to toggle the <paramref name="button"/> border. If the <paramref name="button"/> is
+            a <see cref="T:System.Windows.Forms.CheckBox"/>, then also toggle on <see cref="E:System.Windows.Forms.CheckBox.CheckedChanged"/> as well.
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.TabControlCustom">
             <summary>
             A customizable <see cref="T:System.Windows.Forms.TabControl"/> tab control.
@@ -14104,6 +14269,11 @@
             Set the current STRING value within the control.
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.FolderEditControl.UseProjectDirectoryAsDefault">
+            <summary>
+            Use project directory as default
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.FolderEditControl.OnTextBoxLeave(System.Object,System.EventArgs)">
             <summary>
             Occurs when control leaves the text box portion of the control
@@ -14210,6 +14380,21 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.NativeIntegration">
+            <summary>
+            Exported definitions for native-method integration.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.NativeIntegration.IsKeyDownMessage(System.Windows.Forms.Message)">
+            <summary>
+            Checks whether the message is in (WM_KEYDOWN | WM_SYSKEYDOWN | WM_CHAR).
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.NativeIntegration.IsKeyUpMessage(System.Windows.Forms.Message)">
+            <summary>
+            Checks whether the message is in (WM_KEYUP | WM_SYSKEYUP).
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.NativeMethods.SystemMetric">
@@ -14921,6 +15106,11 @@
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.Properties.Resources.downcenter">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Properties.Resources.gear">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
             </summary>

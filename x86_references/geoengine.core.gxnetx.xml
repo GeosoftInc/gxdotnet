@@ -16146,8 +16146,18 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.DeleteFolder2D(System.String)">
+            <summary>Delete a 3DView folder.</summary>
+            <param name="name">Folder name.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.DeleteFolder3D(System.String)">
-            <summary>Delete a folder.</summary>
+            <summary>Delete a Map folder.</summary>
             <param name="guid">Folder GUID.</param>
             <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
@@ -16156,8 +16166,19 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.MoveGroupToFolder2D(System.String,System.Int32)">
+            <summary>Add group to a Map folder in MVIEW.</summary>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW.</param>
+            <param name="group">Group number</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.MoveGroupToFolder3D(System.String,System.Int32)">
-            <summary>Add group to a folder in MVIEW.</summary>
+            <summary>Add group to a 3DView folder in MVIEW.</summary>
             <param name="guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="group">Group number</param>
             <available_version>9.10</available_version>
@@ -16167,8 +16188,19 @@ view coordinate system before they are placed in the view.
             <extended_method>no</extended_method>
             <method_group>Group Methods</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.AddFolder2D(System.String,System.String)">
+            <summary>Add a Map folder to the MVIEW.</summary>
+            <param name="name">Folder name</param>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.AddFolder3D(System.String,System.String,System.String@,System.Int32)">
-            <summary>Add a folder to the MVIEW.</summary>
+            <summary>Add a 3DView folder to the MVIEW.</summary>
             <param name="name">Folder name</param>
             <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="guid">GUID</param>
@@ -16181,10 +16213,21 @@ view coordinate system before they are placed in the view.
             <method_group>Group Methods</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMVIEW.AddFolder3D(System.String,System.String,System.String@)">
-            <summary>Add a folder to the MVIEW.</summary>
+            <summary>Add a 3DView folder to the MVIEW.</summary>
             <param name="name">Folder name</param>
             <param name="parent_guid">Folder parent GUID, or empty string for parent MVIEW.</param>
             <param name="guid">GUID</param>
+            <available_version>9.10</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Group Methods</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMVIEW.GetFolderItems2D(System.String)">
+            <summary>Get the list of key-value pairs representing the name(key) and the type(value) of all children in the specified parent folders in the MVIEW.</summary>
+            <param name="parent_name">Parent folder name, or empty string for root MVIEW</param>
+            <remarks>Returns name/type pairs. Types can be 'Folder', 'Group' or 'Unknown'</remarks>
             <available_version>9.10</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
@@ -22374,6 +22417,16 @@ the name "MAPL" is used
        with the target MAP object on which to do the drawing
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMAP.DatasetFilePathList(GeoEngine.Core.GXNetX.CLST)">
+            <summary>Get a list of all dataset file paths in this map.</summary>
+            <param name="lst">List to hold the paths.  Paths may be up to 2080 characters in length.</param>
+            <available_version>2022.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CMAP.GetDataProj">
             <summary>Get the projection type of the Data view of a map.</summary>
@@ -33240,7 +33293,7 @@ Channel must be locked for READONLY or READWRITE.
             <method_group>Channel</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNetX.CDB.SetIPJ(System.Int32,System.Int32,GeoEngine.Core.GXNetX.CIPJ)">
-            <summary>Set a REG object into a symbol</summary>
+            <summary>Set an IPJ object into a pair of (X, Y) channels</summary>
             <param name="ch1">X channel</param>
             <param name="ch2">Y channel</param>
             <param name="ipj" />
@@ -46844,121 +46897,6 @@ method of the data, which is usually
             <summary>Open Modes</summary>
             <tocexclude />
         </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
-            <summary>Fire the General Information Message delegate event.</summary>
-            <param name="Class">Message Class</param>
-            <param name="Info">Message Information</param>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ToolCommandEvent(System.Int32!System.Runtime.CompilerServices.IsLong,System.String)">
-            <summary>Fire the Direct command delegate event.</summary>
-            <param name="ID">Command ID Number</param>
-            <param name="Name">Command Name</param>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_FlushEvent">
-            <summary>Fire the Flush tool delegate event.</summary>
-            <remarks>Used to serialize settings with META obtained from initialization.</remarks>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ShowHelpEvent">
-            <summary>Fire the Context sensitive help delegate event.</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeAreaEvent(System.Double,System.Double,System.Double,System.Double)">
-            <summary>Fire the Change the visible area event.</summary>
-            <param name="XMin">Minimum X</param>
-            <param name="YMin">Minimum Y</param>
-            <param name="XMax">Maximum X</param>
-            <param name="YMax">Maximum Y</param>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeLocationEvent(System.Double,System.Double,System.Double)">
-            <summary>Fire the Change the current location event.</summary>
-            <param name="X">X Location</param>
-            <param name="Y">Y Location</param>
-            <param name="Z">Z Location</param>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeProjectionEvent(GeoEngine.Core.GXNetX.CIPJ)">
-            <summary>Fire the Change the current projection event.</summary>
-            <param name="IPJ">Projection</param>
-        </member>
-        <member name="P:GeoEngine.Core.GXNetX.Windows.ToolControl.ipGPOBJ">
-            <summary>Geosoft internal use only.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.GeneralInfo">
-            <summary>General Information Message event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ToolCommand">
-            <summary>Direct command event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeArea">
-            <summary>Visible area changed event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeLocation">
-            <summary>Location changed event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeProjection">
-            <summary>Projection changed event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ShowHelp">
-            <summary>Context sensitive help event.</summary>
-        </member>
-        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.Flush">
-            <summary>Flush tool settings event.</summary>
-            <remarks>Any required tool settings may be set to the tool META obtained from initialization and will be serialized on this event.</remarks>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.bInitializeToolControl(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMETA,GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate,GeoEngine.Core.GXNetX.Windows.ChangeLocationDelegate,GeoEngine.Core.GXNetX.Windows.ChangeAreaDelegate,System.String@)">
-            <summary>Initialize your external Tool.</summary>
-            <returns>true if successful</returns>
-            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
-            <param name="META">CMETA containing tool's internal configuration data</param>
-            <param name="ChIPJDel">Change Projection Delegate.</param>
-            <param name="ChLocDel">Change Location Delegate.</param>
-            <param name="ChAreaDel">Change Area Delegate.</param>
-            <param name="Name">Return Tool Control Title Here (Required).</param>
-            <remarks>Will be called right after construction (Required method).</remarks>
-        </member>
-        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Dispose">
-            <summary>Destructor.</summary>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ToolControl">
-            <summary>
-The interface ToolControl defines an interface that needs to be implemented to embed a <see cref="T:System.Windows.Forms.UserControl" /> 
-derived class in montaj. By implementing this interface it is possible to load any such managed object into the montaj
-framework which will supports persistance through CMETA.
-</summary>
-            <seealso cref="!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool" />
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.GeneralInfoDelegate">
-            <summary>General Information Message delegate.</summary>
-            <param name="Class">Message Class</param>
-            <param name="Info">Message Information</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ToolCommandDelegate">
-            <summary>Direct command delegate.</summary>
-            <param name="ID">Command ID Number</param>
-            <param name="Name">Command Name</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.FlushDelegate">
-            <summary>Flush tool delegate.</summary>
-            <remarks>Used to serialize settings with META obtained from initialization.</remarks>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ShowHelpDelegate">
-            <summary>Context sensitive help delegate.</summary>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeAreaDelegate">
-            <summary>Change the visible area.</summary>
-            <param name="XMin">Minimum X</param>
-            <param name="YMin">Minimum Y</param>
-            <param name="XMax">Maximum X</param>
-            <param name="YMax">Maximum Y</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeLocationDelegate">
-            <summary>Change the current location.</summary>
-            <param name="X">X Location</param>
-            <param name="Y">Y Location</param>
-            <param name="Z">Z Location</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
-            <summary>Change the current projection.</summary>
-            <param name="IPJ">Projection</param>
-        </member>
         <member name="M:GeoEngine.Core.GXNetX.CERROR.#ctor(System.String,System.String,System.Int32)">
             <summary>Create an error</summary>
         </member>
@@ -47179,6 +47117,121 @@ Get the gx handle from tls
         </member>
         <member name="T:GeoEngine.Core.GXNetX.CGXNETCore">
             <summary />
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_GeneralInfoEvent(System.String,System.String)">
+            <summary>Fire the General Information Message delegate event.</summary>
+            <param name="Class">Message Class</param>
+            <param name="Info">Message Information</param>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ToolCommandEvent(System.Int32!System.Runtime.CompilerServices.IsLong,System.String)">
+            <summary>Fire the Direct command delegate event.</summary>
+            <param name="ID">Command ID Number</param>
+            <param name="Name">Command Name</param>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_FlushEvent">
+            <summary>Fire the Flush tool delegate event.</summary>
+            <remarks>Used to serialize settings with META obtained from initialization.</remarks>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ShowHelpEvent">
+            <summary>Fire the Context sensitive help delegate event.</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeAreaEvent(System.Double,System.Double,System.Double,System.Double)">
+            <summary>Fire the Change the visible area event.</summary>
+            <param name="XMin">Minimum X</param>
+            <param name="YMin">Minimum Y</param>
+            <param name="XMax">Maximum X</param>
+            <param name="YMax">Maximum Y</param>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeLocationEvent(System.Double,System.Double,System.Double)">
+            <summary>Fire the Change the current location event.</summary>
+            <param name="X">X Location</param>
+            <param name="Y">Y Location</param>
+            <param name="Z">Z Location</param>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Fire_ChangeProjectionEvent(GeoEngine.Core.GXNetX.CIPJ)">
+            <summary>Fire the Change the current projection event.</summary>
+            <param name="IPJ">Projection</param>
+        </member>
+        <member name="P:GeoEngine.Core.GXNetX.Windows.ToolControl.ipGPOBJ">
+            <summary>Geosoft internal use only.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.GeneralInfo">
+            <summary>General Information Message event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ToolCommand">
+            <summary>Direct command event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeArea">
+            <summary>Visible area changed event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeLocation">
+            <summary>Location changed event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ChangeProjection">
+            <summary>Projection changed event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.ShowHelp">
+            <summary>Context sensitive help event.</summary>
+        </member>
+        <member name="E:GeoEngine.Core.GXNetX.Windows.ToolControl.Flush">
+            <summary>Flush tool settings event.</summary>
+            <remarks>Any required tool settings may be set to the tool META obtained from initialization and will be serialized on this event.</remarks>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.bInitializeToolControl(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CMETA,GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate,GeoEngine.Core.GXNetX.Windows.ChangeLocationDelegate,GeoEngine.Core.GXNetX.Windows.ChangeAreaDelegate,System.String@)">
+            <summary>Initialize your external Tool.</summary>
+            <returns>true if successful</returns>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="META">CMETA containing tool's internal configuration data</param>
+            <param name="ChIPJDel">Change Projection Delegate.</param>
+            <param name="ChLocDel">Change Location Delegate.</param>
+            <param name="ChAreaDel">Change Area Delegate.</param>
+            <param name="Name">Return Tool Control Title Here (Required).</param>
+            <remarks>Will be called right after construction (Required method).</remarks>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.Windows.ToolControl.Dispose">
+            <summary>Destructor.</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ToolControl">
+            <summary>
+The interface ToolControl defines an interface that needs to be implemented to embed a <see cref="T:System.Windows.Forms.UserControl" /> 
+derived class in montaj. By implementing this interface it is possible to load any such managed object into the montaj
+framework which will supports persistance through CMETA.
+</summary>
+            <seealso cref="!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool" />
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.GeneralInfoDelegate">
+            <summary>General Information Message delegate.</summary>
+            <param name="Class">Message Class</param>
+            <param name="Info">Message Information</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ToolCommandDelegate">
+            <summary>Direct command delegate.</summary>
+            <param name="ID">Command ID Number</param>
+            <param name="Name">Command Name</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.FlushDelegate">
+            <summary>Flush tool delegate.</summary>
+            <remarks>Used to serialize settings with META obtained from initialization.</remarks>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ShowHelpDelegate">
+            <summary>Context sensitive help delegate.</summary>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeAreaDelegate">
+            <summary>Change the visible area.</summary>
+            <param name="XMin">Minimum X</param>
+            <param name="YMin">Minimum Y</param>
+            <param name="XMax">Maximum X</param>
+            <param name="YMax">Maximum Y</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeLocationDelegate">
+            <summary>Change the current location.</summary>
+            <param name="X">X Location</param>
+            <param name="Y">Y Location</param>
+            <param name="Z">Z Location</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNetX.Windows.ChangeProjectionDelegate">
+            <summary>Change the current projection.</summary>
+            <param name="IPJ">Projection</param>
         </member>
     </members>
 </doc>
