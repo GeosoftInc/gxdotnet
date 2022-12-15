@@ -54,6 +54,12 @@
             Check if visibility for a control will be affected by expanding or collapsing the UI with this button
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.RemoveFromVisibilityStateControlList(System.Windows.Forms.Control)">
+            <summary>
+            Removes the specified control from the visibility list
+            </summary>
+            <param name="control">Control to remove</param>
+        </member>
         <member name="E:Geosoft.GX.Controls.AdvancedButtonControl.OnExpanded">
             <summary>
             Occurs when the advanced panel is shown. Expanding the panel sets to visible all the controls contained therein, so use this
@@ -327,6 +333,110 @@
             Internal control to use in designers for snapping guidelines.
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.DualChoiceVerticalRadioControl">
+            <summary>
+            Horizontal dual choice radio button that helps with designing forms for layout growth.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.bIsValid(System.String@)">
+            <summary>
+            Check to see if the current radio button passes valiation tests.
+            </summary>
+            <param name="strError">The error message returned if the control does not validate.</param>
+            <returns>Always true except if EnumValues were not configured.</returns>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.EnumValue1">
+            <summary>
+            Gets or sets the numeric value associated with Radio Button 1.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.EnumValue2">
+            <summary>
+            Gets or sets the numeric value associated with Radio Button 1.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.DefaultValue">
+            <summary>
+            Gets or sets the default value of this control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.Text1">
+            <summary>
+            Gets or sets the text next to Radio Button 1.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.Text2">
+            <summary>
+            Gets or sets the text next to Radio Button 2.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.RadioButton1">
+            <summary>
+            Gets the Radio Button 1 control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.RadioButton2">
+            <summary>
+            Gets the Radio Button 2 control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.ReadOnly">
+            <summary>
+            Gets or sets the read-only status of this control; when set, the unchecked option is disabled to prevent changing.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.CurrentValue">
+            <summary>
+            Get the current INT value within the control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.Checked">
+            <summary>
+            Get/set the checked state of second radio button
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.SetCurrentValue(System.Int32)">
+            <summary>
+            Set the current INT value within the control.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.CheckedChanged">
+            <summary>
+            Occurs when either radio button's Checked property is changed.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.Click">
+            <summary>
+            Occurs when either radio button control is clicked.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.SnapControl">
+            <summary>
+            Internal control to use in designers for snapping guidelines.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.DualChoiceVerticalRadioControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.ControlExtensions">
             <summary>
             Generic extension methods for Windows Forms Controls
@@ -347,6 +457,96 @@
             <typeparam name="TChild">The type of child to search for.</typeparam>
             <param name="control">This control</param>
             <returns>The child instance if found or null if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.ToRoundedRectangle(System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Takes a rectangle and applies rounded edges provided a radius.
+            </summary>
+            <remarks>
+            https://stackoverflow.com/a/33853557/2942725
+            </remarks>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.Database.DBLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.Database.DBLock.DB">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.DBLock.FromName(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.DBLock.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.Database.SymbLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.Helpers.Database.SymbLock.Symbol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.SymbLock.FindOrCreate(GeoEngine.Core.GXNetX.CDB,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Find or create a symbol (and lock it).
+            </summary>
+            <param name="db">The current database.</param>
+            <param name="name">The name of the symnol.</param>
+            <param name="type"><see cref="T:GeoEngine.Core.GXNetX.DB_SYMB_TYPEConstant"/></param>
+            <param name="category"><see cref="M:GeoEngine.Core.GXNetX.CDB.CreateSymb(System.String,System.Int32,System.Int32,System.Int32)"/></param>
+            <param name="dbOwn"><see cref="T:GeoEngine.Core.GXNetX.DB_OWNConstant"/></param>
+            <param name="lock"><see cref="T:GeoEngine.Core.GXNetX.DB_LOCKConstant"/></param>
+            <param name="wait"><see cref="T:GeoEngine.Core.GXNetX.DB_WAITConstant"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.SymbLock.Find(GeoEngine.Core.GXNetX.CDB,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Find or create a symbol (and lock it).
+            </summary>
+            <param name="db">The current database.</param>
+            <param name="name">The name of the symnol.</param>
+            <param name="type"><see cref="T:GeoEngine.Core.GXNetX.DB_SYMB_TYPEConstant"/></param>
+            <param name="category"><see cref="M:GeoEngine.Core.GXNetX.CDB.CreateSymb(System.String,System.Int32,System.Int32,System.Int32)"/></param>
+            <param name="dbOwn"><see cref="T:GeoEngine.Core.GXNetX.DB_OWNConstant"/></param>
+            <param name="lock"><see cref="T:GeoEngine.Core.GXNetX.DB_LOCKConstant"/></param>
+            <param name="wait"><see cref="T:GeoEngine.Core.GXNetX.DB_WAITConstant"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.SymbLock.IsValid">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.SymbLock.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Database.SymbLock.IsLocked">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.CurrentUsage.IsDesignMode">
+            <summary>
+            Checks <see cref="P:System.ComponentModel.LicenseManager.UsageMode"/> to see whether we are
+            currently in Design mode. Some components break the designer, this
+            method allows us to explicitly skip certain operations at Design time.
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.IGraphicsAdapter">
             <summary>
@@ -413,6 +613,79 @@
             </summary>
             <param name="e">The incoming paint event to wrap.</param>
             <returns>The interface, exposing required methods.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.ProjectUtils">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ProjectUtils.LoadedDocuments(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>
+            Yields all documents currently contained and open within the project (<see cref="M:Geosoft.Desktop.GXNetX.CPROJ.iListLoadedDocuments(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CVV,System.String)"/>).
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.ProjectUtils.Documents(GeoEngine.Core.GXNetX.CGXNETCore)">
+            <summary>
+            Yields all documents currently contained within the project (<see cref="M:Geosoft.Desktop.GXNetX.CPROJ.iListDocuments(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CVV,System.String)"/>).
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.Reactive.ObservableUtils">
+            <summary>
+            Utility methods for <see cref="T:System.IObservable`1"/> components.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Reactive.ObservableUtils.WhereLatestFrom``2(System.IObservable{``0},System.IObservable{``1},System.Func{``1,System.Boolean})">
+            <summary>
+            Apply a <paramref name="predicate"/> to the latest value retrieved from <paramref name="other"/>.
+            Will effectively filter the <paramref name="source"/> by another <see cref="T:System.IObservable`1"/>.
+            Finally, it selects just the source value, allowing for continuation disregarding the joined
+            <typeparamref name="TOther"/>.
+            </summary>
+            <typeparam name="TSource">The source type.</typeparam>
+            <typeparam name="TOther">The other type, to apply the predicate to.</typeparam>
+            <param name="source">The source observable sequence.</param>
+            <param name="other">The observable sequence to filter by.</param>
+            <param name="predicate">A predicate to apply to the second sequence to filter the source sequence by.</param>
+            <returns>The obserable source sequence, filtered by another observable sequence.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Reactive.ObservableUtils.WhereLatestFromT``2(System.IObservable{``0},System.IObservable{``1},System.Func{System.ValueTuple{``0,``1},System.Boolean})">
+            <summary>
+            Apply a <paramref name="predicate"/> to the latest value retrieved from <paramref name="other"/>.
+            Will effectively filter the <paramref name="source"/> by another <see cref="T:System.IObservable`1"/>.
+            Finally, it selects just the source value, allowing for continuation disregarding the joined
+            <typeparamref name="TOther"/>.
+            </summary>
+            <typeparam name="TSource">The source type.</typeparam>
+            <typeparam name="TOther">The other type, to apply the predicate to.</typeparam>
+            <param name="source">The source observable sequence.</param>
+            <param name="other">The observable sequence to filter by.</param>
+            <param name="predicate">A predicate to apply to the second sequence to filter the source sequence by.</param>
+            <returns>The obserable source sequence, filtered by another observable sequence.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.Reactive.ObservableUtils.WhereLatestFrom``1(System.IObservable{``0},System.IObservable{System.Boolean})">
+            <summary>
+            Filters with to the latest value retrieved from <paramref name="observableB"/>.
+            Will effectively filter the <paramref name="source"/> by another <see cref="T:System.IObservable`1"/>.
+            Finally, it selects just the source value, allowing for continuation disregarding the joined
+            observable bool.
+            </summary>
+            <typeparam name="TSource">The source type.</typeparam>
+            <param name="source">The source observable sequence.</param>
+            <param name="observableB">The observable bool to filter by.</param>
+            <returns>The obserable source sequence, filtered by another observable bool sequence.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.SuspendLayoutUtil">
+            <summary>
+            Utility class to <see cref="M:System.Windows.Forms.Control.SuspendLayout"/> and
+            <see cref="M:System.Windows.Forms.Control.ResumeLayout"/> between an operation.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.SuspendLayoutUtil.SuspendLayoutFor(System.Windows.Forms.Control,System.Action,System.Nullable{System.Boolean})">
+            <summary>
+            Wrap the <paramref name="action"/> in calls to <see cref="M:System.Windows.Forms.Control.SuspendLayout"/>
+            and <see cref="M:System.Windows.Forms.Control.ResumeLayout"/>. Useful for any <see cref="T:System.Action"/>
+            that is likely to update the UI.
+            </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.SynchronizationContextUtils">
             <summary>
@@ -5632,18 +5905,33 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins">
-            <summary>
-            Mixin to reduce code duplicate for common control binding mechanisms
-            </summary>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.ViewModelWhenAnyValue``2(``1,``0,System.Linq.Expressions.Expression)">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Binding.ViewModelWhenAnyValue``2(``1,``0,System.Linq.Expressions.Expression)">
             <summary>
             This method was obtained from the ReactiveUI internals and is very handy to set up bindings
             with natural syntax like with the ControlBindingMixins.BindComboBox mixin.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindComboBox``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Binding.GetVMListProp``3(``0,System.Func{``1,``2})">
+            <summary>
+            Extract an <see cref="T:System.Collections.IList"/> property from the provided ViewModel.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslation">
+            <summary>
+            Translations for Reactive bindings.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslation.I">
+            <summary>
+            Singleton instance property.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ComboBoxBindingMixIns">
+            <summary>
+            View binding mixins for <see cref="T:System.Windows.Forms.ComboBox"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ComboBoxBindingMixIns.BindComboBox``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
              <summary>
              Utility method to bind the combination a reactive IList property and associated selection in a ViewModel to a <see cref="T:System.Windows.Forms.ComboBox"/> control in a view.
              </summary>
@@ -5696,7 +5984,7 @@
                 d(this.BindComboBox(ViewModel, vm =&gt; vm.SomeList, vm =&gt; vm.SelectionProperty, v =&gt; v.comboBox));
              }
              </code>
-             Which would be somewhat equivalent (some extra intelligence was 
+             Which would be somewhat equivalent (some extra intelligence was
              added to deal with failing to update VM and maintaining selection) to:
              <code>
              this.WhenActivated(d =&gt;
@@ -5718,7 +6006,37 @@
              </code>
              </example>
         </member>
-        <member name="M:Geosoft.GX.Controls.ReactiveUI.ControlBindingMixins.BindFileEditControl``2(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,System.String}},System.Linq.Expressions.Expression{System.Func{``1,Geosoft.GX.Controls.FileEditControl}})">
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ComboBoxBindingMixIns.BindAliasedComboBoxControl``4(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``0,``3}},System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Forms.ComboBox}})">
+            <summary>
+            <para>Binds a <see cref="T:System.Windows.Forms.ComboBox"/> to a <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of key-value pairs, where
+            the text displayed in the ComboBox is in the first position, and the backing value field is in the
+            second position.</para>
+            <para>Changes from View (<see cref="T:System.Windows.Forms.ComboBox"/>) to ViewModel (<typeparamref name="TVMProp"/>) are synchronized via
+            a lookup on <paramref name="vmListPropertyExpression"/> by the first key-value pair element, and changes
+            from ViewModel to View are synchronized via a lookup based on the second value of each tuple (using <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> of <typeparamref name="TVMProp"/>).</para>
+            <para>Any changes provided via the <see cref="P:System.Windows.Forms.ComboBox.Text"/> property or through the ViewModel property
+            will synchronized.</para>
+            </summary>
+            <typeparam name="TViewModel">The ViewModel type.</typeparam>
+            <typeparam name="TView">The View type.</typeparam>
+            <typeparam name="TVMKeyValListProp">the type of the ViewModel list property (needs to be an <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> of (string, T) pairs).</typeparam>
+            <typeparam name="TVMProp">The ViewModel value type.</typeparam>
+            <param name="view">The view containing the <see cref="T:System.Windows.Forms.ComboBox"/>.</param>
+            <param name="viewModel">The ViewModel containing the <typeparamref name="TVMKeyValListProp"/>.</param>
+            <param name="vmListPropertyExpression">The ViewModel <see cref="T:System.Collections.Generic.IReadOnlyList`1"/> property, accessed via an expression.</param>
+            <param name="vmPropertyExpression">The ViewModel <typeparamref name="TVMProp"/> property, accessed via an expression.</param>
+            <param name="comboBoxExpression">The View <see cref="T:System.Windows.Forms.ComboBox"/> control, accessed via an expression.</param>
+            <returns>An instance of <see cref="T:System.IDisposable"/> that, when disposed, disconnects the binding.</returns>
+            <exception cref="T:System.ArgumentNullException">If any of arguments are null.</exception>
+            <exception cref="T:System.ArgumentException">If the supplied <paramref name="vmListPropertyExpression"/> does not yield a <see cref="T:System.Collections.Generic.IReadOnlyList`1"/>.</exception>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.FileEditControlBindingMixIns">
+            <summary>
+            View binding mixins for <see cref="T:Geosoft.GX.Controls.FileEditControl"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.FileEditControlBindingMixIns.BindFileEditControl``2(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,System.String}},System.Linq.Expressions.Expression{System.Func{``1,Geosoft.GX.Controls.FileEditControl}},GeoEngine.Core.GXNetX.CGXNETCore)">
             <summary>
             Binds the specified view model string property to the given view FileEditControl.
             Pulls the full filepath from the FileEditControl.
@@ -5729,7 +6047,30 @@
             <param name="viewModel">The instance of the view model to bind.</param>
             <param name="vmProperty">An expression indicating the property that is bound on the view model.</param>
             <param name="fileEditControlProperty">The property on the view that is to be bound</param>
+            <param name="context">Optional <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore"/> context for use in <see cref="N:GeoEngine.Core.GXNetX"/>.</param>
             <returns>An instance of System.IDisposable that, when disposed, disconnects the binding.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.EditRealControlBinding">
+            <summary>
+            View binding mixins for <see cref="T:Geosoft.GX.Controls.EditRealControl"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.EditRealControlBinding.BindEditRealControl``2(``1,``0,System.Linq.Expressions.Expression{System.Func{``0,System.Double}},System.Linq.Expressions.Expression{System.Func{``1,Geosoft.GX.Controls.EditRealControl}})">
+            <summary>
+            Binds a <see cref="T:Geosoft.GX.Controls.EditRealControl"/> to a <see cref="T:System.Double"/> on the <typeparamref name="TViewModel"/>.
+            </summary>
+            <remarks>
+            <see cref="F:GeoEngine.Core.GXNet.Constant.rDUMMY"/> is used as a default value for the <paramref name="vmProperty"/> if an invalid
+            string is entered, or if the value fails <see cref="M:System.Double.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>.
+            </remarks>
+            <typeparam name="TViewModel">The ViewModel type.</typeparam>
+            <typeparam name="TView">The View type.</typeparam>
+            <param name="view">The view, containing the <see cref="T:Geosoft.GX.Controls.EditRealControl"/>.</param>
+            <param name="viewModel">The view model, containing the <paramref name="vmProperty"/>.</param>
+            <param name="vmProperty">An expression returning the <see cref="T:System.Double"/> property.</param>
+            <param name="editRealControlProperty">An expression returning the <see cref="T:Geosoft.GX.Controls.EditRealControl"/> control.</param>
+            <returns>An instance of <see cref="T:System.IDisposable"/> that, when disposed, disconnects the binding.</returns>
+            <exception cref="T:System.ArgumentNullException">Throws an exception on missing parameters.</exception>
         </member>
         <member name="T:Geosoft.GX.Controls.ReactiveUI.CIPJExtension">
             <summary>
@@ -5864,6 +6205,129 @@
             Constructor
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter">
+            <summary>
+            Operations for interacting with a <see cref="T:Geosoft.View3D.View"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.Clear">
+            <summary>
+            Clear the contents of the <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.Add(System.String,Geosoft.Core.IVoxel)">
+            <summary>
+            Add the <paramref name="voxel"/>, which exists at
+            <paramref name="filename"/>, to the <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.SetControl(System.IntPtr)">
+            <summary>
+            Used to provide a context to render graphics onto for the
+            <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.Redraw(System.ValueTuple{System.Int32,System.Int32},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Force the <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/> to redraw.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.RestartRender">
+            <summary>
+            Restart rendering for the <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.GetSceneBounds">
+            <summary>
+            Attempts to get the extents for the <see cref="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter"/>,
+            and return it in a <see cref="T:Geosoft.View3D.Volume"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.GetScale">
+            <summary>
+            Get the view scale represented as a <see cref="T:Geosoft.View3D.Vect3D"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.GetOrigin">
+            <summary>
+            Get the view origin represented as a <see cref="T:Geosoft.View3D.Vect3D"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.SetOffset(Geosoft.View3D.Vect3D)">
+            <summary>
+            Set view offset via <see cref="M:Geosoft.View3D.View.SetViewOffset(Geosoft.View3D.Vect3D,System.Boolean)"/>
+            and return <see cref="M:Geosoft.View3D.View.GetRealViewOffset"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.SetRealViewDistance(System.Double)">
+            <summary>
+            Set real view distance via <see cref="M:Geosoft.View3D.View.SetRealViewDistance(System.Double)"/>
+            and return <see cref="M:Geosoft.View3D.View.GetViewDistance"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter.SetVisualElements(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Set visual elements of the 3D view. Only non-null
+            values will be applied.
+            </summary>
+            <param name="box">Box visual element.</param>
+            <param name="axis">Axis visual element.</param>
+            <param name="compass">Orientation compass visual element.</param>
+            <param name="navCursor">Navigation cursor visual element.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.DDDViewAdapter.SetVisualElements(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils">
+            <summary>
+            Utility methods for <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/> and <see cref="T:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView"/>
+            components.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.WrapInView(GeoEngine.Core.GXNetX.C3DC)">
+            <summary>
+            Wrap a <see cref="T:GeoEngine.Core.GXNetX.C3DC"/> in a new <see cref="T:Geosoft.View3D.View"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.TrySetExclusiveView(Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel,System.String,Geosoft.Core.IVoxel)">
+            <summary>
+            Attempts to set the view to exclusively cover the provided <see cref="T:Geosoft.Core.IVoxel"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.GetBoundingSphereDiameter(Geosoft.View3D.Volume)">
+            <summary>
+            Gets the bounding sphere diameter for the provided <see cref="T:Geosoft.View3D.Volume"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.GetCenter(Geosoft.View3D.Volume)">
+            <summary>
+            Returns the center of the <paramref name="volume"/> as a <see cref="T:Geosoft.View3D.Vect3D"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.ToCoreVolume(Geosoft.View3D.Volume)">
+            <summary>
+            Converts a <see cref="T:Geosoft.View3D.Volume"/> to
+            a <see cref="T:Geosoft.Core.Volume"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.ToView3DVolume(Geosoft.Core.Volume)">
+            <summary>
+            Converts a <see cref="T:Geosoft.Core.Volume"/> to
+            a <see cref="T:Geosoft.View3D.Volume"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.ToCoreVector3D(Geosoft.View3D.Vect3D)">
+            <summary>
+            Converts a <see cref="T:Geosoft.View3D.Vect3D"/> to
+            a <see cref="T:Geosoft.Core.Vector3D"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.Reactive3DUtils.ToView3DVec3D(Geosoft.Core.Vector3D)">
+            <summary>
+            Converts a <see cref="T:Geosoft.Core.Vector3D"/> to
+            a <see cref="T:Geosoft.View3D.Vect3D"/>.
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveModelessBaseForm`1">
             <summary>
             A <see cref="T:Geosoft.GX.Controls.ModelessBaseForm"/> suitable to use as a View with <see cref="N:Geosoft.GX.Controls.ReactiveUI"/>
@@ -5930,6 +6394,28 @@
         <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveGXNetXObject.SaveINIParams">
             <summary>
             Save INI parameters
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateGXNetXUserControl`1">
+            <summary>
+            An extension of <see cref="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1"/>, exposing a <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore"/> for
+            use within <see cref="N:GeoEngine.Core.GXNetX"/> contexts.
+            </summary>
+            <typeparam name="TViewModel"></typeparam>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateGXNetXUserControl`1.ExternalGXX">
+            <summary>
+            A <see cref="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateGXNetXUserControl`1.ExternalGXX"/> instance
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateGXNetXUserControl`1.Context">
+            <summary>
+            A <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore"/> instance allowing for invocations into <see cref="N:GeoEngine.Core.GXNetX"/> contexts.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateGXNetXUserControl`1.#ctor">
+            <summary>
+            Default .ctor.
             </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateObject">
@@ -6033,6 +6519,114 @@
             	true if the <see cref="T:System.ComponentModel.Component"/> is in design mode; otherwise, false.
             </returns>
         </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ReactiveUtils">
+            <summary>
+            Provides extension methods for ReactiveUI.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveUtils.WhereNotNullOrWhitespace(System.IObservable{System.String})">
+            <summary>
+            Enforces <see cref="M:System.String.IsNullOrWhiteSpace(System.String)"/> on the <see cref="T:System.IObservable`1"/> <paramref name="source"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ReactiveUtils.WhereNotNullOrEmpty(System.IObservable{System.String})">
+            <summary>
+            Enforces <see cref="M:System.String.IsNullOrEmpty(System.String)"/> on the <see cref="T:System.IObservable`1"/> <paramref name="source"/>.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel">
+            <summary>
+            A ViewModel for representing 3D objects through a Reactive control.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.View">
+            <summary>
+            The 3D view class, provides a context to render objects in 3D.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.FromHandle(System.IntPtr)">
+            <summary>
+            Initialize a <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/> from the provided <paramref name="handle"/>,
+            which corresponds to the IWin32Window / Control handle.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.Handle">
+            <summary>
+            The IWin32Window / Control handle used to initialize the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.Redraw(System.ValueTuple{System.Int32,System.Int32})">
+            <summary>
+            Redraw the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/> using the supplied width and height.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.GetSceneBounds">
+            <summary>
+            Get the scene bounds of the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.SetSceneExtents(Geosoft.Core.Volume)">
+            <summary>
+            Set the extents of the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/> to
+            cover the provided <paramref name="volume"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel.SetVisualElements(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Set visual elements of the 3D view. Only non-null
+            values will be applied.
+            </summary>
+            <param name="box">Box visual element.</param>
+            <param name="axis">Axis visual element.</param>
+            <param name="compass">Orientation compass visual element.</param>
+            <param name="navCursor">Navigation cursor visual element.</param>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel">
+            <summary>
+            An implementation of the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.Activator">
+            <summary>
+            Responsible for activating the <see cref="T:ReactiveUI.IActivatableViewModel"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.View">
+            <summary>
+            An adapter to the <see cref="T:Geosoft.View3D.View"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.Handle">
+            <inheritdoc/>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.LastArea">
+            <summary>A cache of the last area so we can redraw without passing in the width and height.</summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.Make(Geosoft.GX.Controls.ReactiveUI.Models.Reactive3D.I3DViewAdapter)">
+            <summary>
+            Factory method for the <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel"/>.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.FromHandle(System.IntPtr)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.Redraw(System.ValueTuple{System.Int32,System.Int32})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.GetSceneBounds">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.SetSceneExtents(Geosoft.Core.Volume)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.SetVisualElements(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <inheritdoc/>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel.Dispose">
+            <summary>
+            Cleanup for <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.Reactive3DViewModel"/>.
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridRow">
             <summary>
             Describes the state of a row in a details grid.
@@ -6103,6 +6697,34 @@
         <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.Details.DetailsGridViewModel.#ctor">
             <summary>
             Constructor
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView">
+            <summary>
+            A <see cref="T:Geosoft.GX.Controls.ReactiveUI.ReactiveTranslateUserControl`1"/> view for displaying and 
+            rendering 3D components (embeds a 3D view into a control).
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView.#ctor">
+            <summary>
+            Basic constructor, set up 
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Reactive3D.Reactive3DView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.ReactiveUI.Views.Details.SimpleDetailsGridFormView.Dispose(System.Boolean)">
@@ -8954,6 +9576,11 @@
             Geosoft color zone edit control which remembers previous state using GX parameters
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.ColorZoneEditControl.IsEmbeddedInModlessDialog">
+            <summary>
+            Indicate this control is placed inside a modeless or modal dialog
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.ColorZoneEditControl.#ctor">
             <summary>
             Default constructor.
@@ -8973,6 +9600,11 @@
         <member name="P:Geosoft.GX.Controls.ColorZoneEditControl.ZoneFile">
             <summary>
             Gets or sets the default value for the zone colour file from the design view.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorZoneEditControl.Colors">
+            <summary>
+            Current color list
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.ColorZoneEditControl.ReplaceFilenameByDefault">
@@ -9049,6 +9681,11 @@
         </member>
         <member name="M:Geosoft.GX.Controls.ColorZoneEditControl.OnColorZoneFileChanged">
             <summary>Raises the <see cref="E:Geosoft.GX.Controls.ColorZoneEditControl.ColorZoneFileChanged"/> event.</summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ColorZoneEditControl.ColorZoneFileChangedObservable">
+            <summary>
+            ColorZoneFileChanged event observable
+            </summary>
         </member>
         <member name="T:Geosoft.GX.Controls.ListItemEnum">
             <summary>
@@ -10433,10 +11070,46 @@
             property defined is shifted or moved due to translation string growth.
             </summary>
         </member>
+        <member name="T:Geosoft.GX.Controls.MapViewFitting">
+            <summary>
+            This defines how to fit the visible area of the map view map into the control picture box.
+            The visible area is measured in base view units, NOT data units, when considering scaling.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewFitting.Fit">
+            <summary>
+            Stretch the visible area to fill the control.
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewFitting.AspectFit">
+            <summary>
+            Preserve X/Y aspect ratio, Min X and Min Y
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewFitting.AspectFitCentered">
+            <summary>
+            Preserve X/Y aspect ratio, Center the input ranges
+            </summary>
+        </member>
         <member name="T:Geosoft.GX.Controls.MapViewControl">
             <summary>
             Geosoft map view control which remembers previous state using GX parameters
             </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewControl.m_MapName">
+            <summary>
+            Temporary map file name
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewControl.m_MapX">
+            <summary>
+            Temporary map object
+            </summary>
+        </member>
+        <member name="F:Geosoft.GX.Controls.MapViewControl.m_MapViewX">
+             <summary>
+            
+             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.MinX">
             <summary>
@@ -10478,9 +11151,29 @@
             Maximum Y of last zoomed area of interest
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ViewFit">
+            <summary>
+            Gets or sets the List Name/Alias status.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.PixelPadding">
+            <summary>
+            Add padding for X Y depend on the MapViewFitting is AspectFitCentered or Fit
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.IsDirty">
             <summary>
             Set to true to force update of the displayed image on the next render
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.PictureBoxHeight">
+            <summary>
+            Returns the height in pixels of the picture box
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.PictureBoxWidth">
+            <summary>
+            Returns the width in pixels of the picture box
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.OnDragActive">
@@ -10511,6 +11204,11 @@
         <member name="P:Geosoft.GX.Controls.MapViewControl.MapViewX">
             <summary>
             Get the internal CMVIEW handle for rendering. Do not dispose!
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.Context">
+            <summary>
+            GeoEngine.Core.GXNetX.CGXNETCore Context
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.XPerPixel">
@@ -10578,9 +11276,69 @@
             Y
             </summary>
         </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs.XScreen">
+            <summary>
+             X screen position
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdateArgs.YScreen">
+            <summary>
+            Y screen position
+            </summary>
+        </member>
         <member name="E:Geosoft.GX.Controls.MapViewControl.MapCursorUpdated">
             <summary>
             Map cursor and was updated (can be use to link controls)
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapCursorUpdatedObservable">
+            <summary>
+            MapCursorUpdated event observable
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.MapViewControl.MapClickUpdateArgs">
+            <summary>
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.MapClickUpdated"/>.
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapClickUpdateArgs.Button">
+            <summary>
+            Button name
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.MapClickUpdated">
+            <summary>
+            Map clicked updated
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapClickUpdatedObservable">
+            <summary>
+            MapClickUpdated event observable
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.MapViewControl.MapMouseDownUpArgs">
+            <summary>
+            Event argument to use with the <see cref="E:Geosoft.GX.Controls.MapViewControl.MapMouseDownUpdated"/> and <see cref="E:Geosoft.GX.Controls.MapViewControl.MapMouseUpUpdated"/>.
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.MapMouseDownUpdated">
+            <summary>
+            Map mouse down update
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapMouseDownUpdatedObservable">
+            <summary>
+            MapMouseDownUpdated event observable
+            </summary>
+        </member>
+        <member name="E:Geosoft.GX.Controls.MapViewControl.MapMouseUpUpdated">
+            <summary>
+            Map mouse up update
+            </summary>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.MapMouseUpUpdatedObservable">
+            <summary>
+            MapMouseUpUpdated event observable
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.#ctor">
@@ -10588,9 +11346,19 @@
             Default constructor.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.HideStatusLabel">
+            <summary>
+            Hide status label if not needed
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.DeleteTempFiles">
+            <summary>
+            Delete temporary map file with xml
             </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.Initialize">
@@ -10654,6 +11422,20 @@
             <param name="yMin">Min Y</param>
             <param name="xMax">Max X</param>
             <param name="yMax">Max Y</param>
+        </member>
+        <member name="P:Geosoft.GX.Controls.MapViewControl.ForceViewExtents">
+            <summary>
+            Determines view extents will be used when redrawing
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.SetCurrentExtents(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Set current view extents
+            </summary>
+            <param name="xMin"></param>
+            <param name="yMin"></param>
+            <param name="xMax"></param>
+            <param name="yMax"></param>
         </member>
         <member name="F:Geosoft.GX.Controls.MapViewControl.components">
             <summary> 
@@ -15364,6 +16146,23 @@
             <param name="minValueInclusive"></param>
             <param name="maxValue"></param>
             <param name="maxValueInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions.GetFilenameState(System.String,System.Boolean)">
+            <summary>
+            Validation for voxel type
+            </summary>
+            <param name="stringValue"></param>
+            <param name="isLithology"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReactiveUI.Validation.Extensions.GeosoftValidatableViewModelExtensions.GetFilenameState(System.String,System.String,System.Boolean)">
+            <summary>
+            Validation for voxel type
+            </summary>
+            <param name="stringValue"></param>
+            <param name="stringName"></param>
+            <param name="isLithology"></param> 
             <returns></returns>
         </member>
         <member name="T:PopupControl.ComboBox">
