@@ -54,6 +54,12 @@
             Check if visibility for a control will be affected by expanding or collapsing the UI with this button
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.RestoreParentHandlersLink(System.Boolean)">
+            <summary>
+            Restore the linking between the Parent control handlers and the AdvancedButtonControl manager
+            </summary>
+            <param name="visible">Visibility when first initiated</param>
+        </member>
         <member name="M:Geosoft.GX.Controls.AdvancedButtonControl.RemoveFromVisibilityStateControlList(System.Windows.Forms.Control)">
             <summary>
             Removes the specified control from the visibility list
@@ -437,34 +443,19 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:Geosoft.GX.Controls.ControlExtensions">
+        <member name="T:Geosoft.GX.Controls.Helpers.FormExtensions">
             <summary>
-            Generic extension methods for Windows Forms Controls
+            Extension methods for a <see cref="T:System.Windows.Forms.Form"/>.
             </summary>
         </member>
-        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstParentOf``1(System.Windows.Forms.Control)">
+        <member name="M:Geosoft.GX.Controls.Helpers.FormExtensions.HideAndDisableControls(System.Windows.Forms.Form,System.Collections.Generic.IEnumerable{System.Windows.Forms.Control},System.Collections.Generic.IEnumerable{System.Windows.Forms.Control})">
             <summary>
-            Find first parent of a specific type
+            Hide and disable any <see cref="T:System.Windows.Forms.Control"/> provided in <paramref name="hideAndDisable"/>, shifting any <see cref="T:System.Windows.Forms.Control"/> provided
+            in <paramref name="verticallyShift"/> to take its place vertically. Finally, resize the <see cref="T:System.Windows.Forms.Form"/> provided in <paramref name="parentForm"/>
+            to contract and fit the new size.
             </summary>
-            <typeparam name="TParent">The type of parent to search for,</typeparam>
-            <param name="control">This control</param>
-            <returns>The parent instance if found or null if not.</returns>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstChildOf``1(System.Windows.Forms.Control)">
-            <summary>
-            Find first child control of a specific type (breadth first search)
-            </summary>
-            <typeparam name="TChild">The type of child to search for.</typeparam>
-            <param name="control">This control</param>
-            <returns>The child instance if found or null if not.</returns>
-        </member>
-        <member name="M:Geosoft.GX.Controls.ControlExtensions.ToRoundedRectangle(System.Drawing.Rectangle,System.Int32)">
-            <summary>
-            Takes a rectangle and applies rounded edges provided a radius.
-            </summary>
-            <remarks>
-            https://stackoverflow.com/a/33853557/2942725
-            </remarks>
+            <remarks>This method assumes that the controls provided in <paramref name="hideAndDisable"/> are located in *contiguous*
+            positions on the <paramref name="parentForm"/>.</remarks>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.Database.DBLock">
             <summary>
@@ -673,6 +664,21 @@
             <param name="source">The source observable sequence.</param>
             <param name="observableB">The observable bool to filter by.</param>
             <returns>The obserable source sequence, filtered by another observable bool sequence.</returns>
+        </member>
+        <member name="T:Geosoft.GX.Controls.Helpers.DisplaySettings">
+            <summary>
+            Utility methods for interacting with displays/monitors.
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.DisplaySettings.GetDisplayScalingFactor(System.Windows.Forms.Screen)">
+            <summary>
+            Retrieves the scaling factor for the provided <see cref="T:System.Windows.Forms.Screen"/> as a <see cref="T:System.Double"/>, or <see cref="F:System.Double.NaN"/> if
+            an exception is encountered.
+            </summary>
+            <remarks>A scaling factor of 150% would return 1.5.</remarks>
+            <param name="target"></param>
+            <returns>The scaling factor of the provided screen, or <see cref="F:System.Double.NaN"/> if an exception was caught.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <see cref="P:System.Windows.Forms.Screen.DeviceName"/> is null or empty.</exception>
         </member>
         <member name="T:Geosoft.GX.Controls.Helpers.SuspendLayoutUtil">
             <summary>
@@ -3479,6 +3485,11 @@
             Translate all controls.
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.Helpers.TranslateForm.DoTranslateControls">
+            <summary>
+            Force to translate all controls
+            </summary>
+        </member>
         <member name="P:Geosoft.GX.Controls.Helpers.TranslateForm.SkipTranslationDesignMode">
             <summary>
             Should translation be skipped (due to design mode)
@@ -5496,6 +5507,35 @@
             </summary>
             <returns>CIPJ</returns>
         </member>
+        <member name="T:Geosoft.GX.Controls.ControlExtensions">
+            <summary>
+            Generic extension methods for Windows Forms Controls
+            </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstParentOf``1(System.Windows.Forms.Control)">
+            <summary>
+            Find first parent of a specific type
+            </summary>
+            <typeparam name="TParent">The type of parent to search for,</typeparam>
+            <param name="control">This control</param>
+            <returns>The parent instance if found or null if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.TryFindFirstChildOf``1(System.Windows.Forms.Control)">
+            <summary>
+            Find first child control of a specific type (breadth first search)
+            </summary>
+            <typeparam name="TChild">The type of child to search for.</typeparam>
+            <param name="control">This control</param>
+            <returns>The child instance if found or null if not.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ControlExtensions.ToRoundedRectangle(System.Drawing.Rectangle,System.Int32)">
+            <summary>
+            Takes a rectangle and applies rounded edges provided a radius.
+            </summary>
+            <remarks>
+            https://stackoverflow.com/a/33853557/2942725
+            </remarks>
+        </member>
         <member name="T:Geosoft.GX.Controls.NoBottomLineToolStripSystemRenderer">
             <summary>
             Custom <see cref="T:System.Windows.Forms.ToolStripSystemRenderer"/> that eliminates the white line underneath a toolstrip.
@@ -6533,6 +6573,53 @@
             <summary>
             Enforces <see cref="M:System.String.IsNullOrEmpty(System.String)"/> on the <see cref="T:System.IObservable`1"/> <paramref name="source"/>.
             </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation">
+            <summary>
+            An additional tag that can be applied to <see cref="T:ReactiveUI.Validation.Abstractions.IValidatableViewModel"/> objects
+            to provide a means of signalling that the ViewModel is ready for validation.
+            </summary>
+            <remarks>See <see cref="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.ValidatableViewModelExtensions.DeferredValidationRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.IObservable{ReactiveUI.Validation.States.IValidationState})"/>
+            for a means of defining deferred validatation rules to be applied after <see cref="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation.ReadyForValidation"/> has been set to true.</remarks>
+        </member>
+        <member name="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation.ReadyForValidation">
+            <summary>
+            A boolean representing whether the ViewModel is ready for validation.
+            </summary>
+        </member>
+        <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.ValidatableViewModelExtensions">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.ValidatableViewModelExtensions.DeferredValidationRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.IObservable{ReactiveUI.Validation.States.IValidationState})">
+            <summary>
+            Defines a deferred validation rule, which will be applied only when <see cref="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation.ReadyForValidation"/> is true.
+            </summary>
+            <typeparam name="TViewModel">The ViewModel type.</typeparam>
+            <typeparam name="TViewModelProp">The ViewModel property type.</typeparam>
+            <param name="viewModel">The ViewModel.</param>
+            <param name="viewModelProperty">The ViewModel property to apply the validation rule to.</param>
+            <param name="validationObservable">The observable setting a validation state.</param>
+            <returns>A disposable validation rule.</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.ValidatableViewModelExtensions.BindDeferredValidation``2(``0,``1,System.Linq.Expressions.Expression{System.Func{``0,System.Windows.Forms.Button}})">
+            <summary>
+            <para>If the <see cref="T:System.Windows.Forms.DialogResult"/> of the <paramref name="form"/> is currently <see cref="F:System.Windows.Forms.DialogResult.OK"/>,
+            then set the <see cref="P:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation.ReadyForValidation"/> property to true, to signal to the 
+            <see cref="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.IDeferredValidation"/> object that validation is ready to occur. This will trigger any 
+            <see cref="M:Geosoft.GX.Controls.ReactiveUI.ViewModels.ValidatableViewModelExtensions.DeferredValidationRule``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.IObservable{ReactiveUI.Validation.States.IValidationState})"/>
+            to occur.</para>
+            <para>Finally, if <see cref="P:ReactiveUI.Validation.Contexts.ValidationContext.IsValid"/> is false form the <paramref name="form"/>, it will explicitly
+            set <see cref="P:System.Windows.Forms.Form.DialogResult"/> to <see cref="F:System.Windows.Forms.DialogResult.None"/>, to keep the form open and allow the user to fix
+            the mistakes on the form.</para>
+            </summary>
+            <typeparam name="TView">The View type.</typeparam>
+            <typeparam name="TViewModel">The ViewModel type.</typeparam>
+            <param name="form">The form (view) implementing IViewFor and containing the ViewModel.</param>
+            <param name="viewModel">The ViewModel property for the view.</param>
+            <param name="buttonProperty">The button property for the view.</param>
+            <returns>A disposable subscription.</returns>
         </member>
         <member name="T:Geosoft.GX.Controls.ReactiveUI.ViewModels.Reactive3D.IReactive3DViewModel">
             <summary>
@@ -8996,6 +9083,11 @@
             The GX .Net object
             </summary>
         </member>
+        <member name="F:Geosoft.GX.Controls.BaseForm.IDEAL_SEPARATION_BETWEEN_BUDDIES">
+            <summary>
+            Ideal separation between labels and their buddy controls
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.BaseForm.#ctor(System.IntPtr)">
             <summary>
             Use this contructor where the derived class acts as the first GX in montaj
@@ -9191,6 +9283,13 @@
             without bringing up the validation errors (etc.) in the dialog.
             </summary>
             <returns>true if validation is successful</returns>
+        </member>
+        <member name="M:Geosoft.GX.Controls.BaseForm.ResizeAndShiftBuddyControlsForLabels">
+            <summary>
+            This is a quick method to resize controls to fit if you change the text of one of the labels.
+            The controls should all be BuddyControls to corresponding labels. Will also shift CheckBoxControls to 
+            left-align. NOTE: This function has room for improvement!
+            </summary>
         </member>
         <member name="M:Geosoft.GX.Controls.BaseForm.bValidateContainer(System.Windows.Forms.Control,System.Boolean,System.String@)">
             <summary>
@@ -11184,11 +11283,15 @@
         <member name="P:Geosoft.GX.Controls.MapViewControl.GridValueIMG">
             <summary>
             Set this property to display a grid value at the mouse cursor location in the status label
+            Set this property AFTER setting MapView to correctly inherit the IMG's projection onto the view
+            for the return of grid values.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.GridValueIMGX">
             <summary>
             Set this property to display a grid value at the mouse cursor location in the status label
+            Set this property AFTER setting MapViewX to correctly inherit the IMG's projection onto the view
+            for the return of grid values.
             </summary>
         </member>
         <member name="P:Geosoft.GX.Controls.MapViewControl.GXX">
@@ -11414,6 +11517,11 @@
             Zoom to full extents of visible groups in view
             </summary>
         </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.ZoomToPreviousExtents">
+            <summary>
+            Zoom to previous extents, so even if the map visible extents change you get the same extents
+            </summary>
+        </member>
         <member name="M:Geosoft.GX.Controls.MapViewControl.ZoomTo(System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Zoom to specified area
@@ -11431,6 +11539,15 @@
         <member name="M:Geosoft.GX.Controls.MapViewControl.SetCurrentExtents(System.Double,System.Double,System.Double,System.Double)">
             <summary>
             Set current view extents
+            </summary>
+            <param name="xMin"></param>
+            <param name="yMin"></param>
+            <param name="xMax"></param>
+            <param name="yMax"></param>
+        </member>
+        <member name="M:Geosoft.GX.Controls.MapViewControl.SetAreaOfInterest(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Set current area of interest
             </summary>
             <param name="xMin"></param>
             <param name="yMin"></param>
@@ -14796,8 +14913,13 @@
         </member>
         <member name="P:Geosoft.GX.Controls.EditRealControl.Value">
             <summary>
-            Gets or sets the value for the edit control.
+            Gets the value for the edit control.
             </summary>
+            <remarks>
+            <para>
+            <see cref="M:Geosoft.GX.Controls.EditRealControl.SetValue(System.Double)"/> at the call-site to set a new double value in 
+            the control</para>
+            </remarks>
         </member>
         <member name="P:Geosoft.GX.Controls.EditRealControl.MinimumValue">
             <summary>
