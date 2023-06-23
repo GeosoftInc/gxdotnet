@@ -4,28 +4,8 @@
         "geoengine.core.gxnet"
     </assembly>
     <members>
-        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
-            <summary>
-Get the list of gx's called by this entry point
-</summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
-            <summary>
-Default constructor
-</summary>
-            <param name="pcGxList">list of gx's that this entry point calls</param>
-        </member>
-        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
-            <summary>
-Marks this function as callable from Oasis Montaj.
-</summary>
-            <example>
-[CGXAttribute("")]
-void SampleEntry(){...}
-The parameter that is currently an empty string in the above example can be filled in with
-a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
-This feature is not currently implemented but is planned for future versions.
-</example>
+        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
+            <summary>Geosoft internal use only.</summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CWA.NewLine">
             <summary>Forces a new line in the WA object.</summary>
@@ -24830,7 +24810,7 @@ map views in that the elevation of the view plane is set, and
 the view may be rotated. In addition, when viewed in a map,
 a view with this IPJ will give a status bar location (X, Y, Z)
 of the actual location in space, as opposed to just the X, Y of
-the view plane itself. When a rotation angle (CCW) is specified,
+the view plane itself. When a rotation azimuth angle (CW) is specified,
 the input (X, Y) location is the point about which the coordinate
 system is rotated. For instance, you can rotate a grid about its corner
 (XC, YC) by giving it a Plan View orientation (XC, YC, ZElevation, Rot).
@@ -27529,6 +27509,25 @@ The returned locations will always be a grid point location; no interpolation is
             <param name="crc">CRC returned</param>
             <param name="file">Output XML file</param>
             <available_version>7.2</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CIMU.DecimateCrookedSectionGrid(GeoEngine.Core.GXNet.CIMG,System.Int32,System.Int32,System.String)">
+            <summary>Decimate a crooked section grid.</summary>
+            <param name="img">Input grid IMG</param>
+            <param name="dec_X">:def:Decimation factor along section (&gt;=1)</param>
+            <param name="dec_y">:def:Decimation factor down section (&gt;=1)</param>
+            <param name="out">File name of output grid</param>
+            <remarks>
+For decimation factor N, every MN'th value is selected
+for M = 0, 1, 2, ...
+The full distance is recalculated based on the remaining
+points because it will almost certainly be smaller.
+</remarks>
+            <available_version>2023.0</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -33035,6 +33034,22 @@ setting is to be Get and or Set, use the REG directly.
             <extended_method>no</extended_method>
             <method_group>Channel</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CDB.iGetModificationCount">
+            <summary>Gets the modification count from the database.</summary>
+            <remarks>
+A running count of the times a database has been modified between commits.
+Useful, for instance to be able to discard changes made by a GX on a database that are required
+for the operation of the GX but which the user does not want to persist, and to avoid the Save changes
+question when you go to change the database. So if the count is 0 when you start, it is safe to call
+Discard_DB on exit without worrying about throwing away changes made previously.
+</remarks>
+            <available_version>2023.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Channel</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CDB.IGetName(System.Int32,System.String@,System.Int32)">
             <summary>Gets a name from the database.</summary>
             <param name="name">&amp;lt;define&amp;gt;DB_NAME&amp;lt;/define&amp;gt;</param>
@@ -37421,6 +37436,9 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.IntConstants.IMU_BOOL_OPT_AND">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OPTConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.IMU_BOOL_OLAP_MINUS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.IMU_BOOL_OLAP_2">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant" />.</summary>
         </member>
@@ -40208,6 +40226,9 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.Constant.MAP_EXPORT_FORMAT_MTIFF">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.MAP_EXPORT_FORMAT_CGTIFF">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.MAP_EXPORT_FORMAT_GTIFF">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant" />.</summary>
         </member>
@@ -40736,6 +40757,9 @@ to exaggerate one scale such as Z (1,1,5).
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.IMU_BOOL_OPT_AND">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OPTConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.IMU_BOOL_OLAP_MINUS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.IMU_BOOL_OLAP_2">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant" />.</summary>
@@ -44279,6 +44303,9 @@ Format  Description                      Type           B/W  B/W  COL  B/W  COL 
         <member name="F:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant.MTIFF">
             <summary>"MTIFF"  MapInfo TIFF (*.tif)         Color Image</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant.CGTIFF">
+            <summary>"CGTIFF"  GeoTIFF Compressed (*.tif), Color Image</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.MAP_EXPORT_FORMATConstant.GTIFF">
             <summary>"GTIFF"  GeoTIFF (*.tif),             Color Image</summary>
         </member>
@@ -45048,6 +45075,9 @@ values are dummy
         <member name="T:GeoEngine.Core.GXNet.IMU_BOOL_OPTConstant">
             <summary>Boolean logic option</summary>
             <tocexclude />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant.MINUS">
+            <summary>Overlap values use (grid 1 value - grid 2 value)</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.IMU_BOOL_OLAPConstant._2">
             <summary>Overlap values use grid 2 value</summary>
@@ -46254,6 +46284,29 @@ method of the data, which is usually
             <summary>Open Modes</summary>
             <tocexclude />
         </member>
+        <member name="P:GeoEngine.Core.GXNet.CGXAttribute.GxList">
+            <summary>
+Get the list of gx's called by this entry point
+</summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CGXAttribute.#ctor(System.String)">
+            <summary>
+Default constructor
+</summary>
+            <param name="pcGxList">list of gx's that this entry point calls</param>
+        </member>
+        <member name="T:GeoEngine.Core.GXNet.CGXAttribute">
+            <summary>
+Marks this function as callable from Oasis Montaj.
+</summary>
+            <example>
+[CGXAttribute("")]
+void SampleEntry(){...}
+The parameter that is currently an empty string in the above example can be filled in with
+a list of gx's, seperated by semi-colans, that you call from your script inorder that everything can be properly licensed.
+This feature is not currently implemented but is planned for future versions.
+</example>
+        </member>
         <member name="P:TranslationAttribute.FriendlyPath">
             <summary>
 The translation friendly path
@@ -46273,9 +46326,6 @@ Constructor
             <summary>
 Translation attribute
 </summary>
-        </member>
-        <member name="M:GeoEngine.Core.GXNet.InternalUtils.pGetInternalGXXPointer(System.IntPtr,System.Int32)">
-            <summary>Geosoft internal use only.</summary>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CERROR.#ctor(System.String,System.String,System.Int32)">
             <summary>Create an error</summary>

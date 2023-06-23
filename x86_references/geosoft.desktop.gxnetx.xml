@@ -5652,6 +5652,33 @@ cell area. Grid cells containing no data values are set to dummy.
             <extended_method>no</extended_method>
             <method_group>Obsolete</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CPGU.DirectGriddingDB2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Direct-gridding method, DB version.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="pg">Input grid</param>
+            <param name="xo">X origin of grid</param>
+            <param name="yo">Y origin of grid</param>
+            <param name="xMax">X extent of grid</param>
+            <param name="yMax">Y extent of grid</param>
+            <param name="dx">X cell size</param>
+            <param name="dy">Y cell size</param>
+            <param name="rot">Rotation angle (degrees CCW).</param>
+            <param name="db">Database</param>
+            <param name="x">X Channel [READONLY]</param>
+            <param name="y">Y Channel [READONLY]</param>
+            <param name="z">Data Channel [READONLY]</param>
+            <param name="method">&amp;lt;define&amp;gt;PGU_DIRECTGRID&amp;lt;/define&amp;gt;</param>
+            <remarks>
+Grid cells take on the specified statistic of the values inside the
+cell area. Grid cells containing no data values are set to dummy.
+</remarks>
+            <available_version>2023.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CPGU.DirectGriddingDB(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CPG,System.Double,System.Double,System.Double,System.Double,System.Double,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>Direct-gridding method, DB version.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -17282,6 +17309,21 @@ project folders clean.
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CEDB.LoadChannelAfter(System.String,System.String)">
+            <summary>Loads the channel after specified channel</summary>
+            <param name="chan_to_move">Channel name</param>
+            <param name="chan_to_move_after">Channel name</param>
+            <remarks>
+If the channel to locate does not exist it will load the channel in the default location.
+If the channel to be loaded is already loaded, no changes will be made.
+</remarks>
+            <available_version>2023.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Obsolete</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CEDB.LoadWithViewControl(GeoEngine.Core.GXNetX.CGXNETCore,System.String,Geosoft.Desktop.GXNetX.CEDB,System.Windows.Forms.IWin32Window)">
             <summary>Version of LoadWithView_EDB that can be used to load a database via subclassing into a Windows control.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -21132,6 +21174,75 @@ duplicats each line twice to output database)
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDU.GetAngledBoundingRectangle(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Return the angled bounding rectangle for data to be gridded on an angle.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Database</param>
+            <param name="xCh">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="yCh">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="mCh">Data or mask channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="azimuth">Input Azimuth Angle - degrees CW from North</param>
+            <param name="x1">Returned Corner 1 - X</param>
+            <param name="y1">Returned Corner 1 - Y</param>
+            <param name="x2">Returned Corner 2 - X</param>
+            <param name="y2">Returned Corner 2 - Y</param>
+            <param name="x3">Returned Corner 3 - X</param>
+            <param name="y3">Returned Corner 3 - Y</param>
+            <param name="x4">Returned Corner 4 - X</param>
+            <param name="y4">Returned Corner 4 - Y</param>
+            <remarks>
+Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes
+results in up to half the gridding area being dummies (padding), which is not only
+inefficient, but affects processes like filtering.
+This routine returns the rotated extents rectangle for a given gridding azimuth.
+The data is rotated CCW by the input azimuth. The N-S and E-W extents of the rotated
+data are determined and the bounding points rotated back by the input azimuth to locate
+the angled bounding rectangle around the input data. As with GetGriddingAzimuthToMinimizePadding_DU
+the extents are padded in each direction by 1% of the maximum height/width
+Operates on all selected lines.
+</remarks>
+            <available_version>2023.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDU.rGetGriddingAzimuthToMinimizePadding(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,System.Int32,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Return the gridding azimuth (degrees CW from north) that minimizes padding.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Database</param>
+            <param name="xCh">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="yCh">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="mCh">Data or mask channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
+            <param name="x1">Returned Corner 1 - X</param>
+            <param name="y1">Returned Corner 1 - Y</param>
+            <param name="x2">Returned Corner 2 - X</param>
+            <param name="y2">Returned Corner 2 - Y</param>
+            <param name="x3">Returned Corner 3 - X</param>
+            <param name="y3">Returned Corner 3 - Y</param>
+            <param name="x4">Returned Corner 4 - X</param>
+            <param name="y4">Returned Corner 4 - Y</param>
+            <remarks>
+Especially if the survey lines do not run N-S or E-W, gridding parallel to the XY axes
+results in up to half the gridding area being dummies (padding), which is not only
+inefficient, but affects processes like filtering. This algorithm determines the data
+rotation required such that the gridding extents rectangle fit around the data minimizes the
+amount of padding. The result is good to the nearest degree.
+
+The corner points are returned and include a buffer around the edge equal to 1% of the maximum height/width.
+
+The returned azimuth will be in the range 0 to 89.
+
+Operates on all selected lines.
+</remarks>
+            <available_version>2023.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNetX.CDU.GetChanDataVV(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CVV)">
             <summary>Populate a VV with unique items in a channel.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -22055,6 +22166,22 @@ Returns DUMMY if there are fewer than two valid locations.
             <param name="xCh">X channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
             <param name="yCh">Y channel [&amp;lt;define&amp;gt;DB_LOCK_READONLY&amp;lt;/define&amp;gt;]</param>
             <available_version>2022.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CDU.AvgAzimuth2(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.Double,System.Double@)">
+            <summary>Returns average azimuth of selected lines.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Database Object</param>
+            <param name="xCh">X channel name</param>
+            <param name="yCh">Y channel name</param>
+            <param name="precision">Precision in degrees (1 to 45)</param>
+            <param name="azimuth">Azimuth value returned</param>
+            <remarks>Same as AvgAzimuth, but input the X and Y channels to use.</remarks>
+            <available_version>2023.1</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -27615,6 +27742,25 @@ See the note on offset symbols in RosePlot_CHIMERA
        CHIMERA GX function library.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNetX.CBIGRID.GetDefaultCellSize(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.String,System.Double@)">
+            <summary>Get default cell size value.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="db">Handle to a database</param>
+            <param name="x">Y Channel</param>
+            <param name="y">X Channel</param>
+            <param name="z">Data channel</param>
+            <param name="cell">cell size</param>
+            <returns>
+0 - Ok
+1 - Error
+</returns>
+            <available_version>2023.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNetX.CBIGRID.GetDefaults(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.String,System.Double,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
             <summary>Get default values for max line separation, max point separation and trend angle.</summary>
