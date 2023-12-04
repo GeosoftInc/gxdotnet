@@ -4749,6 +4749,23 @@ created. Otherwise, the old file will be overwritten.
             <extended_method>yes</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CRGRD.iRun3(GeoEngine.Core.GXNet.CDB,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Executes the Rangrid program directly on a database. Specify log file</summary>
+            <param name="db">Handle to a database</param>
+            <param name="x">Y Channel</param>
+            <param name="y">X Channel</param>
+            <param name="z">Data channel</param>
+            <param name="ctl">RANGRID control file.</param>
+            <param name="grd">Output grid name</param>
+            <param name="log">Log file name (default "rangrid.log")</param>
+            <returns>0, always.</returns>
+            <available_version>2023.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CRGRD.iRun2(GeoEngine.Core.GXNet.CDB,System.String,System.String,System.String,System.String,System.String)">
             <summary>Executes the Rangrid program directly on a database.</summary>
             <param name="db">Handle to a database</param>
@@ -4868,6 +4885,75 @@ control file parameters into the RGRD object.
        Run_RGRD function executes the Rangrid program using the RGRD object.
    
 </summary>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPROJ.iGetNumRegisteredBackgroundScripts">
+            <summary>Register a OMS script launched from the project</summary>
+            <remarks>Allows the project to track the progress/failure/success of scripts launched in the background</remarks>
+            <returns>The number of registered background scripts: in progress, finished, failed, deleted etc.</returns>
+            <available_version>2022.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>OMS_Scripting</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPROJ.GetRegisteredBackgroundScript(System.Int32,System.String@,System.Int32,System.String@,System.String@,System.Int32,System.String@,System.String@,System.Int32,GeoEngine.Core.GXNet.CVV,System.String@,System.Int32)">
+            <summary>Retrieve info on a registered OMS script launched from the project</summary>
+            <param name="index">Index for the process (input) 0 to N-1</param>
+            <param name="date_time">Date/Time string in format DD/MM/YYYY hh:mm:ss</param>
+            <param name="date_time_size">Size of descriptive names for script process</param>
+            <param name="name">Name for the process (output)</param>
+            <param name="name2">Secondary name for the process (output)</param>
+            <param name="name_size">Size of descriptive names for script process</param>
+            <param name="script">file name of the script (output)</param>
+            <param name="log">file name of the output log (returned, can be empty).</param>
+            <param name="filename_size">Size of script and log filenames</param>
+            <param name="output_files">List of output documents created by the script. of size -&amp;lt;define&amp;gt;STR_FILE&amp;lt;/define&amp;gt;</param>
+            <param name="process_id">Process ID (returned)</param>
+            <param name="id_size">Size of the process ID string</param>
+            <remarks>reference by index</remarks>
+            <available_version>2022.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>OMS_Scripting</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPROJ.GetRegisteredBackgroundScript(System.Int32,System.String@,System.String@,System.String@,System.String@,System.String@,GeoEngine.Core.GXNet.CVV,System.String@)">
+            <summary>Retrieve info on a registered OMS script launched from the project</summary>
+            <param name="index">Index for the process (input) 0 to N-1</param>
+            <param name="date_time">Date/Time string in format DD/MM/YYYY hh:mm:ss</param>
+            <param name="name">Name for the process (output)</param>
+            <param name="name2">Secondary name for the process (output)</param>
+            <param name="script">file name of the script (output)</param>
+            <param name="log">file name of the output log (returned, can be empty).</param>
+            <param name="output_files">List of output documents created by the script. of size -&amp;lt;define&amp;gt;STR_FILE&amp;lt;/define&amp;gt;</param>
+            <param name="process_id">Process ID (returned)</param>
+            <remarks>reference by index</remarks>
+            <available_version>2022.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>OMS_Scripting</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CPROJ.RegisterBackgroundScript(System.String,System.String,System.String,System.String,System.Int32,GeoEngine.Core.GXNet.CVV,System.String,System.String)">
+            <summary>Register an OMS script launched from the project</summary>
+            <param name="name">Name for the process</param>
+            <param name="name2">Secondary name for the process</param>
+            <param name="script">file name of the script. Script should self-delete to indicate process has completed</param>
+            <param name="log">file name of the output log (optional). Will contain info about this script run</param>
+            <param name="save_log">1 - log file is temporary and deleted on OM close. 0 - do not delete on OM close</param>
+            <param name="output_files">List of output documents created by the script.</param>
+            <param name="file_to_delete">File to delete (optional). Will also delete files with same name and .tmp and .xml extensions</param>
+            <param name="process_id">Process ID - used to check status or kill the process</param>
+            <remarks>Allows the project to track the progress/failure/success of scripts launched in the background</remarks>
+            <available_version>2022.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>yes</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>OMS_Scripting</method_group>
         </member>
         <member name="M:Geosoft.Desktop.GXNet.CPROJ.HasPendingCentralPublishEvent">
             <summary>Checks if there is a pending publish event.</summary>
@@ -13504,6 +13590,16 @@ Existing lines will be erased and then created if they are the same as the new o
    
 </summary>
         </member>
+        <member name="M:Geosoft.Desktop.GXNet.CGMSYS.RemoveLegacyGMS(System.String)">
+            <summary>Completely remove a legacy GSMSYS-2D GMS model file and folders</summary>
+            <param name="model">Model name</param>
+            <available_version>2023.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:Geosoft.Desktop.GXNet.CGMSYS.Launch(System.String)">
             <summary>Launch GMSYS with extension</summary>
             <param name="model">Model name</param>
@@ -13826,6 +13922,23 @@ Sample Fraser Filter string:
             <param name="trn_fil">Output Transform file name string</param>
             <param name="spc_fil">Output Power Spectrum file name string</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>yes</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:Geosoft.Desktop.GXNet.CFFT2.CrossCorrelationPG(GeoEngine.Core.GXNet.CPG,GeoEngine.Core.GXNet.CPG,System.Int32,GeoEngine.Core.GXNet.CPG)">
+            <summary>
+Calculate the cross-correlation of two transform pagers: 
+The complex conjugate of (r, i) items in the first pager are 
+multiplied by the second pager (r, i) values.
+</summary>
+            <param name="pg1">Input pager 1</param>
+            <param name="pg2">Input pager 2</param>
+            <param name="normalise">0 - do not normalise, 1 - result is normalised by max value</param>
+            <param name="pgo">Output pager</param>
+            <available_version>2023.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
@@ -28322,6 +28435,15 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.SEMPLOT_EXPORT_NORMAL">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.SEMPLOT_EXPORTConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.PROJ_OMS_PROCESSID_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.PROJ_OMS_DATETIME_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.PROJ_OMS_NAME_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.PROJ_DISPLAY_ALWAYS">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_DISPLAYConstant" />.</summary>
         </member>
@@ -30550,6 +30672,15 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.SEMPLOT_GROUP_CLASS">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.SEMPLOT_GROUP_CLASSConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.PROJ_OMS_PROCESSID_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.PROJ_OMS_DATETIME_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.PROJ_OMS_NAME_SIZE">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.PROJ_DISPLAY_ALWAYS">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.PROJ_DISPLAYConstant" />.</summary>
@@ -32940,6 +33071,19 @@ files when creating LSTs etc.
         </member>
         <member name="T:Geosoft.Desktop.GXNet.SEMPLOT_GROUP_CLASSConstant">
             <summary>SEMPLOT group class.</summary>
+            <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.PROJ_OMSConstant.PROCESSID_SIZE">
+            <summary>Buffer size for process ID</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.PROJ_OMSConstant.DATETIME_SIZE">
+            <summary>Buffer size for the date/time string</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.PROJ_OMSConstant.NAME_SIZE">
+            <summary>Buffer size for script primary and secondary names</summary>
+        </member>
+        <member name="T:Geosoft.Desktop.GXNet.PROJ_OMSConstant">
+            <summary>Script registration</summary>
             <tocexclude />
         </member>
         <member name="F:Geosoft.Desktop.GXNet.PROJ_DISPLAYConstant.ALWAYS">

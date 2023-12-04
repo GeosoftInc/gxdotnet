@@ -3589,6 +3589,23 @@ altered once the VA is created.
             <extended_method>no</extended_method>
             <method_group>Miscellaneous</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNet.CVA.SetIntN(System.Int32,System.Int32,System.Int32)">
+            <summary>Set N rows of integer elements in a VA.</summary>
+            <param name="start">Start row index (&gt;= 0)</param>
+            <param name="n"># of rows to set (-1 sets all rows to end)</param>
+            <param name="value">Value to set</param>
+            <remarks>
+Element row starting index being set cannot be &lt; 0.
+If the element row index is &gt;= current VA length, the VA length is
+increased.
+</remarks>
+            <available_version>2023.2</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNet.CVA.SetInt(System.Int32,System.Int32,System.Int32)">
             <summary>Set an integer element in a VA.</summary>
             <param name="row">Row</param>
@@ -7535,6 +7552,16 @@ directory is used for the path.
 1 - Directory exists
 </returns>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>File System</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CSYS.DeleteDirectory(System.String)">
+            <summary>Delete a directory and all files/subdirectories contained therein.</summary>
+            <param name="directory">Name of directory to delete</param>
+            <available_version>2023.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -21594,6 +21621,26 @@ If A or B is a dummy, returns dummy.
        logarithmic and geometric functions.
    
 </summary>
+        </member>
+        <member name="M:GeoEngine.Core.GXNet.CMAPTEMPLATE.GetMediaSize(System.String,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>Get full width, full height, plot width and plot height in cm for a specific media or template name</summary>
+            <param name="name">Page size name</param>
+            <param name="full_page_width">Full width of page in cm (`rDUMMY` if name not found)</param>
+            <param name="full_page_height">Full height of page in cm (`rDUMMY` if name not found)</param>
+            <param name="plot_width">Plot width of page in cm (`rDUMMY` if name not found)</param>
+            <param name="plot_height">Plot height of page in cm (`rDUMMY` if name not found)</param>
+            <remarks>
+The user 'media.csv' file is searched first. If the name is not found
+then the 'maptmpl.csv' file is searched, and if a template name is matched
+the sizes of the associated media name are returned.
+If a template is specified, the orientation is taken into account for the media.
+</remarks>
+            <available_version>2023.2</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
         </member>
         <member name="M:GeoEngine.Core.GXNet.CMAPTEMPLATE.RenderPreviewMapProduction(System.IntPtr,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
             <summary>Render a preview for map sheet production purposes</summary>
@@ -35972,6 +36019,9 @@ to exaggerate one scale such as Z (1,1,5).
         <member name="F:GeoEngine.Core.GXNet.IntConstants.ST_DUMMIES">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
         </member>
+        <member name="F:GeoEngine.Core.GXNet.IntConstants.ST_NEMPTYSTRINGS">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
+        </member>
         <member name="F:GeoEngine.Core.GXNet.IntConstants.ST_TOTAL">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
         </member>
@@ -39228,6 +39278,9 @@ to exaggerate one scale such as Z (1,1,5).
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.ST_DUMMIES">
+            <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.Constant.ST_NEMPTYSTRINGS">
             <summary>See <see cref="T:GeoEngine.Core.GXNet.ST_INFOConstant" />.</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.Constant.ST_TOTAL">
@@ -42918,6 +42971,9 @@ contains user read/write files.
         </member>
         <member name="F:GeoEngine.Core.GXNet.ST_INFOConstant.ST_DUMMIES">
             <summary />
+        </member>
+        <member name="F:GeoEngine.Core.GXNet.ST_INFOConstant.ST_NEMPTYSTRINGS">
+            <summary>Number of empty strings from string inputs</summary>
         </member>
         <member name="F:GeoEngine.Core.GXNet.ST_INFOConstant.ST_TOTAL">
             <summary>Total number of items (dummy and non-dummy)</summary>
