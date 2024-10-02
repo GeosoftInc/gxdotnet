@@ -12,7 +12,12 @@
 </pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EDCA");</script><h4 class="subHeading">Parameters</h4><dl><dt><span class="parameter">gxNetShared</span></dt><dd>Type: <a href="T_GeoEngine_Core_GXNetX_CGXNETCore.htm">GeoEngine.Core.GXNetX<span id="LSTB6FA79BD_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTB6FA79BD_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>CGXNETCore</a><br />A shared <a href="T_GeoEngine_Core_GXNetX_CGXNETCore.htm">CGXNETCore</a></dd></dl><h4 class="subHeading">Return Value</h4>Type: <a href="http://msdn2.microsoft.com/en-us/library/td2s409d" target="_blank">Int32</a><br />
 &amp;lt;define&amp;gt;COMMAND_ENV&amp;lt;/define&amp;gt;
 
-Notes									We are moving towards embedded tools and menus and this setting can be
+Notes									
+
+We are moving towards embedded tools and menus and this setting can be
 queried from the project to determine how specific commands should react.
 Only 3D viewer is currently making use of this.
+
+If new Command environment enum values are added, then update the iGetCommandEnvironment_PROJ() function
+in geogxgui\gxx_app.cpp and in the COMMAND_ENVIRONMENT enums in geoengine.core\include\obj\objgp.h.
 </div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID2RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="T_Geosoft_Desktop_GXNetX_CPROJ.htm">CPROJ Class</a></div><div class="seeAlsoStyle"><a href="N_Geosoft_Desktop_GXNetX.htm">Geosoft.Desktop.GXNetX Namespace</a></div></div></div></div><div id="pageFooter" class="pageFooter"> </div></body></html>
