@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\DotNetXReference.shfbproj" started="11/12/2018 4:22:02 PM">
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\DotNetXReference.shfbproj" started="5/8/2019 6:04:58 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -9,12 +9,11 @@ Locating components in the following folder(s):
 Using presentation style &#39;VS2013Geosoft&#39; located in &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release&#39;
 Loading and initializing plug-ins...
 Additional Content Only plug-in is disabled and will not be loaded
+Geosoft GXAPIVersionHistory Plugin plug-in is disabled and will not be loaded
 Geosoft DotNetExtraReflectionInfo Plugin Version 1.0.0.0
 Copyright &#169; 2015, , All Rights Reserved.
 Table of Contents Exclusion Version 2015.1.12.0
 Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
-Geosoft GXAPIVersionHistory Plugin Version 1.0.0.0
-Copyright &#169; 2015, , All Rights Reserved.
 Lightweight Website Style Version 2015.1.12.0
 Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
 Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
@@ -35,16 +34,16 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.1094
+</plugIn>    Last step completed in 00:00:00.0625
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0938
+    Last step completed in 00:00:00.0781
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 11/12/2018 4:22:06 PM.
+Build started 5/8/2019 6:04:59 PM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\x64\Debug\&quot;.
@@ -53,7 +52,7 @@ GenerateRefInfo:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loaded 2 assemblies for reflection and 1 dependency assemblies.
-  Wrote information on 3 namespaces, 546 types, and 8888 members
+  Wrote information on 3 namespaces, 548 types, and 9257 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
@@ -63,12 +62,12 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\g
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:05.1408
+</plugIn>    Last step completed in 00:00:02.2501
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 11/12/2018 4:22:11 PM.
+Build started 5/8/2019 6:05:01 PM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.1.12.0)
@@ -80,46 +79,298 @@ TransformManifest:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+    Unique name M_GeoEngine_Core_GXNetX_C3DN_IGetAxisFont_1 generated for M:GeoEngine.Core.GXNetX.C3DN.IGetAxisFont(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_C3DN_IGetRenderControls_1 generated for M:GeoEngine.Core.GXNetX.C3DN.IGetRenderControls(System.Int32@,System.Int32@,System.String@,System.String@,System.String@)
+    Unique name M_GeoEngine_Core_GXNetX_C3DV_ICopyToMAP_1 generated for M:GeoEngine.Core.GXNetX.C3DV.ICopyToMAP(GeoEngine.Core.GXNetX.CMAP,System.String,System.Double,System.Double,System.Double,System.Double,System.Int32,System.String@,System.String@)
+    Unique name M_GeoEngine_Core_GXNetX_CBF_IReadBinaryString_1 generated for M:GeoEngine.Core.GXNetX.CBF.IReadBinaryString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_GenValidChanSymb_1 generated for M:GeoEngine.Core.GXNetX.CDB.GenValidChanSymb(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_GenValidLineSymb_1 generated for M:GeoEngine.Core.GXNetX.CDB.GenValidLineSymb(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_GetChanStr_1 generated for M:GeoEngine.Core.GXNetX.CDB.GetChanStr(System.Int32,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_GetRegSymbSetting_1 generated for M:GeoEngine.Core.GXNetX.CDB.GetRegSymbSetting(System.Int32,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_GetVABaseCoordinateInfo_1 generated for M:GeoEngine.Core.GXNetX.CDB.GetVABaseCoordinateInfo(System.Int32,System.Int32@,System.Double@,GeoEngine.Core.GXNetX.CVV,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IFormatChan_1 generated for M:GeoEngine.Core.GXNetX.CDB.IFormatChan(System.Int32,System.Double,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetChanClass_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetChanClass(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetChanLabel_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetChanLabel(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetChanName_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetChanName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetChanUnit_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetChanUnit(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetGroupClass_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetGroupClass(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetName_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetSymbName_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetSymbName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetVAProfColorFile_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetVAProfColorFile(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetVAProfSectOption_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetVAProfSectOption(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetVASectColorFile_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetVASectColorFile(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IGetXYZChan_1 generated for M:GeoEngine.Core.GXNetX.CDB.IGetXYZChan(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_IiCoordPair_1 generated for M:GeoEngine.Core.GXNetX.CDB.IiCoordPair(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_ILineLabel_1 generated for M:GeoEngine.Core.GXNetX.CDB.ILineLabel(System.Int32,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_ILineNumber2_1 generated for M:GeoEngine.Core.GXNetX.CDB.ILineNumber2(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_ISetLineName_1 generated for M:GeoEngine.Core.GXNetX.CDB.ISetLineName(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CDB_ISetLineName2_1 generated for M:GeoEngine.Core.GXNetX.CDB.ISetLineName2(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CGEOSTRING_GetFeatureProperties_1 generated for M:GeoEngine.Core.GXNetX.CGEOSTRING.GetFeatureProperties(System.String,System.String@,System.String@,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Int32@,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CGEOSTRING_GetSectionProperties_1 generated for M:GeoEngine.Core.GXNetX.CGEOSTRING.GetSectionProperties(System.String,System.String@,System.String@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)
+    Unique name M_GeoEngine_Core_GXNetX_CGEOSTRING_GetShapeProperties_1 generated for M:GeoEngine.Core.GXNetX.CGEOSTRING.GetShapeProperties(System.String,System.String@,System.String@,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV)
+    Unique name M_GeoEngine_Core_GXNetX_CGIS_IGetFileName_1 generated for M:GeoEngine.Core.GXNetX.CGIS.IGetFileName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CGIS_IScanMIRasterTabFile_1 generated for M:GeoEngine.Core.GXNetX.CGIS.IScanMIRasterTabFile(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CIPJ)
     Unique name M_GeoEngine_Core_GXNetX_CGXNETCore__ctor_1 generated for M:GeoEngine.Core.GXNetX.CGXNETCore.#ctor(System.IntPtr)
     Unique name M_GeoEngine_Core_GXNetX_CGXNETCore_Dispose_1 generated for M:GeoEngine.Core.GXNetX.CGXNETCore.Dispose(System.Boolean)
     Unique name M_GeoEngine_Core_GXNetX_CHANDLE__ctor_1 generated for M:GeoEngine.Core.GXNetX.CHANDLE.#ctor(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32)
     Unique name M_GeoEngine_Core_GXNetX_CHANDLE__ctor_2 generated for M:GeoEngine.Core.GXNetX.CHANDLE.#ctor(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.Boolean)
     Unique name M_GeoEngine_Core_GXNetX_CHANDLE_Dispose_1 generated for M:GeoEngine.Core.GXNetX.CHANDLE.Dispose(System.Boolean)
+    Unique name M_GeoEngine_Core_GXNetX_CIMG_iIsValidIMGFileEx_1 generated for M:GeoEngine.Core.GXNetX.CIMG.iIsValidIMGFileEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_GetFromBinaryAsString_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.GetFromBinaryAsString(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetDisplayName_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetDisplayName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetESRI_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetESRI(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetGXF_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetGXF(System.String@,System.String@,System.String@,System.String@,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetMICoordSys_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetMICoordSys(System.String@,System.String@)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetName_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetOrientationName_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetOrientationName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetUnits_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetUnits(System.Double@,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IGetXML_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IGetXML(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CIPJ_IUnitName_1 generated for M:GeoEngine.Core.GXNetX.CIPJ.IUnitName(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLAYOUT_GetRectName_1 generated for M:GeoEngine.Core.GXNetX.CLAYOUT.GetRectName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLST_GtItem_1 generated for M:GeoEngine.Core.GXNetX.CLST.GtItem(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLST_GtSymbItem_1 generated for M:GeoEngine.Core.GXNetX.CLST.GtSymbItem(System.Int32,System.String@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CLST_IConvertToCSVString_1 generated for M:GeoEngine.Core.GXNetX.CLST.IConvertToCSVString(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLTB_IGetEnglishString_1 generated for M:GeoEngine.Core.GXNetX.CLTB.IGetEnglishString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLTB_IGetField_1 generated for M:GeoEngine.Core.GXNetX.CLTB.IGetField(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CLTB_IGetString_1 generated for M:GeoEngine.Core.GXNetX.CLTB.IGetString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IDuplicateView_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IDuplicateView(System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IGetClassName_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IGetClassName(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IGetFileName_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IGetFileName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IGetMapName_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IGetMapName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IUnPackFilesEx_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IUnPackFilesEx(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAP_IUnPackFilesToFolder_1 generated for M:GeoEngine.Core.GXNetX.CMAP.IUnPackFilesToFolder(System.Int32,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAPTEMPLATE_GetFileName_1 generated for M:GeoEngine.Core.GXNetX.CMAPTEMPLATE.GetFileName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMAPTEMPLATE_GetTmpCopy_1 generated for M:GeoEngine.Core.GXNetX.CMAPTEMPLATE.GetTmpCopy(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMETA_IGetAttribString_1 generated for M:GeoEngine.Core.GXNetX.CMETA.IGetAttribString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMETA_IGetObjName_1 generated for M:GeoEngine.Core.GXNetX.CMETA.IGetObjName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMULTIGRID3DUTIL_ImportFromVoxel_1 generated for M:GeoEngine.Core.GXNetX.CMULTIGRID3DUTIL.ImportFromVoxel(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_ColorDescr_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.ColorDescr(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_GetGroupGUID_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.GetGroupGUID(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_GetGUID_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.GetGUID(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGenNewGroupName_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGenNewGroupName(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGetClassName_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGetClassName(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGetDefPlane_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGetDefPlane(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGetMeta_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGetMeta(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGetName_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGetName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGetNameExtClipPLY_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGetNameExtClipPLY(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CMVIEW_IGroupName_1 generated for M:GeoEngine.Core.GXNetX.CMVIEW.IGroupName(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CPLY_IGetDescription_1 generated for M:GeoEngine.Core.GXNetX.CPLY.IGetDescription(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CRA_IiGets_1 generated for M:GeoEngine.Core.GXNetX.CRA.IiGets(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CREG_Get_1 generated for M:GeoEngine.Core.GXNetX.CREG.Get(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CREG_GetOne_1 generated for M:GeoEngine.Core.GXNetX.CREG.GetOne(System.Int32,System.String@,System.String@)
+    Unique name M_GeoEngine_Core_GXNetX_CREG_MatchString_1 generated for M:GeoEngine.Core.GXNetX.CREG.MatchString(System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetPossibleZUnits_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetPossibleZUnits(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetSampleIntervalConfiguration_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetSampleIntervalConfiguration(System.String@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetTextHeader_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTextHeader(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetTraceDataType_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataType(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetTraceDataTypeDisplayName_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataTypeDisplayName(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetTraceDataTypeName_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceDataTypeName(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetTraceLengthConfiguration_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetTraceLengthConfiguration(System.String@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetXYUnits_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetXYUnits(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetZOffsetConfiguration_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZOffsetConfiguration(System.String@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetZOffsetUnits_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZOffsetUnits(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetZType_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZType(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSEGYREADER_GetZUnits_1 generated for M:GeoEngine.Core.GXNetX.CSEGYREADER.GetZUnits(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_Escape_1 generated for M:GeoEngine.Core.GXNetX.CSTR.Escape(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFileCombineParts_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFileCombineParts(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFileExt_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFileExt(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFileNamePart_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFileNamePart(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatCRC_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatCRC(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatDate_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatDate(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatI_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatI(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatR_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatR(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatR2_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatR2(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatReal_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatReal(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IFormatTime_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IFormatTime(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IGenGroupName_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IGenGroupName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IGetMFile_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IGetMFile(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IGetToken_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IGetToken(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IJustify_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IJustify(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IRemoveQualifiers_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IRemoveQualifiers(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IReplaceiMatchString_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IReplaceiMatchString(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IReplaceMatchString_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IReplaceMatchString(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_ISetCharN_1 generated for M:GeoEngine.Core.GXNetX.CSTR.ISetCharN(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_ISplitString_1 generated for M:GeoEngine.Core.GXNetX.CSTR.ISplitString(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IStrcat_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IStrcat(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IStrcpy_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IStrcpy(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IStrins_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IStrins(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,System.String,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_ISubstr_1 generated for M:GeoEngine.Core.GXNetX.CSTR.ISubstr(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IToLower_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IToLower(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IToUpper_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IToUpper(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_IXYZLine_1 generated for M:GeoEngine.Core.GXNetX.CSTR.IXYZLine(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSTR_Printf_1 generated for M:GeoEngine.Core.GXNetX.CSTR.Printf(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String)
+    Unique name M_GeoEngine_Core_GXNetX_CSURFACEITEM_GetGUID_1 generated for M:GeoEngine.Core.GXNetX.CSURFACEITEM.GetGUID(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSURFACEITEM_GetProperties_1 generated for M:GeoEngine.Core.GXNetX.CSURFACEITEM.GetProperties(System.String@,System.String@,System.String@,System.String@,System.Double@,System.String@,System.String@,System.Double@)
+    Unique name M_GeoEngine_Core_GXNetX_CSURFACEITEM_GetPropertiesEx_1 generated for M:GeoEngine.Core.GXNetX.CSURFACEITEM.GetPropertiesEx(System.String@,System.String@,System.String@,System.String@,System.Double@,System.String@,System.String@,System.Int32@,System.Double@,System.Double@)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_DecryptString_1 generated for M:GeoEngine.Core.GXNetX.CSYS.DecryptString(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.Int32)
     Unique name M_GeoEngine_Core_GXNetX_CSYS_EnableGXDebugger_1 generated for M:GeoEngine.Core.GXNetX.CSYS.EnableGXDebugger(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_EncryptString_1 generated for M:GeoEngine.Core.GXNetX.CSYS.EncryptString(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_GenerateGUID_1 generated for M:GeoEngine.Core.GXNetX.CSYS.GenerateGUID(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_GtString_1 generated for M:GeoEngine.Core.GXNetX.CSYS.GtString(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IAbsoluteFileName_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IAbsoluteFileName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IBackupGeoFile_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IBackupGeoFile(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_iCheckArcLicenseEx_1 generated for M:GeoEngine.Core.GXNetX.CSYS.iCheckArcLicenseEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_iFindPath_1 generated for M:GeoEngine.Core.GXNetX.CSYS.iFindPath(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_iFindPathEx_1 generated for M:GeoEngine.Core.GXNetX.CSYS.iFindPathEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetDirectory_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetDirectory(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetEnv_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetEnv(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetErrorMessageAP_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetErrorMessageAP(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetGeosoftID_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetGeosoftID(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetLicenseClass_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetLicenseClass(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetLicensedUser_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetLicensedUser(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetPath_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetPath(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetProfileName_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetProfileName(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetProfileURL_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetProfileURL(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetSysInfo_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetSysInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IGetWindowsDir_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IGetWindowsDir(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IiGetDotNetGXEntries_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IiGetDotNetGXEntries(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IiGlobal_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IiGlobal(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IiPrompt_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IiPrompt(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IiRegistryGetVal_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IiRegistryGetVal(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IRelativeFileName_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IRelativeFileName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IReplaceString_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IReplaceString(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String)
     Unique name M_GeoEngine_Core_GXNetX_CSYS_iRunGX_1 generated for M:GeoEngine.Core.GXNetX.CSYS.iRunGX(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String)
     Unique name M_GeoEngine_Core_GXNetX_CSYS_iRunGXEx_1 generated for M:GeoEngine.Core.GXNetX.CSYS.iRunGXEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_IShortPathFileName_1 generated for M:GeoEngine.Core.GXNetX.CSYS.IShortPathFileName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_ITempFileExt_1 generated for M:GeoEngine.Core.GXNetX.CSYS.ITempFileExt(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_ITempFileName_1 generated for M:GeoEngine.Core.GXNetX.CSYS.ITempFileName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CSYS_ITransferPath_1 generated for M:GeoEngine.Core.GXNetX.CSYS.ITransferPath(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CTB_GetString_1 generated for M:GeoEngine.Core.GXNetX.CTB.GetString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CTB_IFindColByIndex_1 generated for M:GeoEngine.Core.GXNetX.CTB.IFindColByIndex(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CTPAT_IGetSolidPattern_1 generated for M:GeoEngine.Core.GXNetX.CTPAT.IGetSolidPattern(System.Int32,System.String@,System.String@,System.String@,System.Int32@)
+    Unique name M_GeoEngine_Core_GXNetX_CUSERMETA_IGetDataCreator_1 generated for M:GeoEngine.Core.GXNetX.CUSERMETA.IGetDataCreator(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CUSERMETA_IGetFormat_1 generated for M:GeoEngine.Core.GXNetX.CUSERMETA.IGetFormat(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CUSERMETA_IGetMetaCreator_1 generated for M:GeoEngine.Core.GXNetX.CUSERMETA.IGetMetaCreator(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CUSERMETA_IGetProject_1 generated for M:GeoEngine.Core.GXNetX.CUSERMETA.IGetProject(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CUSERMETA_IGetTitle_1 generated for M:GeoEngine.Core.GXNetX.CUSERMETA.IGetTitle(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CVA_IGetString_1 generated for M:GeoEngine.Core.GXNetX.CVA.IGetString(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CVM_IGetString_1 generated for M:GeoEngine.Core.GXNetX.CVM.IGetString(System.Int32,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CVOX_IGetCellSizeStrings_1 generated for M:GeoEngine.Core.GXNetX.CVOX.IGetCellSizeStrings(System.String@,System.String@,System.String@,System.Double,System.Double,System.Double)
+    Unique name M_GeoEngine_Core_GXNetX_CVOX_IGetMultiVoxsetGUID_1 generated for M:GeoEngine.Core.GXNetX.CVOX.IGetMultiVoxsetGUID(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CVOXD_IGetName_1 generated for M:GeoEngine.Core.GXNetX.CVOXD.IGetName(System.String@,System.Int32)
+    Unique name M_GeoEngine_Core_GXNetX_CVV_IGetString_1 generated for M:GeoEngine.Core.GXNetX.CVV.IGetString(System.Int32,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CARCDB_iImportChemDatabaseWizard_1 generated for M:Geosoft.Desktop.GXNetX.CARCDB.iImportChemDatabaseWizard(System.Windows.Forms.IWin32Window,System.String,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCDH_GetCurrentStringFileGDB_1 generated for M:Geosoft.Desktop.GXNetX.CARCDH.GetCurrentStringFileGDB(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCDH_sPromptForESRISymbol_1 generated for M:Geosoft.Desktop.GXNetX.CARCDH.sPromptForESRISymbol(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.Int32,System.String@,System.Int32@,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCMAP_GetCurrentDocumentInfo_1 generated for M:Geosoft.Desktop.GXNetX.CARCMAP.GetCurrentDocumentInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCMAP_GetSelectedLayerInfo_1 generated for M:Geosoft.Desktop.GXNetX.CARCMAP.GetSelectedLayerInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCSYS_IGetBrowseLoc_1 generated for M:Geosoft.Desktop.GXNetX.CARCSYS.IGetBrowseLoc(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CARCSYS_IGetCurrentDoc_1 generated for M:Geosoft.Desktop.GXNetX.CARCSYS.IGetCurrentDoc(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CCHIMERA_iIsAcquireChan_1 generated for M:Geosoft.Desktop.GXNetX.CCHIMERA.iIsAcquireChan(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String@,System.Double@,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CCOM_IiReadLineNoTerminate_1 generated for M:Geosoft.Desktop.GXNetX.CCOM.IiReadLineNoTerminate(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CCOM_iReadCharsNoTerminate_1 generated for M:Geosoft.Desktop.GXNetX.CCOM.iReadCharsNoTerminate(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CCOM_IReadLine_1 generated for M:Geosoft.Desktop.GXNetX.CCOM.IReadLine(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CCOM_ReadChars_1 generated for M:Geosoft.Desktop.GXNetX.CCOM.ReadChars(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDGW_GtInfo_1 generated for M:Geosoft.Desktop.GXNetX.CDGW.GtInfo(System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_ExportGeodatabaseLST_1 generated for M:Geosoft.Desktop.GXNetX.CDH.ExportGeodatabaseLST(GeoEngine.Core.GXNetX.CLST,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_GetMXDepositRightsInfo_1 generated for M:Geosoft.Desktop.GXNetX.CDH.GetMXDepositRightsInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32@,System.String@,System.String@,System.String@,System.String@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_ICreateCollarTable_1 generated for M:Geosoft.Desktop.GXNetX.CDH.ICreateCollarTable(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_ICreateCollarTableDir_1 generated for M:Geosoft.Desktop.GXNetX.CDH.ICreateCollarTableDir(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_iEditClassificationTableFileGUI_1 generated for M:Geosoft.Desktop.GXNetX.CDH.iEditClassificationTableFileGUI(System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetChanCodeInfo_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetChanCodeInfo(System.String,System.Int32@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetCollarTableDB_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetCollarTableDB(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetInfo_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetInfo(System.Int32,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetProjectName_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetProjectName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetSectionID_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetSectionID(GeoEngine.Core.GXNetX.CGXNETCore,System.Double,System.Double,System.Double,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetTemplateInfo_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetTemplateInfo(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32@,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetTemplateInfoEx_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetTemplateInfoEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.Int32@,System.String@,System.String@,GeoEngine.Core.GXNetX.CLST)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IGetUnits_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IGetUnits(System.String@,System.Int32,System.Double@)
+    Unique name M_Geosoft_Desktop_GXNetX_CDH_IiHaveCurrent2_1 generated for M:Geosoft.Desktop.GXNetX.CDH.IiHaveCurrent2(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDOCU_IDocName_1 generated for M:Geosoft.Desktop.GXNetX.CDOCU.IDocName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDOCU_IFileName_1 generated for M:Geosoft.Desktop.GXNetX.CDOCU.IFileName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CDU_IImportBIN3_1 generated for M:Geosoft.Desktop.GXNetX.CDU.IImportBIN3(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String,System.String,System.String@,System.Int32,System.Int32,System.Double,GeoEngine.Core.GXNetX.CWA)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDB_IGetCurChan_1 generated for M:Geosoft.Desktop.GXNetX.CEDB.IGetCurChan(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDB_IGetCurFidString_1 generated for M:Geosoft.Desktop.GXNetX.CEDB.IGetCurFidString(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDB_IGetCurLine_1 generated for M:Geosoft.Desktop.GXNetX.CEDB.IGetCurLine(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDB_IGetCurrentSelection_1 generated for M:Geosoft.Desktop.GXNetX.CEDB.IGetCurrentSelection(System.String@,System.String@,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDB_IGetName_1 generated for M:Geosoft.Desktop.GXNetX.CEDB.IGetName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEDOC_IGetName_1 generated for M:Geosoft.Desktop.GXNetX.CEDOC.IGetName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAP_IGet3DViewName_1 generated for M:Geosoft.Desktop.GXNetX.CEMAP.IGet3DViewName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAP_IGetCurrentGroup_1 generated for M:Geosoft.Desktop.GXNetX.CEMAP.IGetCurrentGroup(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAP_IGetCurrentView_1 generated for M:Geosoft.Desktop.GXNetX.CEMAP.IGetCurrentView(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAP_IGetName_1 generated for M:Geosoft.Desktop.GXNetX.CEMAP.IGetName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAP_iIGetSpecifiedMapName_1 generated for M:Geosoft.Desktop.GXNetX.CEMAP.iIGetSpecifiedMapName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAPTEMPLATE_iGetItemSelection_1 generated for M:Geosoft.Desktop.GXNetX.CEMAPTEMPLATE.iGetItemSelection(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAPTEMPLATE_IGetName_1 generated for M:Geosoft.Desktop.GXNetX.CEMAPTEMPLATE.IGetName(System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CEMAPTEMPLATE_iIGetSpecifiedMapName_1 generated for M:Geosoft.Desktop.GXNetX.CEMAPTEMPLATE.iIGetSpecifiedMapName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGER_IiGet_1 generated for M:Geosoft.Desktop.GXNetX.CGER.IiGet(System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGU_IGenUXDetectSymbolsGroupName_1 generated for M:Geosoft.Desktop.GXNetX.CGU.IGenUXDetectSymbolsGroupName(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_Fft2SpecFilter_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.Fft2SpecFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_GridStatHist_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.GridStatHist(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iCoordSysWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iCoordSysWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CIPJ,System.Int32,System.Int32,System.String,System.String)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iDatabaseType_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iDatabaseType(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iDatabaseType_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iDatabaseType(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iDatabaseType_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iDatabaseType(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iDatabaseType_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iDatabaseType(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iExportXYZTemplateEditor_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iExportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CDB,System.String,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iExportXYZTemplateEditorEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iExportXYZTemplateEditorEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,Geosoft.Desktop.GXNetX.CEDB,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iExportXYZTemplateEditorEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iExportXYZTemplateEditorEx(GeoEngine.Core.GXNetX.CGXNETCore,Geosoft.Desktop.GXNetX.CEDB,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iExportXYZTemplateEditorEx_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iExportXYZTemplateEditorEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,Geosoft.Desktop.GXNetX.CEDB,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iExportXYZTemplateEditorEx_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iExportXYZTemplateEditorEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,Geosoft.Desktop.GXNetX.CEDB,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iGetAreaOfInterest_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iGetAreaOfInterest(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.Double@,System.Double@,System.Double@,System.Double@,GeoEngine.Core.GXNetX.CPLY,GeoEngine.Core.GXNetX.CIPJ)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iGetAreaOfInterest3D_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iGetAreaOfInterest3D(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,GeoEngine.Core.GXNetX.CPLY,GeoEngine.Core.GXNetX.CIPJ)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiCustomFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiCustomFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@,System.Int32,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiDatFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiGenFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiGenFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,GeoEngine.Core.GXNetX.CVV,System.Int32,System.String,System.String@,System.Int32,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseADO2_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseADO2(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseESRI_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseESRI(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,System.Int32,GeoEngine.Core.GXNetX.CREG)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBC_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBCMaxwell_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBCMaxwell(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IGetDATDefaults_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IGetDATDefaults(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.Int32,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IGetFileFilter_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IGetFileFilter(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.String@,System.String@,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IGetGSDirectory_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IGetGSDirectory(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiBrowseDir_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiBrowseDir(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiColorTransformEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiColorTransformEx(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CITR,GeoEngine.Core.GXNetX.CST,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiCumulativePercent_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiCumulativePercent(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32,GeoEngine.Core.GXNetX.CITR)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiCustomFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiCustomFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiCustomFileForm_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiCustomFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiCustomFileForm_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiCustomFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiDatFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiDatFileForm_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiDatFileForm_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiDatFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiGenFileForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiGenFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.String,GeoEngine.Core.GXNetX.CVV,System.Int32,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiGenFileForm_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiGenFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,GeoEngine.Core.GXNetX.CVV,System.Int32,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiGenFileForm_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiGenFileForm(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,GeoEngine.Core.GXNetX.CVV,System.Int32,System.String,System.String@,System.Int32,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseADO2_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseADO2(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseADO2_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseADO2(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseADO2_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseADO2(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseESRI_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseESRI(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String@,System.Int32@,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseESRI_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseESRI(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseESRI_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseESRI(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.String@,System.Int32@,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBC_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBC_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBC_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBCMaxwell_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBCMaxwell(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBCMaxwell_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBCMaxwell(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.Int32,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiImportDrillDatabaseODBCMaxwell_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiImportDrillDatabaseODBCMaxwell(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String@,System.String@,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportAsciiWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportAsciiWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabase_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabase_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQL_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQL(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQLADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQLADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDrillDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDrillDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabase_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabase_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabase_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabaseADO_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportChemDatabaseADO_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportChemDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabase_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabase_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabase_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabase(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseADO_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseADO_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQL_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQL(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQL_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQL(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQL_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQL(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQLADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQLADO(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQLADO_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQLADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDatabaseSQLADO_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDatabaseSQLADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDrillDatabaseADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDrillDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDrillDatabaseADO_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDrillDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportDrillDatabaseADO_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportDrillDatabaseADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportTemplateSQL_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportTemplateSQL(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportTemplateSQLADO_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportTemplateSQLADO(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iImportXYZTemplateEditor_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iImportXYZTemplateEditor(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CDB,System.String,System.Int32,System.String)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiODBCFileConnect_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiODBCFileConnect(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiODBCFileConnect_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiODBCFileConnect(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.Int32,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiODBCFileConnect_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiODBCFileConnect(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiODBCFileConnect_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiODBCFileConnect(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String@,System.Int32,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_IiSymbolForm_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.IiSymbolForm(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32@,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Int32@,System.Int32@)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iMetaDataTool_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iMetaDataTool(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CMETA,System.Int32,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportChemWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportChemWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.Int32)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
-    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizardEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizard_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizard_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizardEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizardEx_2 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizardEx_3 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,System.Int32,GeoEngine.Core.GXNetX.CREG)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelection_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelection(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelection2_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelection2(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelectionEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelectionEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.Int32,System.Int32,System.String)
@@ -133,6 +384,26 @@ TransformManifest:
     Unique name M_Geosoft_Desktop_GXNetX_CGX_NET__ctor_2 generated for M:Geosoft.Desktop.GXNetX.CGX_NET.#ctor(System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGX_NET__ctor_3 generated for M:Geosoft.Desktop.GXNetX.CGX_NET.#ctor(System.String,System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGX_NET_Initialize_1 generated for M:Geosoft.Desktop.GXNetX.CGX_NET.Initialize(System.String,System.String,System.String,System.Int32,System.Windows.Forms.IWin32Window,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CIP_GetQCChannel_1 generated for M:Geosoft.Desktop.GXNetX.CIP.GetQCChannel(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.Int32,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CIP_IGetChanLabel_1 generated for M:Geosoft.Desktop.GXNetX.CIP.IGetChanLabel(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CMSTK_IFindSTK_1 generated for M:Geosoft.Desktop.GXNetX.CMSTK.IFindSTK(System.String,System.Int32@,System.String@,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CPROJ_ICurrentDocument_1 generated for M:Geosoft.Desktop.GXNetX.CPROJ.ICurrentDocument(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CPROJ_ICurrentDocumentOfType_1 generated for M:Geosoft.Desktop.GXNetX.CPROJ.ICurrentDocumentOfType(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String)
+    Unique name M_Geosoft_Desktop_GXNetX_CPROJ_IGetName_1 generated for M:Geosoft.Desktop.GXNetX.CPROJ.IGetName(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSEMPLOT_IGetMineralChannelName_1 generated for M:Geosoft.Desktop.GXNetX.CSEMPLOT.IGetMineralChannelName(GeoEngine.Core.GXNetX.CGXNETCore,GeoEngine.Core.GXNetX.CDB,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSEMPLOT_IImportAsciiWizard_1 generated for M:Geosoft.Desktop.GXNetX.CSEMPLOT.IImportAsciiWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSEMPLOT_IImportDatabaseODBC_1 generated for M:Geosoft.Desktop.GXNetX.CSEMPLOT.IImportDatabaseODBC(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.String@)
+    Unique name M_Geosoft_Desktop_GXNetX_CSQLSRV_IGetLoginGUI_1 generated for M:Geosoft.Desktop.GXNetX.CSQLSRV.IGetLoginGUI(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String@,System.String@,System.Int32,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetAxisParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetAxisParms(System.Int32@,System.Double@,System.Double@,System.Double@,System.String@,System.Int32,System.Double@,System.Double@,System.Double@,System.Int32@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetFidParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetFidParms(System.Double@,System.Double@,System.Double@,System.String@,System.Int32,System.Double@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetGenParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetGenParms(System.String@,System.String@,System.String@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetGridParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetGridParms(System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.String@,System.Int32,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetLabelParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetLabelParms(System.Int32@,System.Double@,System.Int32@,System.Double@,System.Int32@,System.Double@,System.String@,System.Int32,System.Double@,System.String@,System.Int32,System.Int32@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetProfile_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetProfile(System.Int32@,System.Double@,System.Double@,System.String@,System.Int32@,System.Int32@,System.Int32@,GeoEngine.Core.GXNetX.CVV,System.String@,System.Int32@,System.String@,System.Double@,System.String@,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetProfileEx_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetProfileEx(System.Int32@,System.Double@,System.Double@,System.String@,System.Int32@,System.Int32@,System.Int32@,System.Int32@,GeoEngine.Core.GXNetX.CVV,System.String@,System.Int32@,System.String@,System.Double@,System.String@,System.Int32@)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetSymbParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetSymbParms(System.String@,System.Int32,System.Double@,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,System.Int32@,System.Double@,System.Int32@,GeoEngine.Core.GXNetX.CVV,GeoEngine.Core.GXNetX.CVV,System.Int32@,System.String@,System.Int32,System.Double@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CSTK_IGetTitleParms_1 generated for M:Geosoft.Desktop.GXNetX.CSTK.IGetTitleParms(System.String@,System.String@,System.Int32@,System.Double@,System.Double@,System.Int32@,System.Double@,System.Double@,System.String@,System.Double@,System.String@,System.Int32)
+    Unique name M_Geosoft_Desktop_GXNetX_CUNC_UTF16ValToSTR_1 generated for M:Geosoft.Desktop.GXNetX.CUNC.UTF16ValToSTR(GeoEngine.Core.GXNetX.CGXNETCore,System.Int32,System.String@,System.Int32)
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
@@ -141,20 +412,17 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\g
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:07.3128
+</plugIn>    Last step completed in 00:00:05.2344
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.2813
+    Last step completed in 00:00:00.2969
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
-<plugIn name="Geosoft GXAPIVersionHistory Plugin" behavior="Before" priority="1000">
-In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
-In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
-</plugIn>Copying standard token shared content file...
+Copying standard token shared content file...
 Checking for other token files...
-    C:\Users\buildagent.GEOSOFT\AppData\Local\Temp\tmpD9FF.tmp -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\tmpD9FF.tmp
+    M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\VersionHistory\versions.tokens -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\versions.tokens
 Checking for code snippets files...
 Copying images and creating the media map file...
 Generating conceptual topic files
@@ -162,28 +430,28 @@ Generating conceptual topic files
     M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\Welcome.aml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\ddueXml\welcome.xml
     Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml&#39;
     M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\ddueXml\version-history.xml
-    Last step completed in 00:00:01.4376
+    Last step completed in 00:00:00.0470
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     ConceptualManifest.xml
-    Last step completed in 00:00:00.0313
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\icons\Help.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\Help.png
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 11/12/2018 4:22:20 PM.
+Build started 5/8/2019 6:05:07 PM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.1.12.0)
@@ -194,7 +462,7 @@ Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\g
 Generating conceptual content intermediate TOC file...
 <plugIn name="Table of Contents Exclusion" behavior="After" priority="1500">
 Searching for comment members containing &lt;tocexclude /&gt;...
-Found 402 members to exclude from the TOC
+Found 404 members to exclude from the TOC
 Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.IntConstants&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.Constant&#39;
@@ -259,6 +527,7 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.SBF_OPENConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.REG_MERGEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.PLY_LINE_CLIPConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.PLY_POINT_CLIPConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.PLY_CLIPConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.PJ_RECTConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.PJ_ELEVATIONConstant&#39;
@@ -320,6 +589,7 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.META_CORE_CLASSConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.META_CORE_ATTRIBConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.H_META_INVALID_TOKENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.SURFACE_CLIP_STATUSConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant&#39;
@@ -598,25 +868,25 @@ Removing members from the TOC
     Removing &#39;T:Geosoft.Desktop.GXNetX.ARCDB_NULLConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNetX.ARC_SELTBL_TYPEConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNetX.ACQUIRE_SELConstant&#39;
-</plugIn>    Last step completed in 00:00:01.8907
+</plugIn>    Last step completed in 00:00:01.4844
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.7813
+    Last step completed in 00:00:00.5312
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\sandcastle.config
 M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\conceptual.config
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00.1250
+    Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 11/12/2018 4:22:23 PM.
+Build started 5/8/2019 6:05:09 PM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 BuildConceptualTopics:
   BuildAssembler (v2015.1.12.0)
@@ -627,12 +897,12 @@ BuildConceptualTopics:
   Processed 2 topic(s)
   CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
 Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildConceptualTopics.proj&quot; (default targets).
-    Last step completed in 00:00:07.2815
+    Last step completed in 00:00:04.4220
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 11/12/2018 4:22:30 PM.
+Build started 5/8/2019 6:05:13 PM.
 Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.1.12.0)
@@ -658,18 +928,18 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXN
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Unknown reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Invalid reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
-  Processed 8252 topic(s)
+  Processed 8852 topic(s)
   18 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
 Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj&quot; (default targets).
-    Last step completed in 00:01:15.6750
+    Last step completed in 00:00:57.9700
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -681,11 +951,11 @@ E-Mail: Eric@EWoodruff.us
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
 Processing website files in M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website
-Processed 8254 HTML files
+Processed 8854 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\WebKI.xml
 Saving website table of contents to M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\WebTOC.xml
-    Last step completed in 00:00:22.0322
+    Last step completed in 00:00:05.8595
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -769,7 +1039,7 @@ M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\T
 M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocOpen.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\TocOpen.gif
 M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\scripts\branding-Website.js
 M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-1.11.0.min.js -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:01.0313
+    Last step completed in 00:00:00.3281
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -780,7 +1050,7 @@ Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:35.3452
+</plugIn>    Last step completed in 00:00:23.4380
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -871,16 +1141,25 @@ Copied 8300 files
 Copied 8400 files
 Copied 8500 files
 Copied 8600 files
-Copied 8688 files for the website content
-    Last step completed in 00:00:42.2205
+Copied 8700 files
+Copied 8800 files
+Copied 8900 files
+Copied 9000 files
+Copied 9100 files
+Copied 9200 files
+Copied 9300 files
+Copied 9400 files
+Copied 9500 files
+Copied 9526 files for the website content
+    Last step completed in 00:00:09.9065
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:04.1877
+    Last step completed in 00:00:04.8595
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 11/12/2018 4:25:31 PM.  Total time: 00:03:29.0710
+Build completed successfully at 5/8/2019 6:06:56 PM.  Total time: 00:01:58.0338
 
 </buildStep>
 </shfbBuild>
