@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\DotNetXReference.shfbproj" started="5/16/2018 12:27:32 PM">
+<shfbBuild product="Sandcastle Help File Builder" version="2015.1.12.0" projectFile="M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\DotNetXReference.shfbproj" started="11/12/2018 4:22:02 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
 Locating components in the following folder(s):
-   M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\
-   M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference
-Using presentation style &#39;VS2013Geosoft&#39; located in &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release&#39;
+   M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\
+   M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference
+Using presentation style &#39;VS2013Geosoft&#39; located in &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release&#39;
 Loading and initializing plug-ins...
 Additional Content Only plug-in is disabled and will not be loaded
 Geosoft DotNetExtraReflectionInfo Plugin Version 1.0.0.0
@@ -21,31 +21,31 @@ Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
 </buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
-Source: M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geoengine.core.gxnetx.dll
-    Found assembly &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geoengine.core.gxnetx.dll&#39;
-Source: M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geoengine.core.gxnetx.xml
-Source: M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geosoft.desktop.gxnetx.dll
-    Found assembly &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geosoft.desktop.gxnetx.dll&#39;
-Source: M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geosoft.desktop.gxnetx.xml
+Source: M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geoengine.core.gxnetx.dll
+    Found assembly &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geoengine.core.gxnetx.dll&#39;
+Source: M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geoengine.core.gxnetx.xml
+Source: M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geosoft.desktop.gxnetx.dll
+    Found assembly &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geosoft.desktop.gxnetx.dll&#39;
+Source: M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geosoft.desktop.gxnetx.xml
 
 Copying XML comments files
-    M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geoengine.core.gxnetx.xml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\geoengine.core.gxnetx.xml
-    M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Sources\geosoft.desktop.gxnetx.xml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\geosoft.desktop.gxnetx.xml
+    M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geoengine.core.gxnetx.xml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\geoengine.core.gxnetx.xml
+    M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Sources\geosoft.desktop.gxnetx.xml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\geosoft.desktop.gxnetx.xml
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.1406
+</plugIn>    Last step completed in 00:00:00.1094
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.1406
+    Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 5/16/2018 12:27:36 PM.
-Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
+Build started 11/12/2018 4:22:06 PM.
+Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\x64\Debug\&quot;.
 GenerateRefInfo:
@@ -53,23 +53,23 @@ GenerateRefInfo:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loaded 2 assemblies for reflection and 1 dependency assemblies.
-  Wrote information on 3 namespaces, 538 types, and 8750 members
+  Wrote information on 3 namespaces, 546 types, and 8888 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
-Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\GenerateRefInfo.proj&quot; (default targets).
+Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateRefInfo.proj&quot; (default targets).
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:05.1995
+</plugIn>    Last step completed in 00:00:05.1408
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 5/16/2018 12:27:42 PM.
-Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\TransformManifest.proj&quot; on node 1 (default targets).
+Build started 11/12/2018 4:22:11 PM.
+Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
@@ -119,6 +119,7 @@ TransformManifest:
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iMetaDataTool_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iMetaDataTool(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CMETA,System.Int32,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportChemWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportChemWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.Int32)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizard_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizard(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32@,GeoEngine.Core.GXNetX.CREG)
+    Unique name M_Geosoft_Desktop_GXNetX_CGUI_ImportDrillWizardEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.ImportDrillWizardEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,System.String,System.String,System.String@,System.Int32,GeoEngine.Core.GXNetX.CREG)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelection_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelection(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelection2_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelection2(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.String)
     Unique name M_Geosoft_Desktop_GXNetX_CGUI_iTwoPanelSelectionEx_1 generated for M:Geosoft.Desktop.GXNetX.CGUI.iTwoPanelSelectionEx(GeoEngine.Core.GXNetX.CGXNETCore,System.Windows.Forms.IWin32Window,GeoEngine.Core.GXNetX.CLST,GeoEngine.Core.GXNetX.CLST,System.Int32,System.Int32,System.String)
@@ -136,15 +137,15 @@ TransformManifest:
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\TransformManifest.proj&quot; (default targets).
+Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\TransformManifest.proj&quot; (default targets).
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:07.7439
+</plugIn>    Last step completed in 00:00:07.3128
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.3594
+    Last step completed in 00:00:00.2813
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
@@ -153,47 +154,47 @@ In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
 In Geosoft.Sandcastle.Plugins.GXAPIVersionHistory Execute() method
 </plugIn>Copying standard token shared content file...
 Checking for other token files...
-    C:\Users\buildagent.GEOSOFT\AppData\Local\Temp\tmp6649.tmp -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\tmp6649.tmp
+    C:\Users\buildagent.GEOSOFT\AppData\Local\Temp\tmpD9FF.tmp -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\tmpD9FF.tmp
 Checking for code snippets files...
 Copying images and creating the media map file...
 Generating conceptual topic files
-    Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\Content\Welcome.aml&#39;
-    M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\Content\Welcome.aml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\ddueXml\welcome.xml
-    Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml&#39;
-    M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\ddueXml\version-history.xml
-    Last step completed in 00:00:02.0025
+    Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\Welcome.aml&#39;
+    M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\Welcome.aml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\ddueXml\welcome.xml
+    Parsing topic file &#39;M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml&#39;
+    M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\ddueXml\version-history.xml
+    Last step completed in 00:00:01.4376
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     ConceptualManifest.xml
-    Last step completed in 00:00:00.0312
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\DotNetXReference\icons\Help.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\Help.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\DotNetXReference\icons\Help.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\Help.png
     Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 5/16/2018 12:27:52 PM.
-Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
+Build started 11/12/2018 4:22:20 PM.
+Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
-Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\GenerateIntermediateTOC.proj&quot; (default targets).
 Generating conceptual content intermediate TOC file...
 <plugIn name="Table of Contents Exclusion" behavior="After" priority="1500">
 Searching for comment members containing &lt;tocexclude /&gt;...
-Found 397 members to exclude from the TOC
+Found 402 members to exclude from the TOC
 Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.IntConstants&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.Constant&#39;
@@ -204,12 +205,13 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_ORDERConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_MASKConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_LOOKUPConstant&#39;
-    Removing &#39;T:GeoEngine.Core.GXNetX.VV_LOG_NEGATIVEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.VV_LOGMODEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_LOG_BASEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_FLOAT_CRC_BITSConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VV_DOUBLE_CRC_BITSConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.BLOCK_MODEL_VARIABLE_TYPEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VOXE_EVALConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.VOXELRENDER_MODEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VOX_VECTORVOX_IMPORTConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VOX_SLICE_MODEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VOX_ORIGINConstant&#39;
@@ -308,6 +310,7 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.MVIEW_COLORConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MVIEW_CLIPConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MAKERConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.RBFKERNELConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MULTIGRID3D_DIRECTGRID_METHODConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.FILTER3DConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.VECTOR_IMPORTConstant&#39;
@@ -317,6 +320,9 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNetX.META_CORE_CLASSConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.META_CORE_ATTRIBConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.H_META_INVALID_TOKENConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.SURFACE_CLIP_MODEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.ATTRIBUTE_TYPEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNetX.ATTRIBUTE_DATA_TYPEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MAPTEMPLATE_OPENConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MAP_OPENConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNetX.MAP_LIST_MODEConstant&#39;
@@ -592,26 +598,26 @@ Removing members from the TOC
     Removing &#39;T:Geosoft.Desktop.GXNetX.ARCDB_NULLConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNetX.ARC_SELTBL_TYPEConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNetX.ACQUIRE_SELConstant&#39;
-</plugIn>    Last step completed in 00:00:01.9532
+</plugIn>    Last step completed in 00:00:01.8907
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.8906
+    Last step completed in 00:00:00.7813
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\sandcastle.config
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\conceptual.config
+M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\sandcastle.config
+M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\conceptual.config
     Removing unused ExampleComponent.
     Last step completed in 00:00:00.1250
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 5/16/2018 12:27:55 PM.
-Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
+Build started 11/12/2018 4:22:23 PM.
+Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 BuildConceptualTopics:
   BuildAssembler (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
@@ -620,50 +626,50 @@ BuildConceptualTopics:
   Processing topics...
   Processed 2 topic(s)
   CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
-Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildConceptualTopics.proj&quot; (default targets).
-    Last step completed in 00:00:07.5783
+Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildConceptualTopics.proj&quot; (default targets).
+    Last step completed in 00:00:07.2815
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\bin\amd64\MSBuild.exe]
-Build started 5/16/2018 12:28:02 PM.
-Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
+Build started 11/12/2018 4:22:30 PM.
+Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.1.12.0)
   Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
   Portions Copyright c 2006-2014, Eric Woodruff, All Rights Reserved.
   Loading configuration...
   Processing topics...
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetByteVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ByteVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetByteVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ByteVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetDoubleVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.DoubleVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetDoubleVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.DoubleVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetFloatVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.FloatVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetFloatVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.FloatVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetIntVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.IntVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetIntVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.IntVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetShortVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetShortVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetUShortVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.UShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetUShortVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.UShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.iCheckError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.sCheckTerminate] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.sGetError(System.String@,System.String@,System.Int32@)] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Unknown reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Invalid reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj]
-  Processed 8122 topic(s)
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetByteVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ByteVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetByteVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ByteVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetDoubleVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.DoubleVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetDoubleVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.DoubleVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetFloatVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.FloatVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetFloatVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.FloatVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetIntVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.IntVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetIntVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.IntVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetShortVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetShortVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.ShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetUShortVM(GeoEngine.Core.GXNetX.CVM,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.UShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.GetUShortVV(GeoEngine.Core.GXNetX.CVV,System.Int32)] Unknown reference link target &#39;T:GeoEngine.Core.GXNet.UShortVector&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.iCheckError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.sCheckTerminate] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.sGetError(System.String@,System.String@,System.Int32@)] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNetX.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Unknown reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [T:GeoEngine.Core.GXNetX.Windows.ToolControl] Invalid reference link target &#39;!:M:Geosoft.Desktop.GXNetX.CGUI.LaunchGeoDOTNETXTool&#39;. [M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj]
+  Processed 8252 topic(s)
   18 warning(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
-  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 3 of 30.
-Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\BuildReferenceTopics.proj&quot; (default targets).
-    Last step completed in 00:01:14.6891
+  CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
+Done Building Project &quot;M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\BuildReferenceTopics.proj&quot; (default targets).
+    Last step completed in 00:01:15.6750
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
 
 Clearing any prior web output
-    Last step completed in 00:00:00.1094
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -674,96 +680,96 @@ E-Mail: Eric@EWoodruff.us
 
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
-Processing website files in M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website
-Processed 8124 HTML files
+Processing website files in M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website
+Processed 8254 HTML files
 Sorting keywords and generating See Also indices
-Saving website keyword index to M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\WebKI.xml
-Saving website table of contents to M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\WebTOC.xml
-    Last step completed in 00:00:30.3131
+Saving website keyword index to M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\WebKI.xml
+Saving website table of contents to M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\WebTOC.xml
+    Last step completed in 00:00:22.0322
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\AlertCaution.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\AlertCaution.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\AlertNote.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\AlertNote.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\AlertSecurity.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\AlertSecurity.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\app.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\app.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\CFW.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\CFW.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\CodeExample.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\CodeExample.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\favicon.ico -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\favicon.ico
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\locked.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\locked.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\locked_ext.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\locked_ext.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privclass.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privdelegate.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privenumeration.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privevent.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privextension.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privfield.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privinterface.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privmethod.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privproperty.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\privstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\privstructure.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protclass.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protdelegate.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protenumeration.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protevent.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protextension.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protfield.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protinterface.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protmethod.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protoperator.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protoperator.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protproperty.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\protstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\protstructure.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubclass.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubdelegate.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubenumeration.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubevent.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubextension.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubfield.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubinterface.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubmethod.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\puboperator.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\puboperator.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubproperty.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\pubstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\pubstructure.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\SectionCollapsed.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\SectionCollapsed.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\SectionExpanded.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\SectionExpanded.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\slMobile.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\slMobile.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\static.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\static.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\unlocked.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\unlocked.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\icons\xna.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\xna.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\scripts\branding.js -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\scripts\branding.js
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-cs-CZ.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-cs-CZ.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-de-DE.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-de-DE.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-en-US.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-en-US.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-es-ES.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-es-ES.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-fr-FR.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-fr-FR.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help1.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-Help1.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help2.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-Help2.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-HelpViewer.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-HelpViewer.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-it-IT.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-it-IT.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ja-JP.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-ja-JP.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ko-KR.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-ko-KR.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pl-PL.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-pl-PL.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pt-BR.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-pt-BR.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ru-RU.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-ru-RU.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-tr-TR.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-tr-TR.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Website.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-Website.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-CN.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-zh-CN.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-TW.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding-zh-TW.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\styles\branding.css -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\styles\branding.css
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\index.html -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\index.html
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\search.html -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\search.html
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.aspx -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\SearchHelp.aspx
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.inc.php -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\SearchHelp.inc.php
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.php -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\SearchHelp.php
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\Web.Config -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\Web.Config
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\Search.png -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\Search.png
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocClose.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\TocClose.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocCollapsed.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\TocCollapsed.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocExpanded.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\TocExpanded.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocOpen.gif -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\icons\TocOpen.gif
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\scripts\branding-Website.js
-M:\jobs\FULLBUILD-RELEASE2-GET\installs\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-1.11.0.min.js -&gt; M:\jobs\FULLBUILD-RELEASE2-GET\installs\build\gxapi\GXNetXReference\Help\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:02.0625
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertCaution.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\AlertCaution.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertNote.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\AlertNote.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\AlertSecurity.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\AlertSecurity.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\app.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\app.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\CFW.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\CFW.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\CodeExample.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\CodeExample.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\favicon.ico -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\favicon.ico
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\locked.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\locked.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\locked_ext.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\locked_ext.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privclass.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privdelegate.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privenumeration.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privevent.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privextension.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privfield.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privinterface.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privmethod.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privproperty.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\privstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\privstructure.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protclass.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protdelegate.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protenumeration.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protevent.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protextension.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protfield.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protinterface.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protmethod.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protoperator.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protoperator.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protproperty.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\protstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\protstructure.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubclass.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubclass.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubdelegate.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubdelegate.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubenumeration.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubenumeration.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubevent.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubevent.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubextension.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubextension.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubfield.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubfield.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubinterface.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubinterface.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubmethod.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubmethod.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\puboperator.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\puboperator.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubproperty.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubproperty.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\pubstructure.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\pubstructure.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\SectionCollapsed.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\SectionCollapsed.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\SectionExpanded.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\SectionExpanded.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\slMobile.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\slMobile.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\static.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\static.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\unlocked.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\unlocked.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\icons\xna.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\xna.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\scripts\branding.js -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\scripts\branding.js
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-cs-CZ.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-cs-CZ.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-de-DE.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-de-DE.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-en-US.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-en-US.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-es-ES.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-es-ES.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-fr-FR.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-fr-FR.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help1.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-Help1.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Help2.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-Help2.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-HelpViewer.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-HelpViewer.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-it-IT.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-it-IT.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ja-JP.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-ja-JP.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ko-KR.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-ko-KR.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pl-PL.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-pl-PL.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-pt-BR.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-pt-BR.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-ru-RU.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-ru-RU.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-tr-TR.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-tr-TR.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-Website.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-Website.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-CN.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-zh-CN.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding-zh-TW.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding-zh-TW.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\styles\branding.css -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\styles\branding.css
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\index.html -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\index.html
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\search.html -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\search.html
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.aspx -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\SearchHelp.aspx
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.inc.php -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\SearchHelp.inc.php
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\SearchHelp.php -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\SearchHelp.php
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\Web.Config -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\Web.Config
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\Search.png -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\Search.png
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocClose.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\TocClose.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocCollapsed.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\TocCollapsed.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocExpanded.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\TocExpanded.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\icons\TocOpen.gif -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\icons\TocOpen.gif
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\scripts\branding-Website.js
+M:\jobs\FULLBUILD-RELEASE4-GET\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-1.11.0.min.js -&gt; M:\jobs\FULLBUILD-RELEASE4-GET\api\build\gx_redist\gh_pages\dotnet\GXNetX\Working\Output\Website\scripts\jquery-1.11.0.min.js
+    Last step completed in 00:00:01.0313
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -774,7 +780,7 @@ Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:28.9538
+</plugIn>    Last step completed in 00:00:35.3452
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -864,16 +870,17 @@ Copied 8200 files
 Copied 8300 files
 Copied 8400 files
 Copied 8500 files
-Copied 8551 files for the website content
-    Last step completed in 00:00:38.4696
+Copied 8600 files
+Copied 8688 files for the website content
+    Last step completed in 00:00:42.2205
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:01.1250
+    Last step completed in 00:00:04.1877
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 5/16/2018 12:30:58 PM.  Total time: 00:03:25.8563
+Build completed successfully at 11/12/2018 4:25:31 PM.  Total time: 00:03:29.0710
 
 </buildStep>
 </shfbBuild>
