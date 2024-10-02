@@ -24,6 +24,7 @@
   <HelpKINode Title="ActivateView method" Url="html/M_Geosoft_Desktop_GXNet_CEMAP_ActivateView.htm" />
   <HelpKINode Title="ADD field">
     <HelpKINode Title="AGG_RENDERConstant.ADD Field" Url="html/F_GeoEngine_Core_GXNet_AGG_RENDERConstant_ADD.htm" />
+    <HelpKINode Title="FFT_WHITE_NOISEConstant.ADD Field" Url="html/F_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant_ADD.htm" />
     <HelpKINode Title="REG_MERGEConstant.ADD Field" Url="html/F_GeoEngine_Core_GXNet_REG_MERGEConstant_ADD.htm" />
   </HelpKINode>
   <HelpKINode Title="Add method" Url="html/M_GeoEngine_Core_GXNet_CVV_Add.htm" />
@@ -63,6 +64,7 @@
   <HelpKINode Title="AddVV method" Url="html/M_Geosoft_Desktop_GXNet_CVVEXP_AddVV.htm" />
   <HelpKINode Title="AddWarning method" Url="html/M_Geosoft_Desktop_GXNet_CARCPY_AddWarning.htm" />
   <HelpKINode Title="AddWarp method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_AddWarp.htm" />
+  <HelpKINode Title="AddWhiteNoise method" Url="html/M_Geosoft_Desktop_GXNet_CFFT_AddWhiteNoise.htm" />
   <HelpKINode Title="ADD_IF_NONE field" Url="html/F_GeoEngine_Core_GXNet_FILE_EXTConstant_ADD_IF_NONE.htm" />
   <HelpKINode Title="ADOTableNames method" Url="html/M_Geosoft_Desktop_GXNet_CDU_ADOTableNames.htm" />
   <HelpKINode Title="AGG field">
@@ -811,6 +813,7 @@
     <HelpKINode Title="TD_IDConstant.CANCEL Field" Url="html/F_GeoEngine_Core_GXNet_TD_IDConstant_CANCEL.htm" />
   </HelpKINode>
   <HelpKINode Title="Cancel method" Url="html/M_GeoEngine_Core_GXNet_CSYS_Cancel.htm" />
+  <HelpKINode Title="Capture3DSnapshot method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_Capture3DSnapshot.htm" />
   <HelpKINode Title="CARCDB class">
     <HelpKINode Title="CARCDB Class" Url="html/T_Geosoft_Desktop_GXNet_CARCDB.htm" />
     <HelpKINode Title="about CARCDB class" Url="html/T_Geosoft_Desktop_GXNet_CARCDB.htm" />
@@ -1166,6 +1169,7 @@
   <HelpKINode Title="CDB.MakerSymb method" Url="html/M_GeoEngine_Core_GXNet_CDB_MakerSymb.htm" />
   <HelpKINode Title="CDB.MaskChanLST method" Url="html/M_GeoEngine_Core_GXNet_CDB_MaskChanLST.htm" />
   <HelpKINode Title="CDB.NextSelLine method" Url="html/M_GeoEngine_Core_GXNet_CDB_NextSelLine.htm" />
+  <HelpKINode Title="CDB.NonStringAndNonArrayChanLST method" Url="html/M_GeoEngine_Core_GXNet_CDB_NonStringAndNonArrayChanLST.htm" />
   <HelpKINode Title="CDB.NormalChanLST method" Url="html/M_GeoEngine_Core_GXNet_CDB_NormalChanLST.htm" />
   <HelpKINode Title="CDB.Open method" Url="html/M_GeoEngine_Core_GXNet_CDB_Open.htm" />
   <HelpKINode Title="CDB.OpenReadOnly method" Url="html/M_GeoEngine_Core_GXNet_CDB_OpenReadOnly.htm" />
@@ -1173,6 +1177,7 @@
   <HelpKINode Title="CDB.PutChanVV method" Url="html/M_GeoEngine_Core_GXNet_CDB_PutChanVV.htm" />
   <HelpKINode Title="CDB.PutVaChanVV method" Url="html/M_GeoEngine_Core_GXNet_CDB_PutVaChanVV.htm" />
   <HelpKINode Title="CDB.ReadBlobBF method" Url="html/M_GeoEngine_Core_GXNet_CDB_ReadBlobBF.htm" />
+  <HelpKINode Title="CDB.RenameLine method" Url="html/M_GeoEngine_Core_GXNet_CDB_RenameLine.htm" />
   <HelpKINode Title="CDB.Repair method" Url="html/M_GeoEngine_Core_GXNet_CDB_Repair.htm" />
   <HelpKINode Title="CDB.rGetChanReal method" Url="html/M_GeoEngine_Core_GXNet_CDB_rGetChanReal.htm" />
   <HelpKINode Title="CDB.rGetFidIncr method" Url="html/M_GeoEngine_Core_GXNet_CDB_rGetFidIncr.htm" />
@@ -2017,6 +2022,7 @@
     <HelpKINode Title="about CFFT class" Url="html/T_Geosoft_Desktop_GXNet_CFFT.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_Geosoft_Desktop_GXNet_CFFT.htm" />
   </HelpKINode>
+  <HelpKINode Title="CFFT.AddWhiteNoise method" Url="html/M_Geosoft_Desktop_GXNet_CFFT_AddWhiteNoise.htm" />
   <HelpKINode Title="CFFT.AppDens method" Url="html/M_Geosoft_Desktop_GXNet_CFFT_AppDens.htm" />
   <HelpKINode Title="CFFT.AppSusc method" Url="html/M_Geosoft_Desktop_GXNet_CFFT_AppSusc.htm" />
   <HelpKINode Title="CFFT.BandPass method" Url="html/M_Geosoft_Desktop_GXNet_CFFT_BandPass.htm" />
@@ -2052,6 +2058,7 @@
   </HelpKINode>
   <HelpKINode Title="CFFT2.Fft2In method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_Fft2In.htm" />
   <HelpKINode Title="CFFT2.FilterPG method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FilterPG.htm" />
+  <HelpKINode Title="CFFT2.FilterResponse method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FilterResponse.htm" />
   <HelpKINode Title="CFFT2.Flt method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_Flt.htm" />
   <HelpKINode Title="CFFT2.FltInv method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FltInv.htm" />
   <HelpKINode Title="CFFT2.PowSpc method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_PowSpc.htm" />
@@ -2199,6 +2206,7 @@
   <HelpKINode Title="CGU.ImportDAARC500Serial method" Url="html/M_Geosoft_Desktop_GXNet_CGU_ImportDAARC500Serial.htm" />
   <HelpKINode Title="CGU.ImportP190 method" Url="html/M_Geosoft_Desktop_GXNet_CGU_ImportP190.htm" />
   <HelpKINode Title="CGU.LagDAARC500GPS method" Url="html/M_Geosoft_Desktop_GXNet_CGU_LagDAARC500GPS.htm" />
+  <HelpKINode Title="CGU.MagneticTiltDepth method" Url="html/M_Geosoft_Desktop_GXNet_CGU_MagneticTiltDepth.htm" />
   <HelpKINode Title="CGU.MaxwellPlateCorners method" Url="html/M_Geosoft_Desktop_GXNet_CGU_MaxwellPlateCorners.htm" />
   <HelpKINode Title="CGU.ScanDAARC500Ethernet method" Url="html/M_Geosoft_Desktop_GXNet_CGU_ScanDAARC500Ethernet.htm" />
   <HelpKINode Title="CGU.ScanDAARC500Serial method" Url="html/M_Geosoft_Desktop_GXNet_CGU_ScanDAARC500Serial.htm" />
@@ -2240,6 +2248,7 @@
   <HelpKINode Title="CGUI.IiCumulativePercent method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCumulativePercent.htm" />
   <HelpKINode Title="CGUI.IiCustomFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm.htm" />
   <HelpKINode Title="CGUI.IiDatFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm.htm" />
+  <HelpKINode Title="CGUI.IiDatFileFormEx method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileFormEx.htm" />
   <HelpKINode Title="CGUI.IiGenFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm.htm" />
   <HelpKINode Title="CGUI.IiImportDrillDatabaseADO2 method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseADO2.htm" />
   <HelpKINode Title="CGUI.IiImportDrillDatabaseESRI method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseESRI.htm" />
@@ -2581,7 +2590,6 @@
   <HelpKINode Title="CIMU.GridFill method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridFill.htm" />
   <HelpKINode Title="CIMU.GridFilt method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridFilt.htm" />
   <HelpKINode Title="CIMU.GridHead method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridHead.htm" />
-  <HelpKINode Title="CIMU.GridInFill method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridInFill.htm" />
   <HelpKINode Title="CIMU.GridMask method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridMask.htm" />
   <HelpKINode Title="CIMU.GridPeak method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridPeak.htm" />
   <HelpKINode Title="CIMU.GridPLY method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridPLY.htm" />
@@ -3094,6 +3102,7 @@
   <HelpKINode Title="CMAP.IUnPackFilesEx method" Url="html/Overload_GeoEngine_Core_GXNet_CMAP_IUnPackFilesEx.htm" />
   <HelpKINode Title="CMAP.IUnPackFilesToFolder method" Url="html/Overload_GeoEngine_Core_GXNet_CMAP_IUnPackFilesToFolder.htm" />
   <HelpKINode Title="CMAP.PackFiles method" Url="html/M_GeoEngine_Core_GXNet_CMAP_PackFiles.htm" />
+  <HelpKINode Title="CMAP.RenameView method" Url="html/M_GeoEngine_Core_GXNet_CMAP_RenameView.htm" />
   <HelpKINode Title="CMAP.Render method" Url="html/M_GeoEngine_Core_GXNet_CMAP_Render.htm" />
   <HelpKINode Title="CMAP.RenderBitmap method" Url="html/M_GeoEngine_Core_GXNet_CMAP_RenderBitmap.htm" />
   <HelpKINode Title="CMAP.RenderViewBitmap method" Url="html/M_GeoEngine_Core_GXNet_CMAP_RenderViewBitmap.htm" />
@@ -3431,6 +3440,7 @@
   <HelpKINode Title="CMVIEW.AxisY method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_AxisY.htm" />
   <HelpKINode Title="CMVIEW.BestFitWindow method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_BestFitWindow.htm" />
   <HelpKINode Title="CMVIEW.Box3D method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Box3D.htm" />
+  <HelpKINode Title="CMVIEW.Capture3DSnapshot method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_Capture3DSnapshot.htm" />
   <HelpKINode Title="CMVIEW.ChangeLineMessage method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_ChangeLineMessage.htm" />
   <HelpKINode Title="CMVIEW.Chord method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Chord.htm" />
   <HelpKINode Title="CMVIEW.ClassifiedSymbols method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_ClassifiedSymbols.htm" />
@@ -3484,6 +3494,7 @@
   <HelpKINode Title="CMVIEW.FitWindow method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_FitWindow.htm" />
   <HelpKINode Title="CMVIEW.FontWeightLST method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_FontWeightLST.htm" />
   <HelpKINode Title="CMVIEW.Get3DPointOfView method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Get3DPointOfView.htm" />
+  <HelpKINode Title="CMVIEW.Get3DSnapshots method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Get3DSnapshots.htm" />
   <HelpKINode Title="CMVIEW.GetAGGFileNames method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetAGGFileNames.htm" />
   <HelpKINode Title="CMVIEW.GetAggregate method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetAggregate.htm" />
   <HelpKINode Title="CMVIEW.GetClipPLY method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetClipPLY.htm" />
@@ -3503,6 +3514,8 @@
   <HelpKINode Title="CMVIEW.GetMAP method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetMAP.htm" />
   <HelpKINode Title="CMVIEW.GetPlaneClipPLY method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPlaneClipPLY.htm" />
   <HelpKINode Title="CMVIEW.GetPlaneEquation method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPlaneEquation.htm" />
+  <HelpKINode Title="CMVIEW.GetPlaneSurface method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_GetPlaneSurface.htm" />
+  <HelpKINode Title="CMVIEW.GetPlaneSurfInfo method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPlaneSurfInfo.htm" />
   <HelpKINode Title="CMVIEW.GetPLY method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPLY.htm" />
   <HelpKINode Title="CMVIEW.GetREG method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetREG.htm" />
   <HelpKINode Title="CMVIEW.GetSurfaceFilename method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_GetSurfaceFilename.htm" />
@@ -3596,6 +3609,7 @@
   <HelpKINode Title="CMVIEW.RenameGroup method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_RenameGroup.htm" />
   <HelpKINode Title="CMVIEW.Render method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Render.htm" />
   <HelpKINode Title="CMVIEW.ReScale method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_ReScale.htm" />
+  <HelpKINode Title="CMVIEW.Restore3DSnapshot method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Restore3DSnapshot.htm" />
   <HelpKINode Title="CMVIEW.rGetMapScale method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_rGetMapScale.htm" />
   <HelpKINode Title="CMVIEW.rNorth method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_rNorth.htm" />
   <HelpKINode Title="CMVIEW.rScaleMM method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_rScaleMM.htm" />
@@ -3945,8 +3959,8 @@
   <HelpKINode Title="Constant class">
     <HelpKINode Title="Constant Class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
     <HelpKINode Title="Constant Class" Url="html/T_Geosoft_Desktop_GXNet_Constant.htm" />
-    <HelpKINode Title="about Constant class" Url="html/T_Geosoft_Desktop_GXNet_Constant.htm" />
     <HelpKINode Title="about Constant class" Url="html/T_GeoEngine_Core_GXNet_Constant.htm" />
+    <HelpKINode Title="about Constant class" Url="html/T_Geosoft_Desktop_GXNet_Constant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_GeoEngine_Core_GXNet_Constant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_Constant.htm" />
   </HelpKINode>
@@ -4369,7 +4383,6 @@
   <HelpKINode Title="Constant.EDB_PROFILE_SCALE_LINEAR field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROFILE_SCALE_LINEAR.htm" />
   <HelpKINode Title="Constant.EDB_PROFILE_SCALE_LOG field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROFILE_SCALE_LOG.htm" />
   <HelpKINode Title="Constant.EDB_PROFILE_SCALE_LOGLINEAR field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROFILE_SCALE_LOGLINEAR.htm" />
-  <HelpKINode Title="Constant.EDB_PROF_I_AUTO_RESCALE_X field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_AUTO_RESCALE_X.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_BREAK_ON_DUMMY field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_BREAK_ON_DUMMY.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_CHANNEL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_CHANNEL.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_COLOR field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_COLOR.htm" />
@@ -4383,11 +4396,9 @@
   <HelpKINode Title="Constant.EDB_PROF_I_SOURCELINE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_SOURCELINE.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_SYMBOL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_SYMBOL.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_SYMBOL_WEIGHT field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_SYMBOL_WEIGHT.htm" />
-  <HelpKINode Title="Constant.EDB_PROF_I_VERT_GRID_LINE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_VERT_GRID_LINE.htm" />
   <HelpKINode Title="Constant.EDB_PROF_I_WRAP field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_WRAP.htm" />
   <HelpKINode Title="Constant.EDB_PROF_R_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="Constant.EDB_PROF_R_LOG_MINIMUM field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_LOG_MINIMUM.htm" />
-  <HelpKINode Title="Constant.EDB_PROF_R_VERT_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_VERT_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="Constant.EDB_REMOVE_DISCARD field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_REMOVE_DISCARD.htm" />
   <HelpKINode Title="Constant.EDB_REMOVE_PROMPT field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_REMOVE_PROMPT.htm" />
   <HelpKINode Title="Constant.EDB_REMOVE_SAVE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_REMOVE_SAVE.htm" />
@@ -4405,6 +4416,7 @@
   <HelpKINode Title="Constant.EDOC_PATH_FULL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_PATH_FULL.htm" />
   <HelpKINode Title="Constant.EDOC_PATH_NAME field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_PATH_NAME.htm" />
   <HelpKINode Title="Constant.EDOC_PATH_NAME_EXT field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_PATH_NAME_EXT.htm" />
+  <HelpKINode Title="Constant.EDOC_TYPE_GEOSURFACE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_GEOSURFACE.htm" />
   <HelpKINode Title="Constant.EDOC_TYPE_GMS2D field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_GMS2D.htm" />
   <HelpKINode Title="Constant.EDOC_TYPE_GMS3D field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_GMS3D.htm" />
   <HelpKINode Title="Constant.EDOC_TYPE_VOXEL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_VOXEL.htm" />
@@ -4479,6 +4491,8 @@
   <HelpKINode Title="Constant.FFT_DETREND_ENDS field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_DETREND_ENDS.htm" />
   <HelpKINode Title="Constant.FFT_DETREND_MEAN field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_DETREND_MEAN.htm" />
   <HelpKINode Title="Constant.FFT_DETREND_NONE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_DETREND_NONE.htm" />
+  <HelpKINode Title="Constant.FFT_WHITE_NOISE_ADD field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_WHITE_NOISE_ADD.htm" />
+  <HelpKINode Title="Constant.FFT_WHITE_NOISE_SET field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_WHITE_NOISE_SET.htm" />
   <HelpKINode Title="Constant.FILE_EXT_ADD_IF_NONE field" Url="html/F_GeoEngine_Core_GXNet_Constant_FILE_EXT_ADD_IF_NONE.htm" />
   <HelpKINode Title="Constant.FILE_EXT_FORCE field" Url="html/F_GeoEngine_Core_GXNet_Constant_FILE_EXT_FORCE.htm" />
   <HelpKINode Title="Constant.FILE_FILTER_3DSURVEY field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FILE_FILTER_3DSURVEY.htm" />
@@ -6240,6 +6254,7 @@
     <HelpKINode Title="CTC.CreateEx Method " Url="html/M_Geosoft_Desktop_GXNet_CTC_CreateEx.htm" />
     <HelpKINode Title="CWA.CreateEx Method " Url="html/M_GeoEngine_Core_GXNet_CWA_CreateEx.htm" />
   </HelpKINode>
+  <HelpKINode Title="CreateEx2 method" Url="html/M_Geosoft_Desktop_GXNet_CTC_CreateEx2.htm" />
   <HelpKINode Title="CreateExact method" Url="html/M_GeoEngine_Core_GXNet_CST_CreateExact.htm" />
   <HelpKINode Title="CreateExt method">
     <HelpKINode Title="CVA.CreateExt Method " Url="html/M_GeoEngine_Core_GXNet_CVA_CreateExt.htm" />
@@ -6829,15 +6844,12 @@
   <HelpKINode Title="CSYS.FontLST method" Url="html/M_GeoEngine_Core_GXNet_CSYS_FontLST.htm" />
   <HelpKINode Title="CSYS.GenerateGUID method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GenerateGUID.htm" />
   <HelpKINode Title="CSYS.GeosoftConnectAuthenticateAndNavigate method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GeosoftConnectAuthenticateAndNavigate.htm" />
-  <HelpKINode Title="CSYS.GetAPIKey method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetAPIKey.htm" />
   <HelpKINode Title="CSYS.GetEntitlementRights method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetEntitlementRights.htm" />
   <HelpKINode Title="CSYS.GetLoadedMenus method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetLoadedMenus.htm" />
   <HelpKINode Title="CSYS.GetPattern method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetPattern.htm" />
   <HelpKINode Title="CSYS.GetPTMP method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetPTMP.htm" />
   <HelpKINode Title="CSYS.GetREG method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetREG.htm" />
   <HelpKINode Title="CSYS.GetSettingsMETA method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetSettingsMETA.htm" />
-  <HelpKINode Title="CSYS.GetViewServiceURL method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetViewServiceURL.htm" />
-  <HelpKINode Title="CSYS.GetViewURL method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetViewURL.htm" />
   <HelpKINode Title="CSYS.GetWorkspaceREG method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GetWorkspaceREG.htm" />
   <HelpKINode Title="CSYS.GlobalReset method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GlobalReset.htm" />
   <HelpKINode Title="CSYS.GlobalSet method" Url="html/M_GeoEngine_Core_GXNet_CSYS_GlobalSet.htm" />
@@ -6909,6 +6921,7 @@
   <HelpKINode Title="CSYS.iRunGX method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGX.htm" />
   <HelpKINode Title="CSYS.iRunGXEx method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGXEx.htm" />
   <HelpKINode Title="CSYS.iRunPDF method" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunPDF.htm" />
+  <HelpKINode Title="CSYS.iRunPython method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunPython.htm" />
   <HelpKINode Title="CSYS.iScript method" Url="html/M_GeoEngine_Core_GXNet_CSYS_iScript.htm" />
   <HelpKINode Title="CSYS.iScriptRecord method" Url="html/M_GeoEngine_Core_GXNet_CSYS_iScriptRecord.htm" />
   <HelpKINode Title="CSYS.IsEncryptedString method" Url="html/M_GeoEngine_Core_GXNet_CSYS_IsEncryptedString.htm" />
@@ -7009,6 +7022,7 @@
   </HelpKINode>
   <HelpKINode Title="CTC.Create method" Url="html/M_Geosoft_Desktop_GXNet_CTC_Create.htm" />
   <HelpKINode Title="CTC.CreateEx method" Url="html/M_Geosoft_Desktop_GXNet_CTC_CreateEx.htm" />
+  <HelpKINode Title="CTC.CreateEx2 method" Url="html/M_Geosoft_Desktop_GXNet_CTC_CreateEx2.htm" />
   <HelpKINode Title="CTC.Dispose method" Url="html/M_Geosoft_Desktop_GXNet_CTC_Dispose.htm" />
   <HelpKINode Title="CTC.GGterain method" Url="html/M_Geosoft_Desktop_GXNet_CTC_GGterain.htm" />
   <HelpKINode Title="CTC.Grregter method" Url="html/M_Geosoft_Desktop_GXNet_CTC_Grregter.htm" />
@@ -9281,7 +9295,6 @@
     <HelpKINode Title="about EDB_PROFConstant class" Url="html/T_Geosoft_Desktop_GXNet_EDB_PROFConstant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_EDB_PROFConstant.htm" />
   </HelpKINode>
-  <HelpKINode Title="EDB_PROFConstant.I_AUTO_RESCALE_X field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_AUTO_RESCALE_X.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_BREAK_ON_DUMMY field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_BREAK_ON_DUMMY.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_CHANNEL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_CHANNEL.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_COLOR field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_COLOR.htm" />
@@ -9295,11 +9308,9 @@
   <HelpKINode Title="EDB_PROFConstant.I_SOURCELINE field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SOURCELINE.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_SYMBOL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SYMBOL.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_SYMBOL_WEIGHT field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SYMBOL_WEIGHT.htm" />
-  <HelpKINode Title="EDB_PROFConstant.I_VERT_GRID_LINE field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_VERT_GRID_LINE.htm" />
   <HelpKINode Title="EDB_PROFConstant.I_WRAP field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_WRAP.htm" />
   <HelpKINode Title="EDB_PROFConstant.R_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="EDB_PROFConstant.R_LOG_MINIMUM field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_LOG_MINIMUM.htm" />
-  <HelpKINode Title="EDB_PROFConstant.R_VERT_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_VERT_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="EDB_PROFILE_SCALEConstant class">
     <HelpKINode Title="EDB_PROFILE_SCALEConstant Class" Url="html/T_Geosoft_Desktop_GXNet_EDB_PROFILE_SCALEConstant.htm" />
     <HelpKINode Title="about EDB_PROFILE_SCALEConstant class" Url="html/T_Geosoft_Desktop_GXNet_EDB_PROFILE_SCALEConstant.htm" />
@@ -9314,8 +9325,6 @@
   <HelpKINode Title="EDB_PROFILE_SCALE_LOG field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROFILE_SCALE_LOG.htm" />
   <HelpKINode Title="EDB_PROFILE_SCALE_LOGLINEAR enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROFILE_SCALE_LOGLINEAR field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROFILE_SCALE_LOGLINEAR.htm" />
-  <HelpKINode Title="EDB_PROF_I_AUTO_RESCALE_X enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
-  <HelpKINode Title="EDB_PROF_I_AUTO_RESCALE_X field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_AUTO_RESCALE_X.htm" />
   <HelpKINode Title="EDB_PROF_I_BREAK_ON_DUMMY enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROF_I_BREAK_ON_DUMMY field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_BREAK_ON_DUMMY.htm" />
   <HelpKINode Title="EDB_PROF_I_CHANNEL enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
@@ -9342,16 +9351,12 @@
   <HelpKINode Title="EDB_PROF_I_SYMBOL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_SYMBOL.htm" />
   <HelpKINode Title="EDB_PROF_I_SYMBOL_WEIGHT enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROF_I_SYMBOL_WEIGHT field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_SYMBOL_WEIGHT.htm" />
-  <HelpKINode Title="EDB_PROF_I_VERT_GRID_LINE enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
-  <HelpKINode Title="EDB_PROF_I_VERT_GRID_LINE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_VERT_GRID_LINE.htm" />
   <HelpKINode Title="EDB_PROF_I_WRAP enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROF_I_WRAP field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_I_WRAP.htm" />
   <HelpKINode Title="EDB_PROF_R_GRID_LINE_INTERVAL enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROF_R_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="EDB_PROF_R_LOG_MINIMUM enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDB_PROF_R_LOG_MINIMUM field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_LOG_MINIMUM.htm" />
-  <HelpKINode Title="EDB_PROF_R_VERT_GRID_LINE_INTERVAL enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
-  <HelpKINode Title="EDB_PROF_R_VERT_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDB_PROF_R_VERT_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="EDB_REMOVEConstant class">
     <HelpKINode Title="EDB_REMOVEConstant Class" Url="html/T_Geosoft_Desktop_GXNet_EDB_REMOVEConstant.htm" />
     <HelpKINode Title="about EDB_REMOVEConstant class" Url="html/T_Geosoft_Desktop_GXNet_EDB_REMOVEConstant.htm" />
@@ -9462,10 +9467,13 @@
     <HelpKINode Title="about EDOC_TYPEConstant class" Url="html/T_Geosoft_Desktop_GXNet_EDOC_TYPEConstant.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_EDOC_TYPEConstant.htm" />
   </HelpKINode>
+  <HelpKINode Title="EDOC_TYPEConstant.GEOSURFACE field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_GEOSURFACE.htm" />
   <HelpKINode Title="EDOC_TYPEConstant.GMS2D field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_GMS2D.htm" />
   <HelpKINode Title="EDOC_TYPEConstant.GMS3D field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_GMS3D.htm" />
   <HelpKINode Title="EDOC_TYPEConstant.VOXEL field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_VOXEL.htm" />
   <HelpKINode Title="EDOC_TYPEConstant.VOXEL_INVERSION field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_VOXEL_INVERSION.htm" />
+  <HelpKINode Title="EDOC_TYPE_GEOSURFACE enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
+  <HelpKINode Title="EDOC_TYPE_GEOSURFACE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_GEOSURFACE.htm" />
   <HelpKINode Title="EDOC_TYPE_GMS2D enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="EDOC_TYPE_GMS2D field" Url="html/F_Geosoft_Desktop_GXNet_Constant_EDOC_TYPE_GMS2D.htm" />
   <HelpKINode Title="EDOC_TYPE_GMS3D enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
@@ -10043,6 +10051,17 @@
   <HelpKINode Title="FFT_DETREND_MEAN field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_DETREND_MEAN.htm" />
   <HelpKINode Title="FFT_DETREND_NONE enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
   <HelpKINode Title="FFT_DETREND_NONE field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_DETREND_NONE.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISEConstant class">
+    <HelpKINode Title="FFT_WHITE_NOISEConstant Class" Url="html/T_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant.htm" />
+    <HelpKINode Title="about FFT_WHITE_NOISEConstant class" Url="html/T_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FFT_WHITE_NOISEConstant.ADD field" Url="html/F_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant_ADD.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISEConstant.SET field" Url="html/F_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant_SET.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISE_ADD enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISE_ADD field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_WHITE_NOISE_ADD.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISE_SET enumeration member" Url="html/T_Geosoft_Desktop_GXNet_IntConstants.htm" />
+  <HelpKINode Title="FFT_WHITE_NOISE_SET field" Url="html/F_Geosoft_Desktop_GXNet_Constant_FFT_WHITE_NOISE_SET.htm" />
   <HelpKINode Title="FGDC field" Url="html/F_GeoEngine_Core_GXNet_USERMETA_FORMATConstant_FGDC.htm" />
   <HelpKINode Title="FID field" Url="html/F_Geosoft_Desktop_GXNet_STK_FLAGConstant_FID.htm" />
   <HelpKINode Title="FidNorm method" Url="html/M_GeoEngine_Core_GXNet_CVV_FidNorm.htm" />
@@ -10534,6 +10553,7 @@
   <HelpKINode Title="FilterMineralPosData method" Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_FilterMineralPosData.htm" />
   <HelpKINode Title="FilterParmGroup method" Url="html/M_GeoEngine_Core_GXNet_CSYS_FilterParmGroup.htm" />
   <HelpKINode Title="FilterPG method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FilterPG.htm" />
+  <HelpKINode Title="FilterResponse method" Url="html/M_Geosoft_Desktop_GXNet_CFFT2_FilterResponse.htm" />
   <HelpKINode Title="FilterSEH method" Url="html/M_GeoEngine_Core_GXNet_CGXNETCore_FilterSEH.htm" />
   <HelpKINode Title="FiltSym method" Url="html/M_Geosoft_Desktop_GXNet_CPGU_FiltSym.htm" />
   <HelpKINode Title="FiltSym5 method" Url="html/M_Geosoft_Desktop_GXNet_CPGU_FiltSym5.htm" />
@@ -11103,8 +11123,8 @@
   <HelpKINode Title="GeoEngine.Core.GXNet.WA_OPENConstant class" Url="html/T_GeoEngine_Core_GXNet_WA_OPENConstant.htm" />
   <HelpKINode Title="GEOGR field" Url="html/F_GeoEngine_Core_GXNet_DB_CHAN_FORMATConstant_GEOGR.htm" />
   <HelpKINode Title="GEOGRAPHIC field" Url="html/F_Geosoft_Desktop_GXNet_IP_STACK_TYPEConstant_GEOGRAPHIC.htm" />
-  <HelpKINode Title="GeoGxHandle property" Url="html/P_GeoEngine_Core_GXNet_CGXNETCore_GeoGxHandle.htm" />
   <HelpKINode Title="GeoGXHandle property" Url="html/P_GeoEngine_Core_GXNet_CHANDLE_GeoGXHandle.htm" />
+  <HelpKINode Title="GeoGxHandle property" Url="html/P_GeoEngine_Core_GXNet_CGXNETCore_GeoGxHandle.htm" />
   <HelpKINode Title="GEOID field">
     <HelpKINode Title="IPJ_NAMEConstant.GEOID Field" Url="html/F_GeoEngine_Core_GXNet_IPJ_NAMEConstant_GEOID.htm" />
     <HelpKINode Title="PJ_ELEVATIONConstant.GEOID Field" Url="html/F_GeoEngine_Core_GXNet_PJ_ELEVATIONConstant_GEOID.htm" />
@@ -11273,6 +11293,7 @@
   <HelpKINode Title="Geosoft.Desktop.GXNet.EUL3_RESULTConstant class" Url="html/T_Geosoft_Desktop_GXNet_EUL3_RESULTConstant.htm" />
   <HelpKINode Title="Geosoft.Desktop.GXNet.FFT2_PGConstant class" Url="html/T_Geosoft_Desktop_GXNet_FFT2_PGConstant.htm" />
   <HelpKINode Title="Geosoft.Desktop.GXNet.FFT_DETRENDConstant class" Url="html/T_Geosoft_Desktop_GXNet_FFT_DETRENDConstant.htm" />
+  <HelpKINode Title="Geosoft.Desktop.GXNet.FFT_WHITE_NOISEConstant class" Url="html/T_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant.htm" />
   <HelpKINode Title="Geosoft.Desktop.GXNet.FILE_FILTERConstant class" Url="html/T_Geosoft_Desktop_GXNet_FILE_FILTERConstant.htm" />
   <HelpKINode Title="Geosoft.Desktop.GXNet.FILE_FORMConstant class" Url="html/T_Geosoft_Desktop_GXNet_FILE_FORMConstant.htm" />
   <HelpKINode Title="Geosoft.Desktop.GXNet.GD_STATUSConstant class" Url="html/T_Geosoft_Desktop_GXNet_GD_STATUSConstant.htm" />
@@ -11470,7 +11491,10 @@
   <HelpKINode Title="GEOSTRING_OPEN_READ field" Url="html/F_GeoEngine_Core_GXNet_Constant_GEOSTRING_OPEN_READ.htm" />
   <HelpKINode Title="GEOSTRING_OPEN_READWRITE enumeration member" Url="html/T_GeoEngine_Core_GXNet_IntConstants.htm" />
   <HelpKINode Title="GEOSTRING_OPEN_READWRITE field" Url="html/F_GeoEngine_Core_GXNet_Constant_GEOSTRING_OPEN_READWRITE.htm" />
-  <HelpKINode Title="GEOSURFACE field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_GEOSURFACE.htm" />
+  <HelpKINode Title="GEOSURFACE field">
+    <HelpKINode Title="EDOC_TYPEConstant.GEOSURFACE Field" Url="html/F_Geosoft_Desktop_GXNet_EDOC_TYPEConstant_GEOSURFACE.htm" />
+    <HelpKINode Title="FILE_FILTERConstant.GEOSURFACE Field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_GEOSURFACE.htm" />
+  </HelpKINode>
   <HelpKINode Title="GEOTEMP field">
     <HelpKINode Title="SYS_DIRConstant.GEOTEMP Field" Url="html/F_GeoEngine_Core_GXNet_SYS_DIRConstant_GEOTEMP.htm" />
     <HelpKINode Title="SYS_PATHConstant.GEOTEMP Field" Url="html/F_GeoEngine_Core_GXNet_SYS_PATHConstant_GEOTEMP.htm" />
@@ -11644,13 +11668,13 @@
   </HelpKINode>
   <HelpKINode Title="Get3DMatrixOrientation method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_Get3DMatrixOrientation.htm" />
   <HelpKINode Title="Get3DPointOfView method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Get3DPointOfView.htm" />
+  <HelpKINode Title="Get3DSnapshots method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Get3DSnapshots.htm" />
   <HelpKINode Title="Get3DView method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_Get3DView.htm" />
   <HelpKINode Title="Get3DViewEx method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_Get3DViewEx.htm" />
   <HelpKINode Title="GetAGGFileNames method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetAGGFileNames.htm" />
   <HelpKINode Title="GetAggregate method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetAggregate.htm" />
   <HelpKINode Title="GetAllShapes method" Url="html/M_GeoEngine_Core_GXNet_CGEOSTRING_GetAllShapes.htm" />
   <HelpKINode Title="GetAOIArea method" Url="html/M_Geosoft_Desktop_GXNet_CEMAP_GetAOIArea.htm" />
-  <HelpKINode Title="GetAPIKey method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetAPIKey.htm" />
   <HelpKINode Title="GetArea method" Url="html/M_GeoEngine_Core_GXNet_CVOX_GetArea.htm" />
   <HelpKINode Title="GetAssociatedLST method" Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_GetAssociatedLST.htm" />
   <HelpKINode Title="GetAttribBool method" Url="html/M_GeoEngine_Core_GXNet_CMETA_GetAttribBool.htm" />
@@ -11855,8 +11879,8 @@
   </HelpKINode>
   <HelpKINode Title="GetLST2 method" Url="html/M_GeoEngine_Core_GXNet_CLTB_GetLST2.htm" />
   <HelpKINode Title="GetMakerName method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_GetMakerName.htm" />
-  <HelpKINode Title="GetMap method" Url="html/M_Geosoft_Desktop_GXNet_CDH_GetMap.htm" />
   <HelpKINode Title="GetMAP method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetMAP.htm" />
+  <HelpKINode Title="GetMap method" Url="html/M_Geosoft_Desktop_GXNet_CDH_GetMap.htm" />
   <HelpKINode Title="GetMapLayoutProps method" Url="html/M_Geosoft_Desktop_GXNet_CEMAP_GetMapLayoutProps.htm" />
   <HelpKINode Title="GetMapNamesVV method" Url="html/M_Geosoft_Desktop_GXNet_CDH_GetMapNamesVV.htm" />
   <HelpKINode Title="GetMapSize method" Url="html/M_GeoEngine_Core_GXNet_CMAP_GetMapSize.htm" />
@@ -11901,6 +11925,8 @@
     <HelpKINode Title="CMVIEW.GetPlaneEquation Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPlaneEquation.htm" />
   </HelpKINode>
   <HelpKINode Title="GetPlaneEquation2 method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_GetPlaneEquation2.htm" />
+  <HelpKINode Title="GetPlaneSurface method" Url="html/Overload_GeoEngine_Core_GXNet_CMVIEW_GetPlaneSurface.htm" />
+  <HelpKINode Title="GetPlaneSurfInfo method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPlaneSurfInfo.htm" />
   <HelpKINode Title="GetPLY method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetPLY.htm" />
   <HelpKINode Title="GetPointOfView method" Url="html/M_GeoEngine_Core_GXNet_C3DN_GetPointOfView.htm" />
   <HelpKINode Title="GetPoly method" Url="html/M_Geosoft_Desktop_GXNet_CDMPPLY_GetPoly.htm" />
@@ -12023,8 +12049,6 @@
   <HelpKINode Title="GetVertices method" Url="html/M_GeoEngine_Core_GXNet_CMESH_GetVertices.htm" />
   <HelpKINode Title="GetViewIPJ method" Url="html/M_Geosoft_Desktop_GXNet_CEMAP_GetViewIPJ.htm" />
   <HelpKINode Title="GetViewPlaneEquation method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_GetViewPlaneEquation.htm" />
-  <HelpKINode Title="GetViewServiceURL method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetViewServiceURL.htm" />
-  <HelpKINode Title="GetViewURL method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_GetViewURL.htm" />
   <HelpKINode Title="GetVM method" Url="html/M_GeoEngine_Core_GXNet_CVV_GetVM.htm" />
   <HelpKINode Title="GetVolumeVectors method" Url="html/M_GeoEngine_Core_GXNet_CMULTIGRID3D_GetVolumeVectors.htm" />
   <HelpKINode Title="GetVoronoiEdges method" Url="html/M_Geosoft_Desktop_GXNet_CTIN_GetVoronoiEdges.htm" />
@@ -12297,7 +12321,6 @@
   <HelpKINode Title="GridFilt method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridFilt.htm" />
   <HelpKINode Title="GridHead method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridHead.htm" />
   <HelpKINode Title="GridIDWFromGDB method" Url="html/M_GeoEngine_Core_GXNet_CMULTIGRID3DUTIL_GridIDWFromGDB.htm" />
-  <HelpKINode Title="GridInFill method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridInFill.htm" />
   <HelpKINode Title="GridLoad method" Url="html/M_Geosoft_Desktop_GXNet_CDU_GridLoad.htm" />
   <HelpKINode Title="GridLoadXYZ method" Url="html/M_Geosoft_Desktop_GXNet_CDU_GridLoadXYZ.htm" />
   <HelpKINode Title="GridMask method" Url="html/M_GeoEngine_Core_GXNet_CIMU_GridMask.htm" />
@@ -13150,8 +13173,8 @@
   <HelpKINode Title="IGetGroupClass method" Url="html/Overload_GeoEngine_Core_GXNet_CDB_IGetGroupClass.htm" />
   <HelpKINode Title="IGetGSDirectory method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IGetGSDirectory.htm" />
   <HelpKINode Title="IGetGXF method" Url="html/Overload_GeoEngine_Core_GXNet_CIPJ_IGetGXF.htm" />
-  <HelpKINode Title="IGetInfo method" Url="html/Overload_Geosoft_Desktop_GXNet_CDH_IGetInfo.htm" />
   <HelpKINode Title="iGetInfo method" Url="html/M_GeoEngine_Core_GXNet_CDB_iGetInfo.htm" />
+  <HelpKINode Title="IGetInfo method" Url="html/Overload_Geosoft_Desktop_GXNet_CDH_IGetInfo.htm" />
   <HelpKINode Title="iGetInt method">
     <HelpKINode Title="CLST.iGetInt Method " Url="html/M_GeoEngine_Core_GXNet_CLST_iGetInt.htm" />
     <HelpKINode Title="CLTB.iGetInt Method " Url="html/M_GeoEngine_Core_GXNet_CLTB_iGetInt.htm" />
@@ -13300,6 +13323,7 @@
   <HelpKINode Title="IiCumulativePercent method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCumulativePercent.htm" />
   <HelpKINode Title="IiCustomFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiCustomFileForm.htm" />
   <HelpKINode Title="IiDatFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileForm.htm" />
+  <HelpKINode Title="IiDatFileFormEx method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiDatFileFormEx.htm" />
   <HelpKINode Title="IiGenFileForm method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiGenFileForm.htm" />
   <HelpKINode Title="IiGet method" Url="html/Overload_Geosoft_Desktop_GXNet_CGER_IiGet.htm" />
   <HelpKINode Title="IiGetDotNetGXEntries method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_IiGetDotNetGXEntries.htm" />
@@ -13315,8 +13339,8 @@
   <HelpKINode Title="IiImportDrillDatabaseODBC method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBC.htm" />
   <HelpKINode Title="IiImportDrillDatabaseODBCMaxwell method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_IiImportDrillDatabaseODBCMaxwell.htm" />
   <HelpKINode Title="iIMGTYPE field" Url="html/F_GeoEngine_Core_GXNet_IMG_QUERYConstant_iIMGTYPE.htm" />
-  <HelpKINode Title="iImportAsciiWizard method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm" />
   <HelpKINode Title="IImportAsciiWizard method" Url="html/Overload_Geosoft_Desktop_GXNet_CSEMPLOT_IImportAsciiWizard.htm" />
+  <HelpKINode Title="iImportAsciiWizard method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportAsciiWizard.htm" />
   <HelpKINode Title="IImportBIN3 method" Url="html/Overload_Geosoft_Desktop_GXNet_CDU_IImportBIN3.htm" />
   <HelpKINode Title="iImportChemDatabase method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabase.htm" />
   <HelpKINode Title="iImportChemDatabaseADO method" Url="html/Overload_Geosoft_Desktop_GXNet_CGUI_iImportChemDatabaseADO.htm" />
@@ -14614,6 +14638,7 @@
   <HelpKINode Title="iRunGX method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGX.htm" />
   <HelpKINode Title="iRunGXEx method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunGXEx.htm" />
   <HelpKINode Title="iRunPDF method" Url="html/M_GeoEngine_Core_GXNet_CSYS_iRunPDF.htm" />
+  <HelpKINode Title="iRunPython method" Url="html/Overload_GeoEngine_Core_GXNet_CSYS_iRunPython.htm" />
   <HelpKINode Title="iSaveCloseDocuments method" Url="html/M_Geosoft_Desktop_GXNet_CPROJ_iSaveCloseDocuments.htm" />
   <HelpKINode Title="iSaveParms method">
     <HelpKINode Title="CKGRD.iSaveParms Method " Url="html/M_Geosoft_Desktop_GXNet_CKGRD_iSaveParms.htm" />
@@ -14806,7 +14831,6 @@
   <HelpKINode Title="iWRITEPG field" Url="html/F_GeoEngine_Core_GXNet_IMG_QUERYConstant_iWRITEPG.htm" />
   <HelpKINode Title="iXor method" Url="html/M_GeoEngine_Core_GXNet_CMATH_iXor.htm" />
   <HelpKINode Title="IXYZLine method" Url="html/Overload_GeoEngine_Core_GXNet_CSTR_IXYZLine.htm" />
-  <HelpKINode Title="I_AUTO_RESCALE_X field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_AUTO_RESCALE_X.htm" />
   <HelpKINode Title="I_BREAK_ON_DUMMY field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_BREAK_ON_DUMMY.htm" />
   <HelpKINode Title="I_CHANNEL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_CHANNEL.htm" />
   <HelpKINode Title="I_COLOR field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_COLOR.htm" />
@@ -14820,7 +14844,6 @@
   <HelpKINode Title="I_SOURCELINE field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SOURCELINE.htm" />
   <HelpKINode Title="I_SYMBOL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SYMBOL.htm" />
   <HelpKINode Title="I_SYMBOL_WEIGHT field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_SYMBOL_WEIGHT.htm" />
-  <HelpKINode Title="I_VERT_GRID_LINE field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_VERT_GRID_LINE.htm" />
   <HelpKINode Title="I_WRAP field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_I_WRAP.htm" />
   <HelpKINode Title="J2K field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_J2K.htm" />
   <HelpKINode Title="Jacobi method" Url="html/M_Geosoft_Desktop_GXNet_CPGU_Jacobi.htm" />
@@ -15238,6 +15261,7 @@
   <HelpKINode Title="LUT field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_LUT.htm" />
   <HelpKINode Title="MACHINE field" Url="html/F_GeoEngine_Core_GXNet_REG_DOMAINConstant_MACHINE.htm" />
   <HelpKINode Title="MADE field" Url="html/F_GeoEngine_Core_GXNet_MVIEW_ISConstant_MADE.htm" />
+  <HelpKINode Title="MagneticTiltDepth method" Url="html/M_Geosoft_Desktop_GXNet_CGU_MagneticTiltDepth.htm" />
   <HelpKINode Title="MakeAlpha method" Url="html/M_GeoEngine_Core_GXNet_CSTR_MakeAlpha.htm" />
   <HelpKINode Title="MakeCurrent method">
     <HelpKINode Title="CEDB.MakeCurrent Method " Url="html/M_Geosoft_Desktop_GXNet_CEDB_MakeCurrent.htm" />
@@ -16626,6 +16650,7 @@
     <HelpKINode Title="VVU_INTERP_EDGEConstant.NONE Field" Url="html/F_Geosoft_Desktop_GXNet_VVU_INTERP_EDGEConstant_NONE.htm" />
     <HelpKINode Title="VV_ORDERConstant.NONE Field" Url="html/F_GeoEngine_Core_GXNet_VV_ORDERConstant_NONE.htm" />
   </HelpKINode>
+  <HelpKINode Title="NonStringAndNonArrayChanLST method" Url="html/M_GeoEngine_Core_GXNet_CDB_NonStringAndNonArrayChanLST.htm" />
   <HelpKINode Title="NOPROMPT field" Url="html/F_Geosoft_Desktop_GXNet_MFCSQL_DRIVERConstant_NOPROMPT.htm" />
   <HelpKINode Title="NORMAL field">
     <HelpKINode Title="AGG_LAYER_ZONEConstant.NORMAL Field" Url="html/F_GeoEngine_Core_GXNet_AGG_LAYER_ZONEConstant_NORMAL.htm" />
@@ -17442,6 +17467,8 @@
   <HelpKINode Title="RemoveXYDup method" Url="html/M_Geosoft_Desktop_GXNet_CVVU_RemoveXYDup.htm" />
   <HelpKINode Title="RemoveXYDupIndex method" Url="html/M_Geosoft_Desktop_GXNet_CVVU_RemoveXYDupIndex.htm" />
   <HelpKINode Title="RenameGroup method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_RenameGroup.htm" />
+  <HelpKINode Title="RenameLine method" Url="html/M_GeoEngine_Core_GXNet_CDB_RenameLine.htm" />
+  <HelpKINode Title="RenameView method" Url="html/M_GeoEngine_Core_GXNet_CMAP_RenameView.htm" />
   <HelpKINode Title="Render method">
     <HelpKINode Title="CMAP.Render Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_Render.htm" />
     <HelpKINode Title="CMVIEW.Render Method " Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Render.htm" />
@@ -17501,6 +17528,7 @@
     <HelpKINode Title="SYS_PATHConstant.RESOURCEFILES Field" Url="html/F_GeoEngine_Core_GXNet_SYS_PATHConstant_RESOURCEFILES.htm" />
   </HelpKINode>
   <HelpKINode Title="RESOURCE_PACK field" Url="html/F_Geosoft_Desktop_GXNet_FILE_FILTERConstant_RESOURCE_PACK.htm" />
+  <HelpKINode Title="Restore3DSnapshot method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Restore3DSnapshot.htm" />
   <HelpKINode Title="RestoreGeoFile method" Url="html/M_GeoEngine_Core_GXNet_CSYS_RestoreGeoFile.htm" />
   <HelpKINode Title="ReSurveyEastNorth method" Url="html/M_Geosoft_Desktop_GXNet_CDH_ReSurveyEastNorth.htm" />
   <HelpKINode Title="ReSurveyPolFit method" Url="html/M_Geosoft_Desktop_GXNet_CDH_ReSurveyPolFit.htm" />
@@ -17662,7 +17690,6 @@
   <HelpKINode Title="rYO field" Url="html/F_GeoEngine_Core_GXNet_IMG_QUERYConstant_rYO.htm" />
   <HelpKINode Title="R_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="R_LOG_MINIMUM field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_LOG_MINIMUM.htm" />
-  <HelpKINode Title="R_VERT_GRID_LINE_INTERVAL field" Url="html/F_Geosoft_Desktop_GXNet_EDB_PROFConstant_R_VERT_GRID_LINE_INTERVAL.htm" />
   <HelpKINode Title="SAME field">
     <HelpKINode Title="DU_INTERP_EDGEConstant.SAME Field" Url="html/F_Geosoft_Desktop_GXNet_DU_INTERP_EDGEConstant_SAME.htm" />
     <HelpKINode Title="VVU_INTERP_EDGEConstant.SAME Field" Url="html/F_Geosoft_Desktop_GXNet_VVU_INTERP_EDGEConstant_SAME.htm" />
@@ -17916,6 +17943,7 @@
   <HelpKINode Title="SerialISOXML method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_SerialISOXML.htm" />
   <HelpKINode Title="SerialXML method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_SerialXML.htm" />
   <HelpKINode Title="SERVERNAME field" Url="html/F_GeoEngine_Core_GXNet_SYS_INFOConstant_SERVERNAME.htm" />
+  <HelpKINode Title="SET field" Url="html/F_Geosoft_Desktop_GXNet_FFT_WHITE_NOISEConstant_SET.htm" />
   <HelpKINode Title="Set method" Url="html/M_GeoEngine_Core_GXNet_CREG_Set.htm" />
   <HelpKINode Title="Set3DGroupFlags method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_Set3DGroupFlags.htm" />
   <HelpKINode Title="Set3DInverted method" Url="html/M_GeoEngine_Core_GXNet_CIPJ_Set3DInverted.htm" />
@@ -18127,12 +18155,12 @@
   <HelpKINode Title="SetMask method" Url="html/M_Geosoft_Desktop_GXNet_CSEMPLOT_SetMask.htm" />
   <HelpKINode Title="SetMETA method">
     <HelpKINode Title="CDOCU.SetMETA Method " Url="html/M_Geosoft_Desktop_GXNet_CDOCU_SetMETA.htm" />
-    <HelpKINode Title="CIMG.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_SetMETA.htm" />
-    <HelpKINode Title="CMAP.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_SetMETA.htm" />
     <HelpKINode Title="CDB.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CDB_SetMETA.htm" />
     <HelpKINode Title="CGIS.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CGIS_SetMETA.htm" />
     <HelpKINode Title="CHGD.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHGD_SetMETA.htm" />
     <HelpKINode Title="CHXYZ.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CHXYZ_SetMETA.htm" />
+    <HelpKINode Title="CIMG.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CIMG_SetMETA.htm" />
+    <HelpKINode Title="CMAP.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CMAP_SetMETA.htm" />
     <HelpKINode Title="CVOX.SetMETA Method " Url="html/M_GeoEngine_Core_GXNet_CVOX_SetMETA.htm" />
   </HelpKINode>
   <HelpKINode Title="SetMeta method" Url="html/M_GeoEngine_Core_GXNet_CMVIEW_SetMeta.htm" />
