@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2022.2.6.0" projectFile="M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\DotNetReference.shfbproj" started="11/21/2023 5:50:44 PM">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2022.2.6.0" projectFile="M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\DotNetReference.shfbproj" started="5/30/2024 5:47:16 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder&#39;
@@ -39,18 +39,18 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.0140
+</plugIn>    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00.0940
+    Last step completed in 00:00:00.0938
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
-[C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\amd64\MSBuild.exe - GenerateRefInfo-d01a70da-7987-4c82-8aa0-af7f657008eb.proj]
-Build started 11/21/2023 5:50:46 PM.
+[C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\amd64\MSBuild.exe - GenerateRefInfo-6e369f25-2c91-48c3-8a21-fdb4636a1c6d.proj]
+Build started 5/30/2024 5:47:18 PM.
 
-Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\GenerateRefInfo-d01a70da-7987-4c82-8aa0-af7f657008eb.proj&quot; on node 1 (default targets).
+Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\GenerateRefInfo-6e369f25-2c91-48c3-8a21-fdb4636a1c6d.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\x64\Debug\&quot;.
 GenerateRefInfo:
@@ -58,18 +58,18 @@ GenerateRefInfo:
   c Microsoft Corporation. All rights reserved.
   No source code context base path specified.  Source context information is unavailable.
   Loaded 2 assemblies for reflection and 1 dependency assemblies.
-  Wrote information on 2 namespaces, 568 types, and 9669 members
+  Wrote information on 2 namespaces, 572 types, and 9736 members
   Merging duplicate type and member information
   Merged 0 duplicate type(s) and 0 duplicate member(s)
-Done Building Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\GenerateRefInfo-d01a70da-7987-4c82-8aa0-af7f657008eb.proj&quot; (default targets).
+Done Building Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\GenerateRefInfo-6e369f25-2c91-48c3-8a21-fdb4636a1c6d.proj&quot; (default targets).
 <plugIn name="Geosoft DotNetExtraReflectionInfo Plugin" behavior="After" priority="1000">
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
 In Geosoft.Sandcastle.Plugins.DotNetExtraReflectionInfo Execute() method
-</plugIn>    Last step completed in 00:00:01.5461
+</plugIn>    Last step completed in 00:00:01.6875
 </buildStep>
 <buildStep step="ApplyDocumentModel">
 Applying document model to reflection output...
-    Last step completed in 00:00:00.8250
+    Last step completed in 00:00:00.7813
 </buildStep>
 <buildStep step="AddApiTopicFilenames">
 Adding topic filenames to API members...
@@ -240,7 +240,6 @@ Adding topic filenames to API members...
     Unique name M_GeoEngine_Core_GXNet_CSYS_IRelativeFileName_1 generated for M:GeoEngine.Core.GXNet.CSYS.IRelativeFileName(System.String,System.String@,System.Int32)
     Unique name M_GeoEngine_Core_GXNet_CSYS_IReplaceString_1 generated for M:GeoEngine.Core.GXNet.CSYS.IReplaceString(System.String,System.String@,System.String)
     Unique name M_GeoEngine_Core_GXNet_CSYS_iRunGX_1 generated for M:GeoEngine.Core.GXNet.CSYS.iRunGX(System.Windows.Forms.IWin32Window,System.String)
-    Unique name M_GeoEngine_Core_GXNet_CSYS_iRunGXEx_1 generated for M:GeoEngine.Core.GXNet.CSYS.iRunGXEx(System.Windows.Forms.IWin32Window,System.String,System.Int32@)
     Unique name M_GeoEngine_Core_GXNet_CSYS_iRunPython_1 generated for M:GeoEngine.Core.GXNet.CSYS.iRunPython(System.Windows.Forms.IWin32Window,System.String,System.String)
     Unique name M_GeoEngine_Core_GXNet_CSYS_IShortPathFileName_1 generated for M:GeoEngine.Core.GXNet.CSYS.IShortPathFileName(System.String,System.String@,System.Int32)
     Unique name M_GeoEngine_Core_GXNet_CSYS_ITempFileExt_1 generated for M:GeoEngine.Core.GXNet.CSYS.ITempFileExt(System.String,System.String@,System.Int32)
@@ -414,6 +413,7 @@ Adding topic filenames to API members...
     Unique name M_Geosoft_Desktop_GXNet_CMSTK_IFindSTK_1 generated for M:Geosoft.Desktop.GXNet.CMSTK.IFindSTK(System.String,System.Int32@,System.String@,System.String@,System.String@)
     Unique name M_Geosoft_Desktop_GXNet_CPROJ_GetCentralProjectInformation_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.GetCentralProjectInformation(System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@)
     Unique name M_Geosoft_Desktop_GXNet_CPROJ_GetRegisteredBackgroundScript_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.GetRegisteredBackgroundScript(System.Int32,System.String@,System.String@,System.String@,System.String@,System.String@,GeoEngine.Core.GXNet.CVV,System.String@)
+    Unique name M_Geosoft_Desktop_GXNet_CPROJ_GetRegisteredBackgroundScriptEx_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.GetRegisteredBackgroundScriptEx(System.Int32,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,System.String@,GeoEngine.Core.GXNet.CLST,GeoEngine.Core.GXNet.CLST,System.String@)
     Unique name M_Geosoft_Desktop_GXNet_CPROJ_GetServerAndProjectGUID_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.GetServerAndProjectGUID(System.String@,System.String@)
     Unique name M_Geosoft_Desktop_GXNet_CPROJ_ICurrentDocument_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.ICurrentDocument(System.String@,System.String@)
     Unique name M_Geosoft_Desktop_GXNet_CPROJ_ICurrentDocumentOfType_1 generated for M:Geosoft.Desktop.GXNet.CPROJ.ICurrentDocumentOfType(System.String@,System.String)
@@ -433,15 +433,15 @@ Adding topic filenames to API members...
     Unique name M_Geosoft_Desktop_GXNet_CSTK_IGetSymbParms_1 generated for M:Geosoft.Desktop.GXNet.CSTK.IGetSymbParms(System.String@,System.Int32,System.Double@,System.String@,System.Int32,System.String@,System.Int32,System.Int32@,System.Int32@,System.Double@,System.Int32@,GeoEngine.Core.GXNet.CVV,GeoEngine.Core.GXNet.CVV,System.Int32@,System.String@,System.Int32,System.Double@,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNet_CSTK_IGetTitleParms_1 generated for M:Geosoft.Desktop.GXNet.CSTK.IGetTitleParms(System.String@,System.String@,System.Int32@,System.Double@,System.Double@,System.Int32@,System.Double@,System.Double@,System.String@,System.Double@,System.String@,System.Int32)
     Unique name M_Geosoft_Desktop_GXNet_CUNC_UTF16ValToSTR_1 generated for M:Geosoft.Desktop.GXNet.CUNC.UTF16ValToSTR(System.Int32,System.String@,System.Int32)
-    Last step completed in 00:00:01.0000
+    Last step completed in 00:00:01.1094
 </buildStep>
 <buildStep step="GenerateApiTopicManifest">
 Generating API topic manifest...
-    Last step completed in 00:00:00.1640
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.2030
+    Last step completed in 00:00:00.2031
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
@@ -455,30 +455,30 @@ Generating conceptual topic files
     M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\Content\Welcome.aml -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\ddueXml\welcome.xml
     Parsing topic file &#39;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml&#39;
     M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\Content\VersionHistory\VersionHistory.aml -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\ddueXml\version-history.xml
-    Last step completed in 00:00:00.0340
+    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     Merging topic IDs into manifest.xml
-    Last step completed in 00:00:00.0230
+    Last step completed in 00:00:00.0312
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
 M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\DotNetReference\icons\Help.png -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\Output\Website\icons\Help.png
-    Last step completed in 00:00:00.0060
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00.0030
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file for API content...
 Generating conceptual content intermediate TOC file...
 <plugIn name="Table of Contents Exclusion" behavior="After" priority="1500">
 Searching for comment members containing &lt;tocexclude /&gt;...
-Found 417 members to exclude from the TOC
+Found 420 members to exclude from the TOC
 Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNet.IntConstants&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.Constant&#39;
@@ -523,6 +523,8 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNet.SYS_MENU_CLEARConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.SYS_LINEAGE_SOURCEConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.SYS_INFOConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_DAT_FILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.SYS_FILE_FORMConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.SYS_FONTConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.SYS_DIRConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.SHELL_EXECUTEConstant&#39;
@@ -710,6 +712,7 @@ Removing members from the TOC
     Removing &#39;T:GeoEngine.Core.GXNet.DAT_XGDConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.DAT_FILE_FORMConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.DAT_FILEConstant&#39;
+    Removing &#39;T:GeoEngine.Core.GXNet.CSYMB3D_SYMBOLConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.CSYMB_COLORConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.BF_SEEKConstant&#39;
     Removing &#39;T:GeoEngine.Core.GXNet.BF_OPEN_MODEConstant&#39;
@@ -897,12 +900,12 @@ Removing members from the TOC
     Removing &#39;T:Geosoft.Desktop.GXNet.ARCDB_NULLConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNet.ARC_SELTBL_TYPEConstant&#39;
     Removing &#39;T:Geosoft.Desktop.GXNet.ACQUIRE_SELConstant&#39;
-</plugIn>    Last step completed in 00:00:01.0670
+</plugIn>    Last step completed in 00:00:01.1407
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
-    Last step completed in 00:00:00.3310
+    Last step completed in 00:00:00.3438
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
@@ -910,12 +913,12 @@ M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\
   Updating reference topic configurations.
   Updating conceptual topic configurations.
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00.0070
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="BuildTopics">
 Building help topics...
 [C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\amd64\MSBuild.exe - BuildTopics.proj]
-Build started 11/21/2023 5:50:51 PM.
+Build started 5/30/2024 5:47:23 PM.
 
 Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\BuildTopics.proj&quot; on node 1 (default targets).
 BuildTopics:
@@ -927,24 +930,24 @@ BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXN
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sCheckTerminate] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\BuildTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.sGetError(System.String@,System.String@,System.Int32@)] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\BuildTopics.proj]
 BuildAssembler : warning : ResolveReferenceLinksComponent: [M:GeoEngine.Core.GXNet.CGXNETCore.ShowError] The target attribute is missing or has no value.  You have most likely omitted a cref attribute or left it blank on an XML comments element such as see, seealso, or exception. [M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\BuildTopics.proj]
-  Processed 9288 topic(s)
+  Processed 9352 topic(s)
   4 warning(s)
   CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
   ResolveArtLinksComponent: Copying media files...
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 4 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 2 of 30.
 Done Building Project &quot;M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\BuildTopics.proj&quot; (default targets).
-    Last step completed in 00:00:54.7531
+    Last step completed in 00:00:57.9395
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00.0190
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
 [C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\amd64\MSBuild.exe - ExtractHtmlInfo.proj]
 
-    Last step completed in 00:00:03.0491
+    Last step completed in 00:00:02.8751
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -1030,14 +1033,14 @@ M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\Geosoft.Sandcastle\Releas
 M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\branding-Website.js -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\Output\Website\scripts\branding-Website.js
 M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\clipboard.min.js -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\Output\Website\scripts\clipboard.min.js
 M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\gx\doc\Geosoft.Sandcastle\Release\Web\scripts\jquery-3.5.1.min.js -&gt; M:\b\REL\geosoft-ci\geosoft-ci\geosoft-base\api\build\gx_redist\gh_pages\dotnet\GXNet\Working\Output\Website\scripts\jquery-3.5.1.min.js
-    Last step completed in 00:00:00.2880
+    Last step completed in 00:00:00.3438
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:08.5393
+</plugIn>    Last step completed in 00:00:06.8752
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
@@ -1062,16 +1065,16 @@ Copied 8500 files
 Copied 9000 files
 Copied 9500 files
 Copied 10000 files
-Copied 10018 files for the website content
-    Last step completed in 00:00:06.4273
+Copied 10084 files for the website content
+    Last step completed in 00:00:08.0323
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:01.6551
+    Last step completed in 00:00:01.5782
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 11/21/2023 5:52:06 PM.  Total time: 00:01:21.6245
+Build completed successfully at 5/30/2024 5:48:41 PM.  Total time: 00:01:24.9412
 
 </buildStep>
 </shfbBuild>
