@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25029.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XToolControl", "XToolControl.csproj", "{473A5E92-441A-4441-89C6-3811661077CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XToolControl", "XToolControl.csproj", "{473A5E92-441A-4441-89C6-3811661077CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

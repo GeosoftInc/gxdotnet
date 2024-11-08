@@ -29026,6 +29026,12 @@ nnn representing incremental number starting from 0
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FORM_OPEN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FORMConstant" />.</summary>
         </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_ARGIS_STYLX">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_ARGIS_LYRX">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
         <member name="F:Geosoft.Desktop.GXNet.IntConstants.FILE_FILTER_3DSURVEY">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
         </member>
@@ -31263,6 +31269,12 @@ nnn representing incremental number starting from 0
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FORM_OPEN">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FORMConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_ARGIS_STYLX">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_ARGIS_LYRX">
+            <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.Constant.FILE_FILTER_3DSURVEY">
             <summary>See <see cref="T:Geosoft.Desktop.GXNet.FILE_FILTERConstant" />.</summary>
@@ -33863,6 +33875,12 @@ Regular pant-leg filter::
         <member name="T:Geosoft.Desktop.GXNet.FILE_FORMConstant">
             <summary>File Form Defines</summary>
             <tocexclude />
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.ARGIS_STYLX">
+            <summary>ArcGIS Stylx files  *.stylx  LOCAL</summary>
+        </member>
+        <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant.ARGIS_LYRX">
+            <summary>ArcGIS LayerX files  *.lyrx  LOCAL</summary>
         </member>
         <member name="F:Geosoft.Desktop.GXNet.FILE_FILTERConstant._3DSURVEY">
             <summary>3d survey files  *.3dSurvey`  LOCAL</summary>

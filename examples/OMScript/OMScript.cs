@@ -1,3 +1,4 @@
+// Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 using System;
 using System.Drawing;
 using System.Collections;
@@ -13,6 +14,7 @@ namespace OMScript
    /// <summary>
    /// Summary description for Form1.
    /// </summary>
+   [System.Runtime.Versioning.SupportedOSPlatform("windows")]
    public class OMScript : System.Windows.Forms.Form
    {
       private System.Windows.Forms.Label label1;
@@ -43,6 +45,18 @@ namespace OMScript
       {
          if (disposing)
          {
+            if (this.label1 != null)
+               this.label1.Dispose();
+
+            if (this.tbCmd != null)
+               this.tbCmd.Dispose();
+
+            if (this.tbExecute != null)
+               this.tbExecute.Dispose();
+
+            if (this.tbExit != null)
+               this.tbExit.Dispose();
+
             if (components != null)
             {
                components.Dispose();
