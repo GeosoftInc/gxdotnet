@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>$(DotNetRuntimeTarget)</TargetFramework>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
@@ -11,6 +11,9 @@
     <Copyright>Copyright ©  2017</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <OutputPath>bin\x64\Debug\</OutputPath>
@@ -51,7 +54,7 @@
       <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
     <Reference Include="Geosoft.GX.Controls" Condition="'$(Platform)' == 'x64'">
-      <HintPath>$(DeskRefFolder)\Geosoft.GX.Controls.dll</HintPath>
+      <HintPath>$(ApiRefFolder)\Geosoft.GX.Controls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
