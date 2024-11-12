@@ -1,4 +1,3 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
@@ -9,9 +8,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "chanadd", "chanadd\chanadd.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OMScript", "OMScript\OMScript.csproj", "{FD9D5EF7-58CA-4D4D-B084-54AB9B40C05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XToolControl", "XToolControl\XToolControl.csproj", "{473A5E92-441A-4441-89C6-3811661077CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XToolControl", "XToolControl\XToolControl.csproj", "{473A5E92-441A-4441-89C6-3811661077CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptySampleTemplates", "EmptySampleTemplates\EmptySampleTemplates.csproj", "{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmptySampleTemplates", "EmptySampleTemplates\EmptySampleTemplates.csproj", "{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,13 +71,11 @@ Global
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Debug|x64.Build.0 = Debug|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Debug|x86.Build.0 = Debug|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|x64.ActiveCfg = Release|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|x64.Build.0 = Release|Any CPU
 		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|x86.ActiveCfg = Release|Any CPU
-		{A9070B0F-579D-4524-B5C8-8E6377D4D8C6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
