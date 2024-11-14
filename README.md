@@ -17,11 +17,10 @@ Select a __[Release](https://github.com/GeosoftInc/gxdotnet/releases)__ and down
    | Folder | Content |
    |:------:| ------- |
    | ___examples___ | C# examples |
-   | ___x86_references___ | Geosoft .NET dlls and xml, to be placed with your programs |
 
-The `build.proj` and `env.targets` files contain [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) scripts that  can be used to build the examples or launch Visual Studio with the correct environments defined.
+The `build.proj` and `env.targets` files contain [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild) scripts that can be used to build the examples or launch Visual Studio with the correct environments defined.
 
-[Visual Studio Community 2017](https://www.visualstudio.com/downloads/) is recommened for developers that do not yet have access to Visual Studio. It should also be possible to build using other toolsets (e.g. MingW), but this is neither tested nor supported.
+[Visual Studio 2022](https://www.visualstudio.com/downloads/) or newer is recommended. It should also be possible to build using other toolsets (e.g. MingW), but this is neither tested nor supported.
 
 The MSBuild scripts require [the MSBuild Extension Pack](http://www.msbuildextensionpack.com/).
 
@@ -41,10 +40,6 @@ Then open `examples\examples.sln`.
 ### References
 
 All Geosoft assemblies are references from the Geosoft Desktop Applications bin directory.
-
-### x86 References
-The `x86_references` directory provide minimal assemblies necessary to build assemblies targetting x86. These assemblies cannot be used and is only neccessary to be able to use the Visual Studio Windows Forms Designer since Visual Studio is at this moment still an x86 application.
-
 
 License
 -------
