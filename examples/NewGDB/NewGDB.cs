@@ -1,3 +1,4 @@
+// Copyright (c) 2024 Bentley Systems, Incorporated. All rights reserved.
 using GeoEngine.Core.GXNet;
 using Geosoft.Desktop.GXNet;
 using Geosoft.GX.Controls;

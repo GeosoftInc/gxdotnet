@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotnettools">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(ApiRefFolder)\dotnettools.dll</HintPath>
+    </Reference>
+    <Reference Include="geoengine.core.gxnet">
+      <HintPath>$(ApiRefFolder)\geoengine.core.gxnet.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoEngine.Core.Managed">
+      <HintPath>$(ApiRefFolder)\GeoEngine.Core.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="geosoft.desktop.gxnet">
+      <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Geosoft.GX.Controls">
+      <HintPath>$(ApiRefFolder)\Geosoft.GX.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+</Project>

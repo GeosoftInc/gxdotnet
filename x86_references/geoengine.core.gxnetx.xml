@@ -7199,6 +7199,31 @@ running within the geodist library
             <extended_method>no</extended_method>
             <method_group>Licensing</method_group>
         </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iCheckArcSDKLicenseEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
+            <summary>Check to see if a ESRI ArcGIS Pro SDK and Map SDK license is available, returns type and version of available engine.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="version">Version String</param>
+            <param name="version_size">Size of Version String</param>
+            <returns>&lt;define&gt;ARC_SDK_LICENSE&lt;/define&gt;</returns>
+            <available_version>2024.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CSYS.iCheckArcSDKLicenseEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String@)">
+            <summary>Check to see if a ESRI ArcGIS Pro SDK and Map SDK license is available, returns type and version of available engine.</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="version">Version String</param>
+            <returns>&lt;define&gt;ARC_SDK_LICENSE&lt;/define&gt;</returns>
+            <available_version>2024.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Licensing</method_group>
+        </member>
         <member name="M:GeoEngine.Core.GXNetX.CSYS.iCheckArcLicenseEx(GeoEngine.Core.GXNetX.CGXNETCore,System.String@,System.Int32)">
             <summary>Check to see if a ESRI ArcEngine or ArcView license is available, returns type and version of available engine.</summary>
             <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
@@ -12451,6 +12476,16 @@ Single-word items (without a separating period) are skipped.
             <param name="parm">Name of the parameter</param>
             <param name="data">String to get</param>
             <available_version>5.0</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CREG.GetMakerXML(System.String)">
+            <summary>Gets the MAKER handle from the REG object.</summary>
+            <param name="parm">XML file name</param>
+            <available_version>9.7</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -23493,6 +23528,26 @@ The layer name is optional
             <param name="format">&lt;define&gt;MAP_EXPORT_RASTER_FORMAT&lt;/define&gt;</param>
             <param name="options">Extended Options String (format specific)</param>
             <available_version>7.1</available_version>
+            <licensed_method>no</licensed_method>
+            <app_method>no</app_method>
+            <public_method>yes</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Export</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CMAP.ExportAllInView2(System.String,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.String,System.String)">
+            <summary>Same as ExportAllInView_MAP, but preset the range in X and Y to export (mm)</summary>
+            <param name="name">File Name To Export</param>
+            <param name="view">View to export coordinates in</param>
+            <param name="dpi">Resolution in DPI (will override view resolution if not dummy, map page size will be used to determine pixel size of output)</param>
+            <param name="minX">Base view minimum X (mm)</param>
+            <param name="minY">Base view minimum Y (mm)</param>
+            <param name="maxX">Base view maximum X (mm)</param>
+            <param name="maxY">Base view maximum Y (mm)</param>
+            <param name="bits">&lt;define&gt;MAP_EXPORT_BITS&lt;/define&gt;</param>
+            <param name="dither">&lt;define&gt;MAP_EXPORT_METHOD&lt;/define&gt;</param>
+            <param name="format">&lt;define&gt;MAP_EXPORT_FORMAT&lt;/define&gt;</param>
+            <param name="options">Extended Options String (format specific)</param>
+            <available_version>2024.2</available_version>
             <licensed_method>no</licensed_method>
             <app_method>no</app_method>
             <public_method>yes</public_method>
@@ -34791,6 +34846,37 @@ in the value part.
             <remarks>Needs ArcEngine licence.</remarks>
             <returns>DATALINKD handle, terminates if creation fails</returns>
             <available_version>9.0</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CDATALINKD.CreateArcLYRX(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@,System.Int32)">
+            <summary>Create an DATALINKD object from a ArcGIS LYRX file</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="arc_lyrx_file">Arc LYRX file name</param>
+            <param name="arc_srylx_file">Layer Stylx file name</param>
+            <param name="root_name">root layer name</param>
+            <param name="root_name_size">Size of root name buffer</param>
+            <remarks>Needs ArcGIS Pro SDK and Map SDK licence.</remarks>
+            <returns>DATALINKD handle, terminates if creation fails</returns>
+            <available_version>2024.1</available_version>
+            <licensed_method>yes</licensed_method>
+            <app_method>no</app_method>
+            <public_method>no</public_method>
+            <extended_method>no</extended_method>
+            <method_group>Miscellaneous</method_group>
+        </member>
+        <member name="M:GeoEngine.Core.GXNetX.CDATALINKD.CreateArcLYRX(GeoEngine.Core.GXNetX.CGXNETCore,System.String,System.String,System.String@)">
+            <summary>Create an DATALINKD object from a ArcGIS LYRX file</summary>
+            <param name="gxNetShared">A shared <see cref="T:GeoEngine.Core.GXNetX.CGXNETCore" /></param>
+            <param name="arc_lyrx_file">Arc LYRX file name</param>
+            <param name="arc_srylx_file">Layer Stylx file name</param>
+            <param name="root_name">root layer name</param>
+            <remarks>Needs ArcGIS Pro SDK and Map SDK licence.</remarks>
+            <returns>DATALINKD handle, terminates if creation fails</returns>
+            <available_version>2024.1</available_version>
             <licensed_method>yes</licensed_method>
             <app_method>no</app_method>
             <public_method>no</public_method>
