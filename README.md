@@ -1,6 +1,6 @@
-# Geosoft GX for .Net Repository
+# Geosoft GX for C# .Net Repository
 
-This is the repository for Geosoft GX Developer support for C# .Net development. Refer to the documentation for more information.
+This is the repository for Geosoft GX Developer support for .Net development. Refer to the documentation for more information.
 
 [GX Developer documentation](https://geosoftgxdev.atlassian.net/wiki/display/GD/Python+in+GX+Developer)
 
