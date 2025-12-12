@@ -30,21 +30,6 @@
     <Reference Include="geosoft.desktop.gxnet" Condition="'$(Platform)' == 'x64'">
       <HintPath>$(ApiRefFolder)\geosoft.desktop.gxnet.dll</HintPath>
     </Reference>
-    <Reference Update="System">
-      <Name>System</Name>
-    </Reference>
-    <Reference Update="System.Core">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Update="System.Data">
-      <Name>System.Data</Name>
-    </Reference>
-    <Reference Update="System.Drawing">
-      <Name>System.Drawing</Name>
-    </Reference>
-    <Reference Update="System.Xml">
-      <Name>System.XML</Name>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="XToolControl.cs">
