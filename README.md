@@ -1,4 +1,4 @@
-# Geosoft GX for C# .Net Repository
+# Geosoft GX for .Net Repository
 
 This is the repository for Geosoft GX Developer support for .Net development. Refer to the documentation for more information.
 
